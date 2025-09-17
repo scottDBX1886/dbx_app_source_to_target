@@ -11,6 +11,52 @@ logger = logging.getLogger(__name__)
 # Create router for auth endpoints
 router = APIRouter(prefix="/api", tags=["authentication"])
 
+async def get_scim_debug_info(databricks_host: str, user_token: str, email: str = None):
+    """Get SCIM debug information to understand group issues"""
+    if not user_token:
+        return {"error": "No user token"}
+    
+    result = {
+        "databricks_host": databricks_host,
+        "email": email,
+        "scim_url": f"{databricks_host}/api/2.0/preview/scim/v2/Me"
+    }
+    
+    try:
+        async with httpx.AsyncClient() as client:
+            response = await client.get(
+                f"{databricks_host}/api/2.0/preview/scim/v2/Me",
+                headers={"Authorization": f"Bearer {user_token}", "Content-Type": "application/json"},
+                timeout=10.0
+            )
+            
+            result["status_code"] = response.status_code
+            result["response_headers"] = dict(response.headers)
+            
+            if response.status_code == 200:
+                user_data = response.json()
+                result["response_keys"] = list(user_data.keys())
+                result["full_response"] = user_data
+                
+                # Check groups specifically
+                if "groups" in user_data:
+                    result["groups_found"] = True
+                    result["groups_count"] = len(user_data["groups"])
+                    result["groups_raw"] = user_data["groups"]
+                else:
+                    result["groups_found"] = False
+                    result["groups_count"] = 0
+                
+            else:
+                result["error"] = f"API returned {response.status_code}"
+                result["response_text"] = response.text
+                
+    except Exception as e:
+        result["exception"] = str(e)
+        result["exception_type"] = type(e).__name__
+    
+    return result
+
 async def get_real_user_info(databricks_host: str, user_token: str, email: str = None):
     """Get real user information from Databricks API with detailed debugging"""
     debug_info = {
@@ -114,6 +160,9 @@ async def get_user_info(request: Request):
     # Get real user data from Databricks - ORIGINAL WORKING APPROACH
     result = await get_real_user_info(databricks_host, user_token, email)
     
+    # Also get the SCIM debug info for troubleshooting
+    scim_debug = await get_scim_debug_info(databricks_host, user_token, email)
+    
     if result["success"]:
         return {
             "user_info": result["user_info"],
@@ -122,7 +171,8 @@ async def get_user_info(request: Request):
             "has_user_token": True,
             "authorization_type": "hybrid",
             "data_source": "databricks_api",
-            "debug_info": result.get("debug_info", {})
+            "debug_info": result.get("debug_info", {}),
+            "scim_debug": scim_debug  # Add SCIM debug info
         }
     else:
         return {
@@ -135,7 +185,8 @@ async def get_user_info(request: Request):
             "authenticated": False,
             "app": "Gainwell Main App",
             "error": result["error"],
-            "debug_info": result.get("debug_info", {})
+            "debug_info": result.get("debug_info", {}),
+            "scim_debug": scim_debug  # Add SCIM debug info even on error
         }
 
 @router.get("/debug/headers")

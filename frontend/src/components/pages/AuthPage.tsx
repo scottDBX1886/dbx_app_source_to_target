@@ -18,6 +18,7 @@ interface AuthStatus {
   error?: string;
   debug_api_response?: any;
   fallback_mode?: boolean;
+  scim_debug?: any;  // SCIM debug info included in main response
 }
 
 export function AuthPage() {
@@ -47,17 +48,10 @@ export function AuthPage() {
       
       const data = await response.json();
       setAuthStatus(data);
-
-      // Also fetch SCIM debug info to understand what's happening
-      try {
-        const scimResponse = await fetch('/api/debug/scim-raw');
-        if (scimResponse.ok) {
-          const scimData = await scimResponse.json();
-          setScimDebug(scimData);
-        }
-      } catch (scimError) {
-        console.log('SCIM debug fetch failed:', scimError);
-        setScimDebug({ error: 'Failed to fetch SCIM debug info' });
+      
+      // SCIM debug info is now included in the main response
+      if (data.scim_debug) {
+        setScimDebug(data.scim_debug);
       }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to load authentication data');
