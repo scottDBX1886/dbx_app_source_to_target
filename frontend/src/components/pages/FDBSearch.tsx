@@ -12,7 +12,9 @@ export function FDBSearch() {
   const [records, setRecords] = useState<FDBRecord[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [drawerOpen, setDrawerOpen] = useState(false);
+  
+  // Popup state (matching FMT Master style)
+  const [showPopup, setShowPopup] = useState(false);
   const [selectedRecord, setSelectedRecord] = useState<FDBDetailsResponse | null>(null);
 
   // Load initial data when tenant changes
@@ -46,12 +48,12 @@ export function FDBSearch() {
     }
   };
 
-  const openDrawer = async (ndc: string) => {
+  const openPopup = async (ndc: string) => {
     try {
       setLoading(true);
       const details = await fdbApi.getRecordDetails(ndc, tenant);
       setSelectedRecord(details);
-      setDrawerOpen(true);
+      setShowPopup(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to load record details');
       console.error('Error loading record details:', err);
@@ -60,21 +62,23 @@ export function FDBSearch() {
     }
   };
 
-  const closeDrawer = () => {
-    setDrawerOpen(false);
+  const closePopup = () => {
+    setShowPopup(false);
     setSelectedRecord(null);
   };
 
-  // Handle ESC key to close drawer
+  // Handle ESC key to close popup
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        closeDrawer();
+        closePopup();
       }
     };
-    document.addEventListener('keydown', handleEsc);
-    return () => document.removeEventListener('keydown', handleEsc);
-  }, []);
+    if (showPopup) {
+      document.addEventListener('keydown', handleEsc);
+      return () => document.removeEventListener('keydown', handleEsc);
+    }
+  }, [showPopup]);
 
   const exportData = async (format: 'csv' | 'json') => {
     try {
@@ -95,7 +99,7 @@ export function FDBSearch() {
     }
   };
 
-  // Copy drawer data to clipboard
+  // Copy popup data to clipboard
   const copyJson = async () => {
     if (!selectedRecord) return;
     try {
@@ -106,151 +110,200 @@ export function FDBSearch() {
     }
   };
 
+  const downloadCsvFromPopup = async () => {
+    if (!selectedRecord) return;
+    
+    const flatData = [];
+    for (const [section, kv] of Object.entries(selectedRecord.sections)) {
+      for (const [key, value] of Object.entries(kv)) {
+        flatData.push({ section, field: key, value: String(value) });
+      }
+    }
+
+    const headers = "Section,Field,Value\n";
+    const csvRows = flatData.map(row => `"${row.section}","${row.field}","${row.value}"`);
+    const csvContent = headers + csvRows.join("\n");
+
+    const blob = new Blob([csvContent], { type: "text/csv" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `ndc_${selectedRecord.ndc}_details.csv`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  };
+
   return (
-    <div className="page">
-      <div className="panel-header">
-        <h1 className="panel-title">FDB Search</h1>
-        <div className="hint">Live data from Databricks Volume - {records.length} records found</div>
+    <div className="fdb-search-page">
+      <div className="page-header">
+        <h1>🔍 FDB Search</h1>
+        <p className="muted">Live data from Databricks Volume - Search ~20 FDB files across tenants</p>
       </div>
 
-      {/* Search Controls */}
-      <div className="row" style={{ marginBottom: '24px', alignItems: 'flex-end', gap: '16px' }}>
-        <div style={{ flex: '1 1 auto' }}>
-          <label>Search NDC, Brand, Generic, or Manufacturer</label>
+      {/* Main Search Panel */}
+      <div className="panel">
+        <div className="panel-header">
+          <h2 className="panel-title">FDB Records - {tenant} Tenant</h2>
+        </div>
+        
+        <div className="row">
           <input 
-            type="text"
+            type="text" 
+            placeholder="Search NDC / Brand / Generic / Manufacturer" 
+            style={{ minWidth: '320px', flex: 1 }}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="Enter search term..."
             disabled={loading}
           />
+          <button className="btn primary" onClick={handleSearch} disabled={loading}>
+            {loading ? 'Searching...' : 'Search'}
+          </button>
+          <button className="btn" onClick={() => exportData('csv')} disabled={loading || records.length === 0}>
+            Export CSV
+          </button>
+          <button className="btn" onClick={() => exportData('json')} disabled={loading || records.length === 0}>
+            Export JSON
+          </button>
         </div>
-        <button 
-          onClick={handleSearch}
-          disabled={loading}
-          style={{ height: '40px' }}
-        >
-          {loading ? 'Searching...' : 'Search'}
-        </button>
-        <button 
-          onClick={() => exportData('csv')}
-          disabled={loading || records.length === 0}
-          style={{ height: '40px' }}
-        >
-          Export CSV
-        </button>
-        <button 
-          onClick={() => exportData('json')}
-          disabled={loading || records.length === 0}
-          style={{ height: '40px' }}
-        >
-          Export JSON
-        </button>
-      </div>
-
-      {/* Error Display */}
-      {error && (
-        <div style={{ 
-          padding: '12px', 
-          backgroundColor: '#dc3545', 
-          color: 'white', 
-          borderRadius: '4px', 
-          marginBottom: '16px' 
-        }}>
-          {error}
-        </div>
-      )}
-
-      {/* Results */}
-      <div className="scroll" style={{ height: '500px' }}>
-        {loading ? (
-          <div style={{ textAlign: 'center', padding: '40px' }}>
-            Loading FDB data from volume...
+        
+        {/* Error Display */}
+        {error && (
+          <div className="alert error" style={{ marginTop: '16px' }}>
+            <strong>Error:</strong> {error}
           </div>
-        ) : records.length === 0 ? (
-          <div style={{ textAlign: 'center', padding: '40px', color: 'var(--color-text-muted)' }}>
-            {searchQuery ? 'No records found for your search.' : 'Enter a search term to find FDB records.'}
-          </div>
-        ) : (
-          <table className="data-table">
-            <thead>
-              <tr>
-                <th style={{ width: '120px' }}>NDC</th>
-                <th style={{ width: '200px' }}>Brand</th>
-                <th style={{ width: '200px' }}>Generic</th>
-                <th style={{ width: '80px' }}>Rx/OTC</th>
-                <th style={{ width: '100px' }}>Pkg Size</th>
-                <th style={{ width: '80px' }}>HIC3</th>
-                <th style={{ width: '150px' }}>Manufacturer</th>
-                <th style={{ width: '100px' }}>Load Date</th>
-                {records.some(r => r.formulary_status) && (
-                  <th style={{ width: '120px' }}>Formulary</th>
-                )}
-              </tr>
-            </thead>
-            <tbody>
-              {records.map((record) => (
-                <tr key={record.ndc}>
-                  <td>
-                    <button 
-                      className="ndc-link" 
-                      onClick={() => openDrawer(record.ndc)}
-                    >
-                      {record.ndc}
-                    </button>
-                  </td>
-                  <td>{record.brand}</td>
-                  <td>{record.generic}</td>
-                  <td>{record.rx_otc}</td>
-                  <td>{record.pkg_size}</td>
-                  <td>{record.hic3}</td>
-                  <td>{record.mfr}</td>
-                  <td>{record.load_date}</td>
-                  {records.some(r => r.formulary_status) && (
-                    <td>
-                      {record.formulary_status && (
-                        <span className={`status ${record.formulary_status.toLowerCase().replace(' ', '-')}`}>
-                          {record.formulary_status}
-                        </span>
-                      )}
-                    </td>
-                  )}
-                </tr>
-              ))}
-            </tbody>
-          </table>
         )}
+        
+        <div className="divider"></div>
+        
+        <div className="scroll">
+          {loading ? (
+            <div style={{ textAlign: 'center', padding: '40px' }}>
+              Loading FDB data from volume...
+            </div>
+          ) : records.length === 0 ? (
+            <div style={{ textAlign: 'center', padding: '40px', color: 'var(--color-text-muted)' }}>
+              {searchQuery ? 'No records found for your search.' : 'Enter a search term to find FDB records.'}
+            </div>
+          ) : (
+            <table className="data-table">
+              <thead>
+                <tr>
+                  <th>NDC</th>
+                  <th>Brand</th>
+                  <th>Generic</th>
+                  <th>Rx/OTC</th>
+                  <th>Pkg Size</th>
+                  <th>HIC3</th>
+                  <th>Manufacturer</th>
+                  <th>Load Date</th>
+                  {records.some(r => r.formulary_status) && <th>Formulary</th>}
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {records.map((record) => (
+                  <tr key={record.ndc}>
+                    <td><code>{record.ndc}</code></td>
+                    <td>{record.brand}</td>
+                    <td>{record.generic}</td>
+                    <td>{record.rx_otc}</td>
+                    <td>{record.pkg_size}</td>
+                    <td>{record.hic3}</td>
+                    <td>{record.mfr}</td>
+                    <td>{record.load_date}</td>
+                    {records.some(r => r.formulary_status) && (
+                      <td>
+                        {record.formulary_status && (
+                          <span className={`status ${record.formulary_status.toLowerCase().replace(' ', '-')}`}>
+                            {record.formulary_status}
+                          </span>
+                        )}
+                      </td>
+                    )}
+                    <td>
+                      <button 
+                        className="btn ghost" 
+                        style={{ padding: '4px 8px', fontSize: '12px' }}
+                        onClick={() => openPopup(record.ndc)}
+                      >
+                        View Details
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+        </div>
       </div>
 
-      {/* Record Details Drawer */}
-      {drawerOpen && selectedRecord && (
-        <div className="drawer-overlay" onClick={closeDrawer}>
-          <div className="drawer-aside" onClick={(e) => e.stopPropagation()}>
-            <div className="drawer-header">
-              <h2>NDC Details: {selectedRecord.ndc}</h2>
-              <div className="hint">Source: {selectedRecord.data_source}</div>
-              <button className="btn-close" onClick={closeDrawer}>×</button>
+      {/* Data Source Info */}
+      <div className="panel">
+        <div className="panel-header">
+          <h2 className="panel-title">🔗 Data Source</h2>
+        </div>
+        
+        <div className="alert info">
+          <strong>Live Volume Integration</strong>
+          <div className="muted mt-1">
+            Data is loaded live from Databricks Volume with tenant-specific filtering.
+          </div>
+        </div>
+        
+        <div className="kv">
+          <div className="muted">Volume Path</div>
+          <div><code>/Volumes/demo/gainwell/fdb_data/</code></div>
+          
+          <div className="muted">Tenant Filtering</div>
+          <div>
+            {tenant === 'MASTER' 
+              ? 'All core drug records (500+ entries)'
+              : `Filtered by ${tenant} formulary entries for tenant-specific data`
+            }
+          </div>
+          
+          <div className="muted">Files Used</div>
+          <div>
+            <ul>
+              <li>fdb_core_drugs.csv - Primary drug information</li>
+              {tenant !== 'MASTER' && <li>fdb_formulary_{tenant.toLowerCase()}.csv - Tenant formulary</li>}
+              <li>fdb_pricing.csv - Pricing details (when available)</li>
+              <li>fdb_regional_{tenant.toLowerCase()}.csv - Regional preferences</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* NDC Details Popup */}
+      {showPopup && selectedRecord && (
+        <div className="popup-overlay" onClick={closePopup}>
+          <div className="popup-window" onClick={(e) => e.stopPropagation()}>
+            <div className="popup-header">
+              <h3>NDC Details: {selectedRecord.ndc}</h3>
+              <div className="popup-actions">
+                <button className="btn ghost" onClick={copyJson}>Copy JSON</button>
+                <button className="btn ghost" onClick={downloadCsvFromPopup}>Download CSV</button>
+                <button className="btn-close" onClick={closePopup}>×</button>
+              </div>
             </div>
-            <div className="drawer-content scroll">
+            <div className="popup-content scroll">
+              <div className="muted mb-2">Source: {selectedRecord.data_source}</div>
               {Object.entries(selectedRecord.sections).map(([sectionName, sectionData]) => (
                 <div key={sectionName} className="sec">
-                  <h3>{sectionName}</h3>
+                  <h4>{sectionName}</h4>
                   <div className="kv">
                     {Object.entries(sectionData).map(([key, value]) => (
-                      <div key={key} className="kv-row">
-                        <div className="kv-key">{key}</div>
-                        <div className="kv-value">{String(value)}</div>
-                      </div>
+                      <React.Fragment key={key}>
+                        <div className="muted">{key}</div>
+                        <div>{String(value)}</div>
+                      </React.Fragment>
                     ))}
                   </div>
                 </div>
               ))}
-            </div>
-            <div className="drawer-footer">
-              <button onClick={copyJson}>Copy JSON</button>
-              <button onClick={() => exportData('csv')}>Export CSV</button>
-              <button onClick={closeDrawer}>Close</button>
             </div>
           </div>
         </div>

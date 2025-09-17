@@ -1,18 +1,18 @@
 {
-  "_react-vendor-EA6J1kvb.js": {
-    "file": "assets/react-vendor-EA6J1kvb.js",
+  "_react-vendor-BIylXNQr.js": {
+    "file": "assets/react-vendor-BIylXNQr.js",
     "name": "react-vendor"
   },
   "index.html": {
-    "file": "assets/index-iKUd9WTR.js",
+    "file": "assets/index-ctvLSBCI.js",
     "name": "index",
     "src": "index.html",
     "isEntry": true,
     "imports": [
-      "_react-vendor-EA6J1kvb.js"
+      "_react-vendor-BIylXNQr.js"
     ],
     "css": [
-      "assets/index-76BL7W-I.css"
+      "assets/index-C7-Efrax.css"
     ]
   }
 }
