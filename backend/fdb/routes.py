@@ -53,7 +53,7 @@ async def debug_volume_access(request: Request):
         
         # Derived workspace URL
         host = request.headers.get("host", "").lower()
-        if "dbc-" in host:
+        if "dbc-" in host or "azuredatabricks.net" in host:
             derived_workspace_url = f"https://{host}"
         else:
             derived_workspace_url = request.headers.get("x-forwarded-proto", "https") + "://" + host
@@ -194,8 +194,26 @@ async def debug_sdk_access(request: Request):
         test_file_path = "/Volumes/demo/gainwell/fdb_data/fdb_core_drugs.csv"
         
         try:
-            # Initialize WorkspaceClient with user token
-            config = Config(token=user_token)
+            # Initialize WorkspaceClient with user token, avoiding OAuth env var conflicts
+            import os
+            
+            # Extract host from the environment 
+            databricks_host = os.environ.get("DATABRICKS_HOST")
+            if not databricks_host:
+                databricks_host = "https://adb-3438839487639471.11.azuredatabricks.net"  # From error message
+            
+            debug_info["sdk_test_results"]["databricks_host"] = databricks_host
+            
+            # Create config with explicit host and token only, ignoring OAuth env vars
+            config = Config(
+                host=databricks_host,
+                token=user_token,
+                # Explicitly disable other auth methods
+                username=None,
+                password=None,
+                client_id=None,
+                client_secret=None
+            )
             w = WorkspaceClient(config=config)
             
             debug_info["sdk_test_results"]["workspace_client_created"] = True
@@ -230,7 +248,7 @@ async def debug_sdk_access(request: Request):
 # Volume configuration
 VOLUME_BASE_PATH = "/Volumes/demo/gainwell/fdb_data"
 
-async def load_fdb_data_via_sdk(tenant: str = "MASTER", user_token: str = None) -> pd.DataFrame:
+async def load_fdb_data_via_sdk(tenant: str = "MASTER", user_token: str = None, request: Request = None) -> pd.DataFrame:
     """
     Load core FDB data with tenant-specific formulary filtering using Databricks SDK
     """
@@ -248,9 +266,27 @@ async def load_fdb_data_via_sdk(tenant: str = "MASTER", user_token: str = None) 
         
         logger.info("Initializing Databricks WorkspaceClient with user token")
         
-        # Initialize WorkspaceClient with user token
-        # The SDK will automatically detect the workspace from the environment
-        config = Config(token=user_token)
+        # Initialize WorkspaceClient with user token, avoiding OAuth env var conflicts
+        # Clear OAuth-related environment variables to prevent SDK confusion
+        import os
+        
+        # Extract host from the environment or derive from request context
+        databricks_host = os.environ.get("DATABRICKS_HOST")
+        if not databricks_host:
+            # If no host in environment, we'll need to derive it somehow
+            # For now, let's try to get it from the app context
+            databricks_host = "https://adb-3438839487639471.11.azuredatabricks.net"  # From error message
+        
+        # Create config with explicit host and token only, ignoring OAuth env vars
+        config = Config(
+            host=databricks_host,
+            token=user_token,
+            # Explicitly disable other auth methods
+            username=None,
+            password=None,
+            client_id=None,
+            client_secret=None
+        )
         w = WorkspaceClient(config=config)
         
         # Load core drug data from volume using Databricks SDK Files API
@@ -350,7 +386,7 @@ async def search_fdb_records(
             )
         
         # Load data for the specified tenant using Files API
-        df = await load_fdb_data_via_sdk(tenant, user_token)
+        df = await load_fdb_data_via_sdk(tenant, user_token, request)
         logger.info(f"Loaded {len(df)} records for tenant {tenant}")
         
         # Apply search filter
@@ -447,7 +483,7 @@ async def get_fdb_details(
             )
         
         # Load core data using Files API
-        df = await load_fdb_data_via_sdk(tenant, user_token)
+        df = await load_fdb_data_via_sdk(tenant, user_token, request)
         
         # Find the specific NDC
         record = df[df['ndc'].astype(str) == ndc]
@@ -463,8 +499,32 @@ async def get_fdb_details(
         from databricks.sdk import WorkspaceClient
         from databricks.sdk.core import Config
         
-        # Initialize WorkspaceClient with user token  
-        config = Config(token=user_token)
+        # Initialize WorkspaceClient with user token, avoiding OAuth env var conflicts
+        import os
+        
+        # Extract host from the environment or derive from request context
+        databricks_host = os.environ.get("DATABRICKS_HOST")
+        if not databricks_host:
+            # Try to get from request context (when running in Databricks App)  
+            if request:
+                host = request.headers.get("host", "").lower()
+                if "azuredatabricks.net" in host or "dbc-" in host:
+                    databricks_host = f"https://{host}"
+            
+            # Fallback to the host we detected from the error message if still not found
+            if not databricks_host:
+                databricks_host = "https://adb-3438839487639471.11.azuredatabricks.net"
+        
+        # Create config with explicit host and token only, ignoring OAuth env vars
+        config = Config(
+            host=databricks_host,
+            token=user_token,
+            # Explicitly disable other auth methods
+            username=None,
+            password=None,
+            client_id=None,
+            client_secret=None
+        )
         w = WorkspaceClient(config=config)
         
         # Try to load pricing data
@@ -587,7 +647,7 @@ async def export_fdb_data(
             )
         
         # Load data for the specified tenant using Files API
-        df = await load_fdb_data_via_sdk(tenant, user_token)
+        df = await load_fdb_data_via_sdk(tenant, user_token, request)
         
         # Apply search filter if provided
         if query:
