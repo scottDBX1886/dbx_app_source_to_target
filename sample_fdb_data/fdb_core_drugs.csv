@@ -1,0 +1,501 @@
+ndc,gsn,brand,generic,rx_otc,pkg_size,hic3,hicl,dcc,mfr,obsolete,rebate,load_date,pkg_origin,gsn_desc,pkg_form
+2738920083,10000,Lipitor,atorvastatin,OTC,1,002,HMG-CoA Reductase Inhibitors,PSYCH,Pfizer,True,True,2025-01-12,FR,HMG-CoA Reductase Inhibitors,Cream
+3840386076,10001,Humira,adalimumab,OTC,60,011,TNF Blockers,INFECT,AbbVie,False,True,2025-04-15,US,TNF Blockers,Suspension
+3031195783,10002,Advair,fluticasone-salmeterol,OTC,120,080,Corticosteroids,DERM,GlaxoSmithKline,True,True,2025-08-09,CA,Corticosteroids,Solution
+3193663720,10003,Nexium,esomeprazole,OTC,90,030,Proton Pump Inhibitors,PSYCH,AstraZeneca,False,False,2025-06-19,US,Proton Pump Inhibitors,Cream
+6638393590,10004,Crestor,rosuvastatin,OTC,90,001,HMG-CoA Reductase Inhibitors,URO,Crestor Inc,True,True,2024-10-02,US,HMG-CoA Reductase Inhibitors,Cream
+3862939051,10005,Lantus,insulin glargine,RX,5ml,080,Insulin,OPHTH,Sanofi,False,False,2025-03-08,US,Insulin,Injection
+3779342675,10006,Rituxan,rituximab,OTC,120,080,Monoclonal Antibodies,PSYCH,Genentech,False,True,2025-03-07,DE,Monoclonal Antibodies,Injection
+4938633713,10007,Enbrel,etanercept,RX,60,025,TNF Blockers,ONCO,Amgen,True,False,2024-11-01,FR,TNF Blockers,Suspension
+8110976070,10008,Copaxone,glatiramer,RX,100,011,Multiple Sclerosis Agents,OPHTH,Teva,False,True,2025-02-05,UK,Multiple Sclerosis Agents,Cream
+6372844572,10009,Neulasta,pegfilgrastim,RX,10ml,080,Colony Stimulating Factors,PSYCH,Biogen,True,True,2024-12-01,FR,Colony Stimulating Factors,Cream
+6310389272,10010,Lucentis,ranibizumab,RX,120,025,VEGF Inhibitors,INFECT,Lucentis Pharma,False,False,2024-10-13,FR,VEGF Inhibitors,Tablet
+5314455451,10011,Avastin,bevacizumab,RX,100,090,Monoclonal Antibodies,OPHTH,Genentech,False,True,2025-07-12,CA,Monoclonal Antibodies,Cream
+1047271317,10012,Herceptin,trastuzumab,RX,120,003,HER2 Receptor Antagonists,NEURO,Roche,False,True,2025-08-10,CA,HER2 Receptor Antagonists,Solution
+5249588057,10013,Remicade,infliximab,RX,1,090,TNF Blockers,GI,Johnson & Johnson,True,False,2025-07-15,CA,TNF Blockers,Injection
+1411377364,10014,Synagis,palivizumab,OTC,5ml,070,Monoclonal Antibodies,CV,MedImmune,True,False,2025-05-22,US,Monoclonal Antibodies,Injection
+1771020773,10015,Gleevec,imatinib,OTC,5ml,050,Tyrosine Kinase Inhibitors,RESP,Novartis,True,False,2025-05-06,UK,Tyrosine Kinase Inhibitors,Injection
+1364152083,10016,Taxotere,docetaxel,RX,100,070,Taxanes,DERM,Sanofi,False,True,2024-11-07,UK,Taxanes,Suspension
+5467761629,10017,Procrit,epoetin alfa,RX,120,100,Erythropoiesis Stimulating Agents,INFECT,Amgen,True,False,2025-02-05,DE,Erythropoiesis Stimulating Agents,Solution
+5559536233,10018,Epogen,epoetin alfa,OTC,100,070,Erythropoiesis Stimulating Agents,INFECT,Janssen,True,False,2025-01-18,DE,Erythropoiesis Stimulating Agents,Solution
+4133663591,10019,Aranesp,darbepoetin alfa,RX,100,002,Erythropoiesis Stimulating Agents,ONCO,Eli Lilly,False,False,2025-07-21,CA,Erythropoiesis Stimulating Agents,Suspension
+3637732035,10020,Zyprexa,olanzapine,OTC,100,003,Atypical Antipsychotics,GI,AstraZeneca,True,False,2025-03-18,CA,Atypical Antipsychotics,Capsule
+1483450717,10021,Seroquel,quetiapine,RX,1,030,Atypical Antipsychotics,URO,Janssen,True,True,2025-02-08,UK,Atypical Antipsychotics,Tablet
+4910789810,10022,Risperdal,risperidone,OTC,100,030,Atypical Antipsychotics,ONCO,Otsuka,False,True,2025-02-24,FR,Atypical Antipsychotics,Injection
+9086441241,10023,Abilify,aripiprazole,RX,60,025,Atypical Antipsychotics,NEURO,Pfizer,False,False,2025-01-04,US,Atypical Antipsychotics,Solution
+9593870313,10024,Geodon,ziprasidone,RX,5ml,025,Atypical Antipsychotics,NEURO,Pfizer,True,False,2025-01-16,UK,Atypical Antipsychotics,Capsule
+1292425626,10025,Xanax,alprazolam,OTC,90,025,Benzodiazepines,OPHTH,Pfizer,False,True,2025-01-15,CA,Benzodiazepines,Injection
+2549426162,10026,Ativan,lorazepam,OTC,100,070,Benzodiazepines,ENDO,Roche,True,True,2025-02-08,UK,Benzodiazepines,Injection
+3790115114,10027,Valium,diazepam,RX,10ml,060,Benzodiazepines,NEURO,Sanofi,True,False,2025-02-13,CA,Benzodiazepines,Capsule
+5180966213,10028,Ambien,zolpidem,RX,90,070,Hypnotics,NEURO,Lunesta Inc,False,False,2025-04-14,FR,Hypnotics,Capsule
+5235261076,10029,Lunesta,eszopiclone,RX,100,002,Hypnotics,ONCO,Pfizer,True,True,2025-06-28,UK,Hypnotics,Cream
+2619746919,10030,Viagra,sildenafil,RX,60,090,PDE5 Inhibitors,ENDO,Eli Lilly,True,True,2025-02-03,UK,PDE5 Inhibitors,Injection
+9502249643,10031,Cialis,tadalafil,OTC,120,020,PDE5 Inhibitors,CV,Bayer,True,True,2025-05-29,FR,PDE5 Inhibitors,Suspension
+6539992849,10032,Levitra,vardenafil,OTC,120,090,PDE5 Inhibitors,RHEU,Boehringer Ingelheim,True,True,2025-04-26,CA,PDE5 Inhibitors,Cream
+6459140678,10033,Flomax,tamsulosin,OTC,90,011,Alpha Blockers,ENDO,GSK,True,True,2025-06-05,UK,Alpha Blockers,Injection
+6328761455,10034,Avodart,dutasteride,RX,60,001,5-Alpha Reductase Inhibitors,OPHTH,Merck,True,True,2024-10-21,DE,5-Alpha Reductase Inhibitors,Solution
+6929097616,10035,Proscar,finasteride,RX,1,060,HMG-CoA Reductase Inhibitors,ENDO,Abbott,False,True,2025-05-06,CA,HMG-CoA Reductase Inhibitors,Suspension
+1623961244,10036,Cardura,doxazosin,RX,30,002,TNF Blockers,DERM,Pfizer,False,True,2025-01-24,FR,TNF Blockers,Injection
+7859394370,10037,Hytrin,terazosin,OTC,5ml,010,Corticosteroids,ONCO,Pfizer,True,True,2025-06-04,UK,Corticosteroids,Suspension
+1279187917,10038,Prinivil,lisinopril,OTC,5ml,050,Proton Pump Inhibitors,ONCO,Bristol-Myers Squibb,False,True,2025-08-21,CA,Proton Pump Inhibitors,Injection
+9460134266,10039,Zestril,lisinopril,RX,5ml,020,HMG-CoA Reductase Inhibitors,NEURO,Bristol-Myers Squibb,True,True,2025-03-26,US,HMG-CoA Reductase Inhibitors,Tablet
+3921717370,10040,Vasotec,enalapril,RX,5ml,011,Insulin,RHEU,Bristol-Myers Squibb,True,False,2025-02-13,DE,Insulin,Suspension
+9488190161,10041,Capoten,captopril,RX,100,070,Monoclonal Antibodies,PSYCH,Bristol-Myers Squibb,True,True,2024-09-24,FR,Monoclonal Antibodies,Tablet
+1466255251,10042,Altace,ramipril,OTC,100,003,TNF Blockers,DERM,Aventis,False,True,2025-07-22,FR,TNF Blockers,Suspension
+2936464097,10043,Mavik,trandolapril,OTC,60,100,Multiple Sclerosis Agents,ONCO,Abbott,True,True,2025-06-28,CA,Multiple Sclerosis Agents,Injection
+1892491264,10044,Univasc,moexipril,OTC,120,001,Colony Stimulating Factors,URO,Abbott,True,False,2025-08-08,DE,Colony Stimulating Factors,Solution
+3405828933,10045,Accupril,quinapril,RX,90,030,VEGF Inhibitors,OPHTH,Pfizer,True,False,2025-01-03,UK,VEGF Inhibitors,Tablet
+9896651216,10046,Norvasc,amlodipine,OTC,60,020,Monoclonal Antibodies,RESP,Pfizer,True,True,2024-09-18,FR,Monoclonal Antibodies,Tablet
+3076090541,10047,Procardia,nifedipine,RX,60,003,HER2 Receptor Antagonists,GI,Forest,True,False,2024-10-07,DE,HER2 Receptor Antagonists,Suspension
+5498830362,10048,Cardizem,diltiazem,OTC,60,080,TNF Blockers,PSYCH,Verapamil Inc,False,False,2024-11-21,DE,TNF Blockers,Capsule
+2600959720,10049,Verapamil,verapamil,RX,30,001,Monoclonal Antibodies,RESP,Forest,True,False,2025-04-24,US,Monoclonal Antibodies,Suspension
+9711547722,10050,Diltiazem,diltiazem,RX,100,011,Tyrosine Kinase Inhibitors,URO,Pfizer,True,False,2024-10-15,CA,Tyrosine Kinase Inhibitors,Tablet
+8101925533,10051,Adalat,nifedipine,OTC,120,100,Taxanes,INFECT,Sandoz,True,True,2025-02-22,UK,Taxanes,Injection
+6503960115,10052,DynaCirc,simvastatin,OTC,120,002,Erythropoiesis Stimulating Agents,DERM,Merck,False,True,2025-03-22,UK,Erythropoiesis Stimulating Agents,Solution
+4523794830,10053,Zocor,pravastatin,OTC,120,001,Erythropoiesis Stimulating Agents,URO,Bristol-Myers Squibb,False,True,2025-06-28,DE,Erythropoiesis Stimulating Agents,Capsule
+5617576768,10054,Pravachol,fluvastatin,RX,10ml,025,Erythropoiesis Stimulating Agents,RHEU,Novartis,False,True,2025-03-12,CA,Erythropoiesis Stimulating Agents,Suspension
+1656084413,10055,Lescol,lovastatin,RX,90,050,Atypical Antipsychotics,CV,Merck,True,True,2025-03-31,CA,Atypical Antipsychotics,Injection
+4946223462,10056,Mevacor,ezetimibe-simvastatin,RX,90,030,Atypical Antipsychotics,RESP,Merck,False,True,2025-03-18,CA,Atypical Antipsychotics,Cream
+9084758140,10057,Vytorin,ezetimibe,RX,10ml,002,Atypical Antipsychotics,INFECT,Merck,False,False,2025-05-25,CA,Atypical Antipsychotics,Injection
+7259555024,10058,Zetia,colesevelam,RX,120,080,Atypical Antipsychotics,ONCO,Daiichi Sankyo,False,False,2025-02-26,UK,Atypical Antipsychotics,Tablet
+7084851846,10059,WelChol,cholestyramine,RX,1,080,Atypical Antipsychotics,URO,WelChol Inc,True,False,2025-02-14,FR,Atypical Antipsychotics,Injection
+5402190026,10060,Questran,metformin,OTC,60,060,Benzodiazepines,DERM,Bristol-Myers Squibb,True,True,2024-10-03,DE,Benzodiazepines,Suspension
+2375534949,10061,Glucophage,glimepiride,RX,100,003,Benzodiazepines,ENDO,Takeda,True,True,2024-12-09,DE,Benzodiazepines,Solution
+3986256261,10062,Amaryl,glipizide,OTC,120,060,Benzodiazepines,INFECT,GSK,True,True,2025-03-04,DE,Benzodiazepines,Capsule
+9766747374,10063,Glucotrol,glyburide,OTC,30,025,Hypnotics,PSYCH,Merck,True,False,2025-02-16,UK,Hypnotics,Tablet
+4501228219,10064,Diabeta,glyburide,RX,100,001,Hypnotics,OPHTH,Takeda,True,False,2025-08-30,UK,Hypnotics,Solution
+5805988150,10065,Micronase,repaglinide,OTC,120,090,PDE5 Inhibitors,GI,Boehringer Ingelheim,True,False,2024-11-21,FR,PDE5 Inhibitors,Injection
+8200317426,10066,Prandin,nateglinide,OTC,90,050,PDE5 Inhibitors,URO,Novo Nordisk,True,True,2024-12-28,DE,PDE5 Inhibitors,Capsule
+6060846277,10067,Starlix,pioglitazone,RX,60,002,PDE5 Inhibitors,RHEU,AstraZeneca,False,True,2025-09-05,UK,PDE5 Inhibitors,Injection
+4854529765,10068,Actos,rosiglitazone,RX,5ml,080,Alpha Blockers,URO,Symlin Inc,False,False,2024-10-20,UK,Alpha Blockers,Suspension
+8682543724,10069,Avandia,sitagliptin,OTC,60,050,5-Alpha Reductase Inhibitors,OPHTH,Pfizer,False,False,2025-06-21,CA,5-Alpha Reductase Inhibitors,Cream
+6646455338,10070,Januvia,saxagliptin,OTC,100,100,HMG-CoA Reductase Inhibitors,ONCO,AbbVie,True,True,2025-04-18,FR,HMG-CoA Reductase Inhibitors,Injection
+9555934551,10071,Onglyza,linagliptin,RX,5ml,060,TNF Blockers,INFECT,GlaxoSmithKline,True,True,2025-06-28,US,TNF Blockers,Injection
+5792524815,10072,Tradjenta,liraglutide,OTC,1,080,Corticosteroids,INFECT,AstraZeneca,True,True,2025-06-14,CA,Corticosteroids,Capsule
+2471877914,10073,Victoza,exenatide,OTC,30,080,Proton Pump Inhibitors,NEURO,Crestor Inc,True,True,2024-10-20,UK,Proton Pump Inhibitors,Capsule
+3862953961,10074,Byetta,pramlintide,OTC,30,090,HMG-CoA Reductase Inhibitors,ONCO,Sanofi,False,True,2025-04-05,CA,HMG-CoA Reductase Inhibitors,Capsule
+7074270046,10075,Symlin,atorvastatin,RX,90,001,Insulin,RHEU,Genentech,True,False,2025-07-23,US,Insulin,Tablet
+5620283693,10076,Lipitor,atorvastatin,OTC,90,011,HMG-CoA Reductase Inhibitors,CV,Pfizer,True,True,2024-12-12,DE,HMG-CoA Reductase Inhibitors,Tablet
+9895341832,10077,Humira,adalimumab,RX,30,050,TNF Blockers,CV,AbbVie,True,True,2024-10-01,CA,TNF Blockers,Suspension
+2379270633,10078,Advair,fluticasone-salmeterol,OTC,100,020,Corticosteroids,RHEU,GlaxoSmithKline,True,True,2025-05-13,UK,Corticosteroids,Tablet
+4608321688,10079,Nexium,esomeprazole,OTC,5ml,060,Proton Pump Inhibitors,RHEU,AstraZeneca,True,False,2024-10-26,FR,Proton Pump Inhibitors,Solution
+6750482041,10080,Crestor,rosuvastatin,OTC,120,002,HMG-CoA Reductase Inhibitors,DERM,Crestor Inc,True,True,2025-06-26,CA,HMG-CoA Reductase Inhibitors,Tablet
+8661217691,10081,Lantus,insulin glargine,RX,90,070,Insulin,DERM,Sanofi,False,True,2025-07-05,DE,Insulin,Injection
+8779889035,10082,Rituxan,rituximab,RX,10ml,020,Monoclonal Antibodies,RESP,Genentech,False,False,2024-09-19,FR,Monoclonal Antibodies,Cream
+5201533723,10083,Enbrel,etanercept,OTC,100,001,TNF Blockers,ENDO,Amgen,True,True,2024-12-11,FR,TNF Blockers,Solution
+5541693615,10084,Copaxone,glatiramer,RX,90,001,Multiple Sclerosis Agents,INFECT,Teva,True,True,2025-02-26,UK,Multiple Sclerosis Agents,Cream
+4111926290,10085,Neulasta,pegfilgrastim,RX,90,040,Colony Stimulating Factors,RESP,Biogen,False,False,2025-02-27,UK,Colony Stimulating Factors,Injection
+7113351137,10086,Lucentis,ranibizumab,OTC,10ml,011,VEGF Inhibitors,PSYCH,Lucentis Pharma,True,False,2025-01-28,FR,VEGF Inhibitors,Tablet
+8630871142,10087,Avastin,bevacizumab,OTC,60,010,Monoclonal Antibodies,ONCO,Genentech,False,True,2024-12-14,US,Monoclonal Antibodies,Solution
+4629435690,10088,Herceptin,trastuzumab,OTC,60,011,HER2 Receptor Antagonists,CV,Roche,True,False,2025-01-17,US,HER2 Receptor Antagonists,Tablet
+4308632142,10089,Remicade,infliximab,RX,100,030,TNF Blockers,ENDO,Johnson & Johnson,True,True,2025-08-24,FR,TNF Blockers,Suspension
+3565460472,10090,Synagis,palivizumab,OTC,1,010,Monoclonal Antibodies,DERM,MedImmune,True,False,2025-01-19,CA,Monoclonal Antibodies,Solution
+4645739992,10091,Gleevec,imatinib,RX,120,002,Tyrosine Kinase Inhibitors,PSYCH,Novartis,False,True,2025-09-15,DE,Tyrosine Kinase Inhibitors,Capsule
+8582953296,10092,Taxotere,docetaxel,RX,120,020,Taxanes,URO,Sanofi,False,False,2025-08-14,DE,Taxanes,Suspension
+9038257470,10093,Procrit,epoetin alfa,RX,5ml,011,Erythropoiesis Stimulating Agents,ENDO,Amgen,True,False,2025-04-17,FR,Erythropoiesis Stimulating Agents,Solution
+7035726648,10094,Epogen,epoetin alfa,RX,5ml,040,Erythropoiesis Stimulating Agents,NEURO,Janssen,False,False,2025-06-18,UK,Erythropoiesis Stimulating Agents,Capsule
+8947722094,10095,Aranesp,darbepoetin alfa,OTC,60,003,Erythropoiesis Stimulating Agents,OPHTH,Eli Lilly,True,True,2025-03-06,CA,Erythropoiesis Stimulating Agents,Tablet
+6536325357,10096,Zyprexa,olanzapine,RX,60,011,Atypical Antipsychotics,RESP,AstraZeneca,False,False,2025-07-31,CA,Atypical Antipsychotics,Solution
+2868270973,10097,Seroquel,quetiapine,OTC,60,100,Atypical Antipsychotics,URO,Janssen,True,True,2025-01-20,DE,Atypical Antipsychotics,Cream
+9815075692,10098,Risperdal,risperidone,RX,5ml,050,Atypical Antipsychotics,PSYCH,Otsuka,True,False,2025-02-15,UK,Atypical Antipsychotics,Capsule
+4145738872,10099,Abilify,aripiprazole,OTC,60,070,Atypical Antipsychotics,DERM,Pfizer,True,False,2025-01-17,FR,Atypical Antipsychotics,Capsule
+1612280857,10100,Geodon,ziprasidone,RX,5ml,025,Atypical Antipsychotics,RESP,Pfizer,True,False,2025-08-02,CA,Atypical Antipsychotics,Cream
+9572669499,10101,Xanax,alprazolam,OTC,1,060,Benzodiazepines,CV,Pfizer,True,True,2024-11-18,DE,Benzodiazepines,Cream
+4558259424,10102,Ativan,lorazepam,RX,100,002,Benzodiazepines,RHEU,Roche,True,True,2025-07-04,DE,Benzodiazepines,Solution
+7021056542,10103,Valium,diazepam,OTC,90,003,Benzodiazepines,NEURO,Sanofi,False,True,2025-05-03,CA,Benzodiazepines,Injection
+9694886156,10104,Ambien,zolpidem,RX,100,100,Hypnotics,INFECT,Lunesta Inc,True,False,2025-06-29,FR,Hypnotics,Injection
+8935110242,10105,Lunesta,eszopiclone,RX,10ml,100,Hypnotics,NEURO,Pfizer,False,False,2025-05-29,FR,Hypnotics,Suspension
+6731457697,10106,Viagra,sildenafil,OTC,120,080,PDE5 Inhibitors,ONCO,Eli Lilly,True,False,2025-05-20,US,PDE5 Inhibitors,Injection
+2595548691,10107,Cialis,tadalafil,RX,90,060,PDE5 Inhibitors,INFECT,Bayer,False,True,2024-11-30,US,PDE5 Inhibitors,Suspension
+9678177496,10108,Levitra,vardenafil,OTC,90,080,PDE5 Inhibitors,OPHTH,Boehringer Ingelheim,True,False,2025-01-29,FR,PDE5 Inhibitors,Tablet
+8324343193,10109,Flomax,tamsulosin,RX,60,070,Alpha Blockers,CV,GSK,True,True,2025-01-29,FR,Alpha Blockers,Suspension
+6171041738,10110,Avodart,dutasteride,OTC,1,025,5-Alpha Reductase Inhibitors,ENDO,Merck,False,False,2025-08-22,DE,5-Alpha Reductase Inhibitors,Tablet
+6375047547,10111,Proscar,finasteride,RX,10ml,090,HMG-CoA Reductase Inhibitors,GI,Abbott,True,True,2025-06-29,US,HMG-CoA Reductase Inhibitors,Suspension
+6723234325,10112,Cardura,doxazosin,OTC,5ml,100,TNF Blockers,ENDO,Pfizer,True,False,2025-08-15,US,TNF Blockers,Tablet
+8052478666,10113,Hytrin,terazosin,OTC,10ml,001,Corticosteroids,DERM,Pfizer,False,True,2025-07-03,CA,Corticosteroids,Cream
+6769412945,10114,Prinivil,lisinopril,RX,10ml,020,Proton Pump Inhibitors,INFECT,Bristol-Myers Squibb,False,False,2025-04-12,FR,Proton Pump Inhibitors,Cream
+3586798584,10115,Zestril,lisinopril,OTC,30,002,HMG-CoA Reductase Inhibitors,URO,Bristol-Myers Squibb,False,False,2025-07-27,CA,HMG-CoA Reductase Inhibitors,Suspension
+4192637893,10116,Vasotec,enalapril,RX,1,003,Insulin,CV,Bristol-Myers Squibb,False,True,2024-11-08,UK,Insulin,Cream
+5816943618,10117,Capoten,captopril,OTC,10ml,025,Monoclonal Antibodies,OPHTH,Bristol-Myers Squibb,True,True,2024-12-05,US,Monoclonal Antibodies,Suspension
+5626989495,10118,Altace,ramipril,RX,5ml,020,TNF Blockers,ENDO,Aventis,True,True,2025-06-28,UK,TNF Blockers,Suspension
+7778251430,10119,Mavik,trandolapril,OTC,120,010,Multiple Sclerosis Agents,GI,Abbott,True,False,2024-12-26,UK,Multiple Sclerosis Agents,Suspension
+5504466797,10120,Univasc,moexipril,OTC,1,060,Colony Stimulating Factors,GI,Abbott,True,False,2025-04-11,DE,Colony Stimulating Factors,Cream
+5340970011,10121,Accupril,quinapril,OTC,90,070,VEGF Inhibitors,OPHTH,Pfizer,True,True,2025-03-25,DE,VEGF Inhibitors,Injection
+2925018473,10122,Norvasc,amlodipine,OTC,60,080,Monoclonal Antibodies,ENDO,Pfizer,True,True,2024-11-20,UK,Monoclonal Antibodies,Solution
+6752723518,10123,Procardia,nifedipine,OTC,1,011,HER2 Receptor Antagonists,OPHTH,Forest,True,False,2025-06-24,DE,HER2 Receptor Antagonists,Solution
+8201068040,10124,Cardizem,diltiazem,OTC,30,040,TNF Blockers,RESP,Verapamil Inc,True,True,2025-07-13,US,TNF Blockers,Cream
+1331447388,10125,Verapamil,verapamil,OTC,1,050,Monoclonal Antibodies,ENDO,Forest,False,False,2024-10-16,CA,Monoclonal Antibodies,Solution
+4931582028,10126,Diltiazem,diltiazem,RX,60,003,Tyrosine Kinase Inhibitors,URO,Pfizer,False,True,2024-11-04,US,Tyrosine Kinase Inhibitors,Tablet
+6590170325,10127,Adalat,nifedipine,RX,1,050,Taxanes,RESP,Sandoz,False,True,2025-06-08,CA,Taxanes,Cream
+9317593427,10128,DynaCirc,simvastatin,OTC,5ml,100,Erythropoiesis Stimulating Agents,INFECT,Merck,False,True,2025-03-07,FR,Erythropoiesis Stimulating Agents,Injection
+1931663756,10129,Zocor,pravastatin,OTC,120,060,Erythropoiesis Stimulating Agents,CV,Bristol-Myers Squibb,True,True,2024-12-25,CA,Erythropoiesis Stimulating Agents,Capsule
+4964559557,10130,Pravachol,fluvastatin,OTC,90,060,Erythropoiesis Stimulating Agents,DERM,Novartis,True,False,2025-09-04,US,Erythropoiesis Stimulating Agents,Suspension
+8762825996,10131,Lescol,lovastatin,RX,5ml,060,Atypical Antipsychotics,RHEU,Merck,False,True,2025-01-06,US,Atypical Antipsychotics,Injection
+8090211132,10132,Mevacor,ezetimibe-simvastatin,RX,30,040,Atypical Antipsychotics,GI,Merck,True,True,2024-09-22,DE,Atypical Antipsychotics,Suspension
+2673188220,10133,Vytorin,ezetimibe,RX,100,001,Atypical Antipsychotics,INFECT,Merck,True,True,2025-08-24,DE,Atypical Antipsychotics,Solution
+1989813163,10134,Zetia,colesevelam,RX,60,010,Atypical Antipsychotics,ENDO,Daiichi Sankyo,False,False,2025-05-31,CA,Atypical Antipsychotics,Injection
+9164340364,10135,WelChol,cholestyramine,RX,60,010,Atypical Antipsychotics,NEURO,WelChol Inc,True,True,2025-05-24,CA,Atypical Antipsychotics,Tablet
+2891299556,10136,Questran,metformin,RX,120,002,Benzodiazepines,CV,Bristol-Myers Squibb,True,True,2024-12-19,FR,Benzodiazepines,Capsule
+4068088997,10137,Glucophage,glimepiride,OTC,5ml,080,Benzodiazepines,DERM,Takeda,True,True,2024-10-08,UK,Benzodiazepines,Tablet
+8155116032,10138,Amaryl,glipizide,OTC,10ml,011,Benzodiazepines,RESP,GSK,True,False,2025-07-11,DE,Benzodiazepines,Injection
+1074426226,10139,Glucotrol,glyburide,RX,100,003,Hypnotics,RHEU,Merck,False,True,2025-03-09,UK,Hypnotics,Suspension
+2209993067,10140,Diabeta,glyburide,OTC,10ml,001,Hypnotics,PSYCH,Takeda,False,False,2025-07-03,CA,Hypnotics,Injection
+5835980939,10141,Micronase,repaglinide,RX,30,025,PDE5 Inhibitors,NEURO,Boehringer Ingelheim,False,False,2025-09-02,UK,PDE5 Inhibitors,Tablet
+7796073090,10142,Prandin,nateglinide,OTC,30,020,PDE5 Inhibitors,DERM,Novo Nordisk,False,True,2024-10-18,CA,PDE5 Inhibitors,Cream
+9676168556,10143,Starlix,pioglitazone,RX,90,080,PDE5 Inhibitors,ENDO,AstraZeneca,False,False,2025-01-12,DE,PDE5 Inhibitors,Tablet
+1546611995,10144,Actos,rosiglitazone,OTC,5ml,001,Alpha Blockers,DERM,Symlin Inc,False,False,2024-12-27,US,Alpha Blockers,Injection
+3013885521,10145,Avandia,sitagliptin,OTC,120,010,5-Alpha Reductase Inhibitors,OPHTH,Pfizer,False,False,2025-01-22,CA,5-Alpha Reductase Inhibitors,Capsule
+2630990953,10146,Januvia,saxagliptin,OTC,100,010,HMG-CoA Reductase Inhibitors,OPHTH,AbbVie,False,True,2025-06-16,FR,HMG-CoA Reductase Inhibitors,Cream
+7132013897,10147,Onglyza,linagliptin,OTC,60,002,TNF Blockers,PSYCH,GlaxoSmithKline,True,False,2025-08-01,CA,TNF Blockers,Suspension
+1926843290,10148,Tradjenta,liraglutide,OTC,120,030,Corticosteroids,NEURO,AstraZeneca,False,True,2025-03-04,DE,Corticosteroids,Cream
+6037875311,10149,Victoza,exenatide,RX,30,002,Proton Pump Inhibitors,OPHTH,Crestor Inc,True,False,2025-02-09,US,Proton Pump Inhibitors,Suspension
+7592750743,10150,Byetta,pramlintide,RX,90,060,HMG-CoA Reductase Inhibitors,GI,Sanofi,True,True,2025-02-07,UK,HMG-CoA Reductase Inhibitors,Capsule
+9988855967,10151,Symlin,atorvastatin,RX,120,090,Insulin,URO,Genentech,True,True,2025-06-26,FR,Insulin,Capsule
+1922014321,10152,Lipitor,atorvastatin,OTC,1,025,HMG-CoA Reductase Inhibitors,PSYCH,Pfizer,True,True,2025-09-02,FR,HMG-CoA Reductase Inhibitors,Tablet
+9770224539,10153,Humira,adalimumab,OTC,1,030,TNF Blockers,ONCO,AbbVie,True,True,2025-08-21,CA,TNF Blockers,Suspension
+1855869137,10154,Advair,fluticasone-salmeterol,RX,1,011,Corticosteroids,CV,GlaxoSmithKline,True,False,2025-03-20,US,Corticosteroids,Cream
+1918579330,10155,Nexium,esomeprazole,OTC,5ml,001,Proton Pump Inhibitors,INFECT,AstraZeneca,False,False,2024-10-23,US,Proton Pump Inhibitors,Cream
+3713753144,10156,Crestor,rosuvastatin,RX,10ml,040,HMG-CoA Reductase Inhibitors,INFECT,Crestor Inc,True,False,2024-10-27,CA,HMG-CoA Reductase Inhibitors,Tablet
+6993752088,10157,Lantus,insulin glargine,OTC,30,100,Insulin,NEURO,Sanofi,False,True,2025-04-20,DE,Insulin,Injection
+8336877361,10158,Rituxan,rituximab,OTC,60,050,Monoclonal Antibodies,OPHTH,Genentech,True,True,2025-01-03,DE,Monoclonal Antibodies,Injection
+8518934841,10159,Enbrel,etanercept,OTC,1,010,TNF Blockers,URO,Amgen,True,True,2024-10-04,DE,TNF Blockers,Cream
+9761564818,10160,Copaxone,glatiramer,OTC,60,060,Multiple Sclerosis Agents,RHEU,Teva,False,True,2025-07-09,DE,Multiple Sclerosis Agents,Solution
+8715224299,10161,Neulasta,pegfilgrastim,OTC,100,050,Colony Stimulating Factors,URO,Biogen,False,False,2025-04-03,DE,Colony Stimulating Factors,Solution
+5455362137,10162,Lucentis,ranibizumab,RX,60,060,VEGF Inhibitors,URO,Lucentis Pharma,True,True,2025-03-27,CA,VEGF Inhibitors,Suspension
+3641394298,10163,Avastin,bevacizumab,RX,5ml,003,Monoclonal Antibodies,NEURO,Genentech,False,True,2025-02-20,DE,Monoclonal Antibodies,Tablet
+8021767119,10164,Herceptin,trastuzumab,RX,1,070,HER2 Receptor Antagonists,NEURO,Roche,True,False,2024-09-17,UK,HER2 Receptor Antagonists,Solution
+5274240931,10165,Remicade,infliximab,RX,120,080,TNF Blockers,RHEU,Johnson & Johnson,False,True,2025-05-24,UK,TNF Blockers,Injection
+5781144889,10166,Synagis,palivizumab,RX,90,080,Monoclonal Antibodies,ONCO,MedImmune,False,True,2024-11-17,FR,Monoclonal Antibodies,Capsule
+3253165646,10167,Gleevec,imatinib,OTC,30,001,Tyrosine Kinase Inhibitors,NEURO,Novartis,False,True,2025-04-20,CA,Tyrosine Kinase Inhibitors,Injection
+9650481538,10168,Taxotere,docetaxel,RX,120,080,Taxanes,ONCO,Sanofi,False,False,2025-08-18,CA,Taxanes,Tablet
+4610011931,10169,Procrit,epoetin alfa,OTC,90,070,Erythropoiesis Stimulating Agents,URO,Amgen,False,True,2024-11-30,FR,Erythropoiesis Stimulating Agents,Cream
+5908044123,10170,Epogen,epoetin alfa,RX,100,001,Erythropoiesis Stimulating Agents,DERM,Janssen,True,True,2024-09-19,UK,Erythropoiesis Stimulating Agents,Cream
+6110067420,10171,Aranesp,darbepoetin alfa,OTC,5ml,011,Erythropoiesis Stimulating Agents,RHEU,Eli Lilly,False,False,2025-04-09,UK,Erythropoiesis Stimulating Agents,Cream
+9355275249,10172,Zyprexa,olanzapine,OTC,120,025,Atypical Antipsychotics,PSYCH,AstraZeneca,False,False,2025-03-06,UK,Atypical Antipsychotics,Injection
+2140978091,10173,Seroquel,quetiapine,OTC,120,020,Atypical Antipsychotics,INFECT,Janssen,False,False,2025-02-12,UK,Atypical Antipsychotics,Solution
+6303217182,10174,Risperdal,risperidone,OTC,120,001,Atypical Antipsychotics,ENDO,Otsuka,True,True,2025-06-05,CA,Atypical Antipsychotics,Suspension
+7140822865,10175,Abilify,aripiprazole,RX,60,001,Atypical Antipsychotics,NEURO,Pfizer,False,True,2025-07-06,FR,Atypical Antipsychotics,Capsule
+4811067382,10176,Geodon,ziprasidone,RX,100,010,Atypical Antipsychotics,RESP,Pfizer,True,False,2025-02-28,CA,Atypical Antipsychotics,Cream
+8057928764,10177,Xanax,alprazolam,OTC,30,011,Benzodiazepines,GI,Pfizer,False,True,2025-01-06,US,Benzodiazepines,Solution
+2428553259,10178,Ativan,lorazepam,RX,60,002,Benzodiazepines,ONCO,Roche,True,True,2025-05-13,US,Benzodiazepines,Injection
+2996413671,10179,Valium,diazepam,OTC,90,050,Benzodiazepines,URO,Sanofi,False,False,2024-10-19,UK,Benzodiazepines,Cream
+6236542263,10180,Ambien,zolpidem,RX,10ml,100,Hypnotics,OPHTH,Lunesta Inc,True,False,2024-10-15,CA,Hypnotics,Suspension
+6765177261,10181,Lunesta,eszopiclone,RX,10ml,001,Hypnotics,RHEU,Pfizer,True,True,2025-07-19,UK,Hypnotics,Capsule
+8458150732,10182,Viagra,sildenafil,RX,100,060,PDE5 Inhibitors,CV,Eli Lilly,True,False,2025-08-02,FR,PDE5 Inhibitors,Tablet
+9373657566,10183,Cialis,tadalafil,RX,60,070,PDE5 Inhibitors,RHEU,Bayer,False,False,2025-04-17,UK,PDE5 Inhibitors,Tablet
+3648927648,10184,Levitra,vardenafil,RX,90,040,PDE5 Inhibitors,URO,Boehringer Ingelheim,False,True,2024-11-28,US,PDE5 Inhibitors,Cream
+7962570911,10185,Flomax,tamsulosin,OTC,120,050,Alpha Blockers,PSYCH,GSK,True,True,2024-12-27,US,Alpha Blockers,Capsule
+1609652223,10186,Avodart,dutasteride,RX,60,040,5-Alpha Reductase Inhibitors,OPHTH,Merck,True,True,2025-03-15,DE,5-Alpha Reductase Inhibitors,Solution
+9469696067,10187,Proscar,finasteride,OTC,120,050,HMG-CoA Reductase Inhibitors,ONCO,Abbott,True,True,2024-12-24,FR,HMG-CoA Reductase Inhibitors,Capsule
+2730090685,10188,Cardura,doxazosin,RX,1,050,TNF Blockers,PSYCH,Pfizer,True,False,2025-07-02,DE,TNF Blockers,Solution
+3712356535,10189,Hytrin,terazosin,OTC,90,020,Corticosteroids,NEURO,Pfizer,False,True,2025-06-20,DE,Corticosteroids,Injection
+2494753335,10190,Prinivil,lisinopril,RX,120,070,Proton Pump Inhibitors,PSYCH,Bristol-Myers Squibb,False,True,2024-11-04,UK,Proton Pump Inhibitors,Injection
+4907064879,10191,Zestril,lisinopril,OTC,120,003,HMG-CoA Reductase Inhibitors,ENDO,Bristol-Myers Squibb,False,True,2025-03-20,US,HMG-CoA Reductase Inhibitors,Capsule
+9116847887,10192,Vasotec,enalapril,OTC,60,020,Insulin,INFECT,Bristol-Myers Squibb,False,True,2024-11-01,FR,Insulin,Suspension
+9981447151,10193,Capoten,captopril,RX,60,002,Monoclonal Antibodies,CV,Bristol-Myers Squibb,False,True,2025-08-08,US,Monoclonal Antibodies,Capsule
+3144288618,10194,Altace,ramipril,OTC,60,080,TNF Blockers,INFECT,Aventis,False,False,2025-03-16,CA,TNF Blockers,Tablet
+5868910889,10195,Mavik,trandolapril,OTC,90,001,Multiple Sclerosis Agents,CV,Abbott,False,True,2024-12-21,DE,Multiple Sclerosis Agents,Cream
+5047816264,10196,Univasc,moexipril,RX,90,100,Colony Stimulating Factors,URO,Abbott,False,False,2025-05-27,CA,Colony Stimulating Factors,Cream
+5886495478,10197,Accupril,quinapril,RX,60,010,VEGF Inhibitors,GI,Pfizer,False,True,2025-07-23,FR,VEGF Inhibitors,Capsule
+7953576448,10198,Norvasc,amlodipine,OTC,100,060,Monoclonal Antibodies,NEURO,Pfizer,False,True,2025-04-27,DE,Monoclonal Antibodies,Cream
+6643064118,10199,Procardia,nifedipine,RX,5ml,100,HER2 Receptor Antagonists,PSYCH,Forest,False,False,2025-06-27,FR,HER2 Receptor Antagonists,Suspension
+7035558824,10200,Cardizem,diltiazem,RX,60,025,TNF Blockers,ENDO,Verapamil Inc,False,True,2025-06-22,CA,TNF Blockers,Cream
+9543447765,10201,Verapamil,verapamil,OTC,5ml,040,Monoclonal Antibodies,RESP,Forest,True,True,2024-11-15,US,Monoclonal Antibodies,Tablet
+5804153535,10202,Diltiazem,diltiazem,OTC,10ml,025,Tyrosine Kinase Inhibitors,PSYCH,Pfizer,False,True,2025-01-28,CA,Tyrosine Kinase Inhibitors,Tablet
+2740449027,10203,Adalat,nifedipine,RX,1,020,Taxanes,INFECT,Sandoz,False,True,2025-01-29,FR,Taxanes,Cream
+9082147889,10204,DynaCirc,simvastatin,RX,120,010,Erythropoiesis Stimulating Agents,ENDO,Merck,False,True,2025-02-26,FR,Erythropoiesis Stimulating Agents,Suspension
+4896081286,10205,Zocor,pravastatin,RX,90,050,Erythropoiesis Stimulating Agents,OPHTH,Bristol-Myers Squibb,False,False,2025-01-22,UK,Erythropoiesis Stimulating Agents,Tablet
+5544781617,10206,Pravachol,fluvastatin,OTC,100,003,Erythropoiesis Stimulating Agents,CV,Novartis,True,True,2025-02-16,UK,Erythropoiesis Stimulating Agents,Solution
+9967080475,10207,Lescol,lovastatin,OTC,120,040,Atypical Antipsychotics,ONCO,Merck,False,True,2025-03-13,CA,Atypical Antipsychotics,Tablet
+2129423080,10208,Mevacor,ezetimibe-simvastatin,OTC,10ml,040,Atypical Antipsychotics,RHEU,Merck,True,True,2025-06-20,UK,Atypical Antipsychotics,Solution
+1522395242,10209,Vytorin,ezetimibe,RX,100,030,Atypical Antipsychotics,ENDO,Merck,False,False,2024-10-10,CA,Atypical Antipsychotics,Injection
+9451045367,10210,Zetia,colesevelam,RX,120,002,Atypical Antipsychotics,INFECT,Daiichi Sankyo,False,True,2024-11-16,UK,Atypical Antipsychotics,Injection
+1717528846,10211,WelChol,cholestyramine,RX,90,080,Atypical Antipsychotics,DERM,WelChol Inc,False,True,2025-06-26,DE,Atypical Antipsychotics,Capsule
+9568174520,10212,Questran,metformin,RX,120,011,Benzodiazepines,DERM,Bristol-Myers Squibb,True,False,2025-02-17,US,Benzodiazepines,Cream
+6938752782,10213,Glucophage,glimepiride,OTC,5ml,040,Benzodiazepines,ENDO,Takeda,False,True,2024-12-07,UK,Benzodiazepines,Capsule
+7601326740,10214,Amaryl,glipizide,RX,100,002,Benzodiazepines,INFECT,GSK,False,False,2025-01-29,CA,Benzodiazepines,Cream
+4111616178,10215,Glucotrol,glyburide,OTC,100,070,Hypnotics,ENDO,Merck,True,True,2024-10-12,DE,Hypnotics,Suspension
+1206535488,10216,Diabeta,glyburide,RX,120,070,Hypnotics,DERM,Takeda,False,False,2025-05-25,UK,Hypnotics,Capsule
+3372493329,10217,Micronase,repaglinide,OTC,60,025,PDE5 Inhibitors,ONCO,Boehringer Ingelheim,True,False,2024-11-21,UK,PDE5 Inhibitors,Suspension
+5659577212,10218,Prandin,nateglinide,OTC,1,003,PDE5 Inhibitors,RHEU,Novo Nordisk,True,True,2025-04-17,US,PDE5 Inhibitors,Capsule
+8679864593,10219,Starlix,pioglitazone,OTC,90,025,PDE5 Inhibitors,RESP,AstraZeneca,True,True,2024-10-13,US,PDE5 Inhibitors,Tablet
+6404977518,10220,Actos,rosiglitazone,RX,120,070,Alpha Blockers,OPHTH,Symlin Inc,True,True,2024-10-22,US,Alpha Blockers,Solution
+7905943282,10221,Avandia,sitagliptin,RX,30,070,5-Alpha Reductase Inhibitors,DERM,Pfizer,True,True,2025-04-16,UK,5-Alpha Reductase Inhibitors,Capsule
+3080489417,10222,Januvia,saxagliptin,OTC,30,020,HMG-CoA Reductase Inhibitors,ONCO,AbbVie,True,True,2024-11-19,CA,HMG-CoA Reductase Inhibitors,Cream
+1951244988,10223,Onglyza,linagliptin,RX,120,010,TNF Blockers,PSYCH,GlaxoSmithKline,True,True,2024-11-29,DE,TNF Blockers,Tablet
+7338371425,10224,Tradjenta,liraglutide,RX,100,010,Corticosteroids,URO,AstraZeneca,True,True,2025-04-01,FR,Corticosteroids,Solution
+3396691321,10225,Victoza,exenatide,OTC,60,020,Proton Pump Inhibitors,ONCO,Crestor Inc,False,True,2025-06-16,DE,Proton Pump Inhibitors,Cream
+7956325675,10226,Byetta,pramlintide,RX,60,030,HMG-CoA Reductase Inhibitors,DERM,Sanofi,False,False,2025-06-24,US,HMG-CoA Reductase Inhibitors,Cream
+5469189882,10227,Symlin,atorvastatin,OTC,10ml,040,Insulin,INFECT,Genentech,False,False,2025-08-13,CA,Insulin,Injection
+4890581458,10228,Lipitor,atorvastatin,OTC,90,011,HMG-CoA Reductase Inhibitors,CV,Pfizer,True,True,2024-10-26,DE,HMG-CoA Reductase Inhibitors,Injection
+7250495875,10229,Humira,adalimumab,OTC,100,003,TNF Blockers,ENDO,AbbVie,True,False,2024-10-07,CA,TNF Blockers,Cream
+8831685861,10230,Advair,fluticasone-salmeterol,OTC,90,010,Corticosteroids,DERM,GlaxoSmithKline,True,True,2024-10-29,CA,Corticosteroids,Suspension
+9595889684,10231,Nexium,esomeprazole,OTC,30,030,Proton Pump Inhibitors,CV,AstraZeneca,True,False,2024-10-08,FR,Proton Pump Inhibitors,Injection
+1401482871,10232,Crestor,rosuvastatin,RX,100,100,HMG-CoA Reductase Inhibitors,URO,Crestor Inc,False,True,2024-11-07,CA,HMG-CoA Reductase Inhibitors,Tablet
+6068814458,10233,Lantus,insulin glargine,OTC,5ml,040,Insulin,ONCO,Sanofi,True,False,2024-10-09,UK,Insulin,Capsule
+4694229299,10234,Rituxan,rituximab,RX,1,003,Monoclonal Antibodies,RHEU,Genentech,True,False,2025-07-19,UK,Monoclonal Antibodies,Tablet
+1606965399,10235,Enbrel,etanercept,OTC,120,040,TNF Blockers,DERM,Amgen,True,False,2025-05-24,UK,TNF Blockers,Cream
+7970736869,10236,Copaxone,glatiramer,RX,90,080,Multiple Sclerosis Agents,OPHTH,Teva,True,True,2025-03-24,UK,Multiple Sclerosis Agents,Solution
+7359842124,10237,Neulasta,pegfilgrastim,RX,120,070,Colony Stimulating Factors,ONCO,Biogen,False,True,2025-04-22,FR,Colony Stimulating Factors,Suspension
+4273826425,10238,Lucentis,ranibizumab,OTC,10ml,025,VEGF Inhibitors,ENDO,Lucentis Pharma,False,False,2025-01-22,DE,VEGF Inhibitors,Suspension
+1325532667,10239,Avastin,bevacizumab,RX,30,003,Monoclonal Antibodies,DERM,Genentech,True,True,2024-12-04,DE,Monoclonal Antibodies,Cream
+9470917659,10240,Herceptin,trastuzumab,OTC,90,002,HER2 Receptor Antagonists,URO,Roche,True,False,2025-08-01,FR,HER2 Receptor Antagonists,Tablet
+2942320189,10241,Remicade,infliximab,OTC,5ml,040,TNF Blockers,CV,Johnson & Johnson,True,True,2025-04-11,UK,TNF Blockers,Tablet
+7567549522,10242,Synagis,palivizumab,OTC,30,001,Monoclonal Antibodies,OPHTH,MedImmune,False,False,2025-03-26,FR,Monoclonal Antibodies,Tablet
+9146620627,10243,Gleevec,imatinib,RX,100,011,Tyrosine Kinase Inhibitors,URO,Novartis,True,True,2025-04-18,FR,Tyrosine Kinase Inhibitors,Injection
+5393592470,10244,Taxotere,docetaxel,RX,100,010,Taxanes,ONCO,Sanofi,False,True,2025-01-19,FR,Taxanes,Injection
+2806895870,10245,Procrit,epoetin alfa,RX,10ml,003,Erythropoiesis Stimulating Agents,RESP,Amgen,False,False,2025-08-11,DE,Erythropoiesis Stimulating Agents,Cream
+9351171811,10246,Epogen,epoetin alfa,RX,60,025,Erythropoiesis Stimulating Agents,PSYCH,Janssen,False,False,2025-08-09,CA,Erythropoiesis Stimulating Agents,Injection
+7313097098,10247,Aranesp,darbepoetin alfa,RX,100,002,Erythropoiesis Stimulating Agents,NEURO,Eli Lilly,False,True,2024-12-31,UK,Erythropoiesis Stimulating Agents,Suspension
+7824479982,10248,Zyprexa,olanzapine,OTC,120,040,Atypical Antipsychotics,ONCO,AstraZeneca,True,False,2025-05-13,FR,Atypical Antipsychotics,Injection
+7510481139,10249,Seroquel,quetiapine,RX,60,030,Atypical Antipsychotics,OPHTH,Janssen,False,True,2025-08-03,DE,Atypical Antipsychotics,Cream
+4567392415,10250,Risperdal,risperidone,RX,1,020,Atypical Antipsychotics,ENDO,Otsuka,True,False,2024-11-19,FR,Atypical Antipsychotics,Solution
+4139629858,10251,Abilify,aripiprazole,RX,60,040,Atypical Antipsychotics,URO,Pfizer,False,True,2024-11-05,US,Atypical Antipsychotics,Suspension
+3433318334,10252,Geodon,ziprasidone,OTC,90,010,Atypical Antipsychotics,INFECT,Pfizer,True,True,2025-03-17,DE,Atypical Antipsychotics,Suspension
+1878593861,10253,Xanax,alprazolam,OTC,120,100,Benzodiazepines,ONCO,Pfizer,False,True,2025-06-07,FR,Benzodiazepines,Tablet
+2842468127,10254,Ativan,lorazepam,OTC,60,030,Benzodiazepines,NEURO,Roche,True,False,2025-07-20,DE,Benzodiazepines,Injection
+7741962489,10255,Valium,diazepam,RX,100,100,Benzodiazepines,ENDO,Sanofi,False,False,2025-08-09,FR,Benzodiazepines,Injection
+1168068726,10256,Ambien,zolpidem,RX,90,001,Hypnotics,GI,Lunesta Inc,True,False,2024-11-19,CA,Hypnotics,Tablet
+9945787068,10257,Lunesta,eszopiclone,RX,30,011,Hypnotics,ENDO,Pfizer,True,True,2024-10-24,DE,Hypnotics,Suspension
+3639918644,10258,Viagra,sildenafil,RX,120,070,PDE5 Inhibitors,OPHTH,Eli Lilly,False,False,2025-07-09,CA,PDE5 Inhibitors,Injection
+5280244227,10259,Cialis,tadalafil,OTC,1,001,PDE5 Inhibitors,NEURO,Bayer,False,True,2024-10-01,US,PDE5 Inhibitors,Cream
+3550644568,10260,Levitra,vardenafil,OTC,10ml,050,PDE5 Inhibitors,NEURO,Boehringer Ingelheim,False,True,2025-02-13,UK,PDE5 Inhibitors,Injection
+2997728690,10261,Flomax,tamsulosin,OTC,120,010,Alpha Blockers,NEURO,GSK,False,False,2025-04-10,US,Alpha Blockers,Cream
+6391559761,10262,Avodart,dutasteride,RX,10ml,001,5-Alpha Reductase Inhibitors,PSYCH,Merck,True,False,2025-05-19,UK,5-Alpha Reductase Inhibitors,Suspension
+2467487870,10263,Proscar,finasteride,RX,10ml,010,HMG-CoA Reductase Inhibitors,RHEU,Abbott,False,False,2025-05-21,UK,HMG-CoA Reductase Inhibitors,Cream
+4296835493,10264,Cardura,doxazosin,OTC,120,011,TNF Blockers,RHEU,Pfizer,False,False,2024-10-31,CA,TNF Blockers,Solution
+5721073656,10265,Hytrin,terazosin,RX,60,050,Corticosteroids,URO,Pfizer,True,False,2025-04-23,US,Corticosteroids,Solution
+9791478025,10266,Prinivil,lisinopril,RX,120,030,Proton Pump Inhibitors,OPHTH,Bristol-Myers Squibb,True,False,2025-09-03,CA,Proton Pump Inhibitors,Tablet
+4206925934,10267,Zestril,lisinopril,OTC,5ml,100,HMG-CoA Reductase Inhibitors,GI,Bristol-Myers Squibb,True,True,2025-01-09,FR,HMG-CoA Reductase Inhibitors,Injection
+7515610834,10268,Vasotec,enalapril,RX,30,002,Insulin,OPHTH,Bristol-Myers Squibb,False,False,2025-07-13,DE,Insulin,Capsule
+5404243024,10269,Capoten,captopril,RX,1,011,Monoclonal Antibodies,INFECT,Bristol-Myers Squibb,True,False,2025-04-05,CA,Monoclonal Antibodies,Injection
+9435980097,10270,Altace,ramipril,RX,5ml,040,TNF Blockers,ENDO,Aventis,True,False,2025-03-02,UK,TNF Blockers,Tablet
+4960689059,10271,Mavik,trandolapril,RX,60,001,Multiple Sclerosis Agents,RESP,Abbott,True,True,2024-11-16,US,Multiple Sclerosis Agents,Suspension
+5657370390,10272,Univasc,moexipril,OTC,1,025,Colony Stimulating Factors,RHEU,Abbott,False,False,2024-10-11,FR,Colony Stimulating Factors,Injection
+8112826530,10273,Accupril,quinapril,OTC,10ml,080,VEGF Inhibitors,NEURO,Pfizer,False,True,2025-04-17,US,VEGF Inhibitors,Solution
+5632678670,10274,Norvasc,amlodipine,OTC,1,011,Monoclonal Antibodies,INFECT,Pfizer,False,True,2024-10-12,US,Monoclonal Antibodies,Injection
+1067966239,10275,Procardia,nifedipine,OTC,90,040,HER2 Receptor Antagonists,GI,Forest,False,True,2025-02-05,US,HER2 Receptor Antagonists,Solution
+4794615643,10276,Cardizem,diltiazem,RX,5ml,010,TNF Blockers,OPHTH,Verapamil Inc,False,False,2024-12-13,US,TNF Blockers,Solution
+6990010832,10277,Verapamil,verapamil,RX,30,003,Monoclonal Antibodies,INFECT,Forest,False,True,2025-02-14,UK,Monoclonal Antibodies,Solution
+1071744236,10278,Diltiazem,diltiazem,RX,10ml,070,Tyrosine Kinase Inhibitors,URO,Pfizer,True,False,2025-02-11,FR,Tyrosine Kinase Inhibitors,Solution
+7857841197,10279,Adalat,nifedipine,RX,10ml,001,Taxanes,OPHTH,Sandoz,False,False,2025-07-12,US,Taxanes,Capsule
+4150675698,10280,DynaCirc,simvastatin,RX,100,100,Erythropoiesis Stimulating Agents,OPHTH,Merck,True,False,2025-01-22,DE,Erythropoiesis Stimulating Agents,Solution
+4801234176,10281,Zocor,pravastatin,RX,60,090,Erythropoiesis Stimulating Agents,NEURO,Bristol-Myers Squibb,True,False,2025-04-11,CA,Erythropoiesis Stimulating Agents,Tablet
+4366855620,10282,Pravachol,fluvastatin,OTC,120,010,Erythropoiesis Stimulating Agents,DERM,Novartis,False,False,2025-08-16,CA,Erythropoiesis Stimulating Agents,Cream
+7545225293,10283,Lescol,lovastatin,OTC,120,050,Atypical Antipsychotics,RESP,Merck,False,True,2025-06-29,DE,Atypical Antipsychotics,Suspension
+3261867411,10284,Mevacor,ezetimibe-simvastatin,OTC,90,025,Atypical Antipsychotics,DERM,Merck,True,False,2025-05-25,US,Atypical Antipsychotics,Tablet
+3501577663,10285,Vytorin,ezetimibe,OTC,100,003,Atypical Antipsychotics,ENDO,Merck,True,False,2025-05-07,US,Atypical Antipsychotics,Cream
+6066279143,10286,Zetia,colesevelam,OTC,30,100,Atypical Antipsychotics,RESP,Daiichi Sankyo,False,False,2025-04-12,DE,Atypical Antipsychotics,Solution
+9804287912,10287,WelChol,cholestyramine,OTC,90,080,Atypical Antipsychotics,URO,WelChol Inc,False,False,2025-05-28,US,Atypical Antipsychotics,Suspension
+6655962981,10288,Questran,metformin,OTC,90,080,Benzodiazepines,OPHTH,Bristol-Myers Squibb,True,False,2024-12-27,DE,Benzodiazepines,Tablet
+4917040629,10289,Glucophage,glimepiride,RX,100,025,Benzodiazepines,GI,Takeda,True,True,2024-11-14,CA,Benzodiazepines,Tablet
+8568968211,10290,Amaryl,glipizide,RX,100,020,Benzodiazepines,PSYCH,GSK,True,True,2025-01-02,UK,Benzodiazepines,Capsule
+2973896036,10291,Glucotrol,glyburide,OTC,30,001,Hypnotics,RESP,Merck,True,True,2024-12-01,CA,Hypnotics,Capsule
+7424194972,10292,Diabeta,glyburide,OTC,90,050,Hypnotics,RHEU,Takeda,True,True,2025-03-10,CA,Hypnotics,Cream
+3511225369,10293,Micronase,repaglinide,RX,120,010,PDE5 Inhibitors,RHEU,Boehringer Ingelheim,True,True,2025-01-12,UK,PDE5 Inhibitors,Capsule
+2396013498,10294,Prandin,nateglinide,OTC,100,003,PDE5 Inhibitors,RHEU,Novo Nordisk,True,True,2025-07-09,CA,PDE5 Inhibitors,Solution
+3257441558,10295,Starlix,pioglitazone,OTC,60,100,PDE5 Inhibitors,CV,AstraZeneca,False,False,2025-03-12,DE,PDE5 Inhibitors,Injection
+6177113151,10296,Actos,rosiglitazone,OTC,120,090,Alpha Blockers,RESP,Symlin Inc,True,False,2025-03-28,FR,Alpha Blockers,Tablet
+4571913879,10297,Avandia,sitagliptin,RX,120,040,5-Alpha Reductase Inhibitors,NEURO,Pfizer,True,True,2024-10-24,FR,5-Alpha Reductase Inhibitors,Suspension
+2141571650,10298,Januvia,saxagliptin,RX,90,050,HMG-CoA Reductase Inhibitors,ONCO,AbbVie,True,False,2024-09-22,UK,HMG-CoA Reductase Inhibitors,Solution
+1788369292,10299,Onglyza,linagliptin,RX,120,040,TNF Blockers,RHEU,GlaxoSmithKline,False,True,2024-11-12,US,TNF Blockers,Injection
+8510483772,10300,Tradjenta,liraglutide,RX,120,050,Corticosteroids,ENDO,AstraZeneca,False,False,2025-03-08,CA,Corticosteroids,Capsule
+5761379854,10301,Victoza,exenatide,RX,60,090,Proton Pump Inhibitors,GI,Crestor Inc,True,False,2024-12-29,FR,Proton Pump Inhibitors,Suspension
+4384391187,10302,Byetta,pramlintide,OTC,60,060,HMG-CoA Reductase Inhibitors,ENDO,Sanofi,False,False,2024-12-09,CA,HMG-CoA Reductase Inhibitors,Injection
+7473490237,10303,Symlin,atorvastatin,OTC,60,001,Insulin,DERM,Genentech,True,True,2025-04-17,FR,Insulin,Cream
+1902514464,10304,Lipitor,atorvastatin,RX,100,020,HMG-CoA Reductase Inhibitors,URO,Pfizer,False,True,2025-01-22,CA,HMG-CoA Reductase Inhibitors,Cream
+3251551143,10305,Humira,adalimumab,RX,120,080,TNF Blockers,DERM,AbbVie,False,False,2025-07-11,UK,TNF Blockers,Cream
+7420065880,10306,Advair,fluticasone-salmeterol,OTC,10ml,060,Corticosteroids,INFECT,GlaxoSmithKline,True,False,2024-10-27,FR,Corticosteroids,Solution
+1194142989,10307,Nexium,esomeprazole,OTC,1,050,Proton Pump Inhibitors,PSYCH,AstraZeneca,False,True,2025-04-17,DE,Proton Pump Inhibitors,Capsule
+8416816681,10308,Crestor,rosuvastatin,RX,10ml,001,HMG-CoA Reductase Inhibitors,NEURO,Crestor Inc,False,True,2025-05-18,UK,HMG-CoA Reductase Inhibitors,Injection
+7967147782,10309,Lantus,insulin glargine,OTC,120,010,Insulin,OPHTH,Sanofi,True,False,2025-01-06,UK,Insulin,Suspension
+6871916417,10310,Rituxan,rituximab,RX,90,090,Monoclonal Antibodies,ONCO,Genentech,True,False,2024-11-13,FR,Monoclonal Antibodies,Capsule
+9355483752,10311,Enbrel,etanercept,OTC,30,001,TNF Blockers,DERM,Amgen,False,False,2025-06-12,DE,TNF Blockers,Injection
+4494014440,10312,Copaxone,glatiramer,RX,60,011,Multiple Sclerosis Agents,OPHTH,Teva,False,True,2025-01-27,DE,Multiple Sclerosis Agents,Injection
+6057940668,10313,Neulasta,pegfilgrastim,OTC,90,040,Colony Stimulating Factors,ENDO,Biogen,False,True,2025-01-08,UK,Colony Stimulating Factors,Tablet
+7955511943,10314,Lucentis,ranibizumab,RX,1,060,VEGF Inhibitors,RHEU,Lucentis Pharma,True,True,2024-10-24,US,VEGF Inhibitors,Suspension
+5334461683,10315,Avastin,bevacizumab,OTC,1,011,Monoclonal Antibodies,ONCO,Genentech,False,False,2025-07-29,FR,Monoclonal Antibodies,Tablet
+9233047178,10316,Herceptin,trastuzumab,OTC,10ml,010,HER2 Receptor Antagonists,GI,Roche,False,False,2025-04-23,DE,HER2 Receptor Antagonists,Injection
+5181499348,10317,Remicade,infliximab,OTC,60,025,TNF Blockers,RHEU,Johnson & Johnson,True,False,2025-02-02,US,TNF Blockers,Suspension
+1948963195,10318,Synagis,palivizumab,OTC,120,040,Monoclonal Antibodies,DERM,MedImmune,True,True,2025-05-03,DE,Monoclonal Antibodies,Solution
+8437270342,10319,Gleevec,imatinib,OTC,100,003,Tyrosine Kinase Inhibitors,GI,Novartis,False,True,2025-06-21,FR,Tyrosine Kinase Inhibitors,Cream
+8017090461,10320,Taxotere,docetaxel,OTC,120,020,Taxanes,INFECT,Sanofi,True,True,2025-04-03,US,Taxanes,Tablet
+5772354579,10321,Procrit,epoetin alfa,OTC,30,025,Erythropoiesis Stimulating Agents,RHEU,Amgen,False,False,2025-07-09,US,Erythropoiesis Stimulating Agents,Suspension
+3824976291,10322,Epogen,epoetin alfa,OTC,60,080,Erythropoiesis Stimulating Agents,ENDO,Janssen,True,False,2025-06-11,DE,Erythropoiesis Stimulating Agents,Suspension
+1901836489,10323,Aranesp,darbepoetin alfa,OTC,60,060,Erythropoiesis Stimulating Agents,OPHTH,Eli Lilly,True,True,2025-06-10,US,Erythropoiesis Stimulating Agents,Capsule
+6830483575,10324,Zyprexa,olanzapine,RX,90,100,Atypical Antipsychotics,RHEU,AstraZeneca,True,False,2025-01-12,DE,Atypical Antipsychotics,Injection
+5199575725,10325,Seroquel,quetiapine,OTC,10ml,080,Atypical Antipsychotics,RHEU,Janssen,True,True,2025-01-08,DE,Atypical Antipsychotics,Solution
+5256664621,10326,Risperdal,risperidone,RX,100,003,Atypical Antipsychotics,ENDO,Otsuka,False,True,2025-05-30,FR,Atypical Antipsychotics,Capsule
+3847127928,10327,Abilify,aripiprazole,OTC,60,060,Atypical Antipsychotics,URO,Pfizer,True,False,2025-03-10,CA,Atypical Antipsychotics,Cream
+3518246084,10328,Geodon,ziprasidone,OTC,10ml,050,Atypical Antipsychotics,RHEU,Pfizer,True,True,2025-06-27,CA,Atypical Antipsychotics,Solution
+6282568970,10329,Xanax,alprazolam,RX,30,011,Benzodiazepines,DERM,Pfizer,True,False,2024-09-30,UK,Benzodiazepines,Tablet
+4449470129,10330,Ativan,lorazepam,OTC,90,050,Benzodiazepines,RHEU,Roche,True,True,2025-04-20,DE,Benzodiazepines,Solution
+6704997545,10331,Valium,diazepam,OTC,5ml,001,Benzodiazepines,CV,Sanofi,True,False,2025-05-23,DE,Benzodiazepines,Cream
+5526170063,10332,Ambien,zolpidem,RX,5ml,030,Hypnotics,PSYCH,Lunesta Inc,True,False,2025-07-16,UK,Hypnotics,Injection
+7885490332,10333,Lunesta,eszopiclone,RX,30,002,Hypnotics,OPHTH,Pfizer,False,False,2024-10-30,UK,Hypnotics,Cream
+7993365756,10334,Viagra,sildenafil,OTC,60,050,PDE5 Inhibitors,ENDO,Eli Lilly,False,False,2025-01-16,DE,PDE5 Inhibitors,Solution
+9296499125,10335,Cialis,tadalafil,OTC,10ml,040,PDE5 Inhibitors,CV,Bayer,True,True,2025-06-27,UK,PDE5 Inhibitors,Capsule
+1878548878,10336,Levitra,vardenafil,RX,5ml,070,PDE5 Inhibitors,RESP,Boehringer Ingelheim,False,True,2025-04-01,DE,PDE5 Inhibitors,Injection
+2430495017,10337,Flomax,tamsulosin,OTC,10ml,100,Alpha Blockers,ENDO,GSK,False,True,2025-01-25,FR,Alpha Blockers,Solution
+6880925031,10338,Avodart,dutasteride,OTC,1,003,5-Alpha Reductase Inhibitors,INFECT,Merck,True,False,2025-02-22,US,5-Alpha Reductase Inhibitors,Cream
+2209016973,10339,Proscar,finasteride,OTC,10ml,090,HMG-CoA Reductase Inhibitors,DERM,Abbott,False,True,2025-01-14,CA,HMG-CoA Reductase Inhibitors,Cream
+2058867272,10340,Cardura,doxazosin,OTC,1,050,TNF Blockers,OPHTH,Pfizer,False,False,2025-09-01,DE,TNF Blockers,Cream
+1961868066,10341,Hytrin,terazosin,OTC,1,060,Corticosteroids,URO,Pfizer,True,True,2024-10-09,FR,Corticosteroids,Cream
+3704999491,10342,Prinivil,lisinopril,RX,100,060,Proton Pump Inhibitors,NEURO,Bristol-Myers Squibb,False,True,2025-01-06,DE,Proton Pump Inhibitors,Injection
+1800487037,10343,Zestril,lisinopril,RX,5ml,090,HMG-CoA Reductase Inhibitors,RHEU,Bristol-Myers Squibb,False,True,2025-08-06,FR,HMG-CoA Reductase Inhibitors,Solution
+9524017219,10344,Vasotec,enalapril,RX,100,025,Insulin,URO,Bristol-Myers Squibb,False,True,2024-12-14,UK,Insulin,Suspension
+7296780923,10345,Capoten,captopril,OTC,5ml,020,Monoclonal Antibodies,DERM,Bristol-Myers Squibb,True,True,2025-05-12,UK,Monoclonal Antibodies,Solution
+4275490732,10346,Altace,ramipril,OTC,60,003,TNF Blockers,ENDO,Aventis,False,True,2025-08-18,FR,TNF Blockers,Suspension
+6958560976,10347,Mavik,trandolapril,RX,60,030,Multiple Sclerosis Agents,ONCO,Abbott,True,True,2025-04-30,FR,Multiple Sclerosis Agents,Suspension
+7580869875,10348,Univasc,moexipril,RX,120,070,Colony Stimulating Factors,GI,Abbott,True,False,2025-02-01,CA,Colony Stimulating Factors,Capsule
+3871688523,10349,Accupril,quinapril,OTC,5ml,060,VEGF Inhibitors,INFECT,Pfizer,False,False,2025-03-23,CA,VEGF Inhibitors,Injection
+1188756334,10350,Norvasc,amlodipine,RX,5ml,001,Monoclonal Antibodies,ONCO,Pfizer,False,False,2025-06-04,DE,Monoclonal Antibodies,Suspension
+3445654592,10351,Procardia,nifedipine,RX,90,020,HER2 Receptor Antagonists,NEURO,Forest,False,False,2025-04-18,DE,HER2 Receptor Antagonists,Suspension
+8988698261,10352,Cardizem,diltiazem,RX,90,100,TNF Blockers,ONCO,Verapamil Inc,False,True,2025-04-15,DE,TNF Blockers,Suspension
+4045355683,10353,Verapamil,verapamil,OTC,60,020,Monoclonal Antibodies,CV,Forest,False,False,2024-09-29,FR,Monoclonal Antibodies,Injection
+9130683379,10354,Diltiazem,diltiazem,RX,5ml,040,Tyrosine Kinase Inhibitors,URO,Pfizer,True,False,2025-06-29,UK,Tyrosine Kinase Inhibitors,Cream
+3707014210,10355,Adalat,nifedipine,OTC,120,100,Taxanes,ONCO,Sandoz,True,False,2025-02-08,DE,Taxanes,Cream
+1196744943,10356,DynaCirc,simvastatin,RX,60,011,Erythropoiesis Stimulating Agents,ENDO,Merck,False,False,2024-12-05,CA,Erythropoiesis Stimulating Agents,Tablet
+9399573059,10357,Zocor,pravastatin,OTC,1,050,Erythropoiesis Stimulating Agents,GI,Bristol-Myers Squibb,False,False,2025-03-29,FR,Erythropoiesis Stimulating Agents,Injection
+6015938050,10358,Pravachol,fluvastatin,RX,1,060,Erythropoiesis Stimulating Agents,DERM,Novartis,True,False,2025-03-17,UK,Erythropoiesis Stimulating Agents,Tablet
+5426449355,10359,Lescol,lovastatin,OTC,100,040,Atypical Antipsychotics,URO,Merck,True,False,2024-10-16,FR,Atypical Antipsychotics,Cream
+9859460136,10360,Mevacor,ezetimibe-simvastatin,RX,10ml,011,Atypical Antipsychotics,PSYCH,Merck,True,True,2024-09-22,CA,Atypical Antipsychotics,Capsule
+3684030442,10361,Vytorin,ezetimibe,RX,1,090,Atypical Antipsychotics,ENDO,Merck,False,False,2025-08-23,UK,Atypical Antipsychotics,Tablet
+6090047215,10362,Zetia,colesevelam,RX,1,002,Atypical Antipsychotics,URO,Daiichi Sankyo,False,True,2024-12-02,UK,Atypical Antipsychotics,Cream
+4418984256,10363,WelChol,cholestyramine,OTC,60,003,Atypical Antipsychotics,OPHTH,WelChol Inc,False,True,2025-02-05,DE,Atypical Antipsychotics,Injection
+5811037488,10364,Questran,metformin,RX,30,020,Benzodiazepines,CV,Bristol-Myers Squibb,True,False,2024-12-11,UK,Benzodiazepines,Injection
+3323148197,10365,Glucophage,glimepiride,OTC,90,070,Benzodiazepines,DERM,Takeda,True,False,2025-04-12,UK,Benzodiazepines,Injection
+3295512191,10366,Amaryl,glipizide,OTC,5ml,080,Benzodiazepines,NEURO,GSK,True,True,2025-06-05,DE,Benzodiazepines,Injection
+5365440854,10367,Glucotrol,glyburide,RX,60,040,Hypnotics,CV,Merck,True,False,2025-04-29,DE,Hypnotics,Capsule
+6030153675,10368,Diabeta,glyburide,OTC,5ml,002,Hypnotics,DERM,Takeda,True,True,2024-09-27,US,Hypnotics,Cream
+7196071550,10369,Micronase,repaglinide,OTC,120,090,PDE5 Inhibitors,RESP,Boehringer Ingelheim,True,True,2025-07-20,FR,PDE5 Inhibitors,Suspension
+9563274693,10370,Prandin,nateglinide,OTC,100,003,PDE5 Inhibitors,URO,Novo Nordisk,True,True,2024-11-21,UK,PDE5 Inhibitors,Solution
+3857016430,10371,Starlix,pioglitazone,OTC,60,011,PDE5 Inhibitors,ENDO,AstraZeneca,False,False,2025-04-29,US,PDE5 Inhibitors,Tablet
+3481485270,10372,Actos,rosiglitazone,OTC,30,002,Alpha Blockers,OPHTH,Symlin Inc,True,True,2025-05-19,CA,Alpha Blockers,Cream
+6913062256,10373,Avandia,sitagliptin,RX,120,040,5-Alpha Reductase Inhibitors,URO,Pfizer,True,True,2025-05-11,US,5-Alpha Reductase Inhibitors,Injection
+2079732350,10374,Januvia,saxagliptin,RX,1,025,HMG-CoA Reductase Inhibitors,ENDO,AbbVie,False,True,2024-12-17,CA,HMG-CoA Reductase Inhibitors,Tablet
+9808887584,10375,Onglyza,linagliptin,RX,5ml,040,TNF Blockers,CV,GlaxoSmithKline,True,True,2024-10-15,US,TNF Blockers,Suspension
+1269660221,10376,Tradjenta,liraglutide,OTC,10ml,020,Corticosteroids,ONCO,AstraZeneca,True,True,2025-01-22,DE,Corticosteroids,Suspension
+2735476257,10377,Victoza,exenatide,OTC,100,003,Proton Pump Inhibitors,ENDO,Crestor Inc,False,False,2024-11-27,UK,Proton Pump Inhibitors,Solution
+6840949964,10378,Byetta,pramlintide,RX,90,010,HMG-CoA Reductase Inhibitors,GI,Sanofi,True,False,2025-06-02,CA,HMG-CoA Reductase Inhibitors,Cream
+5990115018,10379,Symlin,atorvastatin,RX,5ml,100,Insulin,OPHTH,Genentech,False,True,2024-10-18,UK,Insulin,Tablet
+2313430419,10380,Lipitor,atorvastatin,OTC,120,001,HMG-CoA Reductase Inhibitors,DERM,Pfizer,False,True,2025-01-14,CA,HMG-CoA Reductase Inhibitors,Solution
+1467037313,10381,Humira,adalimumab,RX,60,030,TNF Blockers,DERM,AbbVie,True,True,2025-05-28,UK,TNF Blockers,Solution
+1899778989,10382,Advair,fluticasone-salmeterol,OTC,30,040,Corticosteroids,ENDO,GlaxoSmithKline,False,False,2025-07-22,CA,Corticosteroids,Capsule
+4239829764,10383,Nexium,esomeprazole,RX,1,001,Proton Pump Inhibitors,INFECT,AstraZeneca,True,True,2025-05-23,CA,Proton Pump Inhibitors,Cream
+4601029838,10384,Crestor,rosuvastatin,RX,10ml,090,HMG-CoA Reductase Inhibitors,DERM,Crestor Inc,True,True,2024-10-29,DE,HMG-CoA Reductase Inhibitors,Solution
+7982798477,10385,Lantus,insulin glargine,OTC,5ml,003,Insulin,GI,Sanofi,True,False,2024-10-06,CA,Insulin,Suspension
+6985537359,10386,Rituxan,rituximab,RX,60,001,Monoclonal Antibodies,GI,Genentech,True,False,2025-04-18,FR,Monoclonal Antibodies,Capsule
+9259858492,10387,Enbrel,etanercept,RX,90,011,TNF Blockers,INFECT,Amgen,True,True,2025-03-20,FR,TNF Blockers,Cream
+5898560014,10388,Copaxone,glatiramer,OTC,10ml,060,Multiple Sclerosis Agents,URO,Teva,True,True,2024-12-05,UK,Multiple Sclerosis Agents,Solution
+3229051410,10389,Neulasta,pegfilgrastim,OTC,10ml,003,Colony Stimulating Factors,URO,Biogen,False,False,2025-05-08,US,Colony Stimulating Factors,Cream
+1027167997,10390,Lucentis,ranibizumab,OTC,5ml,020,VEGF Inhibitors,ENDO,Lucentis Pharma,False,False,2025-05-02,FR,VEGF Inhibitors,Injection
+1486031682,10391,Avastin,bevacizumab,RX,1,010,Monoclonal Antibodies,OPHTH,Genentech,False,True,2025-08-05,DE,Monoclonal Antibodies,Cream
+2773690072,10392,Herceptin,trastuzumab,RX,100,001,HER2 Receptor Antagonists,URO,Roche,False,False,2025-03-13,FR,HER2 Receptor Antagonists,Injection
+8856921740,10393,Remicade,infliximab,RX,5ml,030,TNF Blockers,CV,Johnson & Johnson,True,False,2024-11-20,FR,TNF Blockers,Suspension
+8316452963,10394,Synagis,palivizumab,OTC,60,070,Monoclonal Antibodies,ENDO,MedImmune,False,False,2024-11-17,UK,Monoclonal Antibodies,Injection
+6526884256,10395,Gleevec,imatinib,RX,30,010,Tyrosine Kinase Inhibitors,INFECT,Novartis,False,True,2024-11-08,FR,Tyrosine Kinase Inhibitors,Suspension
+7349921456,10396,Taxotere,docetaxel,RX,60,080,Taxanes,URO,Sanofi,True,True,2024-11-03,FR,Taxanes,Tablet
+9946950837,10397,Procrit,epoetin alfa,OTC,5ml,002,Erythropoiesis Stimulating Agents,ONCO,Amgen,True,False,2025-02-27,DE,Erythropoiesis Stimulating Agents,Solution
+9248699654,10398,Epogen,epoetin alfa,OTC,120,030,Erythropoiesis Stimulating Agents,NEURO,Janssen,False,True,2024-12-11,DE,Erythropoiesis Stimulating Agents,Suspension
+6936510878,10399,Aranesp,darbepoetin alfa,OTC,100,025,Erythropoiesis Stimulating Agents,RHEU,Eli Lilly,True,True,2024-12-19,FR,Erythropoiesis Stimulating Agents,Injection
+6677384885,10400,Zyprexa,olanzapine,OTC,100,100,Atypical Antipsychotics,NEURO,AstraZeneca,True,False,2024-12-28,UK,Atypical Antipsychotics,Injection
+3981621581,10401,Seroquel,quetiapine,RX,10ml,001,Atypical Antipsychotics,RESP,Janssen,False,True,2024-10-19,DE,Atypical Antipsychotics,Injection
+7955383099,10402,Risperdal,risperidone,OTC,1,050,Atypical Antipsychotics,ENDO,Otsuka,True,True,2025-03-17,UK,Atypical Antipsychotics,Solution
+9616470011,10403,Abilify,aripiprazole,OTC,1,040,Atypical Antipsychotics,ENDO,Pfizer,False,False,2025-06-03,UK,Atypical Antipsychotics,Capsule
+2200962667,10404,Geodon,ziprasidone,RX,10ml,090,Atypical Antipsychotics,URO,Pfizer,False,True,2024-11-06,CA,Atypical Antipsychotics,Cream
+3911725872,10405,Xanax,alprazolam,RX,30,003,Benzodiazepines,PSYCH,Pfizer,False,True,2025-06-21,US,Benzodiazepines,Cream
+1164553224,10406,Ativan,lorazepam,OTC,90,011,Benzodiazepines,INFECT,Roche,False,True,2025-08-22,US,Benzodiazepines,Cream
+6007931628,10407,Valium,diazepam,RX,10ml,025,Benzodiazepines,ENDO,Sanofi,True,True,2025-07-28,US,Benzodiazepines,Capsule
+9647826029,10408,Ambien,zolpidem,OTC,30,050,Hypnotics,ENDO,Lunesta Inc,False,True,2025-04-11,FR,Hypnotics,Injection
+8266351076,10409,Lunesta,eszopiclone,RX,5ml,060,Hypnotics,ONCO,Pfizer,False,True,2025-07-08,CA,Hypnotics,Capsule
+1615428012,10410,Viagra,sildenafil,OTC,5ml,011,PDE5 Inhibitors,ENDO,Eli Lilly,False,True,2025-05-01,DE,PDE5 Inhibitors,Tablet
+5907931321,10411,Cialis,tadalafil,OTC,30,020,PDE5 Inhibitors,NEURO,Bayer,True,True,2025-03-28,FR,PDE5 Inhibitors,Tablet
+3964359026,10412,Levitra,vardenafil,RX,100,080,PDE5 Inhibitors,ONCO,Boehringer Ingelheim,True,False,2024-10-14,FR,PDE5 Inhibitors,Solution
+5929932842,10413,Flomax,tamsulosin,RX,5ml,030,Alpha Blockers,RESP,GSK,True,False,2025-08-12,CA,Alpha Blockers,Suspension
+9556063587,10414,Avodart,dutasteride,RX,30,020,5-Alpha Reductase Inhibitors,DERM,Merck,False,True,2025-06-20,CA,5-Alpha Reductase Inhibitors,Suspension
+8147419581,10415,Proscar,finasteride,RX,10ml,100,HMG-CoA Reductase Inhibitors,GI,Abbott,True,False,2024-09-24,CA,HMG-CoA Reductase Inhibitors,Tablet
+3582120526,10416,Cardura,doxazosin,OTC,5ml,003,TNF Blockers,DERM,Pfizer,True,True,2024-09-21,DE,TNF Blockers,Tablet
+6971931644,10417,Hytrin,terazosin,OTC,100,100,Corticosteroids,ONCO,Pfizer,True,False,2025-08-09,DE,Corticosteroids,Injection
+5275698610,10418,Prinivil,lisinopril,OTC,1,050,Proton Pump Inhibitors,PSYCH,Bristol-Myers Squibb,True,False,2024-09-25,FR,Proton Pump Inhibitors,Solution
+5431098795,10419,Zestril,lisinopril,RX,10ml,010,HMG-CoA Reductase Inhibitors,OPHTH,Bristol-Myers Squibb,False,True,2024-11-26,UK,HMG-CoA Reductase Inhibitors,Solution
+4139096817,10420,Vasotec,enalapril,RX,100,070,Insulin,NEURO,Bristol-Myers Squibb,False,True,2024-11-03,FR,Insulin,Tablet
+8214380562,10421,Capoten,captopril,OTC,30,001,Monoclonal Antibodies,CV,Bristol-Myers Squibb,False,False,2025-03-31,DE,Monoclonal Antibodies,Cream
+3148752637,10422,Altace,ramipril,RX,1,030,TNF Blockers,NEURO,Aventis,False,False,2025-03-30,DE,TNF Blockers,Suspension
+5556224241,10423,Mavik,trandolapril,OTC,5ml,070,Multiple Sclerosis Agents,URO,Abbott,True,True,2025-02-27,US,Multiple Sclerosis Agents,Solution
+2467524068,10424,Univasc,moexipril,OTC,10ml,070,Colony Stimulating Factors,PSYCH,Abbott,True,True,2025-01-19,UK,Colony Stimulating Factors,Cream
+9492213827,10425,Accupril,quinapril,OTC,90,003,VEGF Inhibitors,PSYCH,Pfizer,False,False,2024-10-24,FR,VEGF Inhibitors,Capsule
+9239481868,10426,Norvasc,amlodipine,RX,100,040,Monoclonal Antibodies,CV,Pfizer,True,True,2024-09-21,DE,Monoclonal Antibodies,Tablet
+4460598952,10427,Procardia,nifedipine,RX,100,003,HER2 Receptor Antagonists,DERM,Forest,False,False,2025-04-21,US,HER2 Receptor Antagonists,Capsule
+3951735051,10428,Cardizem,diltiazem,OTC,60,070,TNF Blockers,URO,Verapamil Inc,False,True,2025-08-25,DE,TNF Blockers,Suspension
+1948017886,10429,Verapamil,verapamil,OTC,5ml,010,Monoclonal Antibodies,ONCO,Forest,False,False,2025-08-18,CA,Monoclonal Antibodies,Injection
+8824489687,10430,Diltiazem,diltiazem,RX,90,011,Tyrosine Kinase Inhibitors,ENDO,Pfizer,False,False,2025-01-17,DE,Tyrosine Kinase Inhibitors,Cream
+7307637328,10431,Adalat,nifedipine,OTC,30,010,Taxanes,CV,Sandoz,True,False,2024-12-04,CA,Taxanes,Capsule
+4678869988,10432,DynaCirc,simvastatin,OTC,90,040,Erythropoiesis Stimulating Agents,RHEU,Merck,False,False,2025-07-29,CA,Erythropoiesis Stimulating Agents,Tablet
+5491251577,10433,Zocor,pravastatin,OTC,5ml,060,Erythropoiesis Stimulating Agents,CV,Bristol-Myers Squibb,False,True,2025-08-15,DE,Erythropoiesis Stimulating Agents,Tablet
+5937969627,10434,Pravachol,fluvastatin,RX,120,010,Erythropoiesis Stimulating Agents,NEURO,Novartis,True,False,2025-06-04,US,Erythropoiesis Stimulating Agents,Tablet
+6275312159,10435,Lescol,lovastatin,OTC,1,002,Atypical Antipsychotics,NEURO,Merck,True,True,2025-06-29,US,Atypical Antipsychotics,Tablet
+5671542748,10436,Mevacor,ezetimibe-simvastatin,RX,120,050,Atypical Antipsychotics,OPHTH,Merck,False,False,2025-06-19,CA,Atypical Antipsychotics,Tablet
+8817251020,10437,Vytorin,ezetimibe,OTC,120,070,Atypical Antipsychotics,ONCO,Merck,False,False,2024-11-18,US,Atypical Antipsychotics,Cream
+6526211498,10438,Zetia,colesevelam,RX,120,070,Atypical Antipsychotics,INFECT,Daiichi Sankyo,False,True,2025-05-07,US,Atypical Antipsychotics,Cream
+9565930465,10439,WelChol,cholestyramine,OTC,60,025,Atypical Antipsychotics,RHEU,WelChol Inc,True,True,2025-08-15,CA,Atypical Antipsychotics,Injection
+6735537371,10440,Questran,metformin,RX,60,025,Benzodiazepines,RESP,Bristol-Myers Squibb,False,False,2025-04-28,DE,Benzodiazepines,Solution
+6948148892,10441,Glucophage,glimepiride,RX,5ml,011,Benzodiazepines,INFECT,Takeda,True,True,2025-03-15,FR,Benzodiazepines,Suspension
+7628338730,10442,Amaryl,glipizide,OTC,5ml,090,Benzodiazepines,NEURO,GSK,True,True,2025-04-01,US,Benzodiazepines,Solution
+1661230250,10443,Glucotrol,glyburide,OTC,90,020,Hypnotics,CV,Merck,False,False,2024-12-10,CA,Hypnotics,Capsule
+5331049462,10444,Diabeta,glyburide,OTC,10ml,040,Hypnotics,INFECT,Takeda,False,True,2025-01-18,DE,Hypnotics,Suspension
+2029624657,10445,Micronase,repaglinide,RX,60,002,PDE5 Inhibitors,PSYCH,Boehringer Ingelheim,True,False,2025-03-20,DE,PDE5 Inhibitors,Capsule
+6682110837,10446,Prandin,nateglinide,OTC,1,030,PDE5 Inhibitors,OPHTH,Novo Nordisk,True,True,2025-04-13,UK,PDE5 Inhibitors,Solution
+8210375646,10447,Starlix,pioglitazone,OTC,100,002,PDE5 Inhibitors,OPHTH,AstraZeneca,False,True,2025-06-11,UK,PDE5 Inhibitors,Cream
+2500876633,10448,Actos,rosiglitazone,RX,5ml,080,Alpha Blockers,RESP,Symlin Inc,True,True,2024-11-18,UK,Alpha Blockers,Capsule
+6852797570,10449,Avandia,sitagliptin,OTC,90,040,5-Alpha Reductase Inhibitors,RESP,Pfizer,True,True,2024-10-06,US,5-Alpha Reductase Inhibitors,Cream
+5813133844,10450,Januvia,saxagliptin,OTC,10ml,025,HMG-CoA Reductase Inhibitors,DERM,AbbVie,True,True,2025-03-10,DE,HMG-CoA Reductase Inhibitors,Cream
+3083947088,10451,Onglyza,linagliptin,OTC,1,060,TNF Blockers,OPHTH,GlaxoSmithKline,True,True,2025-09-14,US,TNF Blockers,Solution
+5832828451,10452,Tradjenta,liraglutide,OTC,30,060,Corticosteroids,PSYCH,AstraZeneca,False,True,2025-07-18,CA,Corticosteroids,Suspension
+7067580891,10453,Victoza,exenatide,RX,90,050,Proton Pump Inhibitors,ONCO,Crestor Inc,False,True,2025-05-06,CA,Proton Pump Inhibitors,Capsule
+8611834753,10454,Byetta,pramlintide,OTC,90,030,HMG-CoA Reductase Inhibitors,RESP,Sanofi,True,False,2024-10-19,US,HMG-CoA Reductase Inhibitors,Cream
+7240297351,10455,Symlin,atorvastatin,RX,1,070,Insulin,OPHTH,Genentech,True,True,2025-09-10,US,Insulin,Suspension
+4432874135,10456,Lipitor,atorvastatin,RX,5ml,003,HMG-CoA Reductase Inhibitors,CV,Pfizer,True,False,2025-05-13,CA,HMG-CoA Reductase Inhibitors,Tablet
+8495327210,10457,Humira,adalimumab,RX,30,010,TNF Blockers,CV,AbbVie,True,False,2025-02-15,DE,TNF Blockers,Solution
+8278093846,10458,Advair,fluticasone-salmeterol,RX,120,030,Corticosteroids,CV,GlaxoSmithKline,False,False,2024-11-03,FR,Corticosteroids,Cream
+4073036538,10459,Nexium,esomeprazole,OTC,100,060,Proton Pump Inhibitors,URO,AstraZeneca,False,False,2025-07-09,DE,Proton Pump Inhibitors,Suspension
+7229817713,10460,Crestor,rosuvastatin,RX,5ml,011,HMG-CoA Reductase Inhibitors,PSYCH,Crestor Inc,False,False,2024-11-01,FR,HMG-CoA Reductase Inhibitors,Suspension
+1761678074,10461,Lantus,insulin glargine,RX,10ml,040,Insulin,RESP,Sanofi,False,False,2025-02-17,UK,Insulin,Suspension
+8912183374,10462,Rituxan,rituximab,OTC,1,060,Monoclonal Antibodies,INFECT,Genentech,False,True,2025-05-04,CA,Monoclonal Antibodies,Injection
+6299415423,10463,Enbrel,etanercept,OTC,1,001,TNF Blockers,PSYCH,Amgen,True,True,2025-01-31,CA,TNF Blockers,Injection
+8458986511,10464,Copaxone,glatiramer,OTC,90,010,Multiple Sclerosis Agents,NEURO,Teva,False,False,2025-01-26,DE,Multiple Sclerosis Agents,Solution
+6145496389,10465,Neulasta,pegfilgrastim,OTC,5ml,040,Colony Stimulating Factors,RHEU,Biogen,True,False,2025-03-17,FR,Colony Stimulating Factors,Injection
+9338073288,10466,Lucentis,ranibizumab,OTC,60,100,VEGF Inhibitors,INFECT,Lucentis Pharma,False,True,2025-02-17,UK,VEGF Inhibitors,Cream
+5587981014,10467,Avastin,bevacizumab,OTC,10ml,080,Monoclonal Antibodies,NEURO,Genentech,False,True,2024-11-16,FR,Monoclonal Antibodies,Injection
+3731027577,10468,Herceptin,trastuzumab,OTC,1,040,HER2 Receptor Antagonists,ENDO,Roche,True,True,2025-07-01,UK,HER2 Receptor Antagonists,Solution
+9733631631,10469,Remicade,infliximab,RX,60,050,TNF Blockers,RESP,Johnson & Johnson,False,False,2025-07-17,UK,TNF Blockers,Solution
+3787160362,10470,Synagis,palivizumab,RX,90,080,Monoclonal Antibodies,ENDO,MedImmune,False,True,2025-08-14,US,Monoclonal Antibodies,Suspension
+1720136840,10471,Gleevec,imatinib,RX,100,020,Tyrosine Kinase Inhibitors,CV,Novartis,False,False,2024-11-27,CA,Tyrosine Kinase Inhibitors,Injection
+6240322659,10472,Taxotere,docetaxel,RX,90,060,Taxanes,INFECT,Sanofi,True,True,2025-04-02,UK,Taxanes,Injection
+6924455381,10473,Procrit,epoetin alfa,RX,120,050,Erythropoiesis Stimulating Agents,GI,Amgen,False,False,2025-01-10,CA,Erythropoiesis Stimulating Agents,Tablet
+5009515250,10474,Epogen,epoetin alfa,RX,100,050,Erythropoiesis Stimulating Agents,GI,Janssen,False,True,2024-10-09,UK,Erythropoiesis Stimulating Agents,Injection
+1114440063,10475,Aranesp,darbepoetin alfa,OTC,10ml,050,Erythropoiesis Stimulating Agents,GI,Eli Lilly,False,True,2024-10-27,FR,Erythropoiesis Stimulating Agents,Suspension
+2911582050,10476,Zyprexa,olanzapine,OTC,120,030,Atypical Antipsychotics,OPHTH,AstraZeneca,True,True,2025-04-26,FR,Atypical Antipsychotics,Capsule
+5401916397,10477,Seroquel,quetiapine,OTC,90,003,Atypical Antipsychotics,OPHTH,Janssen,False,True,2024-09-28,UK,Atypical Antipsychotics,Injection
+1720211973,10478,Risperdal,risperidone,OTC,30,025,Atypical Antipsychotics,RHEU,Otsuka,False,True,2025-08-16,US,Atypical Antipsychotics,Solution
+7668147558,10479,Abilify,aripiprazole,OTC,10ml,080,Atypical Antipsychotics,OPHTH,Pfizer,True,False,2025-05-05,FR,Atypical Antipsychotics,Solution
+1693015545,10480,Geodon,ziprasidone,OTC,5ml,090,Atypical Antipsychotics,ONCO,Pfizer,False,False,2025-07-16,US,Atypical Antipsychotics,Tablet
+6207377916,10481,Xanax,alprazolam,RX,90,040,Benzodiazepines,ENDO,Pfizer,False,False,2025-09-12,UK,Benzodiazepines,Suspension
+9864315743,10482,Ativan,lorazepam,OTC,1,011,Benzodiazepines,OPHTH,Roche,True,False,2025-06-18,UK,Benzodiazepines,Cream
+8117255245,10483,Valium,diazepam,OTC,90,001,Benzodiazepines,ONCO,Sanofi,False,True,2024-12-27,UK,Benzodiazepines,Tablet
+7403036864,10484,Ambien,zolpidem,RX,60,003,Hypnotics,RESP,Lunesta Inc,False,True,2025-02-15,DE,Hypnotics,Capsule
+8996685152,10485,Lunesta,eszopiclone,RX,60,050,Hypnotics,RESP,Pfizer,False,True,2025-06-18,DE,Hypnotics,Capsule
+1356137156,10486,Viagra,sildenafil,RX,10ml,001,PDE5 Inhibitors,ENDO,Eli Lilly,False,False,2025-02-17,DE,PDE5 Inhibitors,Injection
+6716844755,10487,Cialis,tadalafil,OTC,10ml,070,PDE5 Inhibitors,RESP,Bayer,False,False,2025-06-17,DE,PDE5 Inhibitors,Cream
+1164327232,10488,Levitra,vardenafil,OTC,1,040,PDE5 Inhibitors,GI,Boehringer Ingelheim,False,False,2024-09-21,CA,PDE5 Inhibitors,Solution
+5890183877,10489,Flomax,tamsulosin,RX,60,025,Alpha Blockers,INFECT,GSK,False,False,2025-04-13,US,Alpha Blockers,Suspension
+6329035931,10490,Avodart,dutasteride,OTC,100,060,5-Alpha Reductase Inhibitors,ENDO,Merck,False,True,2025-02-21,FR,5-Alpha Reductase Inhibitors,Capsule
+4559172948,10491,Proscar,finasteride,OTC,100,003,HMG-CoA Reductase Inhibitors,NEURO,Abbott,False,False,2025-02-04,DE,HMG-CoA Reductase Inhibitors,Cream
+4954789734,10492,Cardura,doxazosin,RX,120,020,TNF Blockers,URO,Pfizer,True,False,2025-05-27,UK,TNF Blockers,Capsule
+6762560063,10493,Hytrin,terazosin,OTC,90,020,Corticosteroids,CV,Pfizer,False,True,2024-11-18,DE,Corticosteroids,Tablet
+3621580772,10494,Prinivil,lisinopril,OTC,60,001,Proton Pump Inhibitors,URO,Bristol-Myers Squibb,True,False,2025-05-07,FR,Proton Pump Inhibitors,Suspension
+4981265054,10495,Zestril,lisinopril,OTC,60,030,HMG-CoA Reductase Inhibitors,ENDO,Bristol-Myers Squibb,False,False,2025-09-13,FR,HMG-CoA Reductase Inhibitors,Injection
+2052486286,10496,Vasotec,enalapril,OTC,90,002,Insulin,CV,Bristol-Myers Squibb,True,False,2024-12-04,UK,Insulin,Solution
+3353521486,10497,Capoten,captopril,RX,100,020,Monoclonal Antibodies,URO,Bristol-Myers Squibb,False,False,2025-07-08,DE,Monoclonal Antibodies,Capsule
+8985569165,10498,Altace,ramipril,OTC,1,030,TNF Blockers,ENDO,Aventis,False,False,2024-10-28,UK,TNF Blockers,Tablet
+9167065536,10499,Mavik,trandolapril,OTC,100,010,Multiple Sclerosis Agents,RHEU,Abbott,True,True,2025-08-10,US,Multiple Sclerosis Agents,Suspension
