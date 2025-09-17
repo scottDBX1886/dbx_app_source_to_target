@@ -59,22 +59,3 @@ async def get_user_info(request: Request):
         "authorization_type": "databricks_app_headers",
         "data_source": "x_forwarded_headers"
     }
-
-@router.get("/whoami")
-async def whoami(request: Request):
-    """Simple endpoint showing forwarded user data"""
-    headers = dict(request.headers)
-    
-    user = headers.get("x-forwarded-user")
-    email = headers.get("x-forwarded-email")
-    groups = headers.get("x-forwarded-groups", "")
-    groups_list = [g.strip() for g in groups.split(",") if g.strip()]
-
-    return {
-        "user": user,
-        "email": email, 
-        "groups": groups_list,
-        "raw_groups_header": groups,
-        "user_id": headers.get("x-databricks-user-id"),
-        "has_token": bool(headers.get("x-forwarded-access-token"))
-    }
