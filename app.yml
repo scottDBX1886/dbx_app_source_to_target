@@ -1,0 +1,7 @@
+# Databricks App Configuration
+command: ['python', 'app.py']
+
+# Static files configuration
+static_files:
+  - source_path: static
+    url_path: /

@@ -1,0 +1,41 @@
+# Databricks Apps configuration file
+# This file configures the app for deployment to Databricks
+
+bundle:
+  name: gainwell-main-app
+
+variables:
+  app_name:
+    description: "Name of the application"
+    default: "gainwell-main-app"
+
+resources:
+  apps:
+    gainwell_main_app:
+      name: ${var.app_name}
+      description: "Databricks app with React frontend and FastAPI backend"
+      
+      # Source code configuration
+      source_code_path: .
+      
+      # Static files configuration
+      config:
+        static_files:
+          - source_path: static
+            url_path: /static
+
+targets:
+  dev:
+    mode: development
+    workspace:
+      profile: "dev"
+      
+  demo:
+    mode: development  
+    workspace:
+      profile: "dbx_shared_demo"
+      
+  prod:
+    mode: production
+    workspace:
+      profile: "dev"

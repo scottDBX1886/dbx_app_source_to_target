@@ -1,0 +1,493 @@
+/**
+ * Clean starting styles for new requirements
+ */
+
+/* Import the dark theme for reuse */
+@import './styles/global.css';
+
+/* App-specific styles */
+.app-container {
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.info-panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: var(--shadow);
+}
+
+/* Navigation - Tab Style from FMT Prototype */
+.tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 10px 16px;
+}
+
+.tab {
+  background: #0f1737;
+  border: 1px solid var(--line);
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: #a9b8d9;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.tab:hover {
+  color: var(--text);
+  background: #1f2747;
+}
+
+.tab.active {
+  background: linear-gradient(180deg, #0f1737, #15245a);
+  color: #fff;
+  border-color: #3d5bd1;
+  box-shadow: inset 0 0 0 1px #3d5bd1;
+}
+
+/* Legacy nav styles for backwards compatibility */
+.app-nav {
+  margin: 20px 0;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--text);
+  background: var(--panel);
+  border-color: var(--line);
+}
+
+.nav-link.active {
+  color: var(--text);
+  background: var(--panel);
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+/* Page layouts */
+.auth-page,
+.settings-page,
+.fdb-search-page,
+.fmt-master-page,
+.pdl-coding-page,
+.weekly-review-fmt-page,
+.weekly-review-pdl-page,
+.config-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.page-header {
+  margin-bottom: 24px;
+}
+
+.page-header h1 {
+  margin: 0 0 8px 0;
+}
+
+/* Authentication specific styles */
+.auth-flow {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.auth-step {
+  display: flex;
+  gap: 12px;
+  flex: 1;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+
+.step-icon {
+  font-size: 24px;
+  width: 40px;
+  text-align: center;
+}
+
+.step-content h3 {
+  margin: 0 0 8px 0;
+  color: var(--text);
+  font-size: 16px;
+}
+
+.step-content p {
+  margin: 0 0 12px 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.step-content ul {
+  margin: 0;
+  padding-left: 16px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.step-divider {
+  color: var(--accent);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Permissions grid */
+.permissions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.permission-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  background: rgba(46, 204, 113, 0.1);
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+/* Security headers */
+.security-headers {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.header-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 6px;
+  border: 1px solid var(--line);
+}
+
+/* Auth matrix table */
+.auth-matrix {
+  overflow-x: auto;
+}
+
+.auth-matrix .data-table th,
+.auth-matrix .data-table td {
+  text-align: left;
+  padding: 10px 12px;
+}
+
+.auth-matrix .data-table td:first-child {
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* Config sections */
+.tech-config {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.config-section h3 {
+  margin: 0 0 12px 0;
+  color: var(--text);
+  font-size: 16px;
+}
+
+/* Auth tests */
+.auth-tests {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Security info */
+.security-info h3 {
+  color: var(--text);
+  margin: 16px 0 8px 0;
+}
+
+.security-info ul {
+  margin: 0 0 16px 0;
+  padding-left: 20px;
+}
+
+.security-info li {
+  margin-bottom: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .auth-page,
+  .settings-page {
+    padding: 16px;
+  }
+  
+  .auth-flow {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .step-divider {
+    transform: rotate(90deg);
+  }
+  
+  .tech-config {
+    grid-template-columns: 1fr;
+  }
+  
+  .app-nav {
+    flex-wrap: wrap;
+  }
+}
+
+/* FMT Page Specific Styles */
+.template-examples {
+  margin-top: 16px;
+}
+
+.template-item {
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.template-item strong {
+  color: var(--text);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.template-item code {
+  display: block;
+  margin: 4px 0;
+}
+
+.hierarchy-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.exclusion-rule,
+.validation-rule {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.exclusion-rule:last-child,
+.validation-rule:last-child {
+  border-bottom: none;
+}
+
+/* Weekly Review Styles */
+details.group {
+  border: 1px solid #223061;
+  border-radius: 10px;
+  margin: 8px 0;
+  background: #0f1737;
+}
+
+details.group > summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+details.group > summary .title {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.counts {
+  display: flex;
+  gap: 10px;
+  color: #c9d5f5;
+  font-size: 12px;
+  margin-left: auto;
+}
+
+.counts .c {
+  border: 1px solid #2a3c74;
+  border-radius: 999px;
+  padding: 2px 6px;
+}
+
+/* Status indicators for weekly review */
+.status.both {
+  border-color: #3d5bd1;
+  color: #bcd0ff;
+  background: rgba(61, 91, 209, 0.1);
+}
+
+.status.A {
+  border-color: #2a5a7a;
+  color: #9bd2ff;
+  background: rgba(42, 90, 122, 0.1);
+}
+
+.status.B {
+  border-color: #7a5a2a;
+  color: #ffd19b;
+  background: rgba(122, 90, 42, 0.1);
+}
+
+.status.rejected {
+  border-color: #7a2a2a;
+  color: #ff9b9b;
+  background: rgba(122, 42, 42, 0.1);
+}
+
+.status.final {
+  border-color: #2a7a4a;
+  color: #9bffbf;
+  background: rgba(42, 122, 74, 0.1);
+}
+
+/* Pool summary */
+.pool-summary {
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 6px;
+  border: 1px solid var(--line);
+}
+
+/* NDC Drawer Styles (from FMT prototype) */
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  z-index: 1500;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 520px;
+  max-width: 96vw;
+  background: linear-gradient(180deg, #0a1140, #0b154f);
+  border-left: 2px solid var(--accent);
+  transform: translateX(100%);
+  transition: transform 0.2s ease;
+  box-shadow: 0 0 0 1px rgba(61, 91, 209, 0.35), 0 18px 48px rgba(0, 0, 0, 0.55);
+  padding: 0;
+  overflow: auto;
+  color: var(--text);
+  z-index: 1600;
+}
+
+.drawer.open {
+  transform: translateX(0);
+}
+
+.drawer-backdrop.show {
+  display: block;
+}
+
+.drawer-header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: linear-gradient(180deg, #0b1670, #0b1455);
+  border-bottom: 1px solid #2a3c74;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.drawer-header h2 {
+  margin: 0;
+  font-size: 18px;
+  flex: 1;
+}
+
+.drawer-body {
+  padding: 14px;
+}
+
+.sec {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid #223061;
+  border-radius: 12px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.sec h4 {
+  margin: 10px 0 8px;
+  color: var(--text);
+}
+
+.kv {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.kv > div:nth-child(4n+1),
+.kv > div:nth-child(4n+2) {
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.kv .muted {
+  color: #c1cdee;
+}
+
+/* NDC Link Styling */
+.ndc-link {
+  color: var(--accent);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.ndc-link:hover {
+  color: #5a9bff;
+  text-decoration: underline;
+}

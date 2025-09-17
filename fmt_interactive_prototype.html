@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FMT – Interactive Static Prototype (Lakebase OLTP + OLAP-ready)</title>
+  <!--
+    Formulary Management Tool (FMT) – Single-file, static prototype
+    ----------------------------------------------------------------
+    Purpose: Validate UI/UX flows before wiring to APIs that front Databricks Lakebase (OLTP) and Delta (OLAP).
+    NOTE: No external libraries, frameworks, or CDNs. All vanilla JS + CSS in this single file.
+    
+    // TODO: wire to Lakebase API (served by ECS Fargate) – placeholders:
+    // GET /api/fdb?tenant=&date=YYYY-MM-DD
+    // GET /api/master/fmt?tenant=
+    // GET /api/master/pdl?tenant=
+    // POST /api/review/submit
+    // POST /api/approve
+    // In production, OLTP (Lakebase) holds operational rows; OLAP (Delta) powers analytics & weekly extracts.
+    
+    MBID notes (master/child model):
+    - MBIDs are created only in MASTER with begin/end dates; child tenants (e.g., AK, MO) reuse and may sub-scope (e.g., AK123456_a).
+    - MBID format: SS###### (state abbrev + 6 digits), optional sub-suffix: _a, _b, ...
+    - 1:1 between MBID and MBID description.
+    - If one FMT Drug Name falls in two MBIDs → warn/confirm.
+    - If NDCs for the same FMT Drug Name across two MBIDs differ in status → block approve (prototype: toast).
+    
+    Exclusions & Key Codes (Config-driven; future wiring)
+    - Exclude: federally rebateable, MFT obsolete, specific NDCs, future-dated rows.
+    - Override hierarchy examples: NDC, GSN/GCN, HICL, GC3/HIC3 (primary), DCC.
+    - PDL Key Code templates (examples):
+        GSN + first 6 of Brand + RX/OTC + Package size
+        GSN + first 6 of Brand + RX/OTC + first 6 of Generic
+        GSN + first 6 of Brand + RX/OTC + first 6 of MFR
+  -->
+  <style>
+    :root{
+      --bg1:#0b1124;
+      --bg2:#0b1430;
+      --panel:#0f193a;
+      --muted:#8aa0bf;
+      --text:#e9eef7;
+      --line:#213363;
+      --accent:#3e7bfa;
+      --ok:#2ecc71;
+      --warn:#f9a44a;
+      --err:#ff6b6b;
+      --shadow:0 10px 24px rgba(0,0,0,.28);
+      --mono: ui-monospace, Menlo, Consolas, "SF Mono", "Cascadia Code", monospace;
+      --sans: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      background:linear-gradient(180deg,var(--bg1),var(--bg2));
+      color:var(--text);
+    }
+    header{
+      position:sticky;top:0;z-index:1000;
+      background:#0e173dcc;
+      border-bottom:1px solid var(--line);
+      backdrop-filter: blur(8px);
+    }
+    .wrap{max-width:1280px;margin:0 auto;padding:12px 16px}
+    .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    h1{margin:2px 0 0;font-size:20px}
+    .muted{color:var(--muted);font-size:12px}
+    label{font-size:12px;color:var(--muted)}
+    input,select,button,summary{font-size:14px}
+    input,select{
+      background:#0f1737;border:1px solid var(--line);color:var(--text);
+      padding:8px 10px;border-radius:8px;outline:none;
+    }
+    input:focus,select:focus,button:focus, a:focus{outline:2px solid var(--accent);outline-offset:2px}
+    .btn{background:#1a2b5f;color:#fff;border:1px solid #2a3c74;border-radius:8px;padding:8px 12px;cursor:pointer}
+    .btn.primary{background:linear-gradient(180deg,#1b8fff,#1160e8);border-color:#1e6be0}
+    .btn.success{background:linear-gradient(180deg,#35c46a,#1b9d4e);border-color:#1b9d4e}
+    .btn.warn{background:linear-gradient(180deg,#f9a44a,#e2851e);border-color:#df7d1e}
+    .btn.ghost{background:#0f1737}
+    .tabs{display:flex;gap:8px;flex-wrap:wrap;padding:10px 16px}
+    .tab{background:#0f1737;border:1px solid var(--line);padding:8px 12px;border-radius:999px;color:#a9b8d9;cursor:pointer}
+    .tab.active{background:linear-gradient(180deg,#0f1737,#15245a);color:#fff;border-color:#3d5bd1;box-shadow:inset 0 0 0 1px #3d5bd1}
+    .panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px;margin:14px 0;box-shadow:var(--shadow)}
+    .divider{height:1px;background:var(--line);margin:10px 0}
+    .scroll{max-height:360px;overflow:auto;border-radius:10px}
+    table{width:100%;border-collapse:collapse}
+    th,td{border-bottom:1px solid #1f2c59;padding:8px 6px;text-align:left;font-size:12px;vertical-align:top}
+    th{position:sticky;top:0;background:#0f1737;color:#b6c3de;z-index:1}
+    .code{font-family:var(--mono)}
+    .pill{font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid #2a3c74;display:inline-block}
+    .right{justify-content:flex-end}
+    .hint{font-size:12px;color:#a7b8d7}
+    details.group {border:1px solid #223061;border-radius:10px;margin:8px 0;background:#0f1737}
+    details.group > summary{cursor:pointer;list-style:none;padding:10px 12px;display:flex;align-items:center;gap:10px}
+    details.group > summary .title{font-weight:600}
+    .counts{display:flex;gap:10px;color:#c9d5f5;font-size:12px}
+    .counts .c{border:1px solid #2a3c74;border-radius:999px;padding:2px 6px}
+    .status{display:inline-block;font-size:11px;border-radius:999px;padding:2px 8px;border:1px solid #2a3c74}
+    .status.rejected{border-color:#7a2a2a;color:#ff9b9b}
+    .status.final{border-color:#2a7a4a;color:#9bffbf}
+    .status.A{border-color:#2a5a7a;color:#9bd2ff}
+    .status.B{border-color:#7a5a2a;color:#ffd19b}
+    .status.both{border-color:#3d5bd1;color:#bcd0ff}
+    .toast{
+      position:fixed;right:16px;bottom:16px;background:#1c2a57;border:1px solid #2a3c74;
+      border-radius:8px;padding:8px 12px;box-shadow:var(--shadow);z-index:2000
+    }
+    .drawer-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;z-index:1500}
+    .drawer{
+      position:fixed;top:0;right:0;height:100%;width:520px;max-width:96vw;
+      background:linear-gradient(180deg,#0a1140,#0b154f);
+      border-left:2px solid var(--accent);
+      transform:translateX(100%);transition:transform .2s ease;
+      box-shadow:0 0 0 1px rgba(61,91,209,.35), 0 18px 48px rgba(0,0,0,.55);
+      padding:0;overflow:auto;color:var(--text);z-index:1600
+    }
+    .drawer.open{transform:translateX(0)}
+    .drawer-backdrop.show{display:block}
+    .sec h4{margin:10px 0 8px}
+    .sec{background:rgba(255,255,255,.02);border:1px solid #223061;border-radius:12px;padding:10px;margin:10px 0}
+    .kv{display:grid;grid-template-columns:160px 1fr;gap:8px;font-size:13px;line-height:1.35}
+    .kv > div:nth-child(4n+1), .kv > div:nth-child(4n+2){background:rgba(255,255,255,.01)}
+    .kv .muted{color:#c1cdee}
+    
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media (max-width:900px){
+      .row.stack{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+  <header aria-label="Top">
+    <div class="wrap row">
+      <div style="flex:1 1 auto">
+        <h1>Formulary Management Tool (Prototype)</h1>
+        <div class="muted">Lakebase OLTP + Delta OLAP (future API wiring)</div>
+      </div>
+      <div class="row">
+        <label for="tenant">Tenant</label>
+        <select id="tenant" aria-label="Tenant selector">
+          <option value="MASTER">MASTER (Mother)</option>
+          <option value="AK">AK (Child)</option>
+          <option value="MO">MO (Child)</option>
+        </select>
+      </div>
+    </div>
+    <nav class="wrap tabs" aria-label="Primary">
+      <!-- tabs rendered by JS -->
+      <div id="tabs"></div>
+    </nav>
+  </header>
+
+  <main class="wrap" id="app" tabindex="-1"></main>
+
+  <!-- Right-side NDC drawer -->
+  <div id="backdrop" class="drawer-backdrop" aria-hidden="true"></div>
+  <aside id="drawer" class="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+    <div style="position:sticky;top:0;z-index:2;background:linear-gradient(180deg,#0b1670,#0b1455);border-bottom:1px solid #2a3c74;padding:10px 14px;display:flex;align-items:center;gap:10px">
+      <div style="flex:1 1 auto">
+        <h2 id="drawerTitle" style="margin:0;font-size:18px">NDC Details</h2>
+        <div class="muted">Aggregated from “~20 FDB files” • View-only</div>
+      </div>
+      <button class="btn ghost" id="closeDrawer" aria-label="Close drawer">✕</button>
+    </div>
+    <div style="padding:14px">
+      <div id="drawerBody"></div>
+      <div class="divider"></div>
+      <div class="row right">
+        <button class="btn" id="copyJson">Copy JSON</button>
+        <button class="btn" id="csvJson">Download CSV</button>
+      </div>
+    </div>
+  </aside>
+
+  <script>
+    /***********************************************************************
+     * STATE
+     **********************************************************************/
+    const TABS = [
+      "FDB Search",
+      "FMT Master",
+      "PDL Coding",
+      "Weekly Review – FMT",
+      "Weekly Review – PDL",
+      "Config"
+    ];
+
+    const state = {
+      tenant: localStorage.getItem("fmt_tenant") || "MASTER",
+      activeTab: +(localStorage.getItem("fmt_active_tab") ?? 3),
+      // Seeds (ensure weekly review has data on first load)
+      fdb: [],
+      fmtMaster: [],
+      pdlMaster: [],
+      mbids: [],
+      weekly: {
+        fmt: { pool: [], reviewA: [], reviewB: [], final: {}, decisions: {}, selDate:null, search:"" },
+        pdl: { pool: [], reviewA: [], reviewB: [], final: {}, decisions: {}, selDate:null, search:"" }
+      },
+      configs: [
+        { name:"keycode.template.default", value:"GSN|brand6|rx_otc|pkg6", desc:"Default PDL keycode template" },
+        { name:"export.exclude.future", value:"true", desc:"Exclude future-dated rows from exports" }
+      ],
+      ndcDrawer: { ndc:null, data:null }
+    };
+
+    function daysAgoISO(n){
+      const d = new Date(); d.setDate(d.getDate()-n);
+      return d.toISOString().slice(0,10);
+    }
+
+    function seed(){
+      // FDB records across ~12 days; include new NDCs on latest load date so weekly review is non-empty
+      const today = daysAgoISO(0);
+      const d1 = daysAgoISO(1);
+      const d2 = daysAgoISO(2);
+      const d5 = daysAgoISO(5);
+      const d6 = daysAgoISO(6);
+      const d7 = daysAgoISO(7);
+      const d9 = daysAgoISO(9);
+      const d12 = daysAgoISO(12);
+
+      state.fdb = [
+        {ndc:"00011122233", gsn:10001, brand:"Amoxicillin", generic:"Amoxicillin", rx_otc:"RX", pkg_size:"30",  hic3:"123", hicl:"AMOX", dcc:"ABX",  mfr:"Alpha", obsolete:false, rebate:true,  load_date: d12, pkg_origin:"US", gsn_desc:"Penicillins", pkg_form:"Capsule"},
+        {ndc:"00011122244", gsn:10001, brand:"Amoxicillin", generic:"Amoxicillin", rx_otc:"RX", pkg_size:"90",  hic3:"123", hicl:"AMOX", dcc:"ABX",  mfr:"Alpha", obsolete:false, rebate:true,  load_date: d6,  pkg_origin:"US", gsn_desc:"Penicillins", pkg_form:"Capsule"},
+        {ndc:"99988877766", gsn:10002, brand:"Zyrtec",      generic:"Cetirizine",  rx_otc:"OTC",pkg_size:"60",  hic3:"456", hicl:"ANTH", dcc:"ALL",  mfr:"ZenPharm", obsolete:false, rebate:false, load_date: d5, pkg_origin:"CA", gsn_desc:"Antihistamines", pkg_form:"Tablet"},
+        {ndc:"99988877755", gsn:10002, brand:"Zyrtec-D",    generic:"Cetirizine/Pseudoephed", rx_otc:"OTC",pkg_size:"24", hic3:"456", hicl:"ANTH", dcc:"ALL",  mfr:"ZenPharm", obsolete:true,  rebate:false, load_date: d5, pkg_origin:"CA", gsn_desc:"Antihistamines", pkg_form:"Tablet"},
+        {ndc:"55544433322", gsn:20001, brand:"Lipitor",     generic:"Atorvastatin", rx_otc:"RX", pkg_size:"30",  hic3:"789", hicl:"STAT", dcc:"CV",   mfr:"Beta",  obsolete:false, rebate:true,  load_date: d1, pkg_origin:"US", gsn_desc:"Statins", pkg_form:"Tablet"},
+        {ndc:"55544433311", gsn:20002, brand:"Crestor",     generic:"Rosuvastatin", rx_otc:"RX", pkg_size:"30",  hic3:"789", hicl:"STAT", dcc:"CV",   mfr:"Beta",  obsolete:false, rebate:true,  load_date: d1, pkg_origin:"US", gsn_desc:"Statins", pkg_form:"Tablet"},
+        {ndc:"12312312312", gsn:30001, brand:"Humalog",     generic:"Insulin Lispro", rx_otc:"RX", pkg_size:"5", hic3:"999", hicl:"INS",  dcc:"IMM",  mfr:"Gamma", obsolete:false, rebate:true,  load_date: d9, pkg_origin:"DE", gsn_desc:"Insulins", pkg_form:"Vial"},
+        {ndc:"32132132121", gsn:30002, brand:"Novolog",     generic:"Insulin Aspart", rx_otc:"RX", pkg_size:"5", hic3:"999", hicl:"INS",  dcc:"IMM",  mfr:"Gamma", obsolete:false, rebate:true,  load_date: d2, pkg_origin:"DE", gsn_desc:"Insulins", pkg_form:"Vial"},
+        {ndc:"11122233344", gsn:40001, brand:"Advil",       generic:"Ibuprofen",   rx_otc:"OTC", pkg_size:"100", hic3:"555", hicl:"NSAID", dcc:"PAIN", mfr:"Omega", obsolete:false, rebate:false, load_date: d7, pkg_origin:"US", gsn_desc:"NSAIDs", pkg_form:"Tablet"},
+        // Ensure today's load has NEW NDCs not in masters → non-empty Weekly Review on first load
+        {ndc:"22233344455", gsn:40002, brand:"Motrin",      generic:"Ibuprofen",   rx_otc:"RX",  pkg_size:"60",  hic3:"555", hicl:"NSAID", dcc:"PAIN", mfr:"Omega", obsolete:false, rebate:false, load_date: today, pkg_origin:"US", gsn_desc:"NSAIDs", pkg_form:"Tablet"},
+        {ndc:"77766655544", gsn:50001, brand:"AllerEase",   generic:"Loratadine",  rx_otc:"OTC", pkg_size:"30",  hic3:"456", hicl:"ANTH",  dcc:"ALL",  mfr:"Delta", obsolete:false, rebate:false, load_date: today, pkg_origin:"US", gsn_desc:"Antihistamines", pkg_form:"Tablet"}
+      ];
+
+      state.fmtMaster = [
+        {ndc:"00011122233", fmt_drug:"AMOXICILLIN", mbid:null,      status:"PDL", start:"2024-01-01", end:null},
+        {ndc:"99988877766", fmt_drug:"ZYRTEC",      mbid:"AK123456", status:"PDL", start:"2024-03-01", end:null}
+      ];
+
+      state.pdlMaster = [
+        {ndc:"00011122233", fmt_drug:"AMOXICILLIN", status:"PDL", start:"2024-01-01", end:null},
+        {ndc:"99988877766", fmt_drug:"ZYRTEC",      status:"PDL", start:"2024-03-01", end:null}
+      ];
+
+      state.mbids = [
+        {tenant:"MASTER", mbid:"AK123456",   desc:"Antihistamines"},
+        {tenant:"MASTER", mbid:"CV999001",   desc:"Cardio – Statins"},
+        {tenant:"MASTER", mbid:"IMM000777",  desc:"Immunology – Insulins"},
+        {tenant:"AK",     mbid:"AK123456_a", desc:"AK Antihistamines – sub"}
+      ];
+
+      // Initialize week-ending date per tab to latest FDB date that yields non-empty pool
+      initWeeklyDate("fmt");
+      initWeeklyDate("pdl");
+    }
+
+    function inMaster(list, ndc){ return list.some(r=>r.ndc===ndc); }
+    function inWeek(weekEndingISO, loadISO){
+      const end = new Date(weekEndingISO);
+      const start = new Date(end); start.setDate(end.getDate()-6);
+      const dt = new Date(loadISO);
+      return dt >= start && dt <= end;
+    }
+
+    function latestDateWithPool(kind){
+      // Find latest FDB load date whose new-NDC pool (not in corresponding master) is non-empty
+      const dates = [...new Set(state.fdb.map(r=>r.load_date))].sort();
+      const master = kind==="fmt" ? state.fmtMaster : state.pdlMaster;
+      for(let i=dates.length-1;i>=0;i--){
+        const d = dates[i];
+        const newNDCs = state.fdb.filter(r=>inWeek(d, r.load_date));
+        const pool = newNDCs.filter(r=>!inMaster(master, r.ndc));
+        if (pool.length) return d;
+      }
+      return dates[dates.length-1] || daysAgoISO(0);
+    }
+
+    function initWeeklyDate(kind){
+      const d = latestDateWithPool(kind);
+      state.weekly[kind].selDate = d;
+      computeWeeklyPool(kind);
+    }
+
+    function computeWeeklyPool(kind){
+      const W = state.weekly[kind];
+      const master = (kind==="fmt") ? state.fmtMaster : state.pdlMaster;
+      const newNDCs = state.fdb.filter(r=>inWeek(W.selDate, r.load_date));
+      W.pool = newNDCs.filter(r=>!inMaster(master, r.ndc));
+    }
+
+    /***********************************************************************
+     * HELPERS
+     **********************************************************************/
+    const $  = (s,r=document)=>r.querySelector(s);
+    const $$ = (s,r=document)=>Array.from(r.querySelectorAll(s));
+    function toast(msg){
+      const el=document.createElement("div");
+      el.textContent=msg; el.className="toast"; el.setAttribute("role","status");
+      document.body.appendChild(el); setTimeout(()=>el.remove(), 2400);
+    }
+    function dl(name,text){ const blob=new Blob([text],{type:"text/plain;charset=utf-8"}); const url=URL.createObjectURL(blob); const a=document.createElement("a"); a.href=url; a.download=name; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url); }
+    function csv(rows){
+      if(!rows.length) return "";
+      const ks=Object.keys(rows[0]);
+      const esc=v=>`"${String(v??"").replace(/"/g,'""')}"`;
+      return [ks.join(","), ...rows.map(r=>ks.map(k=>esc(r[k])).join(","))].join("\n");
+    }
+    function rangesOverlap(aStart,aEnd,bStart,bEnd){
+      const A1=new Date(aStart).getTime(), A2=aEnd?new Date(aEnd).getTime():Infinity;
+      const B1=new Date(bStart).getTime(), B2=bEnd?new Date(bEnd).getTime():Infinity;
+      return (A1<=B2)&&(B1<=A2);
+    }
+    function filterByQuery(rows, keys, q){
+      if(!q) return rows;
+      const needle=q.toLowerCase();
+      return rows.filter(r => keys.some(k => String(r[k]??"").toLowerCase().includes(needle)));
+    }
+    function rememberTab(i){ state.activeTab=i; localStorage.setItem("fmt_active_tab", String(i)); }
+
+    function mbidOptionsForTenant(){
+      const t = state.tenant;
+      return state.mbids.filter(m => m.tenant==="MASTER" || m.tenant===t);
+    }
+
+    // Suggested MBID demo rule
+    function suggestMbid(fdb){
+      if(fdb.hic3==="456") return "AK123456";
+      if(fdb.dcc==="CV") return "CV999001";
+      if(fdb.dcc==="IMM") return "IMM000777";
+      return "";
+    }
+
+    /***********************************************************************
+     * DRAWER (NDC details)
+     **********************************************************************/
+    const drawer = $("#drawer");
+    const backdrop = $("#backdrop");
+    $("#closeDrawer").addEventListener("click", closeDrawer);
+    backdrop.addEventListener("click", closeDrawer);
+    document.addEventListener("keydown", (e)=>{
+      if(e.key==="Escape") closeDrawer();
+    });
+
+    function openDrawer(ndc){
+      const rec = state.fdb.find(r=>r.ndc===ndc);
+      if(!rec){ toast("Record not found"); return; }
+      // Aggregated view stub (would combine ~20 FDB files)
+      const data = {
+        Core: {
+          NDC: rec.ndc, GSN: rec.gsn, Brand: rec.brand, Generic: rec.generic, "Rx/OTC": rec.rx_otc, "Load Date": rec.load_date
+        },
+        Classification: {
+          HIC3: rec.hic3, HICL: rec.hicl, DCC: rec.dcc, "GSN Desc": rec.gsn_desc
+        },
+        "Pricing & Flags": {
+          "Federally Rebateable": rec.rebate, "MFT Obsolete": rec.obsolete, "MFR": rec.mfr
+        },
+        "Packaging & Origin": {
+          "Package Size": rec.pkg_size, "Form": rec.pkg_form, Origin: rec.pkg_origin
+        }
+      };
+      state.ndcDrawer = { ndc, data };
+
+      const body = $("#drawerBody");
+      body.innerHTML = "";
+      for(const [sec, kv] of Object.entries(data)){
+        const s = document.createElement("div"); s.className="sec";
+        s.innerHTML = `<h4>${sec}</h4>`;
+        const grid = document.createElement("div"); grid.className="kv";
+        Object.entries(kv).forEach(([k,v])=>{
+          const kEl=document.createElement("div"); kEl.className="muted"; kEl.textContent=k;
+          const vEl=document.createElement("div"); vEl.className="code"; vEl.textContent=String(v);
+          grid.appendChild(kEl); grid.appendChild(vEl);
+        });
+        s.appendChild(grid);
+        body.appendChild(s);
+      }
+
+      $("#copyJson").onclick = async ()=>{
+        try{
+          await navigator.clipboard.writeText(JSON.stringify(data, null, 2));
+          toast("Copied JSON");
+        }catch(e){ toast("Clipboard failed"); }
+      };
+      $("#csvJson").onclick = ()=>{
+        // Flatten data for CSV
+        const flat = [];
+        for(const [sec, kv] of Object.entries(data)){
+          for(const [k,v] of Object.entries(kv)){
+            flat.push({section:sec, field:k, value: String(v) });
+          }
+        }
+        dl(`ndc_${ndc}_summary.csv`, csv(flat));
+      };
+
+      backdrop.classList.add("show"); backdrop.setAttribute("aria-hidden","false");
+      drawer.classList.add("open");
+      // Focus management
+      setTimeout(()=>$("#closeDrawer").focus(), 50);
+    }
+
+    function closeDrawer(){
+      drawer.classList.remove("open");
+      backdrop.classList.remove("show"); backdrop.setAttribute("aria-hidden","true");
+      state.ndcDrawer = { ndc:null, data:null };
+      // return focus to main
+      $("#app").focus();
+    }
+
+    /***********************************************************************
+     * RENDER – Tabs
+     **********************************************************************/
+    function renderTabs(){
+      const t=$("#tabs"); t.innerHTML="";
+      TABS.forEach((name,i)=>{
+        const b=document.createElement("button");
+        b.className="tab"+(i===state.activeTab?" active":"");
+        b.textContent=name;
+        b.setAttribute("role","tab");
+        b.setAttribute("aria-selected", i===state.activeTab ? "true" : "false");
+        b.onclick=()=>{ rememberTab(i); render(); };
+        t.appendChild(b);
+      });
+    }
+
+    /***********************************************************************
+     * TAB: FDB Search
+     **********************************************************************/
+    function renderFDB(){
+      const root=document.createElement("div");
+      root.innerHTML=`
+        <div class="panel" aria-labelledby="fdbLabel">
+          <div class="row stack">
+            <div class="row" style="flex:1 1 auto">
+              <label id="fdbLabel" class="sr-only">Search FDB</label>
+              <input id="q" placeholder="Search NDC, Brand, Generic, HIC3, MFR" aria-label="Search FDB" style="min-width:320px" />
+              <button id="s" class="btn primary">Search</button>
+              <span class="hint">View-only; NDC opens details drawer</span>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="scroll"><table class="table"><thead>
+            <tr><th>NDC</th><th>GSN</th><th>Brand</th><th>Generic</th><th>Rx/OTC</th><th>Package Size</th><th>HIC3</th><th>HICL</th><th>DCC</th><th>MFR</th><th>Load Date</th></tr>
+          </thead><tbody id="tb"></tbody></table></div>
+        </div>`;
+      const tb=$("#tb",root);
+
+      const paint = list => {
+        tb.innerHTML="";
+        list.forEach(r=>{
+          const tr=document.createElement("tr");
+          tr.innerHTML=`
+            <td class="code"><a href="#" data-ndc="${r.ndc}" class="ndcLink">${r.ndc}</a></td>
+            <td>${r.gsn}</td><td>${r.brand}</td><td>${r.generic}</td><td>${r.rx_otc}</td>
+            <td>${r.pkg_size}</td><td>${r.hic3}</td><td>${r.hicl}</td><td>${r.dcc}</td><td>${r.mfr}</td><td>${r.load_date}</td>`;
+          tb.appendChild(tr);
+        });
+        $$(".ndcLink",tb).forEach(a=>a.addEventListener("click", (e)=>{ e.preventDefault(); openDrawer(a.getAttribute("data-ndc")); }));
+      };
+      paint(state.fdb);
+
+      $("#s",root).onclick=()=>{ const q=$("#q",root).value; paint(filterByQuery(state.fdb,["ndc","brand","generic","hic3","mfr"],q)); };
+      $("#q",root).addEventListener("keydown",(e)=>{ if(e.key==="Enter") $("#s",root).click(); });
+
+      return root;
+    }
+
+    /***********************************************************************
+     * TAB: FMT Master
+     **********************************************************************/
+    function renderFmtMaster(){
+      const root=document.createElement("div");
+      root.innerHTML=`
+        <div class="panel">
+          <div class="row">
+            <input id="q" placeholder="Search NDC / FMT Drug / MBID / Status" aria-label="Search FMT Master" style="min-width:320px" />
+            <button id="s" class="btn primary">Search</button>
+            <button id="dl" class="btn">Download CSV</button>
+          </div>
+          <div class="divider"></div>
+          <div class="scroll"><table class="table"><thead>
+            <tr><th>NDC</th><th>FMT Drug</th><th>MBID</th><th>Status</th><th>Start</th><th>End</th></tr>
+          </thead><tbody id="tb"></tbody></table></div>
+        </div>`;
+      const tb=$("#tb",root);
+      const paint = list => { tb.innerHTML=""; list.forEach(r=>{ const tr=document.createElement("tr"); tr.innerHTML=`<td class="code">${r.ndc}</td><td>${r.fmt_drug}</td><td class="code">${r.mbid||""}</td><td>${r.status}</td><td>${r.start}</td><td>${r.end||""}</td>`; tb.appendChild(tr); }); };
+      paint(state.fmtMaster);
+      $("#s",root).onclick=()=>{ const q=$("#q",root).value; paint(filterByQuery(state.fmtMaster,["ndc","fmt_drug","mbid","status"],q)); };
+      $("#q",root).addEventListener("keydown",(e)=>{ if(e.key==="Enter") $("#s",root).click(); });
+      $("#dl",root).onclick=()=>dl("fmt_master.csv",csv(state.fmtMaster));
+      return root;
+    }
+
+    /***********************************************************************
+     * TAB: PDL Coding
+     **********************************************************************/
+    function renderPdlCoding(){
+      const root=document.createElement("div");
+      root.innerHTML=`
+        <div class="panel">
+          <div class="row">
+            <input id="q" placeholder="Search NDC / FMT Drug / Status" aria-label="Search PDL Master" style="min-width:320px" />
+            <button id="s" class="btn primary">Search</button>
+            <button id="dl" class="btn">Download CSV</button>
+          </div>
+          <div class="divider"></div>
+          <div class="scroll"><table class="table"><thead>
+            <tr><th>NDC</th><th>FMT Drug</th><th>Status</th><th>Start</th><th>End</th></tr>
+          </thead><tbody id="tb"></tbody></table></div>
+        </div>`;
+      const tb=$("#tb",root);
+      const paint = list => { tb.innerHTML=""; list.forEach(r=>{ const tr=document.createElement("tr"); tr.innerHTML=`<td class="code">${r.ndc}</td><td>${r.fmt_drug}</td><td>${r.status}</td><td>${r.start}</td><td>${r.end||""}</td>`; tb.appendChild(tr); }); };
+      paint(state.pdlMaster);
+      $("#s",root).onclick=()=>{ const q=$("#q",root).value; paint(filterByQuery(state.pdlMaster,["ndc","fmt_drug","status"],q)); };
+      $("#q",root).addEventListener("keydown",(e)=>{ if(e.key==="Enter") $("#s",root).click(); });
+      $("#dl",root).onclick=()=>dl("pdl_master.csv",csv(state.pdlMaster));
+      return root;
+    }
+
+    /***********************************************************************
+     * WEEKLY REVIEW COMMONS
+     **********************************************************************/
+    function buildGsnSetFromMaster(master){
+      const ndc2gsn = new Map(state.fdb.map(r=>[r.ndc, r.gsn]));
+      const gset = new Set();
+      master.forEach(m => { const g=ndc2gsn.get(m.ndc); if(g) gset.add(g); });
+      return gset;
+    }
+    function groupByMatch(rows, master){
+      const gset=buildGsnSetFromMaster(master);
+      const brandSet=new Set(master.map(m=>String(m.fmt_drug||"").toUpperCase()));
+      const groups={"100% match":[],"gsn match":[],"brand match":[],"no match":[]};
+      rows.forEach(r=>{
+        const brandUp = String(r.brand||"").toUpperCase();
+        const gsnHit = gset.has(r.gsn);
+        const brandHit = brandSet.has(brandUp);
+        if (gsnHit && brandHit) groups["100% match"].push(r);
+        else if (gsnHit) groups["gsn match"].push(r);
+        else if (brandHit) groups["brand match"].push(r);
+        else groups["no match"].push(r);
+      });
+      return groups;
+    }
+    function countsForGroup(rows, reviewA, reviewB, decisions){
+      let pending=0, a=0, b=0, both=0, rejected=0;
+      const inA = new Set(reviewA.map(r=>r.ndc));
+      const inB = new Set(reviewB.map(r=>r.ndc));
+      rows.forEach(r=>{
+        if(decisions[r.ndc]==="rejected"){ rejected++; return; }
+        const ha=inA.has(r.ndc), hb=inB.has(r.ndc);
+        if(ha && hb) { both++; return; }
+        if(ha){ a++; return; }
+        if(hb){ b++; return; }
+        pending++;
+      });
+      return {pending,a,b,both,rejected};
+    }
+    function statusFor(ndc, W){
+      if(W.decisions[ndc]==="rejected") return "rejected";
+      const inA = W.reviewA.some(x=>x.ndc===ndc);
+      const inB = W.reviewB.some(x=>x.ndc===ndc);
+      const inF = W.final[ndc];
+      if(inF) return "final";
+      if(inA && inB) return "both";
+      if(inA) return "A";
+      if(inB) return "B";
+      return "pending";
+    }
+    function statusPill(s){
+      const span=document.createElement("span"); span.className="status "+s; span.textContent=s;
+      return span;
+    }
+    function mbidSelectHTML(selected){
+      return `<select class="mbidSel" aria-label="MBID">
+        <option value="">(none)</option>
+        ${mbidOptionsForTenant().map(m=>`<option ${selected===m.mbid?"selected":""} value="${m.mbid}">${m.mbid} - ${m.desc}</option>`).join("")}
+      </select>`;
+    }
+
+    function groupPanel(kind, key, rows, W, master){
+      const det=document.createElement("details"); det.className="group"; det.open = rows.length > 0 && key !== "no match";
+      const counts = countsForGroup(rows, W.reviewA, W.reviewB, W.decisions);
+      const summary=document.createElement("summary");
+      summary.innerHTML = `<span class="title">${key}</span>
+        <span class="counts">
+          <span class="c">A=${counts.a}</span>
+          <span class="c">B=${counts.b}</span>
+          <span class="c">both=${counts.both}</span>
+          <span class="c">rejected=${counts.rejected}</span>
+          <span class="c">pending=${counts.pending}</span>
+        </span>`;
+      det.appendChild(summary);
+
+      const inner=document.createElement("div"); inner.className="panel"; inner.style.margin="10px";
+      inner.innerHTML = `
+        <div class="row">
+          <label><input type="checkbox" class="sa" /> Select all in '${key}'</label>
+          <div class="row" style="margin-left:auto;gap:8px">
+            <button class="btn success addA">Add to Reviewer A</button>
+            <button class="btn primary addB">Add to Reviewer B</button>
+            <button class="btn warn reject">Reject selected</button>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="scroll"><table class="table">
+          <thead><tr><th></th><th>NDC</th><th>Brand</th><th>GSN</th><th>HIC3</th><th>MFR</th><th>Load</th><th>Suggested MBID</th><th>Status</th></tr></thead>
+          <tbody class="tb"></tbody>
+        </table></div>`;
+      det.appendChild(inner);
+
+      const tb=$(".tb",inner);
+      rows.forEach(r=>{
+        const tr=document.createElement("tr");
+        tr.innerHTML = `<td><input type="checkbox" class="rowSel" data-ndc="${r.ndc}" aria-label="select ${r.ndc}"></td>
+          <td class="code"><a href="#" data-ndc="${r.ndc}" class="ndcLink">${r.ndc}</a></td>
+          <td>${r.brand}</td><td>${r.gsn}</td><td>${r.hic3}</td><td>${r.mfr}</td>
+          <td>${r.load_date}</td><td class="code">${suggestMbid(r)||"-"}</td><td class="statusCell"></td>`;
+        tb.appendChild(tr);
+        $(".statusCell",tr).appendChild(statusPill(statusFor(r.ndc, W)));
+        $(".ndcLink",tr).addEventListener("click",(e)=>{e.preventDefault();openDrawer(r.ndc);});
+      });
+
+      $(".sa",inner).onchange = e => $$(".rowSel",inner).forEach(cb => cb.checked = e.target.checked);
+      const getSelectedNDCs = ()=>$$(".rowSel:checked",inner).map(cb=>cb.getAttribute("data-ndc"));
+      const addTo = (listName)=>{
+        const sel = getSelectedNDCs();
+        if(!sel.length){toast("Select NDCs first");return;}
+        const toAdd = rows.filter(r=>sel.includes(r.ndc)).map(r=>({ndc:r.ndc, mbid:suggestMbid(r)||"", start:state.weekly[kind].selDate, end:null}));
+        toAdd.forEach(x=>{ state.weekly[kind].decisions[x.ndc]=undefined; });
+        const list = state.weekly[kind][listName];
+        // de-dup by ndc
+        toAdd.forEach(x=>{ if(!list.some(y=>y.ndc===x.ndc)) list.push(x); });
+        toast(`Added ${toAdd.length} to ${listName==="reviewA"?"Reviewer A":"Reviewer B"}`);
+        render();
+      };
+      $(".addA",inner).onclick = ()=>addTo("reviewA");
+      $(".addB",inner).onclick = ()=>addTo("reviewB");
+      $(".reject",inner).onclick = ()=>{
+        const sel = getSelectedNDCs();
+        if(!sel.length){toast("Select NDCs first");return;}
+        sel.forEach(ndc=>{
+          state.weekly[kind].decisions[ndc]="rejected";
+          state.weekly[kind].reviewA = state.weekly[kind].reviewA.filter(x=>x.ndc!==ndc);
+          state.weekly[kind].reviewB = state.weekly[kind].reviewB.filter(x=>x.ndc!==ndc);
+          delete state.weekly[kind].final[ndc];
+        });
+        toast(`Rejected ${sel.length} item(s)`); render();
+      };
+
+      return det;
+    }
+
+    function renderReviewTables(kind){
+      const W=state.weekly[kind];
+
+      // Reviewer A
+      const rA=document.createElement("div");
+      rA.className="panel";
+      rA.innerHTML=`
+        <div><strong>Reviewer A – Assign MBID / Dates</strong></div>
+        <div class="divider"></div>
+        <div class="scroll"><table class="table"><thead>
+          <tr><th>NDC</th><th>MBID</th><th>Eff Date</th><th>End Date</th></tr>
+        </thead><tbody id="rA"></tbody></table></div>`;
+      const rABody=$("#rA", rA);
+      rABody.innerHTML="";
+      W.reviewA.forEach(row=>{
+        const tr=document.createElement("tr");
+        tr.innerHTML = `
+          <td class="code">${row.ndc}</td>
+          <td>${mbidSelectHTML(row.mbid)}</td>
+          <td><input class="eff" type="date" value="${row.start}" /></td>
+          <td><input class="end" type="date" value="${row.end||""}" /></td>`;
+        rABody.appendChild(tr);
+        $(".mbidSel",tr).onchange=e=>row.mbid=e.target.value;
+        $(".eff",tr).onchange=e=>row.start=e.target.value;
+        $(".end",tr).onchange=e=>row.end=e.target.value;
+      });
+
+      // Reviewer B
+      const rB=document.createElement("div");
+      rB.className="panel";
+      rB.innerHTML=`
+        <div><strong>Reviewer B – Assign MBID / Dates</strong></div>
+        <div class="divider"></div>
+        <div class="scroll"><table class="table"><thead>
+          <tr><th>NDC</th><th>MBID</th><th>Eff Date</th><th>End Date</th></tr>
+        </thead><tbody id="rB"></tbody></table></div>`;
+      const rBBody=$("#rB", rB);
+      rBBody.innerHTML="";
+      W.reviewB.forEach(row=>{
+        const tr=document.createElement("tr");
+        tr.innerHTML = `
+          <td class="code">${row.ndc}</td>
+          <td>${mbidSelectHTML(row.mbid)}</td>
+          <td><input class="eff" type="date" value="${row.start}" /></td>
+          <td><input class="end" type="date" value="${row.end||""}" /></td>`;
+        rBBody.appendChild(tr);
+        $(".mbidSel",tr).onchange=e=>row.mbid=e.target.value;
+        $(".eff",tr).onchange=e=>row.start=e.target.value;
+        $(".end",tr).onchange=e=>row.end=e.target.value;
+      });
+
+      return [rA, rB];
+    }
+
+    function renderCompareResolve(kind){
+      const W=state.weekly[kind];
+      // Union of A and B by NDC
+      const map = new Map();
+      W.reviewA.forEach(r=>map.set(r.ndc, {A:{...r}, B:null}));
+      W.reviewB.forEach(r=>{
+        const cur = map.get(r.ndc) || {A:null,B:null};
+        cur.B = {...r};
+        map.set(r.ndc, cur);
+      });
+
+      const rows = [...map.entries()].map(([ndc,AB])=>({ndc, ...AB}));
+
+      const root=document.createElement("div");
+      root.className="panel";
+      root.innerHTML=`
+        <div><strong>Compare & Resolve – Final Approver</strong></div>
+        <div class="divider"></div>
+        <div class="scroll"><table class="table"><thead>
+          <tr>
+            <th>NDC</th>
+            <th>A: MBID</th><th>A: Eff</th><th>A: End</th>
+            <th>B: MBID</th><th>B: Eff</th><th>B: End</th>
+            <th>Resolution</th>
+            <th>Resolved Values</th>
+          </tr>
+        </thead><tbody id="cmp"></tbody></table></div>
+        <div class="row right">
+          <button id="promote" class="btn primary">Promote Resolved → Final Review</button>
+        </div>`;
+
+      const tbody=$("#cmp",root);
+
+      function same(a,b, f){ return (a && b) && (a[f]||"") === (b[f]||""); }
+
+      rows.forEach(r=>{
+        const auto = (r.A && r.B) && same(r.A,r.B,"mbid") && same(r.A,r.B,"start") && same(r.A,r.B,"end");
+        const tr=document.createElement("tr");
+        tr.innerHTML=`
+          <td class="code">${r.ndc}</td>
+          <td class="code">${r.A?.mbid||""}</td><td>${r.A?.start||""}</td><td>${r.A?.end||""}</td>
+          <td class="code">${r.B?.mbid||""}</td><td>${r.B?.start||""}</td><td>${r.B?.end||""}</td>
+          <td>
+            <select class="resSel" aria-label="Resolution">
+              <option value="AUTO" ${auto?"selected":""}>AUTO${auto?" (matched)":""}</option>
+              <option value="A">Use A</option>
+              <option value="B">Use B</option>
+              <option value="CUSTOM">Custom</option>
+            </select>
+          </td>
+          <td class="resVals">
+            ${mbidSelectHTML(auto ? (r.A?.mbid||r.B?.mbid||"") : "")}
+            <input class="eff" type="date" value="${auto ? (r.A?.start||r.B?.start||"") : ""}" />
+            <input class="end" type="date" value="${auto ? (r.A?.end||r.B?.end||"") : ""}" />
+          </td>`;
+        tbody.appendChild(tr);
+
+        const resSel = $(".resSel",tr);
+        const resVals = $(".resVals",tr);
+        const mbidSel = $(".mbidSel",resVals);
+        const eff = $(".eff",resVals);
+        const end = $(".end",resVals);
+
+        function applyPreset(mode){
+          let src = null;
+          if(mode==="AUTO"){ src = auto ? (r.A || r.B) : null; }
+          if(mode==="A"){ src = r.A; }
+          if(mode==="B"){ src = r.B; }
+          if(src){
+            mbidSel.value = src.mbid || "";
+            eff.value = src.start || "";
+            end.value = src.end || "";
+          }
+        }
+        applyPreset(resSel.value);
+        resSel.addEventListener("change", e=>applyPreset(e.target.value));
+
+        // Save resolved values temporarily on element dataset
+        tr.dataset.ndc = r.ndc;
+      });
+
+      $("#promote",root).onclick = ()=>{
+        let cnt=0;
+        $$("tbody#cmp tr",root).forEach(tr=>{
+          const ndc = tr.dataset.ndc;
+          const mbid = $(".mbidSel",tr).value || "";
+          const eff = $(".eff",tr).value || state.weekly[kind].selDate;
+          const end = $(".end",tr).value || null;
+          state.weekly[kind].final[ndc] = {ndc, mbid, start:eff, end};
+          cnt++;
+        });
+        toast(`Promoted ${cnt} row(s) to Final Review`);
+        render();
+      };
+
+      return root;
+    }
+
+    function renderFinal(kind){
+      const W=state.weekly[kind];
+      const root=document.createElement("div");
+      root.className="panel";
+      root.innerHTML=`
+        <div class="row">
+          <strong>Final Review</strong>
+          <span class="hint">Deduped by NDC</span>
+          <span style="flex:1 1 auto"></span>
+          <button id="approve" class="btn success">Approve & Sync</button>
+        </div>
+        <div class="divider"></div>
+        <div class="scroll"><table class="table"><thead>
+          <tr><th>NDC</th><th>MBID</th><th>Eff</th><th>End</th></tr>
+        </thead><tbody id="fin"></tbody></table></div>`;
+
+      const fin=$("#fin",root);
+      fin.innerHTML="";
+      Object.values(W.final).forEach(row=>{
+        const tr=document.createElement("tr");
+        tr.innerHTML=`<td class="code">${row.ndc}</td><td class="code">${row.mbid||""}</td><td>${row.start}</td><td>${row.end||""}</td>`;
+        fin.appendChild(tr);
+      });
+
+      $("#approve",root).onclick = ()=>{
+        const rows = Object.values(W.final);
+        if(!rows.length){ toast("Nothing to approve"); return; }
+        let applied=0, rejected=0;
+        const posOut=[];
+        rows.forEach(r=>{
+          if(kind==="fmt"){
+            const dup = state.fmtMaster.some(x=>x.ndc===r.ndc && rangesOverlap(x.start,x.end,r.start,r.end));
+            if(dup){ rejected++; return; }
+            const f=state.fdb.find(x=>x.ndc===r.ndc);
+            state.fmtMaster.push({ndc:r.ndc, fmt_drug:(f?.brand||f?.generic||"").toUpperCase(), mbid:r.mbid||null, status:"PDL", start:r.start, end:r.end||null});
+            applied++;
+          }else{
+            const dup = state.pdlMaster.some(x=>x.ndc===r.ndc && rangesOverlap(x.start,x.end,r.start,r.end));
+            if(dup){ rejected++; return; }
+            const f=state.fdb.find(x=>x.ndc===r.ndc);
+            state.pdlMaster.push({ndc:r.ndc, fmt_drug:(f?.brand||f?.generic||"").toUpperCase(), status:"PDL", start:r.start, end:r.end||null});
+            posOut.push({ndc:r.ndc, action:"ADD", eff_date:r.start, status:"PDL"});
+            applied++;
+          }
+        });
+        if(kind==="pdl" && posOut.length) dl(`pos_export_${W.selDate}.csv`, csv(posOut));
+        toast(`Sync complete: ${applied} applied, ${rejected} blocked (overlap)`);
+        // reset weekly lists but keep date selection
+        state.weekly[kind].reviewA=[]; state.weekly[kind].reviewB=[]; state.weekly[kind].final={}; state.weekly[kind].decisions={};
+        computeWeeklyPool(kind);
+        render();
+      };
+
+      return root;
+    }
+
+    function renderWeekly(kind){
+      const W=state.weekly[kind];
+      const root=document.createElement("div");
+
+      // Header controls
+      const header=document.createElement("div");
+      header.className="panel";
+      header.innerHTML = `
+        <div class="row stack">
+          <div class="row" style="gap:14px">
+            <label class="muted" for="wk_${kind}">Week ending</label>
+            <input id="wk_${kind}" type="date" value="${W.selDate}" />
+          </div>
+          <div class="row" style="gap:8px;flex:1 1 auto">
+            <input id="q_${kind}" placeholder="Search pool: NDC / Brand / GSN / HIC3 / MFR" style="min-width:320px" value="${W.search||""}" />
+            <button id="ref_${kind}" class="btn primary">Refresh</button>
+          </div>
+        </div>
+        <div class="muted">Auto-selects latest week with data on first load. If selected week has none, pick another date.</div>`;
+      root.appendChild(header);
+
+      // Groups
+      const groupsEl=document.createElement("div"); groupsEl.id="groups_"+kind;
+      const poolFiltered = filterByQuery(W.pool, ["ndc","brand","gsn","hic3","mfr"], W.search||"");
+      const master = kind==="fmt" ? state.fmtMaster : state.pdlMaster;
+      const grouped = groupByMatch(poolFiltered, master);
+      const order=["100% match","gsn match","brand match","no match"];
+
+      const hdr=document.createElement("div");
+      const countsLine = `(${order.map(k=>`${k.split(" ")[0]}: ${grouped[k].length}`).join(", ")})`;
+      hdr.className="muted"; hdr.style.padding="0 0 8px 0"; hdr.textContent=`${poolFiltered.length} new drugs ${countsLine}`;
+      groupsEl.appendChild(hdr);
+
+      order.forEach(key=>groupsEl.appendChild(groupPanel(kind, key, grouped[key], W, master)));
+      if(poolFiltered.length===0){
+        const empty=document.createElement("div");
+        empty.className="panel"; empty.innerHTML="<em>No new NDCs for this week ending. Try another date.</em>";
+        groupsEl.appendChild(empty);
+      }
+      root.appendChild(groupsEl);
+
+      // Reviewer A/B
+      const [rA, rB] = renderReviewTables(kind);
+      root.appendChild(rA);
+      root.appendChild(rB);
+
+      // Compare & Resolve
+      root.appendChild(renderCompareResolve(kind));
+
+      // Final Review
+      root.appendChild(renderFinal(kind));
+
+      // Wire events
+      $("#wk_"+kind,header).addEventListener("change",e=>{ W.selDate=e.target.value; computeWeeklyPool(kind); render(); });
+      $("#ref_"+kind,header).onclick=()=>{ W.search=$("#q_"+kind,header).value; computeWeeklyPool(kind); render(); };
+
+      return root;
+    }
+
+    /***********************************************************************
+     * TAB: Config
+     **********************************************************************/
+    function renderConfig(){
+      const root=document.createElement("div");
+      root.innerHTML=`
+        <div class="panel">
+          <div class="row"><strong>Config Values</strong><span class="hint">Key • Value • Description</span></div>
+          <div class="divider"></div>
+          <div class="row">
+            <input id="name" placeholder="key" style="min-width:240px" />
+            <input id="value" placeholder="value" />
+            <input id="desc" placeholder="description" style="min-width:260px" />
+            <button id="add" class="btn success">Add</button>
+            <button id="dl" class="btn">Download CSV</button>
+          </div>
+          <div class="divider"></div>
+          <div class="scroll">
+            <table class="table"><thead><tr><th>Key</th><th>Value</th><th>Description</th></tr></thead><tbody id="tb"></tbody></table>
+          </div>
+        </div>`;
+      const tb=$("#tb",root);
+      const paint = () => { tb.innerHTML=""; state.configs.forEach(r=>{ const tr=document.createElement("tr"); tr.innerHTML=`<td class="code">${r.name}</td><td>${r.value}</td><td>${r.desc}</td>`; tb.appendChild(tr); }); };
+      paint();
+      $("#add",root).onclick=()=>{ const name=$("#name",root).value.trim(), value=$("#value",root).value.trim(), desc=$("#desc",root).value.trim(); if(!name||!value){toast("Key and Value required");return;} state.configs.push({name,value,desc}); paint(); };
+      $("#dl",root).onclick=()=>dl("config_values.csv",csv(state.configs));
+      return root;
+    }
+
+    /***********************************************************************
+     * RENDER main
+     **********************************************************************/
+    function render(){
+      // update header controls
+      $("#tenant").value=state.tenant;
+      localStorage.setItem("fmt_tenant", state.tenant);
+
+      renderTabs();
+      const app=$("#app"); app.innerHTML="";
+      let node;
+      switch(state.activeTab){
+        case 0: node=renderFDB(); break;
+        case 1: node=renderFmtMaster(); break;
+        case 2: node=renderPdlCoding(); break;
+        case 3: node=renderWeekly("fmt"); break;
+        case 4: node=renderWeekly("pdl"); break;
+        case 5: node=renderConfig(); break;
+        default: node=document.createTextNode("Unknown tab");
+      }
+      app.appendChild(node);
+      // focus main when switching
+      app.focus();
+    }
+
+    // init
+    seed();
+    render();
+    $("#tenant").addEventListener("change", e=>{ state.tenant=e.target.value; render(); });
+
+  </script>
+</body>
+</html>
