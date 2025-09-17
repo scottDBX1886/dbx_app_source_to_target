@@ -255,41 +255,57 @@ export function FDBSearch() {
         </div>
       </div>
 
-      {/* NDC Details Popup */}
+      {/* NDC Details Drawer - Right-side slide-in (matching prototype) */}
       {showPopup && selectedRecord && (
-        <div className="popup-overlay" onClick={closePopup}>
-          <div className="popup-window" onClick={(e) => e.stopPropagation()}>
-            <div className="popup-header">
-              <h3>NDC Details: {selectedRecord.ndc}</h3>
-              <div className="popup-actions">
-                <button className="btn ghost" onClick={copyJson}>Copy JSON</button>
-                <button className="btn ghost" onClick={downloadCsvFromPopup}>Download CSV</button>
-                <button className="btn-close" onClick={closePopup}>×</button>
+        <>
+          <div className="drawer-backdrop show" onClick={closePopup} aria-hidden="false"></div>
+          <aside className="drawer open" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+            <div style={{ 
+              position: 'sticky', 
+              top: 0, 
+              zIndex: 2, 
+              background: 'linear-gradient(180deg,#0b1670,#0b1455)', 
+              borderBottom: '1px solid #2a3c74', 
+              padding: '10px 14px', 
+              display: 'flex', 
+              alignItems: 'center', 
+              gap: '10px' 
+            }}>
+              <div style={{ flex: '1 1 auto' }}>
+                <h2 id="drawerTitle" style={{ margin: 0, fontSize: '18px' }}>NDC Details</h2>
+                <div className="muted">Aggregated from "~20 FDB files" • View-only</div>
+              </div>
+              <button className="btn ghost" onClick={closePopup} aria-label="Close drawer">✕</button>
+            </div>
+            <div style={{ padding: '14px' }}>
+              <div id="drawerBody">
+                {Object.entries(selectedRecord)
+                  .filter(([key]) => !['ndc', 'tenant', 'data_source', 'user_email'].includes(key))
+                  .map(([sectionName, sectionData]) => (
+                    <div key={sectionName} className="sec">
+                      <h4>{sectionName}</h4>
+                      <div className="kv">
+                        {typeof sectionData === 'object' && sectionData !== null &&
+                          Object.entries(sectionData).map(([key, value]) => (
+                            <React.Fragment key={key}>
+                              <div className="muted">{key}</div>
+                              <div className="code">{String(value)}</div>
+                            </React.Fragment>
+                          ))
+                        }
+                      </div>
+                    </div>
+                  ))
+                }
+              </div>
+              <div className="divider"></div>
+              <div className="row right">
+                <button className="btn" onClick={copyJson}>Copy JSON</button>
+                <button className="btn" onClick={downloadCsvFromPopup}>Download CSV</button>
               </div>
             </div>
-            <div className="popup-content scroll">
-              <div className="muted mb-2">Aggregated from "~20 FDB files" • View-only</div>
-              {Object.entries(selectedRecord)
-                .filter(([key]) => !['ndc', 'tenant', 'data_source', 'user_email'].includes(key))
-                .map(([sectionName, sectionData]) => (
-                  <div key={sectionName} className="sec">
-                    <h4>{sectionName}</h4>
-                    <div className="kv">
-                      {typeof sectionData === 'object' && sectionData !== null &&
-                        Object.entries(sectionData).map(([key, value]) => (
-                          <React.Fragment key={key}>
-                            <div className="muted">{key}</div>
-                            <div className="code">{String(value)}</div>
-                          </React.Fragment>
-                        ))
-                      }
-                    </div>
-                  </div>
-                ))
-              }
-            </div>
-          </div>
-        </div>
+          </aside>
+        </>
       )}
     </div>
   );

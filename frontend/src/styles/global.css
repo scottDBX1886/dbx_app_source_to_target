@@ -229,6 +229,71 @@ a:focus {
   outline-offset: 2px;
 }
 
+/* Right-side drawer (matching prototype) */
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  z-index: 1500;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 520px;
+  max-width: 96vw;
+  background: linear-gradient(180deg, #0a1140, #0b154f);
+  border-left: 2px solid var(--accent);
+  transform: translateX(100%);
+  transition: transform 0.2s ease;
+  box-shadow: 0 0 0 1px rgba(61, 91, 209, 0.35), 0 18px 48px rgba(0, 0, 0, 0.55);
+  padding: 0;
+  overflow: auto;
+  color: var(--text);
+  z-index: 1600;
+}
+
+.drawer.open {
+  transform: translateX(0);
+}
+
+.drawer-backdrop.show {
+  display: block;
+}
+
+/* Section styling for drawer content */
+.sec h4 {
+  margin: 10px 0 8px;
+}
+
+.sec {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid #223061;
+  border-radius: 12px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.kv {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.kv > div:nth-child(4n+1),
+.kv > div:nth-child(4n+2) {
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.kv .muted {
+  color: #c1cdee;
+}
+
 /* Form Elements */
 label {
   font-size: 12px;
