@@ -309,8 +309,8 @@ async def get_fdb_details(
                 "GSN Desc": str(record['gsn_desc']) if pd.notna(record['gsn_desc']) else ""
             },
             "Pricing & Flags": {
-                "Federally Rebateable": record['rebate'] if pd.notna(record['rebate']) else False,
-                "MFT Obsolete": record['obsolete'] if pd.notna(record['obsolete']) else False,
+                "Federally Rebateable": bool(record['rebate']) if pd.notna(record['rebate']) else False,
+                "MFT Obsolete": bool(record['obsolete']) if pd.notna(record['obsolete']) else False,
                 "MFR": str(record['mfr']) if pd.notna(record['mfr']) else ""
             },
             "Packaging & Origin": {
@@ -325,7 +325,7 @@ async def get_fdb_details(
             details["Formulary"] = {
                 "Status": str(record['formulary_status']),
                 "Tier": int(record['tier']) if pd.notna(record['tier']) else None,
-                "Prior Auth Required": record['pa_required'] if pd.notna(record['pa_required']) else False,
+                "Prior Auth Required": bool(record['pa_required']) if pd.notna(record['pa_required']) else False,
                 "Quantity Limits": str(record['ql_limits']) if pd.notna(record['ql_limits']) and record['ql_limits'] else "None"
             }
         
@@ -336,6 +336,7 @@ async def get_fdb_details(
     except Exception as e:
         logger.error(f"Error getting FDB details for NDC {ndc}: {e}")
         raise HTTPException(status_code=500, detail=f"Failed to get details: {str(e)}")
+
 
 @router.get("/export")
 async def export_fdb_data(
