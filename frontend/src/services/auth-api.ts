@@ -127,6 +127,11 @@ class AuthApiService {
       };
     }
   }
+
+  // Debug SCIM API call - shows exactly what Databricks returns
+  async getScimDebugInfo(): Promise<any> {
+    return this.fetchApi<any>('/debug/scim-raw');
+  }
 }
 
 export const authApi = new AuthApiService();

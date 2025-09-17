@@ -79,87 +79,63 @@ async def get_real_user_info(databricks_host: str, user_token: str, email: str =
 
 @router.get("/health/user-info")
 async def get_user_info(request: Request):
-    """Get user information with authentication status"""
+    """Get user information with authentication status - ORIGINAL WORKING VERSION"""
     headers = dict(request.headers)
     
     # Get Databricks forwarded headers
     email = headers.get("x-forwarded-email")
     user_token = headers.get("x-forwarded-access-token") 
-    databricks_host = request.url.hostname
+    databricks_host = headers.get("x-forwarded-host")
     
-    # Build full databricks host URL
-    if databricks_host:
-        databricks_host = f"https://{databricks_host}"
+    if not databricks_host or not databricks_host.startswith("http"):
+        databricks_host = f"https://{databricks_host}" if databricks_host else None
     
-    # Simple return for missing auth
-    if not user_token or not email:
+    # Debug info
+    debug_data = {
+        "email": email,
+        "has_user_token": bool(user_token),
+        "token_preview": user_token[:20] + "..." if user_token else None,
+        "databricks_host": databricks_host
+    }
+    
+    if not user_token:
         return {
             "user_info": {
                 "user_id": None,
                 "email": email,
-                "display_name": email or "Unknown",
-                "groups": []
+                "display_name": None,
+                "groups": ["no-token"]
             },
             "authenticated": False,
-            "app": "Gainwell Main App"
+            "app": "Gainwell Main App",
+            "debug_info": debug_data
         }
     
-    # Try to get user info from Databricks API
-    try:
-        headers_api = {"Authorization": f"Bearer {user_token}"}
-        
-        async with httpx.AsyncClient() as client:
-            response = await client.get(
-                f"{databricks_host}/api/2.0/preview/scim/v2/Me",
-                headers=headers_api,
-                timeout=10.0
-            )
-            
-            if response.status_code == 200:
-                user_data = response.json()
-                
-                # Extract groups
-                groups = []
-                if "groups" in user_data:
-                    groups = [group.get("display", "Unknown Group") for group in user_data["groups"]]
-                
-                return {
-                    "user_info": {
-                        "user_id": user_data.get("id"),
-                        "email": user_data.get("emails", [{}])[0].get("value", email),
-                        "display_name": user_data.get("displayName", email),
-                        "user_name": user_data.get("userName", email),
-                        "groups": groups
-                    },
-                    "authenticated": True,
-                    "app": "Gainwell Main App"
-                }
-            else:
-                # API call failed, return basic info
-                return {
-                    "user_info": {
-                        "user_id": None,
-                        "email": email,
-                        "display_name": email,
-                        "groups": ["api-error"]
-                    },
-                    "authenticated": True,
-                    "app": "Gainwell Main App",
-                    "error": f"API returned {response.status_code}"
-                }
-                
-    except Exception as e:
-        logger.error(f"Auth API error: {e}")
+    # Get real user data from Databricks - ORIGINAL WORKING APPROACH
+    result = await get_real_user_info(databricks_host, user_token, email)
+    
+    if result["success"]:
+        return {
+            "user_info": result["user_info"],
+            "authenticated": True,
+            "app": "Gainwell Main App",
+            "has_user_token": True,
+            "authorization_type": "hybrid",
+            "data_source": "databricks_api",
+            "debug_info": result.get("debug_info", {})
+        }
+    else:
         return {
             "user_info": {
                 "user_id": None,
                 "email": email,
-                "display_name": email,
-                "groups": ["exception"]
+                "display_name": None,
+                "groups": ["api-error"]
             },
-            "authenticated": True,
+            "authenticated": False,
             "app": "Gainwell Main App",
-            "error": str(e)
+            "error": result["error"],
+            "debug_info": result.get("debug_info", {})
         }
 
 @router.get("/debug/headers")
@@ -171,20 +147,61 @@ async def debug_headers(request: Request):
         "url": str(request.url)
     }
 
-@router.get("/debug/simple-user")
-async def debug_simple_user(request: Request):
-    """Simple debug endpoint to check user headers only"""
+@router.get("/debug/scim-raw")
+async def debug_scim_raw(request: Request):
+    """Debug: Show exactly what SCIM API returns"""
     headers = dict(request.headers)
     
-    return {
-        "status": "debug_working",
-        "x_forwarded_email": headers.get("x-forwarded-email"),
-        "x_forwarded_access_token": "present" if headers.get("x-forwarded-access-token") else "missing",
-        "x_forwarded_host": headers.get("x-forwarded-host"),
-        "x_databricks_user_id": headers.get("x-databricks-user-id"),
-        "user_agent": headers.get("user-agent"),
-        "all_x_headers": {k: v for k, v in headers.items() if k.lower().startswith('x-')}
+    email = headers.get("x-forwarded-email")
+    user_token = headers.get("x-forwarded-access-token") 
+    databricks_host = headers.get("x-forwarded-host")
+    
+    if not databricks_host or not databricks_host.startswith("http"):
+        databricks_host = f"https://{databricks_host}" if databricks_host else None
+    
+    if not user_token:
+        return {"error": "No user token"}
+    
+    result = {
+        "databricks_host": databricks_host,
+        "email": email,
+        "scim_url": f"{databricks_host}/api/2.0/preview/scim/v2/Me"
     }
+    
+    try:
+        async with httpx.AsyncClient() as client:
+            response = await client.get(
+                f"{databricks_host}/api/2.0/preview/scim/v2/Me",
+                headers={"Authorization": f"Bearer {user_token}", "Content-Type": "application/json"},
+                timeout=10.0
+            )
+            
+            result["status_code"] = response.status_code
+            result["response_headers"] = dict(response.headers)
+            
+            if response.status_code == 200:
+                user_data = response.json()
+                result["response_keys"] = list(user_data.keys())
+                result["full_response"] = user_data
+                
+                # Check groups specifically
+                if "groups" in user_data:
+                    result["groups_found"] = True
+                    result["groups_count"] = len(user_data["groups"])
+                    result["groups_raw"] = user_data["groups"]
+                else:
+                    result["groups_found"] = False
+                    result["groups_count"] = 0
+                
+            else:
+                result["error"] = f"API returned {response.status_code}"
+                result["response_text"] = response.text
+                
+    except Exception as e:
+        result["exception"] = str(e)
+        result["exception_type"] = type(e).__name__
+    
+    return result
 
 @router.get("/debug/test-api")
 async def debug_api_call(request: Request):
