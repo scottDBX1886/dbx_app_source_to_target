@@ -44,8 +44,17 @@ async def debug_volume_access():
     # Check different volume path formats
     paths_to_check = [
         "/Volumes/demo/gainwell/fdb_data",
-        "/dbfs/Volumes/demo/gainwell/fdb_data", 
-        "fdb_core_drugs.csv"  # Check if files are in current directory
+        "/dbfs/Volumes/demo/gainwell/fdb_data",
+        "/Volumes/demo/gainwell/fdb_data/",  # With trailing slash
+        "/dbfs/Volumes/demo/gainwell/fdb_data/",  # With trailing slash
+        "fdb_core_drugs.csv",  # Check if files are in current directory
+        "sample_fdb_data/fdb_core_drugs.csv",  # Check if sample data dir exists
+        "/app/python/source_code/sample_fdb_data/fdb_core_drugs.csv",  # Full path to sample data
+        "/Volumes/demo/",  # Check if demo catalog exists
+        "/Volumes/",  # Check if Volumes root exists
+        "/dbfs/",  # Check if dbfs exists
+        "/Volume/demo/gainwell/fdb_data",  # Alternative Volume path (singular)
+        "/volume/demo/gainwell/fdb_data",  # Lowercase variant
     ]
     
     for path in paths_to_check:
@@ -89,18 +98,26 @@ async def debug_volume_access():
 # Volume configuration - Update these paths for your environment
 VOLUME_BASE_PATH = "/Volumes/demo/gainwell/fdb_data"
 FALLBACK_VOLUME_PATH = "/dbfs/Volumes/demo/gainwell/fdb_data"  # Alternative path format
+SAMPLE_DATA_PATH = "sample_fdb_data"  # Local sample data fallback
 
 def get_volume_path(filename: str) -> str:
-    """Get the correct volume path for a file"""
+    """Get the correct volume path for a file, with sample data fallback"""
     primary_path = f"{VOLUME_BASE_PATH}/{filename}"
     fallback_path = f"{FALLBACK_VOLUME_PATH}/{filename}"
+    sample_path = f"{SAMPLE_DATA_PATH}/{filename}"
     
-    # Try primary path first
+    # Try volume paths first
     if os.path.exists(primary_path):
+        logger.info(f"Using primary volume path: {primary_path}")
         return primary_path
     elif os.path.exists(fallback_path):
+        logger.info(f"Using fallback volume path: {fallback_path}")
         return fallback_path
+    elif os.path.exists(sample_path):
+        logger.warning(f"Volume not found, using sample data: {sample_path}")
+        return sample_path
     else:
+        logger.error(f"No valid path found for {filename}. Tried: {primary_path}, {fallback_path}, {sample_path}")
         # Return primary path and let pandas handle the error
         return primary_path
 
