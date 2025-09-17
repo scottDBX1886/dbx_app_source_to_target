@@ -41,15 +41,15 @@ export interface FDBDetailsResponse {
   ndc: string;
   tenant: string;
   data_source: string;
-  sections: {
-    Core: { [key: string]: any };
-    Classification: { [key: string]: any };
-    "Pricing & Flags": { [key: string]: any };
-    "Packaging & Origin": { [key: string]: any };
-    Formulary?: { [key: string]: any };
-    "Pricing Details"?: { [key: string]: any };
-    "Regional Info"?: { [key: string]: any };
-  };
+  user_email?: string;
+  // Sections are now direct properties, not nested under "sections"
+  Core: { [key: string]: any };
+  Classification: { [key: string]: any };
+  "Pricing & Flags": { [key: string]: any };
+  "Packaging & Origin": { [key: string]: any };
+  Formulary?: { [key: string]: any };
+  "Pricing Details"?: { [key: string]: any };
+  "Regional Info"?: { [key: string]: any };
 }
 
 class FDBApiService {

@@ -80,30 +80,13 @@ export function FDBSearch() {
     }
   }, [showPopup]);
 
-  const exportData = async (format: 'csv' | 'json') => {
-    try {
-      const blob = await fdbApi.exportData(tenant, format, searchQuery || undefined);
-      
-      // Create download link
-      const url = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.style.display = 'none';
-      a.href = url;
-      a.download = `fdb_export_${tenant.toLowerCase()}_${new Date().toISOString().slice(0,10)}.${format}`;
-      document.body.appendChild(a);
-      a.click();
-      window.URL.revokeObjectURL(url);
-      document.body.removeChild(a);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Export failed');
-    }
-  };
 
   // Copy popup data to clipboard
   const copyJson = async () => {
     if (!selectedRecord) return;
     try {
-      await navigator.clipboard.writeText(JSON.stringify(selectedRecord.sections, null, 2));
+      const { ndc, tenant, data_source, user_email, ...sections } = selectedRecord;
+      await navigator.clipboard.writeText(JSON.stringify(sections, null, 2));
       alert("Copied JSON");
     } catch (e) {
       alert("Clipboard failed");
@@ -113,10 +96,14 @@ export function FDBSearch() {
   const downloadCsvFromPopup = async () => {
     if (!selectedRecord) return;
     
+    const { ndc, tenant, data_source, user_email, ...sections } = selectedRecord;
+    
     const flatData = [];
-    for (const [section, kv] of Object.entries(selectedRecord.sections)) {
-      for (const [key, value] of Object.entries(kv)) {
-        flatData.push({ section, field: key, value: String(value) });
+    for (const [section, kv] of Object.entries(sections)) {
+      if (typeof kv === 'object' && kv !== null) {
+        for (const [key, value] of Object.entries(kv)) {
+          flatData.push({ section, field: key, value: String(value) });
+        }
       }
     }
 
@@ -161,12 +148,7 @@ export function FDBSearch() {
           <button className="btn primary" onClick={handleSearch} disabled={loading}>
             {loading ? 'Searching...' : 'Search'}
           </button>
-          <button className="btn" onClick={() => exportData('csv')} disabled={loading || records.length === 0}>
-            Export CSV
-          </button>
-          <button className="btn" onClick={() => exportData('json')} disabled={loading || records.length === 0}>
-            Export JSON
-          </button>
+          <span className="hint">View-only; NDC opens details drawer</span>
         </div>
         
         {/* Error Display */}
@@ -192,46 +174,42 @@ export function FDBSearch() {
               <thead>
                 <tr>
                   <th>NDC</th>
+                  <th>GSN</th>
                   <th>Brand</th>
                   <th>Generic</th>
                   <th>Rx/OTC</th>
-                  <th>Pkg Size</th>
+                  <th>Package Size</th>
                   <th>HIC3</th>
-                  <th>Manufacturer</th>
+                  <th>HICL</th>
+                  <th>DCC</th>
+                  <th>MFR</th>
                   <th>Load Date</th>
-                  {records.some(r => r.formulary_status) && <th>Formulary</th>}
-                  <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
                 {records.map((record) => (
                   <tr key={record.ndc}>
-                    <td><code>{record.ndc}</code></td>
+                    <td>
+                      <code>
+                        <a 
+                          href="#" 
+                          className="ndc-link"
+                          onClick={(e) => { e.preventDefault(); openPopup(record.ndc); }}
+                        >
+                          {record.ndc}
+                        </a>
+                      </code>
+                    </td>
+                    <td>{record.gsn}</td>
                     <td>{record.brand}</td>
                     <td>{record.generic}</td>
                     <td>{record.rx_otc}</td>
                     <td>{record.pkg_size}</td>
                     <td>{record.hic3}</td>
+                    <td>{record.hicl}</td>
+                    <td>{record.dcc}</td>
                     <td>{record.mfr}</td>
                     <td>{record.load_date}</td>
-                    {records.some(r => r.formulary_status) && (
-                      <td>
-                        {record.formulary_status && (
-                          <span className={`status ${record.formulary_status.toLowerCase().replace(' ', '-')}`}>
-                            {record.formulary_status}
-                          </span>
-                        )}
-                      </td>
-                    )}
-                    <td>
-                      <button 
-                        className="btn ghost" 
-                        style={{ padding: '4px 8px', fontSize: '12px' }}
-                        onClick={() => openPopup(record.ndc)}
-                      >
-                        View Details
-                      </button>
-                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -290,20 +268,25 @@ export function FDBSearch() {
               </div>
             </div>
             <div className="popup-content scroll">
-              <div className="muted mb-2">Source: {selectedRecord.data_source}</div>
-              {Object.entries(selectedRecord.sections).map(([sectionName, sectionData]) => (
-                <div key={sectionName} className="sec">
-                  <h4>{sectionName}</h4>
-                  <div className="kv">
-                    {Object.entries(sectionData).map(([key, value]) => (
-                      <React.Fragment key={key}>
-                        <div className="muted">{key}</div>
-                        <div>{String(value)}</div>
-                      </React.Fragment>
-                    ))}
+              <div className="muted mb-2">Aggregated from "~20 FDB files" • View-only</div>
+              {Object.entries(selectedRecord)
+                .filter(([key]) => !['ndc', 'tenant', 'data_source', 'user_email'].includes(key))
+                .map(([sectionName, sectionData]) => (
+                  <div key={sectionName} className="sec">
+                    <h4>{sectionName}</h4>
+                    <div className="kv">
+                      {typeof sectionData === 'object' && sectionData !== null &&
+                        Object.entries(sectionData).map(([key, value]) => (
+                          <React.Fragment key={key}>
+                            <div className="muted">{key}</div>
+                            <div className="code">{String(value)}</div>
+                          </React.Fragment>
+                        ))
+                      }
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))
+              }
             </div>
           </div>
         </div>
