@@ -167,11 +167,14 @@ async def debug_volume_permissions(request: Request):
             "error_type": type(e).__name__
         }
 
-@router.get("/debug-files-api")
-async def debug_files_api(request: Request):
-    """Test Files API access with detailed error handling"""
+@router.get("/debug-sdk-access")
+async def debug_sdk_access(request: Request):
+    """Test Databricks SDK access with detailed error handling"""
     try:
-        import httpx
+        from databricks.sdk import WorkspaceClient
+        from databricks.sdk.core import Config
+        import io
+        import pandas as pd
         
         # Get user token
         user_token = request.headers.get("X-Forwarded-Access-Token")
@@ -182,47 +185,38 @@ async def debug_files_api(request: Request):
                 "user_token_present": False
             }
         
-        # Get workspace URL
-        host = request.headers.get("host", "").lower()
-        
-        if "dbc-" in host:
-            workspace_url = f"https://{host}"
-        else:
-            workspace_url = request.headers.get("x-forwarded-proto", "https") + "://" + host
-            
         debug_info = {
             "user_token_present": True,
-            "workspace_url": workspace_url,
-            "host": host,
-            "api_test_results": {}
+            "sdk_test_results": {}
         }
         
-        headers = {
-            "Authorization": f"Bearer {user_token}",
-            "Content-Type": "application/json"
-        }
-        
-        # Test Files API endpoint
+        # Test Databricks SDK
         test_file_path = "/Volumes/demo/gainwell/fdb_data/fdb_core_drugs.csv"
-        api_url = f"{workspace_url}/api/2.0/fs/files{test_file_path}"
         
-        debug_info["api_url"] = api_url
-        
-        async with httpx.AsyncClient(timeout=10.0) as client:
-            try:
-                response = await client.get(api_url, headers=headers)
-                debug_info["api_test_results"] = {
-                    "status_code": response.status_code,
-                    "headers": dict(response.headers),
-                    "content_length": len(response.text) if response.status_code == 200 else 0,
-                    "error_message": response.text if response.status_code != 200 else None,
-                    "first_100_chars": response.text[:100] if response.status_code == 200 else None
-                }
-            except Exception as e:
-                debug_info["api_test_results"] = {
-                    "exception": str(e),
-                    "exception_type": type(e).__name__
-                }
+        try:
+            # Initialize WorkspaceClient with user token
+            config = Config(token=user_token)
+            w = WorkspaceClient(config=config)
+            
+            debug_info["sdk_test_results"]["workspace_client_created"] = True
+            debug_info["sdk_test_results"]["test_file_path"] = test_file_path
+            
+            # Try to download the file
+            file_content = w.files.download(test_file_path)
+            
+            debug_info["sdk_test_results"]["download_success"] = True
+            debug_info["sdk_test_results"]["content_length"] = len(file_content)
+            
+            # Try to parse as CSV
+            df = pd.read_csv(io.BytesIO(file_content))
+            debug_info["sdk_test_results"]["csv_parse_success"] = True
+            debug_info["sdk_test_results"]["csv_rows"] = len(df)
+            debug_info["sdk_test_results"]["csv_columns"] = list(df.columns)
+            debug_info["sdk_test_results"]["first_few_rows"] = df.head(3).to_dict('records')
+            
+        except Exception as e:
+            debug_info["sdk_test_results"]["exception"] = str(e)
+            debug_info["sdk_test_results"]["exception_type"] = type(e).__name__
         
         return debug_info
         
@@ -236,99 +230,76 @@ async def debug_files_api(request: Request):
 # Volume configuration
 VOLUME_BASE_PATH = "/Volumes/demo/gainwell/fdb_data"
 
-async def load_fdb_data_via_api(tenant: str = "MASTER", user_token: str = None) -> pd.DataFrame:
+async def load_fdb_data_via_sdk(tenant: str = "MASTER", user_token: str = None) -> pd.DataFrame:
     """
-    Load core FDB data with tenant-specific formulary filtering using Databricks Files API
+    Load core FDB data with tenant-specific formulary filtering using Databricks SDK
     """
     try:
         import pandas as pd
-        import httpx
         import io
+        from databricks.sdk import WorkspaceClient
+        from databricks.sdk.core import Config
         
         if not user_token:
             raise HTTPException(
                 status_code=401, 
-                detail="User token required for volume access via Files API"
+                detail="User token required for volume access via Databricks SDK"
             )
         
-        # Get workspace URL from request headers - Databricks Apps run in the same workspace
-        host = request.headers.get("host", "").lower()
+        logger.info("Initializing Databricks WorkspaceClient with user token")
         
-        # Extract workspace URL from the request context
-        if "dbc-" in host:
-            workspace_url = f"https://{host}"
-        else:
-            # Fallback: try to determine from request headers
-            workspace_url = request.headers.get("x-forwarded-proto", "https") + "://" + host
+        # Initialize WorkspaceClient with user token
+        # The SDK will automatically detect the workspace from the environment
+        config = Config(token=user_token)
+        w = WorkspaceClient(config=config)
         
-        headers = {
-            "Authorization": f"Bearer {user_token}",
-            "Content-Type": "application/json"
-        }
+        # Load core drug data from volume using Databricks SDK Files API
+        core_file_path = "/Volumes/demo/gainwell/fdb_data/fdb_core_drugs.csv"
+        logger.info(f"Loading core FDB data from volume via SDK: {core_file_path}")
         
-        async with httpx.AsyncClient(timeout=30.0) as client:
-            # Load core drug data from volume using Files API
-            core_file_path = "/Volumes/demo/gainwell/fdb_data/fdb_core_drugs.csv"
-            logger.info(f"Loading core FDB data from volume via API: {core_file_path}")
-            
-            # Use Files API to download the CSV
-            response = await client.get(
-                f"{workspace_url}/api/2.0/fs/files{core_file_path}",
-                headers=headers
+        try:
+            # Use WorkspaceClient Files API to read the CSV
+            file_content = w.files.download(core_file_path)
+            df_core = pd.read_csv(io.BytesIO(file_content))
+            logger.info(f"Successfully loaded {len(df_core)} core records from volume via SDK")
+        except Exception as e:
+            logger.error(f"Failed to load core file via SDK: {e}")
+            raise HTTPException(
+                status_code=500,
+                detail=f"Failed to access core file via SDK: {str(e)}"
             )
+        
+        # Load tenant-specific formulary data to create different datasets per tenant
+        if tenant != "MASTER":
+            tenant_lower = tenant.lower()
+            formulary_file_path = f"/Volumes/demo/gainwell/fdb_data/fdb_formulary_{tenant_lower}.csv"
             
-            if response.status_code != 200:
-                logger.error(f"Failed to load core file: {response.status_code} - {response.text}")
-                raise HTTPException(
-                    status_code=response.status_code,
-                    detail=f"Failed to access core file: {response.text}"
-                )
+            logger.info(f"Loading formulary data for {tenant} from: {formulary_file_path}")
             
-            # Parse CSV content
-            df_core = pd.read_csv(io.StringIO(response.text))
-            logger.info(f"Successfully loaded {len(df_core)} core records from volume via API")
+            try:
+                formulary_content = w.files.download(formulary_file_path)
+                df_formulary = pd.read_csv(io.BytesIO(formulary_content))
+                logger.info(f"Loaded {len(df_formulary)} formulary records for {tenant}")
+                
+                # INNER JOIN to get only drugs that have formulary entries for this tenant
+                df_merged = pd.merge(df_core, df_formulary, on='ndc', how='inner')
+                logger.info(f"After tenant filtering: {len(df_merged)} records for {tenant} (was {len(df_core)} core records)")
+                
+                return df_merged
+            except Exception as e:
+                logger.warning(f"Could not load formulary data for {tenant}: {e}")
+                # Fall back to core data for this tenant
+                return df_core
+        
+        # For MASTER, return all core data
+        logger.info(f"Using all core data for MASTER tenant: {len(df_core)} records")
+        return df_core
             
-            # Load tenant-specific formulary data to create different datasets per tenant
-            if tenant != "MASTER":
-                tenant_lower = tenant.lower()
-                formulary_file_path = f"/Volumes/demo/gainwell/fdb_data/fdb_formulary_{tenant_lower}.csv"
-                
-                logger.info(f"Loading formulary data for {tenant} from: {formulary_file_path}")
-                
-                formulary_response = await client.get(
-                    f"{workspace_url}/api/2.0/fs/files{formulary_file_path}",
-                    headers=headers
-                )
-                
-                if formulary_response.status_code == 200:
-                    df_formulary = pd.read_csv(io.StringIO(formulary_response.text))
-                    logger.info(f"Loaded {len(df_formulary)} formulary records for {tenant}")
-                    
-                    # INNER JOIN to get only drugs that have formulary entries for this tenant
-                    df_merged = pd.merge(df_core, df_formulary, on='ndc', how='inner')
-                    logger.info(f"After tenant filtering: {len(df_merged)} records for {tenant} (was {len(df_core)} core records)")
-                    
-                    return df_merged
-                else:
-                    logger.warning(f"Could not load formulary data for {tenant}: {formulary_response.status_code} - {formulary_response.text}")
-                    # Fall back to core data for this tenant
-                    return df_core
-            
-            # For MASTER, return all core data
-            logger.info(f"Using all core data for MASTER tenant: {len(df_core)} records")
-            return df_core
-                
-    except httpx.HTTPError as e:
-        logger.error(f"HTTP error accessing volume via API: {e}")
-        raise HTTPException(
-            status_code=500, 
-            detail=f"Network error accessing volume: {str(e)}"
-        )
     except Exception as e:
-        logger.error(f"Failed to load FDB data from volume via API: {e}")
+        logger.error(f"Failed to load FDB data from volume via SDK: {e}")
         raise HTTPException(
             status_code=500, 
-            detail=f"Volume data access via API failed: {str(e)}"
+            detail=f"Volume data access via SDK failed: {str(e)}"
         )
 
 def search_dataframe(df, query: str):
@@ -379,7 +350,7 @@ async def search_fdb_records(
             )
         
         # Load data for the specified tenant using Files API
-        df = await load_fdb_data_via_api(tenant, user_token)
+        df = await load_fdb_data_via_sdk(tenant, user_token)
         logger.info(f"Loaded {len(df)} records for tenant {tenant}")
         
         # Apply search filter
@@ -435,8 +406,8 @@ async def search_fdb_records(
             "query": query,
             "limit": limit,
             "total_found": len(records),
-            "data_source": f"Databricks Files API: {VOLUME_BASE_PATH}",
-            "authentication": "user_forwarding",
+            "data_source": f"Databricks SDK: {VOLUME_BASE_PATH}",
+            "authentication": "databricks_sdk",
             "records": records
         }
         
@@ -476,7 +447,7 @@ async def get_fdb_details(
             )
         
         # Load core data using Files API
-        df = await load_fdb_data_via_api(tenant, user_token)
+        df = await load_fdb_data_via_sdk(tenant, user_token)
         
         # Find the specific NDC
         record = df[df['ndc'].astype(str) == ndc]
@@ -485,79 +456,58 @@ async def get_fdb_details(
         
         record = record.iloc[0]  # Get first (should be only) match
         
-        # Try to load additional data files for enrichment using Files API
+        # Try to load additional data files for enrichment using Databricks SDK
         additional_data = {}
         
-        import httpx
         import io
+        from databricks.sdk import WorkspaceClient
+        from databricks.sdk.core import Config
         
-        # Get workspace URL from request headers - Databricks Apps run in the same workspace  
-        host = request.headers.get("host", "").lower()
+        # Initialize WorkspaceClient with user token  
+        config = Config(token=user_token)
+        w = WorkspaceClient(config=config)
         
-        # Extract workspace URL from the request context
-        if "dbc-" in host:
-            workspace_url = f"https://{host}"
-        else:
-            # Fallback: try to determine from request headers
-            workspace_url = request.headers.get("x-forwarded-proto", "https") + "://" + host
-            
-        headers = {
-            "Authorization": f"Bearer {user_token}",
-            "Content-Type": "application/json"
-        }
+        # Try to load pricing data
+        try:
+            pricing_file_path = f"{VOLUME_BASE_PATH}/fdb_pricing.csv"
+            pricing_content = w.files.download(pricing_file_path)
+            df_pricing = pd.read_csv(io.BytesIO(pricing_content))
+            pricing_record = df_pricing[df_pricing['ndc'].astype(str) == ndc]
+            if not pricing_record.empty:
+                pricing = pricing_record.iloc[0]
+                additional_data["pricing"] = {
+                    "awp": float(pricing['awp']) if pd.notna(pricing['awp']) else None,
+                    "wac": float(pricing['wac']) if pd.notna(pricing['wac']) else None,
+                    "nadac": float(pricing['nadac']) if pd.notna(pricing['nadac']) else None,
+                    "federal_rebate": float(pricing['federal_rebate']) if pd.notna(pricing['federal_rebate']) else None,
+                    "state_rebate": float(pricing['state_rebate']) if pd.notna(pricing['state_rebate']) else None,
+                }
+        except Exception as e:
+            logger.warning(f"Could not load pricing data for NDC {ndc}: {e}")
         
-        async with httpx.AsyncClient(timeout=30.0) as client:
-            # Try to load pricing data
-            try:
-                pricing_file_path = f"{VOLUME_BASE_PATH}/fdb_pricing.csv"
-                pricing_response = await client.get(
-                    f"{workspace_url}/api/2.0/fs/files{pricing_file_path}",
-                    headers=headers
-                )
-                
-                if pricing_response.status_code == 200:
-                    df_pricing = pd.read_csv(io.StringIO(pricing_response.text))
-                    pricing_record = df_pricing[df_pricing['ndc'].astype(str) == ndc]
-                    if not pricing_record.empty:
-                        pricing = pricing_record.iloc[0]
-                        additional_data["pricing"] = {
-                            "awp": float(pricing['awp']) if pd.notna(pricing['awp']) else None,
-                            "wac": float(pricing['wac']) if pd.notna(pricing['wac']) else None,
-                            "nadac": float(pricing['nadac']) if pd.notna(pricing['nadac']) else None,
-                            "federal_rebate": float(pricing['federal_rebate']) if pd.notna(pricing['federal_rebate']) else None,
-                            "state_rebate": float(pricing['state_rebate']) if pd.notna(pricing['state_rebate']) else None,
-                        }
-            except Exception as e:
-                logger.warning(f"Could not load pricing data for NDC {ndc}: {e}")
-            
-            # Try to load regional data
-            try:
-                regional_file_path = f"{VOLUME_BASE_PATH}/fdb_regional_{tenant.lower()}.csv"
-                regional_response = await client.get(
-                    f"{workspace_url}/api/2.0/fs/files{regional_file_path}",
-                    headers=headers
-                )
-                
-                if regional_response.status_code == 200:
-                    df_regional = pd.read_csv(io.StringIO(regional_response.text))
-                    regional_record = df_regional[df_regional['ndc'].astype(str) == ndc]
-                    if not regional_record.empty:
-                        regional = regional_record.iloc[0]
-                        additional_data["regional"] = {
-                            "regional_code": str(regional['regional_code']) if pd.notna(regional['regional_code']) else None,
-                            "preference_score": int(regional['preference_score']) if pd.notna(regional['preference_score']) else None,
-                            "local_mfr": str(regional['local_mfr']) if pd.notna(regional['local_mfr']) else None,
-                            "distribution_notes": str(regional['distribution_notes']) if pd.notna(regional['distribution_notes']) else None,
-                        }
-            except Exception as e:
-                logger.warning(f"Could not load regional data for NDC {ndc}: {e}")
+        # Try to load regional data
+        try:
+            regional_file_path = f"{VOLUME_BASE_PATH}/fdb_regional_{tenant.lower()}.csv"
+            regional_content = w.files.download(regional_file_path)
+            df_regional = pd.read_csv(io.BytesIO(regional_content))
+            regional_record = df_regional[df_regional['ndc'].astype(str) == ndc]
+            if not regional_record.empty:
+                regional = regional_record.iloc[0]
+                additional_data["regional"] = {
+                    "regional_code": str(regional['regional_code']) if pd.notna(regional['regional_code']) else None,
+                    "preference_score": int(regional['preference_score']) if pd.notna(regional['preference_score']) else None,
+                    "local_mfr": str(regional['local_mfr']) if pd.notna(regional['local_mfr']) else None,
+                    "distribution_notes": str(regional['distribution_notes']) if pd.notna(regional['distribution_notes']) else None,
+                }
+        except Exception as e:
+            logger.warning(f"Could not load regional data for NDC {ndc}: {e}")
         
         # Build detailed response
         details = {
             "ndc": ndc,
             "tenant": tenant,
-            "data_source": f"Databricks Files API: {VOLUME_BASE_PATH}",
-            "authentication": "user_forwarding",
+            "data_source": f"Databricks SDK: {VOLUME_BASE_PATH}",
+            "authentication": "databricks_sdk",
             "sections": {
                 "Core": {
                     "NDC": str(record['ndc']),
@@ -637,7 +587,7 @@ async def export_fdb_data(
             )
         
         # Load data for the specified tenant using Files API
-        df = await load_fdb_data_via_api(tenant, user_token)
+        df = await load_fdb_data_via_sdk(tenant, user_token)
         
         # Apply search filter if provided
         if query:
@@ -680,7 +630,7 @@ async def export_fdb_data(
                     "query": query,
                     "total_records": len(records),
                     "export_timestamp": timestamp,
-                    "data_source": f"Databricks Files API: {VOLUME_BASE_PATH}",
+                    "data_source": f"Databricks SDK: {VOLUME_BASE_PATH}",
                     "authentication": "user_forwarding"
                 },
                 "records": records
