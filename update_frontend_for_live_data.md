@@ -1,6 +1,144 @@
+# Frontend Code Changes for Live FDB Data
+
+## 📋 Overview
+
+After uploading the FDB data to Databricks volume and updating the backend, here are the frontend changes needed to use live data instead of hardcoded arrays.
+
+## 🔧 Step 1: Create FDB API Service
+
+Create `/frontend/src/services/fdb-api.ts`:
+
+```typescript
+/**
+ * FDB API service for live data from Databricks volume
+ */
+
+const API_BASE_URL = '/api/fdb';
+
+export interface FDBRecord {
+  ndc: string;
+  gsn: number | null;
+  brand: string;
+  generic: string;
+  rx_otc: string;
+  pkg_size: string;
+  hic3: string;
+  hicl: string;
+  dcc: string;
+  mfr: string;
+  obsolete: boolean;
+  rebate: boolean;
+  load_date: string;
+  pkg_origin: string;
+  gsn_desc: string;
+  pkg_form: string;
+  // Formulary fields (if available)
+  formulary_status?: string;
+  tier?: number;
+  pa_required?: boolean;
+  ql_limits?: string;
+}
+
+export interface FDBSearchResponse {
+  tenant: string;
+  query: string | null;
+  limit: number;
+  total_found: number;
+  data_source: string;
+  records: FDBRecord[];
+}
+
+export interface FDBDetailsResponse {
+  ndc: string;
+  tenant: string;
+  data_source: string;
+  sections: {
+    Core: { [key: string]: any };
+    Classification: { [key: string]: any };
+    "Pricing & Flags": { [key: string]: any };
+    "Packaging & Origin": { [key: string]: any };
+    Formulary?: { [key: string]: any };
+    "Pricing Details"?: { [key: string]: any };
+    "Regional Info"?: { [key: string]: any };
+  };
+}
+
+class FDBApiService {
+  private async fetchWithErrorHandling<T>(url: string, options?: RequestInit): Promise<T> {
+    try {
+      const response = await fetch(`${API_BASE_URL}${url}`, {
+        headers: {
+          'Content-Type': 'application/json',
+          ...options?.headers,
+        },
+        ...options,
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({ 
+          detail: response.statusText 
+        }));
+        throw new Error(`API Error: ${response.status} - ${errorData.detail || 'Unknown error'}`);
+      }
+
+      return await response.json();
+    } catch (error) {
+      console.error(`FDB API call failed for ${url}:`, error);
+      throw error;
+    }
+  }
+
+  async searchRecords(
+    tenant: string, 
+    query?: string, 
+    limit: number = 100
+  ): Promise<FDBSearchResponse> {
+    const params = new URLSearchParams({ tenant, limit: limit.toString() });
+    if (query) {
+      params.append('query', query);
+    }
+    
+    return this.fetchWithErrorHandling<FDBSearchResponse>(
+      `/search?${params.toString()}`
+    );
+  }
+
+  async getRecordDetails(ndc: string, tenant: string): Promise<FDBDetailsResponse> {
+    const params = new URLSearchParams({ tenant });
+    return this.fetchWithErrorHandling<FDBDetailsResponse>(
+      `/details/${ndc}?${params.toString()}`
+    );
+  }
+
+  async exportData(
+    tenant: string, 
+    format: 'csv' | 'json' = 'csv',
+    query?: string,
+    limit?: number
+  ): Promise<Blob> {
+    const params = new URLSearchParams({ tenant, format });
+    if (query) params.append('query', query);
+    if (limit) params.append('limit', limit.toString());
+
+    const response = await fetch(`${API_BASE_URL}/export?${params.toString()}`);
+    if (!response.ok) {
+      throw new Error(`Export failed: ${response.statusText}`);
+    }
+    
+    return response.blob();
+  }
+}
+
+export const fdbApi = new FDBApiService();
+```
+
+## 🔧 Step 2: Update FDBSearch Component
+
+Update `/frontend/src/components/pages/FDBSearch.tsx`:
+
+```typescript
 /**
  * FDB Search Page - Live data from Databricks Volume
- * Search and view FDB records across ~20 files
  */
 import React, { useState, useEffect, useContext } from 'react';
 import { TenantContext } from '../../App';
@@ -95,22 +233,11 @@ export function FDBSearch() {
     }
   };
 
-  // Copy drawer data to clipboard
-  const copyJson = async () => {
-    if (!selectedRecord) return;
-    try {
-      await navigator.clipboard.writeText(JSON.stringify(selectedRecord.sections, null, 2));
-      alert("Copied JSON");
-    } catch (e) {
-      alert("Clipboard failed");
-    }
-  };
-
   return (
     <div className="page">
       <div className="panel-header">
         <h1 className="panel-title">FDB Search</h1>
-        <div className="hint">Live data from Databricks Volume - {records.length} records found</div>
+        <div className="hint">Live data from Databricks Volume</div>
       </div>
 
       {/* Search Controls */}
@@ -140,13 +267,6 @@ export function FDBSearch() {
         >
           Export CSV
         </button>
-        <button 
-          onClick={() => exportData('json')}
-          disabled={loading || records.length === 0}
-          style={{ height: '40px' }}
-        >
-          Export JSON
-        </button>
       </div>
 
       {/* Error Display */}
@@ -166,7 +286,7 @@ export function FDBSearch() {
       <div className="scroll" style={{ height: '500px' }}>
         {loading ? (
           <div style={{ textAlign: 'center', padding: '40px' }}>
-            Loading FDB data from volume...
+            Loading FDB data...
           </div>
         ) : records.length === 0 ? (
           <div style={{ textAlign: 'center', padding: '40px', color: 'var(--color-text-muted)' }}>
@@ -184,9 +304,6 @@ export function FDBSearch() {
                 <th style={{ width: '80px' }}>HIC3</th>
                 <th style={{ width: '150px' }}>Manufacturer</th>
                 <th style={{ width: '100px' }}>Load Date</th>
-                {records.some(r => r.formulary_status) && (
-                  <th style={{ width: '120px' }}>Formulary</th>
-                )}
               </tr>
             </thead>
             <tbody>
@@ -207,15 +324,6 @@ export function FDBSearch() {
                   <td>{record.hic3}</td>
                   <td>{record.mfr}</td>
                   <td>{record.load_date}</td>
-                  {records.some(r => r.formulary_status) && (
-                    <td>
-                      {record.formulary_status && (
-                        <span className={`status ${record.formulary_status.toLowerCase().replace(' ', '-')}`}>
-                          {record.formulary_status}
-                        </span>
-                      )}
-                    </td>
-                  )}
                 </tr>
               ))}
             </tbody>
@@ -229,7 +337,6 @@ export function FDBSearch() {
           <div className="drawer-aside" onClick={(e) => e.stopPropagation()}>
             <div className="drawer-header">
               <h2>NDC Details: {selectedRecord.ndc}</h2>
-              <div className="hint">Source: {selectedRecord.data_source}</div>
               <button className="btn-close" onClick={closeDrawer}>×</button>
             </div>
             <div className="drawer-content scroll">
@@ -248,8 +355,7 @@ export function FDBSearch() {
               ))}
             </div>
             <div className="drawer-footer">
-              <button onClick={copyJson}>Copy JSON</button>
-              <button onClick={() => exportData('csv')}>Export CSV</button>
+              <button onClick={() => exportData('json')}>Export JSON</button>
               <button onClick={closeDrawer}>Close</button>
             </div>
           </div>
@@ -258,3 +364,73 @@ export function FDBSearch() {
     </div>
   );
 }
+```
+
+## 🚀 Step 3: Deploy and Test
+
+1. **Install pandas** (if not already done):
+   ```bash
+   cd /Users/scott.johnson/Documents/gainwell_main_app
+   pip install pandas==2.1.3
+   ```
+
+2. **Build frontend**:
+   ```bash
+   cd frontend && npm run build:static
+   ```
+
+3. **Deploy app**:
+   ```bash
+   databricks apps deploy --source-dir . --app-name gainwell-fmt
+   ```
+
+4. **Test the integration**:
+   - Open the deployed app
+   - Go to FDB Search tab
+   - Try searching for "lipitor" or "insulin"
+   - Click on NDC links to see detailed records
+   - Test CSV export functionality
+
+## 📊 Key Benefits of Live Data Integration
+
+### **🔄 Dynamic Updates**
+- **Before**: Hardcoded arrays with 5 records per tenant
+- **After**: 500+ records from volume, updated as files change
+
+### **🔍 Real Search**
+- **Before**: Client-side filtering only  
+- **After**: Server-side search across all fields (NDC, brand, generic, manufacturer, HIC3, DCC)
+
+### **📋 Rich Details**
+- **Before**: Single data structure
+- **After**: Aggregated data from multiple files (core, pricing, formulary, regional)
+
+### **📤 Export Functionality**
+- **Before**: Fake export buttons
+- **After**: Real CSV/JSON exports with search filtering
+
+### **🏢 Tenant-Specific Data**
+- **Before**: Static tenant datasets
+- **After**: Dynamic formulary merging for each tenant
+
+### **⚡ Performance**
+- **Before**: All data loaded on page load
+- **After**: On-demand loading with search optimization
+
+## 🔧 Volume Path Configuration
+
+The backend automatically tries both path formats:
+- Primary: `/Volumes/demo/gainwell/fdb_data/`
+- Fallback: `/dbfs/Volumes/demo/gainwell/fdb_data/`
+
+If your volume path is different, update `VOLUME_BASE_PATH` in `/backend/fdb/routes.py`.
+
+## 📝 Next Steps
+
+1. Upload data to volume using manual commands shown above
+2. Replace the hardcoded FDBSearch component with the live version
+3. Test search, details, and export functionality
+4. Add error handling and loading states
+5. Consider adding caching for better performance
+
+**The integration provides a complete live data pipeline from Databricks volume to React frontend!** 🚀

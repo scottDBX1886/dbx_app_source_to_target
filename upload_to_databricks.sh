@@ -6,8 +6,8 @@
 set -e
 
 # Configuration
-CATALOG=${1:-"main"}
-SCHEMA=${2:-"default"} 
+CATALOG=${1:-"demo"}
+SCHEMA=${2:-"gainwell"} 
 VOLUME_NAME=${3:-"fdb_data"}
 LOCAL_DATA_DIR="sample_fdb_data"
 PROFILE="dbx_shared_demo"  # Your Databricks CLI profile
