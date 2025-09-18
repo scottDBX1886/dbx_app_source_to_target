@@ -11,151 +11,42 @@ logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/api/fdb", tags=["fdb-search"])
 
-# Sample FDB data matching the prototype format: NDC, GSN, Brand, Generic, Rx/OTC, Package Size, HIC3, HICL, DCC, MFR, Load Date
-SAMPLE_FDB_DATA = [
-    {
-        "ndc": "00003012345",
-        "gsn": 12345,
-        "brand": "Tylenol",
-        "generic": "Acetaminophen",
-        "rx_otc": "OTC",
-        "pkg_size": "100 TAB",
-        "hic3": "A01",
-        "hicl": "A01AA",
-        "dcc": "02",
-        "mfr": "Johnson & Johnson",
-        "load_date": "2024-01-01",
-        # Additional fields for popup details
-        "obsolete": False,
-        "rebate": False,
-        "pkg_origin": "US",
-        "gsn_desc": "Acetaminophen 325mg Tablet",
-        "pkg_form": "TAB"
-    },
-    {
-        "ndc": "00003054321",
-        "gsn": 54321,
-        "brand": "Advil",
-        "generic": "Ibuprofen",
-        "rx_otc": "OTC",
-        "pkg_size": "50 TAB",
-        "hic3": "A02",
-        "hicl": "A02BB",
-        "dcc": "03",
-        "mfr": "Pfizer",
-        "load_date": "2024-01-01",
-        # Additional fields for popup details
-        "obsolete": False,
-        "rebate": True,
-        "pkg_origin": "US",
-        "gsn_desc": "Ibuprofen 200mg Tablet",
-        "pkg_form": "TAB"
-    },
-    {
-        "ndc": "00003098765",
-        "gsn": 98765,
-        "brand": "Amoxil",
-        "generic": "Amoxicillin",
-        "rx_otc": "RX",
-        "pkg_size": "30 CAP",
-        "hic3": "B01",
-        "hicl": "B01CA",
-        "dcc": "01",
-        "mfr": "GlaxoSmithKline",
-        "load_date": "2024-01-01",
-        # Additional fields for popup details
-        "obsolete": False,
-        "rebate": True,
-        "pkg_origin": "US",
-        "gsn_desc": "Amoxicillin 500mg Capsule",
-        "pkg_form": "CAP"
-    },
-    {
-        "ndc": "00378123456",
-        "gsn": 13579,
-        "brand": "Lipitor",
-        "generic": "Atorvastatin",
-        "rx_otc": "RX",
-        "pkg_size": "90 TAB",
-        "hic3": "C10",
-        "hicl": "C10AA",
-        "dcc": "05",
-        "mfr": "Mylan",
-        "load_date": "2024-01-15",
-        # Additional fields for popup details
-        "obsolete": False,
-        "rebate": True,
-        "pkg_origin": "US",
-        "gsn_desc": "Atorvastatin 20mg Tablet",
-        "pkg_form": "TAB"
-    },
-    {
-        "ndc": "00378987654",
-        "gsn": 24680,
-        "brand": "Synthroid",
-        "generic": "Levothyroxine",
-        "rx_otc": "RX",
-        "pkg_size": "100 TAB",
-        "hic3": "H03",
-        "hicl": "H03AA",
-        "dcc": "06",
-        "mfr": "AbbVie",
-        "load_date": "2024-02-01",
-        # Additional fields for popup details
-        "obsolete": False,
-        "rebate": False,
-        "pkg_origin": "US",
-        "gsn_desc": "Levothyroxine 50mcg Tablet",
-        "pkg_form": "TAB"
-    }
-]
-
-# Sample tenant-specific formulary data  
-TENANT_FORMULARY_DATA = {
-    "AK": [
-        {"ndc": "00003012345", "formulary_status": "Preferred", "tier": 1, "pa_required": False, "ql_limits": None},
-        {"ndc": "00003054321", "formulary_status": "Non-Preferred", "tier": 2, "pa_required": True, "ql_limits": "30 per 30 days"},
-        {"ndc": "00378123456", "formulary_status": "Preferred", "tier": 1, "pa_required": False, "ql_limits": None}
-    ],
-    "MO": [
-        {"ndc": "00003012345", "formulary_status": "Preferred", "tier": 1, "pa_required": False, "ql_limits": None},
-        {"ndc": "00003098765", "formulary_status": "Preferred", "tier": 1, "pa_required": False, "ql_limits": None},
-        {"ndc": "00378987654", "formulary_status": "Non-Preferred", "tier": 3, "pa_required": True, "ql_limits": "90 per 90 days"}
-    ]
-}
-
-def get_sample_fdb_data(tenant: str = "MASTER") -> pd.DataFrame:
+def load_fdb_data(tenant: str = "MASTER") -> pd.DataFrame:
     """
-    Get sample FDB data with tenant-specific formulary filtering
+    Load FDB data from your data source
+    
+    TODO: Replace with actual data loading logic
+    - Connect to your database/data lake/API
+    - Apply tenant-specific filtering
+    - Return DataFrame with required columns
+    
+    Required columns for main table:
+    - ndc, gsn, brand, generic, rx_otc, pkg_size, hic3, hicl, dcc, mfr, load_date
+    
+    Additional columns for details popup:
+    - obsolete, rebate, pkg_origin, gsn_desc, pkg_form
+    - formulary_status, tier, pa_required, ql_limits (if tenant-specific)
     """
     try:
-        # Start with core sample data
-        df_core = pd.DataFrame(SAMPLE_FDB_DATA)
+        # TODO: Implement your data loading logic here
+        # Examples:
+        # - df = pd.read_sql(query, connection)
+        # - df = spark.read.table("catalog.schema.fdb_table").filter(f"tenant='{tenant}'").toPandas()
+        # - df = pd.read_parquet(f"/path/to/data/{tenant}/fdb_data.parquet")
         
-        # Add tenant-specific formulary data if not MASTER
-        if tenant != "MASTER" and tenant in TENANT_FORMULARY_DATA:
-            formulary_data = TENANT_FORMULARY_DATA[tenant]
-            df_formulary = pd.DataFrame(formulary_data)
-            
-            # Inner join to get only drugs in this tenant's formulary
-            df_merged = pd.merge(df_core, df_formulary, on='ndc', how='inner')
-            logger.info(f"Tenant {tenant}: {len(df_merged)} records (filtered from {len(df_core)} core records)")
-            return df_merged
-        
-        # For MASTER or unknown tenants, return all core data
-        logger.info(f"Tenant {tenant}: {len(df_core)} records (all core data)")
-        return df_core
+        # Placeholder - return empty DataFrame
+        logger.warning(f"FDB data loading not implemented for tenant: {tenant}")
+        return pd.DataFrame()
         
     except Exception as e:
-        logger.error(f"Error getting sample FDB data: {e}")
-        # Return empty DataFrame on error
+        logger.error(f"Error loading FDB data for tenant {tenant}: {e}")
         return pd.DataFrame()
 
-def search_dataframe(df, query: str):
+def search_dataframe(df: pd.DataFrame, query: str) -> pd.DataFrame:
     """
     Search dataframe across multiple text fields
     """
-    if not query:
+    if not query or df.empty:
         return df
     
     query_lower = query.lower()
@@ -180,25 +71,23 @@ async def search_fdb_records(
     limit: Optional[int] = Query(100, description="Result limit")
 ):
     """
-    Search FDB records for a specific tenant using sample data
+    Search FDB records for a specific tenant
     
     Example: GET /api/fdb/search?tenant=AK&query=amoxicillin&limit=50
     """
     try:
-        logger.info(f"FDB search request: tenant={tenant}, query={query}, limit={limit}")
-        
-        # Get user info from headers for logging
+        # Get user info from headers
         user_email = request.headers.get("X-Forwarded-Email", "unknown")
-        logger.info(f"Search requested by user: {user_email}")
+        logger.info(f"FDB search: tenant={tenant}, query={query}, limit={limit}, user={user_email}")
         
-        # Load sample data for the specified tenant
-        df = get_sample_fdb_data(tenant)
+        # Load data for the specified tenant
+        df = load_fdb_data(tenant)
         
         if df.empty:
             return {
                 "tenant": tenant,
                 "query": query,
-                "error": "No data available",
+                "error": "No data available - data loading not implemented",
                 "total_found": 0,
                 "records": []
             }
@@ -214,8 +103,7 @@ async def search_fdb_records(
         if limit and limit > 0:
             df = df.head(limit)
         
-        # Convert to JSON-serializable format - only main FDB table fields
-        # Matching prototype format: NDC, GSN, Brand, Generic, Rx/OTC, Package Size, HIC3, HICL, DCC, MFR, Load Date
+        # Convert to JSON-serializable format - main FDB table fields
         records = []
         for _, row in df.iterrows():
             try:
@@ -232,26 +120,24 @@ async def search_fdb_records(
                     "mfr": str(row['mfr']) if pd.notna(row['mfr']) else "",
                     "load_date": str(row['load_date']) if pd.notna(row['load_date']) else ""
                 }
-                
                 records.append(record)
                 
             except Exception as row_error:
                 logger.warning(f"Error processing row: {row_error}")
                 continue
         
-        logger.info(f"Returning {len(records)} records")
         return {
             "tenant": tenant,
             "query": query,
             "limit": limit,
             "total_found": len(records),
-            "data_source": "Sample Data",
+            "data_source": "Live Data",  # TODO: Update with actual source name
             "user_email": user_email,
             "records": records
         }
         
     except Exception as e:
-        logger.error(f"Unexpected error in FDB search: {e}")
+        logger.error(f"Error in FDB search: {e}")
         return {
             "tenant": tenant,
             "query": query,
@@ -273,26 +159,28 @@ async def get_fdb_details(
     Example: GET /api/fdb/details/00003012345?tenant=AK
     """
     try:
-        # Get user info from headers for logging
+        # Get user info from headers
         user_email = request.headers.get("X-Forwarded-Email", "unknown")
-        logger.info(f"Details requested by user: {user_email} for NDC: {ndc}")
+        logger.info(f"FDB details: NDC={ndc}, tenant={tenant}, user={user_email}")
         
-        # Load sample data
-        df = get_sample_fdb_data(tenant)
+        # Load data
+        df = load_fdb_data(tenant)
+        
+        if df.empty:
+            raise HTTPException(status_code=404, detail="Data loading not implemented")
         
         # Find the specific NDC
         record = df[df['ndc'].astype(str) == ndc]
         if record.empty:
             raise HTTPException(status_code=404, detail=f"NDC {ndc} not found for tenant {tenant}")
         
-        record = record.iloc[0]  # Get first (should be only) match
+        record = record.iloc[0]  # Get first match
         
         # Build detailed response matching prototype drawer structure
-        # Sections: Core, Classification, Pricing & Flags, Packaging & Origin
         details = {
             "ndc": ndc,
             "tenant": tenant,
-            "data_source": "Sample Data",
+            "data_source": "Live Data",  # TODO: Update with actual source name
             "user_email": user_email,
             "Core": {
                 "NDC": str(record['ndc']),
@@ -320,7 +208,7 @@ async def get_fdb_details(
             }
         }
         
-        # Add formulary info if available
+        # Add formulary info if available (tenant-specific data)
         if 'formulary_status' in record and pd.notna(record['formulary_status']):
             details["Formulary"] = {
                 "Status": str(record['formulary_status']),
@@ -337,7 +225,6 @@ async def get_fdb_details(
         logger.error(f"Error getting FDB details for NDC {ndc}: {e}")
         raise HTTPException(status_code=500, detail=f"Failed to get details: {str(e)}")
 
-
 @router.get("/export")
 async def export_fdb_data(
     request: Request,
@@ -347,16 +234,20 @@ async def export_fdb_data(
     limit: Optional[int] = Query(None, description="Optional record limit")
 ):
     """
-    Export FDB sample data for tenant
+    Export FDB data for tenant
     
     Example: GET /api/fdb/export?tenant=MO&format=csv&query=insulin&limit=1000
     """
     try:
-        # Get user info from headers for logging
+        # Get user info from headers
         user_email = request.headers.get("X-Forwarded-Email", "unknown")
+        logger.info(f"FDB export: tenant={tenant}, format={format}, user={user_email}")
         
-        # Load sample data for the specified tenant
-        df = get_sample_fdb_data(tenant)
+        # Load data for the specified tenant
+        df = load_fdb_data(tenant)
+        
+        if df.empty:
+            raise HTTPException(status_code=404, detail="No data available - data loading not implemented")
         
         # Apply search filter if provided
         if query:
@@ -399,7 +290,7 @@ async def export_fdb_data(
                     "query": query,
                     "total_records": len(records),
                     "export_timestamp": timestamp,
-                    "data_source": "Sample Data",
+                    "data_source": "Live Data",  # TODO: Update with actual source name
                     "exported_by": user_email
                 },
                 "records": records
