@@ -218,43 +218,6 @@ export function FDBSearch() {
         </div>
       </div>
 
-      {/* Data Source Info */}
-      <div className="panel">
-        <div className="panel-header">
-          <h2 className="panel-title">🔗 Data Source</h2>
-        </div>
-        
-        <div className="alert info">
-          <strong>Live Volume Integration</strong>
-          <div className="muted mt-1">
-            Data is loaded live from Databricks Volume with tenant-specific filtering.
-          </div>
-        </div>
-        
-        <div className="kv">
-          <div className="muted">Volume Path</div>
-          <div><code>/Volumes/demo/gainwell/fdb_data/</code></div>
-          
-          <div className="muted">Tenant Filtering</div>
-          <div>
-            {tenant === 'MASTER' 
-              ? 'All core drug records (500+ entries)'
-              : `Filtered by ${tenant} formulary entries for tenant-specific data`
-            }
-          </div>
-          
-          <div className="muted">Files Used</div>
-          <div>
-            <ul>
-              <li>fdb_core_drugs.csv - Primary drug information</li>
-              {tenant !== 'MASTER' && <li>fdb_formulary_{tenant.toLowerCase()}.csv - Tenant formulary</li>}
-              <li>fdb_pricing.csv - Pricing details (when available)</li>
-              <li>fdb_regional_{tenant.toLowerCase()}.csv - Regional preferences</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
       {/* NDC Details Drawer - Right-side slide-in (matching prototype) */}
       {showPopup && selectedRecord && (
         <>
