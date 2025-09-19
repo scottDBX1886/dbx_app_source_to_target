@@ -1,0 +1,151 @@
+ndc,pdl_drug,status,load_date,effective_date,expiration_date,last_updated,created_by,updated_by,notes,pos_export_status
+5971764818,GABAPENTIN,Pending,2025-09-02,2025-03-31,,2025-09-13,analyst,system,New PDL entry,Pending
+1699169388,LEVOTHYROXINE,Active,2025-08-21,2025-04-19,,2025-09-17,pdl_manager,analyst,New PDL entry,Pending
+3165118481,LOSARTAN,Inactive,2025-09-03,2025-04-30,2025-07-05,2025-09-16,system,pdl_manager,Auto-generated,Pending
+7717131487,LEVOTHYROXINE,Active,2025-08-27,2025-06-02,2025-08-01,2025-09-11,system,system,Auto-generated,Pending
+4347655264,FUROSEMIDE,Active,2025-08-29,2025-05-30,,2025-09-11,pdl_manager,system,Auto-generated,Not Required
+6360319029,SERTRALINE,Under Review,2025-08-20,2025-05-13,2025-08-27,2025-09-15,admin,pdl_manager,Auto-generated,Failed
+8520543646,SIMVASTATIN,Active,2025-08-28,2025-06-11,,2025-09-13,analyst,pdl_manager,Manual review needed,Failed
+3304900558,GABAPENTIN,Inactive,2025-09-16,2025-04-27,2025-08-31,2025-09-18,system,pdl_manager,,Exported
+8119917624,HYDROCHLOROTHIAZIDE,Under Review,2025-09-12,2025-04-18,,2025-09-11,admin,pdl_manager,Auto-generated,Exported
+8849441730,TRAMADOL,Inactive,2025-09-11,2025-05-20,2025-08-08,2025-09-16,system,system,Auto-generated,Not Required
+6702263004,ATORVASTATIN,Active,2025-08-28,2025-03-29,,2025-09-14,pdl_manager,pdl_manager,Updated per formulary,Failed
+4400366371,AZITHROMYCIN,Under Review,2025-09-06,2025-05-30,2025-08-14,2025-09-11,admin,pdl_manager,Manual review needed,Exported
+6576725730,GABAPENTIN,Under Review,2025-09-15,2025-05-17,2025-08-16,2025-09-15,system,pdl_manager,Manual review needed,Failed
+8450668232,LEVOTHYROXINE,Pending,2025-09-05,2025-04-04,2025-09-18,2025-09-10,admin,system,Auto-generated,Exported
+5228803725,METFORMIN,Inactive,2025-08-31,2025-04-29,2025-08-16,2025-09-18,system,admin,Auto-generated,Not Required
+7212916332,LEVOTHYROXINE,Active,2025-08-22,2025-04-09,,2025-09-18,analyst,admin,Auto-generated,Exported
+3690279021,TRAMADOL,Under Review,2025-09-10,2025-04-30,2025-07-08,2025-09-13,admin,pdl_manager,Manual review needed,Exported
+7675753664,AMLODIPINE,Pending,2025-08-21,2025-05-05,,2025-09-14,pdl_manager,pdl_manager,,Exported
+7765224309,PREDNISONE,Under Review,2025-08-31,2025-05-10,2025-09-05,2025-09-17,pdl_manager,analyst,New PDL entry,Pending
+1002213896,GABAPENTIN,Pending,2025-09-13,2025-04-03,2025-09-14,2025-09-16,pdl_manager,admin,Auto-generated,Exported
+7553581765,LISINOPRIL,Inactive,2025-08-25,2025-06-15,2025-08-14,2025-09-09,analyst,pdl_manager,Manual review needed,Exported
+8615725850,LEVOTHYROXINE,Under Review,2025-09-18,2025-04-06,,2025-09-18,system,pdl_manager,Updated per formulary,Failed
+2887559308,OMEPRAZOLE,Under Review,2025-09-04,2025-05-30,2025-07-09,2025-09-15,system,admin,,Failed
+1357932008,METFORMIN,Active,2025-08-25,2025-06-08,2025-07-31,2025-09-13,pdl_manager,analyst,,Failed
+7653481000,AZITHROMYCIN,Inactive,2025-08-23,2025-05-30,2025-07-03,2025-09-18,system,analyst,Updated per formulary,Pending
+4475167976,ATORVASTATIN,Pending,2025-08-24,2025-04-08,,2025-09-13,admin,admin,Auto-generated,Failed
+4436472132,LOSARTAN,Active,2025-09-04,2025-05-07,,2025-09-12,admin,admin,Auto-generated,Not Required
+9426758083,FUROSEMIDE,Active,2025-09-18,2025-04-21,2025-07-06,2025-09-14,admin,admin,Manual review needed,Exported
+2810942167,METFORMIN,Pending,2025-09-11,2025-04-05,2025-09-16,2025-09-10,analyst,analyst,Updated per formulary,Not Required
+3671667795,PREDNISONE,Inactive,2025-08-30,2025-06-16,2025-07-05,2025-09-13,system,analyst,Updated per formulary,Failed
+3667634502,ATORVASTATIN,Inactive,2025-08-30,2025-04-11,,2025-09-16,admin,analyst,New PDL entry,Not Required
+4263426627,SERTRALINE,Inactive,2025-09-13,2025-05-14,,2025-09-13,system,pdl_manager,Auto-generated,Not Required
+2605853200,METOPROLOL,Pending,2025-09-12,2025-04-22,2025-08-10,2025-09-14,pdl_manager,analyst,,Not Required
+4156635055,SERTRALINE,Active,2025-09-15,2025-04-19,2025-09-07,2025-09-12,pdl_manager,pdl_manager,Manual review needed,Not Required
+1507584015,AMOXICILLIN,Inactive,2025-08-23,2025-06-15,,2025-09-17,admin,system,,Failed
+2042541697,AZITHROMYCIN,Pending,2025-08-25,2025-05-22,2025-07-29,2025-09-12,system,admin,Auto-generated,Not Required
+7712492999,LOSARTAN,Inactive,2025-08-22,2025-05-01,,2025-09-12,admin,system,,Exported
+6034750232,AZITHROMYCIN,Active,2025-08-23,2025-03-31,2025-07-17,2025-09-12,pdl_manager,analyst,Auto-generated,Exported
+8025249652,GABAPENTIN,Under Review,2025-08-22,2025-03-28,,2025-09-11,pdl_manager,analyst,,Not Required
+7005680047,TRAMADOL,Active,2025-09-05,2025-04-20,2025-08-01,2025-09-13,system,pdl_manager,Auto-generated,Not Required
+1460512159,SERTRALINE,Under Review,2025-09-15,2025-04-20,,2025-09-17,pdl_manager,pdl_manager,Auto-generated,Failed
+9307653327,METFORMIN,Under Review,2025-08-26,2025-06-05,,2025-09-13,system,pdl_manager,,Pending
+4998295437,METFORMIN,Pending,2025-08-21,2025-05-20,2025-09-18,2025-09-15,admin,analyst,Manual review needed,Not Required
+2786414337,TRAMADOL,Inactive,2025-08-22,2025-04-30,2025-07-19,2025-09-09,pdl_manager,admin,,Failed
+1262481838,ATORVASTATIN,Under Review,2025-09-16,2025-05-12,,2025-09-19,pdl_manager,system,New PDL entry,Pending
+8857585658,AMLODIPINE,Active,2025-08-23,2025-05-06,2025-07-19,2025-09-10,system,analyst,Auto-generated,Pending
+9100124845,FUROSEMIDE,Active,2025-09-03,2025-05-16,,2025-09-11,pdl_manager,analyst,Updated per formulary,Not Required
+3859551369,OMEPRAZOLE,Pending,2025-09-06,2025-06-10,,2025-09-14,pdl_manager,system,New PDL entry,Not Required
+3742146348,METFORMIN,Inactive,2025-08-31,2025-06-19,2025-09-03,2025-09-16,analyst,analyst,Auto-generated,Pending
+9906682642,AMOXICILLIN,Active,2025-08-21,2025-04-10,,2025-09-14,pdl_manager,admin,New PDL entry,Exported
+1445828320,PREDNISONE,Active,2025-09-02,2025-05-07,,2025-09-11,pdl_manager,admin,New PDL entry,Not Required
+1974441668,SIMVASTATIN,Inactive,2025-09-16,2025-04-27,2025-08-25,2025-09-12,pdl_manager,admin,,Pending
+4840788712,METOPROLOL,Inactive,2025-09-03,2025-04-18,,2025-09-17,analyst,analyst,Manual review needed,Failed
+5740328559,SIMVASTATIN,Active,2025-09-12,2025-04-13,2025-07-11,2025-09-15,system,analyst,Auto-generated,Failed
+3110172904,SIMVASTATIN,Inactive,2025-09-06,2025-04-05,,2025-09-17,admin,admin,Manual review needed,Exported
+1074182147,TRAMADOL,Pending,2025-08-29,2025-06-04,2025-09-18,2025-09-19,system,system,Updated per formulary,Exported
+4272764301,FUROSEMIDE,Under Review,2025-09-08,2025-05-27,2025-08-19,2025-09-12,admin,analyst,,Not Required
+9662355122,FUROSEMIDE,Pending,2025-09-04,2025-04-27,,2025-09-13,analyst,pdl_manager,Auto-generated,Not Required
+9496684205,LOSARTAN,Under Review,2025-09-13,2025-05-29,,2025-09-14,analyst,analyst,Manual review needed,Not Required
+5946358456,METFORMIN,Under Review,2025-08-24,2025-04-10,,2025-09-09,admin,system,New PDL entry,Not Required
+1612709487,AMOXICILLIN,Pending,2025-09-10,2025-05-31,,2025-09-17,pdl_manager,system,Auto-generated,Pending
+9901947332,GABAPENTIN,Active,2025-09-10,2025-05-31,2025-07-07,2025-09-19,pdl_manager,pdl_manager,Updated per formulary,Not Required
+7437168343,SERTRALINE,Under Review,2025-08-25,2025-04-18,2025-09-08,2025-09-19,admin,analyst,Manual review needed,Not Required
+7042622182,AZITHROMYCIN,Inactive,2025-09-09,2025-04-07,2025-08-03,2025-09-19,analyst,analyst,Auto-generated,Not Required
+5220242022,ALBUTEROL,Under Review,2025-09-08,2025-05-25,2025-09-11,2025-09-16,analyst,admin,Manual review needed,Exported
+4812892284,FUROSEMIDE,Active,2025-08-29,2025-05-07,,2025-09-13,system,system,Updated per formulary,Pending
+1751171313,TRAMADOL,Inactive,2025-08-28,2025-03-29,,2025-09-15,pdl_manager,analyst,New PDL entry,Pending
+6932477738,PREDNISONE,Active,2025-09-13,2025-04-08,2025-09-10,2025-09-14,system,analyst,,Pending
+2478771260,GABAPENTIN,Pending,2025-08-25,2025-05-07,2025-07-31,2025-09-13,pdl_manager,analyst,Updated per formulary,Exported
+3705784427,GABAPENTIN,Inactive,2025-09-18,2025-05-22,2025-09-15,2025-09-17,admin,system,Manual review needed,Pending
+4800278377,AMOXICILLIN,Pending,2025-09-10,2025-05-22,2025-08-01,2025-09-18,system,admin,Updated per formulary,Not Required
+3193369160,METOPROLOL,Active,2025-09-14,2025-06-14,2025-07-05,2025-09-10,admin,system,Manual review needed,Pending
+2265350455,METFORMIN,Active,2025-09-15,2025-04-04,2025-08-14,2025-09-10,analyst,admin,Manual review needed,Not Required
+8887890804,PREDNISONE,Active,2025-09-09,2025-04-06,,2025-09-18,admin,admin,Manual review needed,Pending
+9167157231,GABAPENTIN,Active,2025-08-23,2025-04-08,,2025-09-18,system,pdl_manager,,Failed
+7606979090,LISINOPRIL,Active,2025-08-28,2025-04-11,,2025-09-18,analyst,analyst,,Exported
+4985404509,HYDROCHLOROTHIAZIDE,Pending,2025-08-25,2025-05-16,,2025-09-12,system,system,Auto-generated,Exported
+1519229767,TRAMADOL,Inactive,2025-09-02,2025-05-03,2025-07-13,2025-09-13,analyst,pdl_manager,Manual review needed,Failed
+1403409684,ALBUTEROL,Under Review,2025-09-19,2025-05-15,2025-09-13,2025-09-09,pdl_manager,analyst,Manual review needed,Failed
+8661997481,AZITHROMYCIN,Pending,2025-08-30,2025-04-19,2025-08-06,2025-09-16,pdl_manager,pdl_manager,Updated per formulary,Not Required
+9711905827,TRAMADOL,Pending,2025-08-22,2025-04-06,,2025-09-19,admin,admin,Auto-generated,Pending
+9853740488,ATORVASTATIN,Pending,2025-09-13,2025-04-28,2025-07-30,2025-09-15,analyst,admin,Auto-generated,Exported
+3693871386,OMEPRAZOLE,Pending,2025-08-28,2025-05-13,,2025-09-10,pdl_manager,system,,Not Required
+2312602678,AMLODIPINE,Under Review,2025-08-23,2025-04-13,2025-09-09,2025-09-11,system,pdl_manager,Auto-generated,Pending
+7494883898,PREDNISONE,Under Review,2025-09-04,2025-06-03,2025-08-18,2025-09-10,pdl_manager,system,Manual review needed,Exported
+9647622058,AMOXICILLIN,Under Review,2025-09-08,2025-05-09,2025-08-02,2025-09-13,system,pdl_manager,,Failed
+9432416335,LEVOTHYROXINE,Active,2025-08-23,2025-04-29,,2025-09-15,pdl_manager,admin,Manual review needed,Not Required
+2538502916,GABAPENTIN,Inactive,2025-09-12,2025-04-19,,2025-09-17,pdl_manager,pdl_manager,Manual review needed,Not Required
+8671802097,ATORVASTATIN,Pending,2025-09-02,2025-05-01,2025-09-04,2025-09-13,admin,admin,,Exported
+5297849867,LISINOPRIL,Pending,2025-09-16,2025-06-11,2025-07-04,2025-09-15,admin,pdl_manager,Auto-generated,Exported
+3262717209,FUROSEMIDE,Inactive,2025-09-10,2025-06-04,2025-07-29,2025-09-10,system,analyst,Manual review needed,Not Required
+5434968158,AMLODIPINE,Inactive,2025-09-19,2025-05-25,2025-08-12,2025-09-16,system,system,Updated per formulary,Failed
+9532612867,FUROSEMIDE,Active,2025-09-01,2025-03-23,,2025-09-13,analyst,admin,,Exported
+9812529406,AMLODIPINE,Active,2025-09-14,2025-05-15,,2025-09-12,admin,analyst,,Not Required
+3249560378,SERTRALINE,Pending,2025-08-23,2025-04-11,,2025-09-16,pdl_manager,pdl_manager,Updated per formulary,Not Required
+9318786650,AZITHROMYCIN,Under Review,2025-08-25,2025-05-06,,2025-09-13,system,admin,Updated per formulary,Not Required
+5919285406,AZITHROMYCIN,Active,2025-08-27,2025-06-14,,2025-09-13,pdl_manager,system,Manual review needed,Failed
+1511326375,AMLODIPINE,Pending,2025-09-15,2025-03-23,,2025-09-09,system,analyst,Auto-generated,Failed
+2009630575,OMEPRAZOLE,Inactive,2025-08-27,2025-06-09,,2025-09-13,system,admin,New PDL entry,Exported
+3959812092,ALBUTEROL,Active,2025-08-25,2025-06-07,,2025-09-13,system,admin,Updated per formulary,Failed
+9563231564,SIMVASTATIN,Inactive,2025-09-01,2025-05-18,2025-08-05,2025-09-11,admin,admin,,Not Required
+7880709711,OMEPRAZOLE,Inactive,2025-09-09,2025-04-19,2025-08-12,2025-09-11,admin,pdl_manager,Auto-generated,Exported
+3156170663,LEVOTHYROXINE,Inactive,2025-09-02,2025-04-23,2025-07-11,2025-09-12,admin,system,Auto-generated,Failed
+2223673707,LISINOPRIL,Under Review,2025-09-02,2025-05-09,2025-07-03,2025-09-14,admin,admin,Manual review needed,Exported
+4906836455,FUROSEMIDE,Inactive,2025-09-14,2025-05-15,2025-07-08,2025-09-09,pdl_manager,admin,Manual review needed,Pending
+1412959328,PREDNISONE,Inactive,2025-09-10,2025-05-11,2025-08-17,2025-09-10,pdl_manager,pdl_manager,New PDL entry,Failed
+8889516158,AMOXICILLIN,Inactive,2025-08-26,2025-04-22,2025-08-07,2025-09-12,pdl_manager,analyst,Updated per formulary,Pending
+5708871550,METFORMIN,Pending,2025-08-24,2025-04-06,2025-09-16,2025-09-12,system,pdl_manager,New PDL entry,Not Required
+3594524461,LOSARTAN,Pending,2025-09-17,2025-03-26,2025-08-01,2025-09-15,pdl_manager,system,Updated per formulary,Pending
+1498189017,PREDNISONE,Pending,2025-09-09,2025-05-20,2025-09-18,2025-09-11,admin,admin,New PDL entry,Exported
+2574758348,SERTRALINE,Pending,2025-09-16,2025-04-11,2025-08-08,2025-09-10,pdl_manager,pdl_manager,New PDL entry,Exported
+8398766301,OMEPRAZOLE,Active,2025-08-29,2025-03-26,,2025-09-13,admin,system,Updated per formulary,Not Required
+6293839765,ATORVASTATIN,Under Review,2025-09-13,2025-05-23,,2025-09-15,admin,admin,Auto-generated,Not Required
+9447970950,LEVOTHYROXINE,Inactive,2025-09-04,2025-06-19,2025-08-30,2025-09-09,analyst,admin,New PDL entry,Exported
+6539577736,AMLODIPINE,Inactive,2025-08-27,2025-04-14,,2025-09-14,analyst,analyst,,Exported
+7804370836,LISINOPRIL,Pending,2025-08-27,2025-05-18,2025-07-10,2025-09-16,analyst,admin,Manual review needed,Pending
+7533824680,METFORMIN,Pending,2025-09-02,2025-06-06,,2025-09-18,pdl_manager,analyst,Auto-generated,Pending
+8061939755,ALBUTEROL,Pending,2025-09-19,2025-05-16,,2025-09-12,admin,admin,Updated per formulary,Failed
+4107582499,AMLODIPINE,Pending,2025-09-18,2025-05-08,2025-09-11,2025-09-16,pdl_manager,system,Manual review needed,Pending
+1346604939,LOSARTAN,Pending,2025-08-28,2025-05-24,,2025-09-14,admin,analyst,Auto-generated,Exported
+8373779153,ATORVASTATIN,Inactive,2025-09-12,2025-05-15,2025-09-07,2025-09-11,analyst,admin,Updated per formulary,Not Required
+8947871252,FUROSEMIDE,Pending,2025-09-09,2025-04-08,2025-07-14,2025-09-09,analyst,analyst,Updated per formulary,Exported
+8129463130,ATORVASTATIN,Pending,2025-09-12,2025-03-26,,2025-09-09,analyst,analyst,Updated per formulary,Pending
+2438146799,ALBUTEROL,Active,2025-08-22,2025-06-12,,2025-09-15,system,pdl_manager,,Not Required
+6310226266,OMEPRAZOLE,Under Review,2025-09-11,2025-05-04,,2025-09-18,pdl_manager,admin,Auto-generated,Exported
+5223206678,AMOXICILLIN,Active,2025-09-14,2025-05-11,,2025-09-17,system,admin,Updated per formulary,Failed
+8107389623,METFORMIN,Inactive,2025-09-09,2025-04-30,,2025-09-09,admin,system,New PDL entry,Exported
+7781722721,LOSARTAN,Under Review,2025-09-03,2025-06-04,,2025-09-11,pdl_manager,pdl_manager,,Failed
+1921317338,HYDROCHLOROTHIAZIDE,Inactive,2025-08-23,2025-04-29,2025-08-22,2025-09-12,pdl_manager,analyst,Auto-generated,Not Required
+9646926463,ATORVASTATIN,Active,2025-09-08,2025-04-15,,2025-09-18,admin,system,Auto-generated,Pending
+9623515257,METFORMIN,Inactive,2025-09-02,2025-05-04,,2025-09-18,admin,pdl_manager,Auto-generated,Failed
+3877163187,METFORMIN,Under Review,2025-09-12,2025-05-04,2025-07-19,2025-09-09,admin,admin,Manual review needed,Pending
+9975104530,HYDROCHLOROTHIAZIDE,Active,2025-08-29,2025-06-01,,2025-09-16,system,admin,Auto-generated,Pending
+9243479420,OMEPRAZOLE,Active,2025-09-07,2025-05-31,,2025-09-15,system,analyst,Auto-generated,Not Required
+3202544133,PREDNISONE,Under Review,2025-08-30,2025-05-24,,2025-09-11,pdl_manager,analyst,,Exported
+7729398263,LEVOTHYROXINE,Inactive,2025-08-23,2025-05-25,2025-07-03,2025-09-17,system,pdl_manager,Updated per formulary,Not Required
+4162379327,FUROSEMIDE,Under Review,2025-09-12,2025-05-16,,2025-09-15,pdl_manager,analyst,Auto-generated,Pending
+1105633480,PREDNISONE,Pending,2025-09-11,2025-04-28,2025-08-27,2025-09-18,admin,system,Updated per formulary,Failed
+7203228933,ATORVASTATIN,Active,2025-09-18,2025-06-02,2025-08-17,2025-09-17,system,pdl_manager,Manual review needed,Exported
+2292971586,TRAMADOL,Inactive,2025-09-12,2025-04-30,,2025-09-15,analyst,admin,Manual review needed,Not Required
+9308678525,ATORVASTATIN,Pending,2025-09-05,2025-04-10,2025-07-31,2025-09-13,pdl_manager,admin,Updated per formulary,Not Required
+7341809153,GABAPENTIN,Under Review,2025-09-13,2025-04-13,,2025-09-11,admin,system,Manual review needed,Exported
+4951825175,SERTRALINE,Pending,2025-08-26,2025-05-25,,2025-09-17,admin,analyst,Manual review needed,Not Required
+5747878523,AMLODIPINE,Pending,2025-08-22,2025-03-30,,2025-09-13,pdl_manager,analyst,Auto-generated,Failed
+7007934187,SERTRALINE,Inactive,2025-09-14,2025-06-08,2025-08-10,2025-09-11,pdl_manager,pdl_manager,Auto-generated,Pending
+2384726249,TRAMADOL,Pending,2025-09-12,2025-06-12,,2025-09-19,analyst,pdl_manager,,Failed
+8225522363,AZITHROMYCIN,Inactive,2025-08-25,2025-04-07,,2025-09-14,system,analyst,Updated per formulary,Failed
+6901317675,LEVOTHYROXINE,Pending,2025-08-24,2025-05-12,2025-08-04,2025-09-15,analyst,admin,Manual review needed,Pending
+8763774895,AMOXICILLIN,Active,2025-09-04,2025-04-28,2025-08-06,2025-09-09,admin,analyst,,Pending
+5607862915,LEVOTHYROXINE,Inactive,2025-09-07,2025-04-01,,2025-09-15,admin,analyst,Updated per formulary,Exported

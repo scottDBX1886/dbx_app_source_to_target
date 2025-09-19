@@ -477,6 +477,31 @@ input::placeholder {
   background: rgba(122, 42, 42, 0.1);
 }
 
+/* PDL-specific status styling */
+.status.active {
+  border-color: #2a7a4a;
+  color: #9bffbf;
+  background: rgba(42, 122, 74, 0.1);
+}
+
+.status.inactive {
+  border-color: #555;
+  color: #ccc;
+  background: rgba(85, 85, 85, 0.1);
+}
+
+.status.pending {
+  border-color: #7a5a2a;
+  color: #ffd19b;
+  background: rgba(122, 90, 42, 0.1);
+}
+
+.status.under-review {
+  border-color: #2a5a7a;
+  color: #9bd2ff;
+  background: rgba(42, 90, 122, 0.1);
+}
+
 /* Pills */
 .pill {
   font-size: 11px;
