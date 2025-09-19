@@ -1,151 +1,519 @@
 ndc,pdl_drug,status,load_date,effective_date,expiration_date,last_updated,created_by,updated_by,notes,pos_export_status
-5971764818,GABAPENTIN,Pending,2025-09-02,2025-03-31,,2025-09-13,analyst,system,New PDL entry,Pending
-1699169388,LEVOTHYROXINE,Active,2025-08-21,2025-04-19,,2025-09-17,pdl_manager,analyst,New PDL entry,Pending
-3165118481,LOSARTAN,Inactive,2025-09-03,2025-04-30,2025-07-05,2025-09-16,system,pdl_manager,Auto-generated,Pending
-7717131487,LEVOTHYROXINE,Active,2025-08-27,2025-06-02,2025-08-01,2025-09-11,system,system,Auto-generated,Pending
-4347655264,FUROSEMIDE,Active,2025-08-29,2025-05-30,,2025-09-11,pdl_manager,system,Auto-generated,Not Required
-6360319029,SERTRALINE,Under Review,2025-08-20,2025-05-13,2025-08-27,2025-09-15,admin,pdl_manager,Auto-generated,Failed
-8520543646,SIMVASTATIN,Active,2025-08-28,2025-06-11,,2025-09-13,analyst,pdl_manager,Manual review needed,Failed
-3304900558,GABAPENTIN,Inactive,2025-09-16,2025-04-27,2025-08-31,2025-09-18,system,pdl_manager,,Exported
-8119917624,HYDROCHLOROTHIAZIDE,Under Review,2025-09-12,2025-04-18,,2025-09-11,admin,pdl_manager,Auto-generated,Exported
-8849441730,TRAMADOL,Inactive,2025-09-11,2025-05-20,2025-08-08,2025-09-16,system,system,Auto-generated,Not Required
-6702263004,ATORVASTATIN,Active,2025-08-28,2025-03-29,,2025-09-14,pdl_manager,pdl_manager,Updated per formulary,Failed
-4400366371,AZITHROMYCIN,Under Review,2025-09-06,2025-05-30,2025-08-14,2025-09-11,admin,pdl_manager,Manual review needed,Exported
-6576725730,GABAPENTIN,Under Review,2025-09-15,2025-05-17,2025-08-16,2025-09-15,system,pdl_manager,Manual review needed,Failed
-8450668232,LEVOTHYROXINE,Pending,2025-09-05,2025-04-04,2025-09-18,2025-09-10,admin,system,Auto-generated,Exported
-5228803725,METFORMIN,Inactive,2025-08-31,2025-04-29,2025-08-16,2025-09-18,system,admin,Auto-generated,Not Required
-7212916332,LEVOTHYROXINE,Active,2025-08-22,2025-04-09,,2025-09-18,analyst,admin,Auto-generated,Exported
-3690279021,TRAMADOL,Under Review,2025-09-10,2025-04-30,2025-07-08,2025-09-13,admin,pdl_manager,Manual review needed,Exported
-7675753664,AMLODIPINE,Pending,2025-08-21,2025-05-05,,2025-09-14,pdl_manager,pdl_manager,,Exported
-7765224309,PREDNISONE,Under Review,2025-08-31,2025-05-10,2025-09-05,2025-09-17,pdl_manager,analyst,New PDL entry,Pending
-1002213896,GABAPENTIN,Pending,2025-09-13,2025-04-03,2025-09-14,2025-09-16,pdl_manager,admin,Auto-generated,Exported
-7553581765,LISINOPRIL,Inactive,2025-08-25,2025-06-15,2025-08-14,2025-09-09,analyst,pdl_manager,Manual review needed,Exported
-8615725850,LEVOTHYROXINE,Under Review,2025-09-18,2025-04-06,,2025-09-18,system,pdl_manager,Updated per formulary,Failed
-2887559308,OMEPRAZOLE,Under Review,2025-09-04,2025-05-30,2025-07-09,2025-09-15,system,admin,,Failed
-1357932008,METFORMIN,Active,2025-08-25,2025-06-08,2025-07-31,2025-09-13,pdl_manager,analyst,,Failed
-7653481000,AZITHROMYCIN,Inactive,2025-08-23,2025-05-30,2025-07-03,2025-09-18,system,analyst,Updated per formulary,Pending
-4475167976,ATORVASTATIN,Pending,2025-08-24,2025-04-08,,2025-09-13,admin,admin,Auto-generated,Failed
-4436472132,LOSARTAN,Active,2025-09-04,2025-05-07,,2025-09-12,admin,admin,Auto-generated,Not Required
-9426758083,FUROSEMIDE,Active,2025-09-18,2025-04-21,2025-07-06,2025-09-14,admin,admin,Manual review needed,Exported
-2810942167,METFORMIN,Pending,2025-09-11,2025-04-05,2025-09-16,2025-09-10,analyst,analyst,Updated per formulary,Not Required
-3671667795,PREDNISONE,Inactive,2025-08-30,2025-06-16,2025-07-05,2025-09-13,system,analyst,Updated per formulary,Failed
-3667634502,ATORVASTATIN,Inactive,2025-08-30,2025-04-11,,2025-09-16,admin,analyst,New PDL entry,Not Required
-4263426627,SERTRALINE,Inactive,2025-09-13,2025-05-14,,2025-09-13,system,pdl_manager,Auto-generated,Not Required
-2605853200,METOPROLOL,Pending,2025-09-12,2025-04-22,2025-08-10,2025-09-14,pdl_manager,analyst,,Not Required
-4156635055,SERTRALINE,Active,2025-09-15,2025-04-19,2025-09-07,2025-09-12,pdl_manager,pdl_manager,Manual review needed,Not Required
-1507584015,AMOXICILLIN,Inactive,2025-08-23,2025-06-15,,2025-09-17,admin,system,,Failed
-2042541697,AZITHROMYCIN,Pending,2025-08-25,2025-05-22,2025-07-29,2025-09-12,system,admin,Auto-generated,Not Required
-7712492999,LOSARTAN,Inactive,2025-08-22,2025-05-01,,2025-09-12,admin,system,,Exported
-6034750232,AZITHROMYCIN,Active,2025-08-23,2025-03-31,2025-07-17,2025-09-12,pdl_manager,analyst,Auto-generated,Exported
-8025249652,GABAPENTIN,Under Review,2025-08-22,2025-03-28,,2025-09-11,pdl_manager,analyst,,Not Required
-7005680047,TRAMADOL,Active,2025-09-05,2025-04-20,2025-08-01,2025-09-13,system,pdl_manager,Auto-generated,Not Required
-1460512159,SERTRALINE,Under Review,2025-09-15,2025-04-20,,2025-09-17,pdl_manager,pdl_manager,Auto-generated,Failed
-9307653327,METFORMIN,Under Review,2025-08-26,2025-06-05,,2025-09-13,system,pdl_manager,,Pending
-4998295437,METFORMIN,Pending,2025-08-21,2025-05-20,2025-09-18,2025-09-15,admin,analyst,Manual review needed,Not Required
-2786414337,TRAMADOL,Inactive,2025-08-22,2025-04-30,2025-07-19,2025-09-09,pdl_manager,admin,,Failed
-1262481838,ATORVASTATIN,Under Review,2025-09-16,2025-05-12,,2025-09-19,pdl_manager,system,New PDL entry,Pending
-8857585658,AMLODIPINE,Active,2025-08-23,2025-05-06,2025-07-19,2025-09-10,system,analyst,Auto-generated,Pending
-9100124845,FUROSEMIDE,Active,2025-09-03,2025-05-16,,2025-09-11,pdl_manager,analyst,Updated per formulary,Not Required
-3859551369,OMEPRAZOLE,Pending,2025-09-06,2025-06-10,,2025-09-14,pdl_manager,system,New PDL entry,Not Required
-3742146348,METFORMIN,Inactive,2025-08-31,2025-06-19,2025-09-03,2025-09-16,analyst,analyst,Auto-generated,Pending
-9906682642,AMOXICILLIN,Active,2025-08-21,2025-04-10,,2025-09-14,pdl_manager,admin,New PDL entry,Exported
-1445828320,PREDNISONE,Active,2025-09-02,2025-05-07,,2025-09-11,pdl_manager,admin,New PDL entry,Not Required
-1974441668,SIMVASTATIN,Inactive,2025-09-16,2025-04-27,2025-08-25,2025-09-12,pdl_manager,admin,,Pending
-4840788712,METOPROLOL,Inactive,2025-09-03,2025-04-18,,2025-09-17,analyst,analyst,Manual review needed,Failed
-5740328559,SIMVASTATIN,Active,2025-09-12,2025-04-13,2025-07-11,2025-09-15,system,analyst,Auto-generated,Failed
-3110172904,SIMVASTATIN,Inactive,2025-09-06,2025-04-05,,2025-09-17,admin,admin,Manual review needed,Exported
-1074182147,TRAMADOL,Pending,2025-08-29,2025-06-04,2025-09-18,2025-09-19,system,system,Updated per formulary,Exported
-4272764301,FUROSEMIDE,Under Review,2025-09-08,2025-05-27,2025-08-19,2025-09-12,admin,analyst,,Not Required
-9662355122,FUROSEMIDE,Pending,2025-09-04,2025-04-27,,2025-09-13,analyst,pdl_manager,Auto-generated,Not Required
-9496684205,LOSARTAN,Under Review,2025-09-13,2025-05-29,,2025-09-14,analyst,analyst,Manual review needed,Not Required
-5946358456,METFORMIN,Under Review,2025-08-24,2025-04-10,,2025-09-09,admin,system,New PDL entry,Not Required
-1612709487,AMOXICILLIN,Pending,2025-09-10,2025-05-31,,2025-09-17,pdl_manager,system,Auto-generated,Pending
-9901947332,GABAPENTIN,Active,2025-09-10,2025-05-31,2025-07-07,2025-09-19,pdl_manager,pdl_manager,Updated per formulary,Not Required
-7437168343,SERTRALINE,Under Review,2025-08-25,2025-04-18,2025-09-08,2025-09-19,admin,analyst,Manual review needed,Not Required
-7042622182,AZITHROMYCIN,Inactive,2025-09-09,2025-04-07,2025-08-03,2025-09-19,analyst,analyst,Auto-generated,Not Required
-5220242022,ALBUTEROL,Under Review,2025-09-08,2025-05-25,2025-09-11,2025-09-16,analyst,admin,Manual review needed,Exported
-4812892284,FUROSEMIDE,Active,2025-08-29,2025-05-07,,2025-09-13,system,system,Updated per formulary,Pending
-1751171313,TRAMADOL,Inactive,2025-08-28,2025-03-29,,2025-09-15,pdl_manager,analyst,New PDL entry,Pending
-6932477738,PREDNISONE,Active,2025-09-13,2025-04-08,2025-09-10,2025-09-14,system,analyst,,Pending
-2478771260,GABAPENTIN,Pending,2025-08-25,2025-05-07,2025-07-31,2025-09-13,pdl_manager,analyst,Updated per formulary,Exported
-3705784427,GABAPENTIN,Inactive,2025-09-18,2025-05-22,2025-09-15,2025-09-17,admin,system,Manual review needed,Pending
-4800278377,AMOXICILLIN,Pending,2025-09-10,2025-05-22,2025-08-01,2025-09-18,system,admin,Updated per formulary,Not Required
-3193369160,METOPROLOL,Active,2025-09-14,2025-06-14,2025-07-05,2025-09-10,admin,system,Manual review needed,Pending
-2265350455,METFORMIN,Active,2025-09-15,2025-04-04,2025-08-14,2025-09-10,analyst,admin,Manual review needed,Not Required
-8887890804,PREDNISONE,Active,2025-09-09,2025-04-06,,2025-09-18,admin,admin,Manual review needed,Pending
-9167157231,GABAPENTIN,Active,2025-08-23,2025-04-08,,2025-09-18,system,pdl_manager,,Failed
-7606979090,LISINOPRIL,Active,2025-08-28,2025-04-11,,2025-09-18,analyst,analyst,,Exported
-4985404509,HYDROCHLOROTHIAZIDE,Pending,2025-08-25,2025-05-16,,2025-09-12,system,system,Auto-generated,Exported
-1519229767,TRAMADOL,Inactive,2025-09-02,2025-05-03,2025-07-13,2025-09-13,analyst,pdl_manager,Manual review needed,Failed
-1403409684,ALBUTEROL,Under Review,2025-09-19,2025-05-15,2025-09-13,2025-09-09,pdl_manager,analyst,Manual review needed,Failed
-8661997481,AZITHROMYCIN,Pending,2025-08-30,2025-04-19,2025-08-06,2025-09-16,pdl_manager,pdl_manager,Updated per formulary,Not Required
-9711905827,TRAMADOL,Pending,2025-08-22,2025-04-06,,2025-09-19,admin,admin,Auto-generated,Pending
-9853740488,ATORVASTATIN,Pending,2025-09-13,2025-04-28,2025-07-30,2025-09-15,analyst,admin,Auto-generated,Exported
-3693871386,OMEPRAZOLE,Pending,2025-08-28,2025-05-13,,2025-09-10,pdl_manager,system,,Not Required
-2312602678,AMLODIPINE,Under Review,2025-08-23,2025-04-13,2025-09-09,2025-09-11,system,pdl_manager,Auto-generated,Pending
-7494883898,PREDNISONE,Under Review,2025-09-04,2025-06-03,2025-08-18,2025-09-10,pdl_manager,system,Manual review needed,Exported
-9647622058,AMOXICILLIN,Under Review,2025-09-08,2025-05-09,2025-08-02,2025-09-13,system,pdl_manager,,Failed
-9432416335,LEVOTHYROXINE,Active,2025-08-23,2025-04-29,,2025-09-15,pdl_manager,admin,Manual review needed,Not Required
-2538502916,GABAPENTIN,Inactive,2025-09-12,2025-04-19,,2025-09-17,pdl_manager,pdl_manager,Manual review needed,Not Required
-8671802097,ATORVASTATIN,Pending,2025-09-02,2025-05-01,2025-09-04,2025-09-13,admin,admin,,Exported
-5297849867,LISINOPRIL,Pending,2025-09-16,2025-06-11,2025-07-04,2025-09-15,admin,pdl_manager,Auto-generated,Exported
-3262717209,FUROSEMIDE,Inactive,2025-09-10,2025-06-04,2025-07-29,2025-09-10,system,analyst,Manual review needed,Not Required
-5434968158,AMLODIPINE,Inactive,2025-09-19,2025-05-25,2025-08-12,2025-09-16,system,system,Updated per formulary,Failed
-9532612867,FUROSEMIDE,Active,2025-09-01,2025-03-23,,2025-09-13,analyst,admin,,Exported
-9812529406,AMLODIPINE,Active,2025-09-14,2025-05-15,,2025-09-12,admin,analyst,,Not Required
-3249560378,SERTRALINE,Pending,2025-08-23,2025-04-11,,2025-09-16,pdl_manager,pdl_manager,Updated per formulary,Not Required
-9318786650,AZITHROMYCIN,Under Review,2025-08-25,2025-05-06,,2025-09-13,system,admin,Updated per formulary,Not Required
-5919285406,AZITHROMYCIN,Active,2025-08-27,2025-06-14,,2025-09-13,pdl_manager,system,Manual review needed,Failed
-1511326375,AMLODIPINE,Pending,2025-09-15,2025-03-23,,2025-09-09,system,analyst,Auto-generated,Failed
-2009630575,OMEPRAZOLE,Inactive,2025-08-27,2025-06-09,,2025-09-13,system,admin,New PDL entry,Exported
-3959812092,ALBUTEROL,Active,2025-08-25,2025-06-07,,2025-09-13,system,admin,Updated per formulary,Failed
-9563231564,SIMVASTATIN,Inactive,2025-09-01,2025-05-18,2025-08-05,2025-09-11,admin,admin,,Not Required
-7880709711,OMEPRAZOLE,Inactive,2025-09-09,2025-04-19,2025-08-12,2025-09-11,admin,pdl_manager,Auto-generated,Exported
-3156170663,LEVOTHYROXINE,Inactive,2025-09-02,2025-04-23,2025-07-11,2025-09-12,admin,system,Auto-generated,Failed
-2223673707,LISINOPRIL,Under Review,2025-09-02,2025-05-09,2025-07-03,2025-09-14,admin,admin,Manual review needed,Exported
-4906836455,FUROSEMIDE,Inactive,2025-09-14,2025-05-15,2025-07-08,2025-09-09,pdl_manager,admin,Manual review needed,Pending
-1412959328,PREDNISONE,Inactive,2025-09-10,2025-05-11,2025-08-17,2025-09-10,pdl_manager,pdl_manager,New PDL entry,Failed
-8889516158,AMOXICILLIN,Inactive,2025-08-26,2025-04-22,2025-08-07,2025-09-12,pdl_manager,analyst,Updated per formulary,Pending
-5708871550,METFORMIN,Pending,2025-08-24,2025-04-06,2025-09-16,2025-09-12,system,pdl_manager,New PDL entry,Not Required
-3594524461,LOSARTAN,Pending,2025-09-17,2025-03-26,2025-08-01,2025-09-15,pdl_manager,system,Updated per formulary,Pending
-1498189017,PREDNISONE,Pending,2025-09-09,2025-05-20,2025-09-18,2025-09-11,admin,admin,New PDL entry,Exported
-2574758348,SERTRALINE,Pending,2025-09-16,2025-04-11,2025-08-08,2025-09-10,pdl_manager,pdl_manager,New PDL entry,Exported
-8398766301,OMEPRAZOLE,Active,2025-08-29,2025-03-26,,2025-09-13,admin,system,Updated per formulary,Not Required
-6293839765,ATORVASTATIN,Under Review,2025-09-13,2025-05-23,,2025-09-15,admin,admin,Auto-generated,Not Required
-9447970950,LEVOTHYROXINE,Inactive,2025-09-04,2025-06-19,2025-08-30,2025-09-09,analyst,admin,New PDL entry,Exported
-6539577736,AMLODIPINE,Inactive,2025-08-27,2025-04-14,,2025-09-14,analyst,analyst,,Exported
-7804370836,LISINOPRIL,Pending,2025-08-27,2025-05-18,2025-07-10,2025-09-16,analyst,admin,Manual review needed,Pending
-7533824680,METFORMIN,Pending,2025-09-02,2025-06-06,,2025-09-18,pdl_manager,analyst,Auto-generated,Pending
-8061939755,ALBUTEROL,Pending,2025-09-19,2025-05-16,,2025-09-12,admin,admin,Updated per formulary,Failed
-4107582499,AMLODIPINE,Pending,2025-09-18,2025-05-08,2025-09-11,2025-09-16,pdl_manager,system,Manual review needed,Pending
-1346604939,LOSARTAN,Pending,2025-08-28,2025-05-24,,2025-09-14,admin,analyst,Auto-generated,Exported
-8373779153,ATORVASTATIN,Inactive,2025-09-12,2025-05-15,2025-09-07,2025-09-11,analyst,admin,Updated per formulary,Not Required
-8947871252,FUROSEMIDE,Pending,2025-09-09,2025-04-08,2025-07-14,2025-09-09,analyst,analyst,Updated per formulary,Exported
-8129463130,ATORVASTATIN,Pending,2025-09-12,2025-03-26,,2025-09-09,analyst,analyst,Updated per formulary,Pending
-2438146799,ALBUTEROL,Active,2025-08-22,2025-06-12,,2025-09-15,system,pdl_manager,,Not Required
-6310226266,OMEPRAZOLE,Under Review,2025-09-11,2025-05-04,,2025-09-18,pdl_manager,admin,Auto-generated,Exported
-5223206678,AMOXICILLIN,Active,2025-09-14,2025-05-11,,2025-09-17,system,admin,Updated per formulary,Failed
-8107389623,METFORMIN,Inactive,2025-09-09,2025-04-30,,2025-09-09,admin,system,New PDL entry,Exported
-7781722721,LOSARTAN,Under Review,2025-09-03,2025-06-04,,2025-09-11,pdl_manager,pdl_manager,,Failed
-1921317338,HYDROCHLOROTHIAZIDE,Inactive,2025-08-23,2025-04-29,2025-08-22,2025-09-12,pdl_manager,analyst,Auto-generated,Not Required
-9646926463,ATORVASTATIN,Active,2025-09-08,2025-04-15,,2025-09-18,admin,system,Auto-generated,Pending
-9623515257,METFORMIN,Inactive,2025-09-02,2025-05-04,,2025-09-18,admin,pdl_manager,Auto-generated,Failed
-3877163187,METFORMIN,Under Review,2025-09-12,2025-05-04,2025-07-19,2025-09-09,admin,admin,Manual review needed,Pending
-9975104530,HYDROCHLOROTHIAZIDE,Active,2025-08-29,2025-06-01,,2025-09-16,system,admin,Auto-generated,Pending
-9243479420,OMEPRAZOLE,Active,2025-09-07,2025-05-31,,2025-09-15,system,analyst,Auto-generated,Not Required
-3202544133,PREDNISONE,Under Review,2025-08-30,2025-05-24,,2025-09-11,pdl_manager,analyst,,Exported
-7729398263,LEVOTHYROXINE,Inactive,2025-08-23,2025-05-25,2025-07-03,2025-09-17,system,pdl_manager,Updated per formulary,Not Required
-4162379327,FUROSEMIDE,Under Review,2025-09-12,2025-05-16,,2025-09-15,pdl_manager,analyst,Auto-generated,Pending
-1105633480,PREDNISONE,Pending,2025-09-11,2025-04-28,2025-08-27,2025-09-18,admin,system,Updated per formulary,Failed
-7203228933,ATORVASTATIN,Active,2025-09-18,2025-06-02,2025-08-17,2025-09-17,system,pdl_manager,Manual review needed,Exported
-2292971586,TRAMADOL,Inactive,2025-09-12,2025-04-30,,2025-09-15,analyst,admin,Manual review needed,Not Required
-9308678525,ATORVASTATIN,Pending,2025-09-05,2025-04-10,2025-07-31,2025-09-13,pdl_manager,admin,Updated per formulary,Not Required
-7341809153,GABAPENTIN,Under Review,2025-09-13,2025-04-13,,2025-09-11,admin,system,Manual review needed,Exported
-4951825175,SERTRALINE,Pending,2025-08-26,2025-05-25,,2025-09-17,admin,analyst,Manual review needed,Not Required
-5747878523,AMLODIPINE,Pending,2025-08-22,2025-03-30,,2025-09-13,pdl_manager,analyst,Auto-generated,Failed
-7007934187,SERTRALINE,Inactive,2025-09-14,2025-06-08,2025-08-10,2025-09-11,pdl_manager,pdl_manager,Auto-generated,Pending
-2384726249,TRAMADOL,Pending,2025-09-12,2025-06-12,,2025-09-19,analyst,pdl_manager,,Failed
-8225522363,AZITHROMYCIN,Inactive,2025-08-25,2025-04-07,,2025-09-14,system,analyst,Updated per formulary,Failed
-6901317675,LEVOTHYROXINE,Pending,2025-08-24,2025-05-12,2025-08-04,2025-09-15,analyst,admin,Manual review needed,Pending
-8763774895,AMOXICILLIN,Active,2025-09-04,2025-04-28,2025-08-06,2025-09-09,admin,analyst,,Pending
-5607862915,LEVOTHYROXINE,Inactive,2025-09-07,2025-04-01,,2025-09-15,admin,analyst,Updated per formulary,Exported
+8331326310,METOPROLOL,Active,2025-01-14,2025-03-14,,2025-08-23,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+8331326310,METOPROLOL,Active,2025-04-24,2025-04-06,,2025-09-12,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Exported
+8331326310,METOPROLOL,Active,2025-06-13,2025-05-15,,2025-09-11,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
+9308678525,ALBUTEROL,Active,2025-02-10,2025-03-04,,2025-09-15,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+9308678525,ALBUTEROL,Active,2025-07-27,2025-05-24,,2025-09-14,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+2362849751,HYDROCHLOROTHIAZIDE,Active,2025-03-11,2024-12-30,,2025-09-10,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+2362849751,HYDROCHLOROTHIAZIDE,Pending,2025-06-11,2025-06-18,,2025-09-12,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - pending per state formulary,Exported
+7203228933,OMEPRAZOLE,Active,2024-12-14,2024-12-18,,2025-09-01,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+7203228933,OMEPRAZOLE,Active,2025-04-27,2025-05-09,,2025-09-16,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Exported
+7203228933,OMEPRAZOLE,Active,2025-07-07,2025-07-14,,2025-09-13,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
+5708871550,CLOPIDOGREL,Active,2025-01-11,2025-03-25,,2025-09-05,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+5708871550,CLOPIDOGREL,Active,2025-03-27,2025-03-27,,2025-09-13,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Exported
+5708871550,CLOPIDOGREL,Inactive,2025-07-04,2025-06-11,,2025-09-15,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - inactive per state formulary,Exported
+4347655264,GABAPENTIN,Active,2025-03-07,2025-01-19,,2025-09-14,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+4347655264,GABAPENTIN,Active,2025-05-30,2025-05-11,,2025-09-18,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Pending
+4347655264,GABAPENTIN,Pending,2025-05-04,2025-07-27,,2025-09-16,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - pending per state formulary,Exported
+8380967066,LEVOTHYROXINE,Inactive,2025-03-18,2025-03-15,,2025-09-15,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+8380967066,LEVOTHYROXINE,Active,2025-03-15,2025-05-10,,2025-09-11,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Exported
+8380967066,LEVOTHYROXINE,Active,2025-05-31,2025-06-06,,2025-09-10,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
+8025249652,LEVOTHYROXINE,Under Review,2025-02-20,2025-02-05,,2025-08-28,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+8025249652,LEVOTHYROXINE,Inactive,2025-03-30,2025-05-11,,2025-09-14,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - inactive for remote access,Pending
+8025249652,LEVOTHYROXINE,Active,2025-06-13,2025-07-19,,2025-09-14,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+7149784386,AMOXICILLIN,Active,2025-03-17,2025-03-28,,2025-09-09,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+7149784386,AMOXICILLIN,Active,2025-03-21,2025-03-24,,2025-09-10,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Pending
+7149784386,AMOXICILLIN,Pending,2025-05-25,2025-05-09,,2025-09-12,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - pending per state formulary,Exported
+8661997481,TRAMADOL,Active,2025-03-10,2025-02-10,,2025-08-24,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+8661997481,TRAMADOL,Active,2025-05-13,2025-05-24,,2025-09-15,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+8470443577,LOSARTAN,Active,2024-12-13,2024-12-30,,2025-08-23,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+8470443577,LOSARTAN,Active,2025-07-19,2025-06-23,,2025-09-13,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
+1320794066,LISINOPRIL,Pending,2024-12-02,2025-03-22,,2025-08-20,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+1320794066,LISINOPRIL,Active,2025-06-06,2025-07-13,,2025-09-12,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
+1691540938,TRAMADOL,Active,2025-02-11,2025-03-31,,2025-09-05,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+1691540938,TRAMADOL,Under Review,2025-04-05,2025-06-26,2025-06-08,2025-09-10,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - under review for remote access,Pending
+1691540938,TRAMADOL,Pending,2025-07-04,2025-06-20,,2025-09-12,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - pending per state formulary,Not Required
+7488784199,PANTOPRAZOLE,Active,2025-04-19,2024-11-28,,2025-09-04,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+7488784199,PANTOPRAZOLE,Inactive,2025-06-22,2025-04-18,,2025-09-08,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - inactive for remote access,Exported
+7488784199,PANTOPRAZOLE,Active,2025-05-28,2025-06-05,,2025-09-13,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+8904413378,CLOPIDOGREL,Active,2025-01-04,2024-12-29,,2025-09-11,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+8904413378,CLOPIDOGREL,Active,2025-03-20,2025-05-29,,2025-09-14,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Pending
+8904413378,CLOPIDOGREL,Active,2025-07-04,2025-05-31,,2025-09-10,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
+6719494304,LOSARTAN,Active,2025-03-14,2025-02-03,,2025-08-30,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+6719494304,LOSARTAN,Active,2025-07-16,2025-07-03,,2025-09-14,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
+1053861788,IBUPROFEN,Pending,2025-03-29,2025-03-26,,2025-08-28,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+1053861788,IBUPROFEN,Pending,2025-04-15,2025-04-13,2025-05-30,2025-09-12,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - pending for remote access,Exported
+4900626301,SIMVASTATIN,Pending,2025-03-22,2025-04-06,,2025-09-07,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+4900626301,SIMVASTATIN,Active,2025-07-30,2025-04-23,,2025-09-17,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+7653481000,ALBUTEROL,Active,2024-11-30,2024-12-11,,2025-09-12,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+7653481000,ALBUTEROL,Active,2025-06-28,2025-06-06,,2025-09-05,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
+7653481000,ALBUTEROL,Active,2025-06-27,2025-05-08,,2025-09-19,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+5136828758,ACETAMINOPHEN,Active,2025-04-08,2025-04-20,,2025-09-05,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+5136828758,ACETAMINOPHEN,Pending,2025-07-14,2025-06-15,,2025-09-16,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - pending per state formulary,Exported
+7679211703,OMEPRAZOLE,Active,2025-03-20,2024-12-22,,2025-09-10,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+6901317675,AMLODIPINE,Active,2024-12-24,2024-12-30,,2025-08-22,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+6901317675,AMLODIPINE,Inactive,2025-06-03,2025-04-02,,2025-09-06,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - inactive for remote access,Exported
+6901317675,AMLODIPINE,Active,2025-04-28,2025-07-05,,2025-09-11,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+5119192821,AMOXICILLIN,Active,2025-02-17,2025-03-22,,2025-09-16,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+5119192821,AMOXICILLIN,Active,2025-04-26,2025-05-04,,2025-09-19,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+8805972163,HYDROCHLOROTHIAZIDE,Active,2024-12-10,2025-01-11,,2025-09-06,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+8805972163,HYDROCHLOROTHIAZIDE,Active,2025-04-11,2025-04-01,,2025-09-17,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
+8805972163,HYDROCHLOROTHIAZIDE,Active,2025-06-22,2025-07-01,,2025-09-16,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+5494434588,PREDNISONE,Active,2025-04-03,2024-11-30,,2025-08-29,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+5494434588,PREDNISONE,Active,2025-06-14,2025-07-23,,2025-09-15,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
+2831986176,WARFARIN,Inactive,2025-01-05,2024-12-14,,2025-08-30,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+2831986176,WARFARIN,Active,2025-07-21,2025-05-26,,2025-09-10,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
+2756505153,CLOPIDOGREL,Active,2025-04-05,2024-12-03,,2025-09-11,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+2756505153,CLOPIDOGREL,Inactive,2025-06-04,2025-04-17,,2025-09-11,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - inactive for remote access,Exported
+2756505153,CLOPIDOGREL,Under Review,2025-06-26,2025-06-23,,2025-09-17,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - under review per state formulary,Exported
+3705303491,AZITHROMYCIN,Active,2024-12-14,2024-12-01,,2025-09-01,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+3705303491,AZITHROMYCIN,Pending,2025-05-24,2025-05-24,2025-04-10,2025-09-06,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - pending for remote access,Exported
+3705303491,AZITHROMYCIN,Active,2025-07-29,2025-05-23,,2025-09-18,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
+2235223532,ALBUTEROL,Inactive,2024-12-09,2025-04-22,,2025-09-10,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+2235223532,ALBUTEROL,Inactive,2025-06-23,2025-06-10,,2025-09-16,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - inactive per state formulary,Not Required
+3705784427,AMOXICILLIN,Inactive,2025-04-02,2025-04-11,,2025-09-07,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+3705784427,AMOXICILLIN,Pending,2025-05-16,2025-05-12,2025-04-05,2025-09-05,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - pending for remote access,Exported
+3110172904,ALBUTEROL,Pending,2024-12-03,2025-01-21,,2025-08-22,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+3110172904,ALBUTEROL,Active,2025-07-23,2025-05-03,,2025-09-12,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+5513671390,LEVOTHYROXINE,Pending,2025-03-20,2025-04-14,,2025-08-22,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+5513671390,LEVOTHYROXINE,Inactive,2025-04-10,2025-06-26,,2025-09-18,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - inactive for remote access,Pending
+5513671390,LEVOTHYROXINE,Active,2025-07-23,2025-05-22,,2025-09-17,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+8129463130,METOPROLOL,Inactive,2025-01-19,2025-03-28,,2025-08-29,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+8129463130,METOPROLOL,Active,2025-04-26,2025-03-06,,2025-09-07,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
+8129463130,METOPROLOL,Pending,2025-04-26,2025-06-08,,2025-09-15,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - pending per state formulary,Not Required
+9711905827,TRAMADOL,Active,2025-03-05,2024-11-30,,2025-09-09,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+9711905827,TRAMADOL,Active,2025-04-12,2025-06-11,,2025-09-17,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
+9711905827,TRAMADOL,Active,2025-05-11,2025-05-16,,2025-09-10,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+6498746277,SIMVASTATIN,Active,2024-12-10,2025-03-29,,2025-08-30,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+6498746277,SIMVASTATIN,Active,2025-05-23,2025-03-20,,2025-09-15,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
+6498746277,SIMVASTATIN,Active,2025-05-11,2025-05-01,,2025-09-12,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
+1700529332,AMLODIPINE,Pending,2025-02-11,2025-01-23,,2025-08-31,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+1700529332,AMLODIPINE,Pending,2025-04-25,2025-04-23,2025-06-05,2025-09-18,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - pending for remote access,Pending
+1700529332,AMLODIPINE,Active,2025-06-15,2025-07-15,,2025-09-13,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+8298103936,TRAMADOL,Active,2025-02-01,2024-12-04,,2025-08-22,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+8298103936,TRAMADOL,Active,2025-06-17,2025-04-23,,2025-09-13,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
+3689312210,LOSARTAN,Pending,2025-01-07,2024-12-04,,2025-09-05,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+3689312210,LOSARTAN,Active,2025-06-14,2025-05-21,,2025-09-09,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
+3689312210,LOSARTAN,Active,2025-06-22,2025-07-06,,2025-09-18,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+8889516158,HYDROCHLOROTHIAZIDE,Active,2025-01-21,2024-12-12,,2025-08-30,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+8889516158,HYDROCHLOROTHIAZIDE,Active,2025-06-27,2025-03-07,,2025-09-05,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Exported
+8889516158,HYDROCHLOROTHIAZIDE,Active,2025-05-10,2025-05-05,,2025-09-10,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+5898551545,SERTRALINE,Active,2025-04-18,2024-12-06,,2025-08-31,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+5898551545,SERTRALINE,Active,2025-05-21,2025-06-13,,2025-09-12,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
+5898551545,SERTRALINE,Active,2025-05-22,2025-06-02,,2025-09-13,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
+1101131385,GABAPENTIN,Active,2025-04-14,2025-02-21,,2025-09-06,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+1101131385,GABAPENTIN,Active,2025-03-17,2025-05-03,,2025-09-17,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
+1101131385,GABAPENTIN,Active,2025-04-26,2025-06-05,,2025-09-16,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
+7533824680,SERTRALINE,Active,2024-12-21,2025-04-12,,2025-09-11,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+7533824680,SERTRALINE,Active,2025-03-14,2025-06-18,,2025-09-09,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Exported
+7533824680,SERTRALINE,Active,2025-07-17,2025-05-06,,2025-09-09,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+6293839765,TRAMADOL,Active,2025-04-18,2025-04-10,,2025-09-09,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+6293839765,TRAMADOL,Pending,2025-05-01,2025-04-29,2025-06-13,2025-09-13,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - pending for remote access,Exported
+6293839765,TRAMADOL,Active,2025-07-17,2025-07-09,,2025-09-11,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+5747878523,AZITHROMYCIN,Active,2025-03-19,2025-01-15,,2025-08-27,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+5747878523,AZITHROMYCIN,Active,2025-03-20,2025-06-06,,2025-09-16,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Exported
+5747878523,AZITHROMYCIN,Active,2025-06-16,2025-06-27,,2025-09-11,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
+7246526346,HYDROCHLOROTHIAZIDE,Pending,2025-03-04,2024-11-26,,2025-09-16,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+7246526346,HYDROCHLOROTHIAZIDE,Active,2025-07-02,2025-06-27,,2025-09-14,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+3262717209,FUROSEMIDE,Active,2025-01-09,2024-12-02,,2025-08-21,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+3262717209,FUROSEMIDE,Active,2025-06-18,2025-04-16,,2025-09-11,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
+7950805510,PREDNISONE,Inactive,2025-02-05,2025-01-22,,2025-08-25,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+7950805510,PREDNISONE,Pending,2025-03-05,2025-04-27,2025-04-11,2025-09-07,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - pending for remote access,Pending
+7950805510,PREDNISONE,Active,2025-05-08,2025-06-03,,2025-09-11,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
+5912155877,LOSARTAN,Active,2025-03-01,2025-03-10,,2025-09-09,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+5912155877,LOSARTAN,Inactive,2025-06-07,2025-03-21,,2025-09-18,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - inactive for remote access,Pending
+5912155877,LOSARTAN,Pending,2025-05-24,2025-04-25,,2025-09-10,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - pending per state formulary,Not Required
+4360826110,PANTOPRAZOLE,Active,2025-02-16,2025-02-18,,2025-08-20,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+4360826110,PANTOPRAZOLE,Active,2025-04-01,2025-05-14,,2025-09-16,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Exported
+4360826110,PANTOPRAZOLE,Active,2025-05-28,2025-06-24,,2025-09-11,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+3671667795,LEVOTHYROXINE,Active,2024-12-16,2024-12-22,,2025-08-21,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+3671667795,LEVOTHYROXINE,Active,2025-05-11,2025-07-30,,2025-09-14,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+1412959328,SERTRALINE,Under Review,2025-04-03,2024-12-30,,2025-09-12,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+1412959328,SERTRALINE,Active,2025-04-25,2025-04-27,,2025-09-08,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Exported
+1412959328,SERTRALINE,Inactive,2025-06-03,2025-06-07,,2025-09-14,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - inactive per state formulary,Not Required
+6479439827,IBUPROFEN,Active,2025-01-06,2024-12-05,,2025-09-15,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+6479439827,IBUPROFEN,Active,2025-05-28,2025-03-22,,2025-09-12,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
+1571971889,PREDNISONE,Under Review,2025-03-22,2025-01-28,,2025-08-25,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+1571971889,PREDNISONE,Active,2025-05-28,2025-04-07,,2025-09-15,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
+1571971889,PREDNISONE,Active,2025-05-27,2025-06-23,,2025-09-12,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+7103348799,FUROSEMIDE,Active,2025-01-29,2024-11-30,,2025-09-13,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+7103348799,FUROSEMIDE,Pending,2025-03-28,2025-04-17,2025-06-13,2025-09-12,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - pending for remote access,Pending
+7103348799,FUROSEMIDE,Pending,2025-07-21,2025-05-11,,2025-09-14,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - pending per state formulary,Exported
+9127906958,SERTRALINE,Inactive,2025-01-24,2024-12-11,,2025-08-31,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+9127906958,SERTRALINE,Inactive,2025-05-21,2025-06-05,,2025-09-15,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - inactive per state formulary,Exported
+1511326375,METFORMIN,Under Review,2025-02-16,2025-04-16,,2025-09-11,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+1511326375,METFORMIN,Active,2025-05-10,2025-03-04,,2025-09-14,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Pending
+1511326375,METFORMIN,Inactive,2025-04-23,2025-07-06,,2025-09-19,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - inactive per state formulary,Not Required
+1009428392,HYDROCHLOROTHIAZIDE,Active,2025-02-22,2025-02-17,,2025-09-16,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+1009428392,HYDROCHLOROTHIAZIDE,Under Review,2025-05-20,2025-03-08,2025-04-10,2025-09-10,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - under review for remote access,Pending
+5228803725,ATORVASTATIN,Active,2025-04-15,2024-12-24,,2025-08-21,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+5228803725,ATORVASTATIN,Active,2025-03-31,2025-05-04,,2025-09-05,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Exported
+5228803725,ATORVASTATIN,Active,2025-05-14,2025-07-26,,2025-09-12,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+7097160169,AMOXICILLIN,Under Review,2025-02-25,2024-12-25,,2025-09-16,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+7097160169,AMOXICILLIN,Active,2025-05-11,2025-04-23,,2025-09-10,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Exported
+7097160169,AMOXICILLIN,Active,2025-05-29,2025-06-20,,2025-09-10,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+6576725730,SERTRALINE,Active,2025-03-09,2025-02-08,,2025-08-30,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+6576725730,SERTRALINE,Pending,2025-06-14,2025-04-30,2025-07-26,2025-09-11,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - pending for remote access,Exported
+6576725730,SERTRALINE,Active,2025-07-13,2025-05-06,,2025-09-17,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
+1911350010,GABAPENTIN,Active,2025-02-19,2025-01-25,,2025-09-16,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+1911350010,GABAPENTIN,Active,2025-06-14,2025-06-12,,2025-09-14,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Exported
+1911350010,GABAPENTIN,Active,2025-06-28,2025-05-18,,2025-09-16,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
+9435524835,OMEPRAZOLE,Pending,2025-03-07,2025-01-05,,2025-09-11,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+9435524835,OMEPRAZOLE,Pending,2025-03-07,2025-06-15,2025-07-16,2025-09-15,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - pending for remote access,Exported
+8107389623,FUROSEMIDE,Active,2025-01-31,2025-04-15,,2025-09-15,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+8107389623,FUROSEMIDE,Active,2025-04-16,2025-06-03,,2025-09-13,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
+8107389623,FUROSEMIDE,Active,2025-06-25,2025-06-30,,2025-09-14,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
+5960196797,CLOPIDOGREL,Inactive,2024-12-31,2024-12-10,,2025-09-01,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+5960196797,CLOPIDOGREL,Active,2025-03-15,2025-04-08,,2025-09-09,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
+5960196797,CLOPIDOGREL,Active,2025-07-25,2025-05-14,,2025-09-17,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+5867639038,AMOXICILLIN,Active,2024-12-19,2025-02-20,,2025-08-21,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+5867639038,AMOXICILLIN,Active,2025-04-26,2025-06-03,,2025-09-17,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Exported
+5867639038,AMOXICILLIN,Active,2025-05-29,2025-05-04,,2025-09-19,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+3247337331,PREDNISONE,Pending,2025-04-18,2025-02-01,,2025-09-06,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+3247337331,PREDNISONE,Under Review,2025-05-02,2025-03-14,2025-05-13,2025-09-10,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - under review for remote access,Exported
+3247337331,PREDNISONE,Active,2025-05-20,2025-07-04,,2025-09-12,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+1216609549,IBUPROFEN,Active,2025-04-01,2025-04-20,,2025-09-09,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+1216609549,IBUPROFEN,Active,2025-07-05,2025-06-14,,2025-09-17,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+8258424449,ACETAMINOPHEN,Active,2025-03-29,2025-01-11,,2025-08-20,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+8258424449,ACETAMINOPHEN,Active,2025-05-11,2025-04-04,,2025-09-08,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
+8258424449,ACETAMINOPHEN,Active,2025-05-25,2025-06-16,,2025-09-11,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+7360733059,LISINOPRIL,Active,2025-02-03,2024-12-30,,2025-09-14,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+7360733059,LISINOPRIL,Active,2025-05-29,2025-06-29,,2025-09-10,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Pending
+7360733059,LISINOPRIL,Active,2025-05-26,2025-06-03,,2025-09-18,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+1445828320,LISINOPRIL,Inactive,2025-03-20,2024-12-05,,2025-09-02,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+1445828320,LISINOPRIL,Active,2025-05-10,2025-06-12,,2025-09-12,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Pending
+1445828320,LISINOPRIL,Active,2025-05-14,2025-06-29,,2025-09-13,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
+6987544085,AZITHROMYCIN,Inactive,2024-12-23,2024-12-16,,2025-09-03,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+6987544085,AZITHROMYCIN,Active,2025-03-28,2025-03-24,,2025-09-19,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Exported
+6987544085,AZITHROMYCIN,Active,2025-05-04,2025-07-03,,2025-09-17,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+7762330563,TRAMADOL,Active,2025-04-02,2024-12-18,,2025-08-24,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+7762330563,TRAMADOL,Pending,2025-03-17,2025-03-16,2025-08-11,2025-09-08,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - pending for remote access,Exported
+7762330563,TRAMADOL,Active,2025-07-04,2025-06-21,,2025-09-13,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+1105633480,PANTOPRAZOLE,Active,2025-03-30,2024-12-19,,2025-08-29,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+1105633480,PANTOPRAZOLE,Pending,2025-03-09,2025-03-14,2025-07-03,2025-09-05,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - pending for remote access,Pending
+1105633480,PANTOPRAZOLE,Active,2025-07-18,2025-04-22,,2025-09-14,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
+5083708161,AZITHROMYCIN,Inactive,2025-01-01,2024-12-01,,2025-09-12,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+5083708161,AZITHROMYCIN,Active,2025-04-29,2025-03-16,,2025-09-14,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Exported
+5083708161,AZITHROMYCIN,Active,2025-05-04,2025-06-28,,2025-09-10,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+8251110183,LEVOTHYROXINE,Under Review,2024-11-28,2024-11-26,,2025-08-23,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+8251110183,LEVOTHYROXINE,Pending,2025-06-16,2025-03-19,2025-04-05,2025-09-06,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - pending for remote access,Pending
+8251110183,LEVOTHYROXINE,Active,2025-05-19,2025-04-24,,2025-09-10,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
+9494231050,ATORVASTATIN,Active,2025-04-09,2025-01-24,,2025-09-18,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+9494231050,ATORVASTATIN,Active,2025-05-01,2025-03-15,,2025-09-07,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Exported
+9494231050,ATORVASTATIN,Active,2025-05-24,2025-06-14,,2025-09-14,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+4164880711,ACETAMINOPHEN,Active,2024-12-31,2025-04-09,,2025-08-27,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+4164880711,ACETAMINOPHEN,Inactive,2025-05-06,2025-05-26,,2025-09-10,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - inactive per state formulary,Exported
+5544731222,SERTRALINE,Inactive,2024-12-22,2025-04-09,,2025-08-30,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+5544731222,SERTRALINE,Under Review,2025-06-22,2025-04-25,2025-07-17,2025-09-11,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - under review for remote access,Exported
+5544731222,SERTRALINE,Active,2025-07-01,2025-07-28,,2025-09-14,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+2312602678,FUROSEMIDE,Pending,2025-03-10,2025-03-26,,2025-08-21,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+2312602678,FUROSEMIDE,Pending,2025-03-19,2025-04-05,2025-07-15,2025-09-08,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - pending for remote access,Pending
+2312602678,FUROSEMIDE,Pending,2025-06-06,2025-06-24,,2025-09-13,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - pending per state formulary,Not Required
+1185142368,METOPROLOL,Active,2024-12-31,2025-03-10,,2025-08-31,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+1185142368,METOPROLOL,Inactive,2025-05-02,2025-04-22,,2025-09-05,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - inactive for remote access,Exported
+1185142368,METOPROLOL,Active,2025-07-19,2025-06-21,,2025-09-14,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+8061939755,ACETAMINOPHEN,Under Review,2025-03-31,2025-01-10,,2025-08-24,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+8061939755,ACETAMINOPHEN,Under Review,2025-05-25,2025-04-20,2025-06-08,2025-09-12,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - under review for remote access,Pending
+8061939755,ACETAMINOPHEN,Active,2025-05-22,2025-07-25,,2025-09-15,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
+3015762722,HYDROCHLOROTHIAZIDE,Active,2024-12-09,2025-04-22,,2025-09-16,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+3015762722,HYDROCHLOROTHIAZIDE,Active,2025-05-21,2025-05-28,,2025-09-11,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Exported
+3015762722,HYDROCHLOROTHIAZIDE,Active,2025-06-28,2025-06-12,,2025-09-10,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+9355354271,IBUPROFEN,Active,2025-04-11,2025-02-18,,2025-08-27,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+9355354271,IBUPROFEN,Inactive,2025-05-21,2025-05-01,,2025-09-05,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - inactive for remote access,Exported
+9355354271,IBUPROFEN,Active,2025-04-29,2025-07-29,,2025-09-09,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
+9810359791,AZITHROMYCIN,Active,2024-11-28,2024-12-24,,2025-09-01,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+9810359791,AZITHROMYCIN,Active,2025-04-17,2025-04-16,,2025-09-09,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Exported
+9810359791,AZITHROMYCIN,Inactive,2025-07-14,2025-05-19,,2025-09-11,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - inactive per state formulary,Not Required
+5192805893,AZITHROMYCIN,Active,2025-03-31,2025-04-13,,2025-09-11,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+5192805893,AZITHROMYCIN,Inactive,2025-03-27,2025-03-08,,2025-09-12,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - inactive for remote access,Exported
+9302724976,AMLODIPINE,Active,2025-04-02,2025-01-01,,2025-09-12,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+6691316698,LISINOPRIL,Pending,2024-12-31,2025-02-19,,2025-09-18,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+6691316698,LISINOPRIL,Active,2025-06-18,2025-03-18,,2025-09-15,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Exported
+6691316698,LISINOPRIL,Active,2025-07-06,2025-05-01,,2025-09-18,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+9432416335,OMEPRAZOLE,Pending,2025-04-11,2025-03-06,,2025-09-06,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+5070124937,CLOPIDOGREL,Active,2025-01-03,2025-04-07,,2025-09-14,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+5070124937,CLOPIDOGREL,Active,2025-04-05,2025-04-13,,2025-09-09,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Exported
+5070124937,CLOPIDOGREL,Active,2025-07-18,2025-06-20,,2025-09-10,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+9020967910,IBUPROFEN,Active,2025-01-27,2024-12-07,,2025-09-07,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+9020967910,IBUPROFEN,Active,2025-07-08,2025-05-11,,2025-09-18,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+1699169388,SIMVASTATIN,Active,2025-01-20,2025-03-30,,2025-09-05,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+6904452356,AMLODIPINE,Active,2025-02-10,2025-03-06,,2025-09-17,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+6904452356,AMLODIPINE,Under Review,2025-05-15,2025-03-29,2025-05-21,2025-09-06,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - under review for remote access,Pending
+6904452356,AMLODIPINE,Active,2025-06-24,2025-06-28,,2025-09-15,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+8743697098,LISINOPRIL,Inactive,2024-12-08,2025-03-26,,2025-08-20,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+8743697098,LISINOPRIL,Inactive,2025-06-29,2025-05-29,,2025-09-05,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - inactive for remote access,Exported
+8743697098,LISINOPRIL,Inactive,2025-07-22,2025-06-18,,2025-09-12,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - inactive per state formulary,Exported
+2566306779,SIMVASTATIN,Active,2024-12-31,2025-01-28,,2025-09-19,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+2566306779,SIMVASTATIN,Pending,2025-06-18,2025-06-03,2025-07-24,2025-09-14,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - pending for remote access,Pending
+2566306779,SIMVASTATIN,Under Review,2025-07-06,2025-04-27,,2025-09-12,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - under review per state formulary,Not Required
+9503133925,FUROSEMIDE,Under Review,2025-02-28,2024-11-24,,2025-08-29,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+9503133925,FUROSEMIDE,Active,2025-06-20,2025-05-01,,2025-09-07,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Exported
+9503133925,FUROSEMIDE,Active,2025-06-06,2025-06-06,,2025-09-09,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
+7007934187,ALBUTEROL,Inactive,2025-02-20,2025-04-17,,2025-09-17,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+7007934187,ALBUTEROL,Pending,2025-03-06,2025-05-25,2025-08-19,2025-09-10,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - pending for remote access,Exported
+7007934187,ALBUTEROL,Active,2025-05-08,2025-04-25,,2025-09-16,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+4592872183,LEVOTHYROXINE,Pending,2025-02-17,2024-12-24,,2025-09-14,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+4592872183,LEVOTHYROXINE,Pending,2025-06-09,2025-07-01,2025-06-07,2025-09-17,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - pending for remote access,Pending
+4592872183,LEVOTHYROXINE,Active,2025-06-26,2025-07-16,,2025-09-15,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
+1224811583,WARFARIN,Inactive,2025-01-04,2025-02-22,,2025-09-15,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+7199691766,LISINOPRIL,Active,2025-02-24,2025-03-10,,2025-08-22,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+7199691766,LISINOPRIL,Active,2025-05-07,2025-03-08,,2025-09-16,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
+7199691766,LISINOPRIL,Active,2025-05-13,2025-07-01,,2025-09-11,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+8511183502,AMLODIPINE,Under Review,2024-12-27,2025-04-08,,2025-08-26,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+8511183502,AMLODIPINE,Under Review,2025-06-10,2025-05-21,,2025-09-17,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - under review per state formulary,Exported
+3859551369,TRAMADOL,Pending,2025-04-05,2025-01-12,,2025-09-02,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+3859551369,TRAMADOL,Active,2025-03-31,2025-05-09,,2025-09-11,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
+9862150983,LISINOPRIL,Active,2025-04-03,2025-03-24,,2025-09-05,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+9862150983,LISINOPRIL,Pending,2025-05-29,2025-05-18,2025-07-12,2025-09-16,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - pending for remote access,Pending
+4148757719,AZITHROMYCIN,Under Review,2024-11-25,2025-02-21,,2025-08-31,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+4148757719,AZITHROMYCIN,Active,2025-04-27,2025-07-29,,2025-09-14,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+4215794577,LOSARTAN,Inactive,2025-04-12,2025-01-20,,2025-09-01,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+4215794577,LOSARTAN,Active,2025-07-15,2025-07-10,,2025-09-11,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+4475167976,AZITHROMYCIN,Active,2025-04-01,2025-03-21,,2025-09-07,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+4475167976,AZITHROMYCIN,Under Review,2025-03-18,2025-05-31,2025-06-11,2025-09-04,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - under review for remote access,Pending
+4475167976,AZITHROMYCIN,Inactive,2025-06-15,2025-07-20,,2025-09-18,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - inactive per state formulary,Not Required
+6024475102,AZITHROMYCIN,Active,2025-01-08,2025-04-06,,2025-09-10,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+6024475102,AZITHROMYCIN,Pending,2025-04-19,2025-05-19,2025-08-07,2025-09-04,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - pending for remote access,Exported
+6024475102,AZITHROMYCIN,Active,2025-07-25,2025-05-03,,2025-09-13,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+5607862915,AMOXICILLIN,Active,2025-01-01,2024-12-15,,2025-09-17,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+5919285406,LEVOTHYROXINE,Active,2025-04-03,2025-01-01,,2025-09-09,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+5919285406,LEVOTHYROXINE,Active,2025-03-23,2025-04-23,,2025-09-09,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
+5919285406,LEVOTHYROXINE,Active,2025-06-08,2025-07-20,,2025-09-14,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+2810942167,METOPROLOL,Active,2024-12-01,2025-04-01,,2025-08-24,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+2810942167,METOPROLOL,Active,2025-04-29,2025-05-29,,2025-09-17,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+6167753531,AMLODIPINE,Active,2024-12-01,2025-03-13,,2025-09-16,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+6167753531,AMLODIPINE,Active,2025-03-08,2025-05-03,,2025-09-09,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
+6167753531,AMLODIPINE,Active,2025-06-06,2025-07-28,,2025-09-15,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+2515899609,AMLODIPINE,Active,2024-11-29,2025-03-12,,2025-08-20,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+2515899609,AMLODIPINE,Active,2025-05-29,2025-05-10,,2025-09-12,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+7804370836,AMLODIPINE,Active,2024-12-14,2025-01-04,,2025-09-19,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+7804370836,AMLODIPINE,Inactive,2025-05-24,2025-03-23,,2025-09-07,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - inactive for remote access,Pending
+3877163187,OMEPRAZOLE,Active,2025-01-20,2024-12-27,,2025-09-13,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+3877163187,OMEPRAZOLE,Active,2025-06-13,2025-05-05,,2025-09-17,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+9869859516,LEVOTHYROXINE,Active,2024-12-13,2025-04-21,,2025-09-18,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+9869859516,LEVOTHYROXINE,Active,2025-06-01,2025-05-17,,2025-09-17,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Pending
+9869859516,LEVOTHYROXINE,Active,2025-06-28,2025-06-11,,2025-09-13,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
+7042622182,SIMVASTATIN,Active,2025-01-21,2024-12-11,,2025-08-24,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+7042622182,SIMVASTATIN,Pending,2025-06-10,2025-04-07,2025-04-14,2025-09-17,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - pending for remote access,Pending
+7042622182,SIMVASTATIN,Inactive,2025-04-30,2025-07-14,,2025-09-09,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - inactive per state formulary,Not Required
+1839946326,ALBUTEROL,Active,2025-03-30,2025-03-06,,2025-09-05,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+1839946326,ALBUTEROL,Active,2025-05-05,2025-06-04,,2025-09-11,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+4424235982,OMEPRAZOLE,Active,2025-03-18,2025-04-06,,2025-09-17,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+4424235982,OMEPRAZOLE,Active,2025-07-12,2025-05-28,,2025-09-16,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+1621461765,METOPROLOL,Pending,2025-01-19,2025-03-18,,2025-09-05,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+1621461765,METOPROLOL,Active,2025-05-02,2025-07-10,,2025-09-17,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
+1839956360,METOPROLOL,Pending,2025-02-08,2025-01-10,,2025-09-14,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+1839956360,METOPROLOL,Inactive,2025-05-19,2025-06-09,,2025-09-09,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - inactive for remote access,Pending
+1839956360,METOPROLOL,Active,2025-07-03,2025-07-17,,2025-09-15,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+8225522363,LEVOTHYROXINE,Active,2025-01-14,2025-03-02,,2025-09-04,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+8225522363,LEVOTHYROXINE,Inactive,2025-05-25,2025-04-29,,2025-09-18,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - inactive for remote access,Pending
+8225522363,LEVOTHYROXINE,Active,2025-05-31,2025-07-23,,2025-09-18,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+6378276904,HYDROCHLOROTHIAZIDE,Active,2025-03-30,2025-01-25,,2025-09-06,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+6378276904,HYDROCHLOROTHIAZIDE,Active,2025-04-22,2025-05-27,,2025-09-12,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
+6378276904,HYDROCHLOROTHIAZIDE,Active,2025-07-05,2025-05-15,,2025-09-14,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+8932843683,ATORVASTATIN,Pending,2024-12-28,2025-02-27,,2025-09-09,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+8932843683,ATORVASTATIN,Active,2025-06-19,2025-06-01,,2025-09-16,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+8694647469,IBUPROFEN,Inactive,2025-04-07,2024-12-18,,2025-09-02,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+8694647469,IBUPROFEN,Under Review,2025-03-05,2025-06-29,2025-04-04,2025-09-06,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - under review for remote access,Exported
+8849441730,PANTOPRAZOLE,Under Review,2025-01-16,2025-02-27,,2025-08-21,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+8849441730,PANTOPRAZOLE,Pending,2025-05-06,2025-07-03,,2025-09-12,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - pending per state formulary,Not Required
+5255397911,WARFARIN,Pending,2025-03-31,2024-12-27,,2025-09-05,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+5255397911,WARFARIN,Active,2025-03-12,2025-04-01,,2025-09-05,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Exported
+5255397911,WARFARIN,Active,2025-07-28,2025-06-19,,2025-09-11,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
+2215706759,METOPROLOL,Inactive,2025-03-10,2025-03-06,,2025-09-14,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+2215706759,METOPROLOL,Active,2025-03-26,2025-05-21,,2025-09-11,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
+2215706759,METOPROLOL,Active,2025-04-29,2025-07-29,,2025-09-11,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+1734871024,ACETAMINOPHEN,Active,2024-12-06,2025-03-21,,2025-09-01,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+1734871024,ACETAMINOPHEN,Inactive,2025-04-30,2025-06-27,,2025-09-17,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - inactive for remote access,Pending
+1734871024,ACETAMINOPHEN,Active,2025-06-29,2025-07-16,,2025-09-15,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
+5389984538,ALBUTEROL,Inactive,2024-12-23,2025-03-01,,2025-09-06,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+5389984538,ALBUTEROL,Active,2025-06-03,2025-05-30,,2025-09-10,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Exported
+5389984538,ALBUTEROL,Active,2025-07-12,2025-06-16,,2025-09-17,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
+3495233425,METFORMIN,Active,2025-02-01,2025-02-26,,2025-09-18,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+3495233425,METFORMIN,Inactive,2025-05-13,2025-03-08,,2025-09-16,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - inactive for remote access,Exported
+3495233425,METFORMIN,Active,2025-06-08,2025-06-07,,2025-09-18,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+9853740488,LOSARTAN,Active,2025-03-12,2024-12-15,,2025-09-10,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+9853740488,LOSARTAN,Under Review,2025-04-01,2025-05-21,2025-07-12,2025-09-05,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - under review for remote access,Pending
+9463225258,ALBUTEROL,Inactive,2025-03-15,2025-01-25,,2025-09-03,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+9463225258,ALBUTEROL,Active,2025-06-21,2025-03-05,,2025-09-06,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Pending
+9463225258,ALBUTEROL,Pending,2025-05-04,2025-05-27,,2025-09-17,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - pending per state formulary,Not Required
+8414246160,OMEPRAZOLE,Pending,2025-03-28,2025-02-24,,2025-09-07,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+8414246160,OMEPRAZOLE,Under Review,2025-04-17,2025-06-15,2025-04-09,2025-09-08,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - under review for remote access,Pending
+5392376819,HYDROCHLOROTHIAZIDE,Active,2024-12-07,2024-12-08,,2025-09-08,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+5392376819,HYDROCHLOROTHIAZIDE,Active,2025-06-18,2025-06-08,,2025-09-13,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Exported
+5392376819,HYDROCHLOROTHIAZIDE,Active,2025-07-26,2025-07-20,,2025-09-17,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+1002213896,CLOPIDOGREL,Active,2025-02-05,2025-04-03,,2025-09-01,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+1002213896,CLOPIDOGREL,Active,2025-07-14,2025-05-30,,2025-09-11,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
+8040635284,PREDNISONE,Pending,2025-03-22,2025-01-23,,2025-08-21,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+8040635284,PREDNISONE,Pending,2025-06-02,2025-03-27,2025-07-13,2025-09-13,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - pending for remote access,Pending
+8040635284,PREDNISONE,Active,2025-07-29,2025-05-24,,2025-09-11,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
+6310226266,PANTOPRAZOLE,Inactive,2024-12-20,2025-02-21,,2025-09-02,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+6310226266,PANTOPRAZOLE,Active,2025-04-05,2025-05-20,,2025-09-05,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
+6310226266,PANTOPRAZOLE,Active,2025-06-23,2025-07-22,,2025-09-18,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
+4952379323,ATORVASTATIN,Active,2025-03-31,2024-12-19,,2025-09-05,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+4952379323,ATORVASTATIN,Under Review,2025-06-28,2025-03-10,2025-08-07,2025-09-07,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - under review for remote access,Pending
+4952379323,ATORVASTATIN,Active,2025-05-26,2025-06-22,,2025-09-09,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
+4835658849,HYDROCHLOROTHIAZIDE,Under Review,2025-03-25,2025-01-24,,2025-08-25,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+4835658849,HYDROCHLOROTHIAZIDE,Active,2025-05-07,2025-03-18,,2025-09-11,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
+4835658849,HYDROCHLOROTHIAZIDE,Active,2025-04-23,2025-05-29,,2025-09-09,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+4720856717,SERTRALINE,Active,2025-04-07,2025-01-29,,2025-09-04,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+4720856717,SERTRALINE,Inactive,2025-04-18,2025-03-29,,2025-09-08,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - inactive for remote access,Pending
+4720856717,SERTRALINE,Active,2025-06-12,2025-06-05,,2025-09-15,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+7168319021,TRAMADOL,Under Review,2025-01-05,2024-12-08,,2025-08-30,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+7168319021,TRAMADOL,Active,2025-05-29,2025-06-19,,2025-09-05,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
+7168319021,TRAMADOL,Active,2025-07-11,2025-07-23,,2025-09-17,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
+4832759161,ESCITALOPRAM,Active,2025-01-29,2025-01-12,,2025-09-10,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+4832759161,ESCITALOPRAM,Active,2025-05-08,2025-05-11,,2025-09-09,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
+7563245808,FUROSEMIDE,Active,2025-02-13,2025-01-02,,2025-09-01,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+7563245808,FUROSEMIDE,Inactive,2025-06-07,2025-03-10,,2025-09-09,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - inactive for remote access,Pending
+7563245808,FUROSEMIDE,Inactive,2025-07-30,2025-06-30,,2025-09-19,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - inactive per state formulary,Not Required
+5297849867,GABAPENTIN,Active,2024-12-03,2025-02-07,,2025-09-08,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+5297849867,GABAPENTIN,Active,2025-05-29,2025-04-10,,2025-09-10,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
+5297849867,GABAPENTIN,Active,2025-04-29,2025-05-12,,2025-09-17,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+9426758083,LEVOTHYROXINE,Active,2025-04-11,2024-12-25,,2025-08-31,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+9426758083,LEVOTHYROXINE,Pending,2025-07-16,2025-07-29,,2025-09-18,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - pending per state formulary,Exported
+4998295437,AZITHROMYCIN,Active,2025-04-12,2025-03-22,,2025-08-21,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+4998295437,AZITHROMYCIN,Inactive,2025-03-11,2025-04-10,,2025-09-08,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - inactive for remote access,Pending
+8689966026,PANTOPRAZOLE,Active,2025-01-22,2024-12-08,,2025-08-24,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+8689966026,PANTOPRAZOLE,Active,2025-04-20,2025-03-16,,2025-09-09,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Exported
+8186700260,METFORMIN,Active,2025-02-12,2025-02-09,,2025-08-27,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+8186700260,METFORMIN,Active,2025-06-25,2025-07-15,,2025-09-12,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
+8343947494,SIMVASTATIN,Inactive,2024-12-23,2025-04-08,,2025-09-14,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+8343947494,SIMVASTATIN,Pending,2025-05-31,2025-04-17,2025-06-14,2025-09-15,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - pending for remote access,Pending
+8343947494,SIMVASTATIN,Active,2025-06-29,2025-06-20,,2025-09-11,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
+6610523344,OMEPRAZOLE,Active,2025-03-24,2025-02-09,,2025-08-24,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+6610523344,OMEPRAZOLE,Active,2025-03-21,2025-05-19,,2025-09-12,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Pending
+6610523344,OMEPRAZOLE,Active,2025-06-10,2025-04-25,,2025-09-18,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+4695833631,GABAPENTIN,Active,2025-01-05,2025-01-27,,2025-09-16,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+4037124251,ACETAMINOPHEN,Active,2025-01-22,2025-01-15,,2025-08-20,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+4037124251,ACETAMINOPHEN,Active,2025-04-09,2025-03-12,,2025-09-11,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Exported
+4037124251,ACETAMINOPHEN,Active,2025-06-28,2025-05-09,,2025-09-11,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
+4156635055,LEVOTHYROXINE,Active,2025-01-12,2025-02-21,,2025-08-24,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+4156635055,LEVOTHYROXINE,Active,2025-03-07,2025-04-02,,2025-09-04,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Exported
+4156635055,LEVOTHYROXINE,Active,2025-07-25,2025-05-29,,2025-09-13,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+4157208448,METFORMIN,Inactive,2025-04-11,2024-12-20,,2025-09-16,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+4157208448,METFORMIN,Inactive,2025-04-29,2025-05-26,,2025-09-16,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - inactive per state formulary,Exported
+3783584446,LOSARTAN,Active,2024-11-24,2025-01-06,,2025-08-22,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+3783584446,LOSARTAN,Inactive,2025-06-11,2025-06-20,,2025-09-11,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - inactive per state formulary,Exported
+4906836455,IBUPROFEN,Active,2025-04-06,2025-01-16,,2025-08-30,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+4906836455,IBUPROFEN,Pending,2025-03-17,2025-03-14,2025-07-22,2025-09-09,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - pending for remote access,Exported
+4906836455,IBUPROFEN,Pending,2025-05-08,2025-07-07,,2025-09-14,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - pending per state formulary,Exported
+9496684205,LOSARTAN,Active,2025-01-16,2025-01-10,,2025-09-16,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+9975104530,SERTRALINE,Active,2025-02-07,2024-12-02,,2025-09-12,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+9975104530,SERTRALINE,Active,2025-04-23,2025-07-07,,2025-09-18,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+1921317338,AZITHROMYCIN,Active,2025-04-16,2025-03-17,,2025-08-25,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+1921317338,AZITHROMYCIN,Active,2025-07-22,2025-06-13,,2025-09-11,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+1403409684,AMLODIPINE,Pending,2025-01-13,2025-02-12,,2025-09-09,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+3399798355,ATORVASTATIN,Active,2024-11-28,2025-01-23,,2025-08-21,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+3399798355,ATORVASTATIN,Active,2025-04-28,2025-06-25,,2025-09-10,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+2056168526,IBUPROFEN,Active,2024-12-16,2024-12-04,,2025-09-04,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+2056168526,IBUPROFEN,Inactive,2025-06-13,2025-06-21,,2025-09-18,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - inactive for remote access,Exported
+2056168526,IBUPROFEN,Active,2025-04-23,2025-06-07,,2025-09-11,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
+7880709711,METFORMIN,Pending,2024-11-24,2025-03-07,,2025-08-21,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+7880709711,METFORMIN,Active,2025-05-16,2025-03-17,,2025-09-12,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Pending
+7880709711,METFORMIN,Active,2025-06-15,2025-07-10,,2025-09-11,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+2605853200,LOSARTAN,Active,2024-12-13,2024-12-25,,2025-09-15,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+2605853200,LOSARTAN,Active,2025-05-16,2025-07-12,,2025-09-18,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+9243479420,AMOXICILLIN,Active,2024-12-26,2024-12-25,,2025-09-12,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+9243479420,AMOXICILLIN,Active,2025-03-07,2025-05-19,,2025-09-05,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Pending
+9243479420,AMOXICILLIN,Active,2025-06-23,2025-05-01,,2025-09-15,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
+6260724222,GABAPENTIN,Active,2025-03-08,2025-02-23,,2025-09-10,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+6260724222,GABAPENTIN,Active,2025-03-07,2025-04-24,,2025-09-08,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
+6260724222,GABAPENTIN,Active,2025-07-24,2025-06-10,,2025-09-18,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+6946528366,LOSARTAN,Pending,2025-04-19,2025-02-05,,2025-09-07,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+6946528366,LOSARTAN,Active,2025-06-13,2025-06-13,,2025-09-09,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
+4263426627,ACETAMINOPHEN,Inactive,2025-03-12,2025-01-26,,2025-08-23,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+4263426627,ACETAMINOPHEN,Active,2025-06-18,2025-04-20,,2025-09-14,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
+4263426627,ACETAMINOPHEN,Under Review,2025-05-10,2025-05-17,,2025-09-19,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - under review per state formulary,Not Required
+2851131694,AMLODIPINE,Pending,2024-12-07,2025-04-06,,2025-09-07,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+2851131694,AMLODIPINE,Active,2025-03-03,2025-04-15,,2025-09-06,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Exported
+2851131694,AMLODIPINE,Pending,2025-05-14,2025-06-05,,2025-09-18,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - pending per state formulary,Not Required
+7459700640,AZITHROMYCIN,Active,2024-12-11,2025-04-01,,2025-09-06,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+7459700640,AZITHROMYCIN,Active,2025-06-15,2025-04-16,,2025-09-10,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
+7459700640,AZITHROMYCIN,Active,2025-07-22,2025-07-15,,2025-09-12,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
+4926255051,ESCITALOPRAM,Active,2024-11-23,2025-01-29,,2025-09-15,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+4926255051,ESCITALOPRAM,Active,2025-05-09,2025-07-02,,2025-09-12,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+9662355122,AMLODIPINE,Pending,2025-01-05,2025-04-05,,2025-09-01,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+9662355122,AMLODIPINE,Pending,2025-03-28,2025-03-11,2025-04-16,2025-09-10,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - pending for remote access,Pending
+9662355122,AMLODIPINE,Pending,2025-05-07,2025-05-14,,2025-09-16,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - pending per state formulary,Not Required
+4675317456,AMLODIPINE,Active,2024-12-13,2025-01-15,,2025-08-28,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+4675317456,AMLODIPINE,Pending,2025-05-20,2025-05-27,2025-04-04,2025-09-17,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - pending for remote access,Exported
+1076247469,LOSARTAN,Active,2025-01-25,2025-03-21,,2025-08-21,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+1076247469,LOSARTAN,Active,2025-06-03,2025-06-16,,2025-09-16,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+5028771608,LISINOPRIL,Active,2025-03-06,2025-03-16,,2025-09-17,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+5028771608,LISINOPRIL,Active,2025-03-28,2025-05-30,,2025-09-07,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
+5028771608,LISINOPRIL,Active,2025-05-13,2025-06-17,,2025-09-16,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+3169261527,SERTRALINE,Active,2025-02-08,2025-01-29,,2025-09-18,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+3169261527,SERTRALINE,Pending,2025-06-12,2025-05-26,2025-07-16,2025-09-11,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - pending for remote access,Exported
+1612262970,LISINOPRIL,Active,2025-03-16,2025-01-10,,2025-08-20,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+1612262970,LISINOPRIL,Inactive,2025-06-21,2025-07-12,,2025-09-16,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - inactive per state formulary,Exported
+3039678075,HYDROCHLOROTHIAZIDE,Active,2025-02-04,2025-03-10,,2025-08-30,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+3039678075,HYDROCHLOROTHIAZIDE,Active,2025-06-20,2025-04-30,,2025-09-11,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
+3039678075,HYDROCHLOROTHIAZIDE,Active,2025-06-13,2025-05-27,,2025-09-09,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
+7202350685,PREDNISONE,Inactive,2025-03-24,2025-02-17,,2025-09-13,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
+7202350685,PREDNISONE,Active,2025-05-06,2025-05-09,,2025-09-13,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
+1519229767,OMEPRAZOLE,Active,2024-11-23,2025-02-07,,2025-09-04,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
+1519229767,OMEPRAZOLE,Active,2025-05-29,2025-04-27,,2025-09-14,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
+3653298842,HYDROCHLOROTHIAZIDE,Active,2025-03-13,2024-12-02,,2025-08-28,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
+3653298842,HYDROCHLOROTHIAZIDE,Active,2025-05-16,2025-03-04,,2025-09-09,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Exported
+3653298842,HYDROCHLOROTHIAZIDE,Pending,2025-05-26,2025-05-31,,2025-09-10,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - pending per state formulary,Not Required
+8616599196,TRAMADOL,Active,2025-06-29,2025-06-23,,2025-09-18,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
+6539577736,TRAMADOL,Active,2025-07-22,2025-07-08,,2025-09-18,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
+4477721364,ALBUTEROL,Active,2025-08-16,2025-08-18,,2025-09-16,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
+7280233624,TRAMADOL,Active,2025-07-16,2025-07-17,,2025-09-18,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
+7029943247,PREDNISONE,Pending,2025-08-24,2025-07-06,,2025-09-16,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
+6658173935,PREDNISONE,Active,2025-07-18,2025-07-21,2025-07-27,2025-09-16,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
+8294806525,ACETAMINOPHEN,Pending,2025-08-01,2025-08-24,,2025-09-18,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
+7857477825,ACETAMINOPHEN,Pending,2025-08-07,2025-08-28,2025-06-04,2025-09-16,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
+7793836773,ALBUTEROL,Pending,2025-06-30,2025-07-24,,2025-09-18,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
+3994344489,TRAMADOL,Pending,2025-07-29,2025-08-09,,2025-09-17,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
+9404184090,PREDNISONE,Pending,2025-07-27,2025-08-26,,2025-09-16,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
+4162379327,PREDNISONE,Pending,2025-07-19,2025-07-08,,2025-09-14,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
+8127868456,TRAMADOL,Pending,2025-06-26,2025-07-19,2025-07-12,2025-09-14,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
+7579305851,ALBUTEROL,Pending,2025-06-24,2025-08-22,,2025-09-18,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
+3165118481,ALBUTEROL,Active,2025-07-09,2025-08-30,2025-08-03,2025-09-15,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
+7763567608,ALBUTEROL,Active,2025-07-23,2025-06-29,2025-06-28,2025-09-14,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
+1568338435,ACETAMINOPHEN,Pending,2025-06-26,2025-08-06,,2025-09-16,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
+4718124639,ALBUTEROL,Pending,2025-08-14,2025-08-01,,2025-09-14,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
+5667570407,ACETAMINOPHEN,Active,2025-07-29,2025-07-08,2025-07-09,2025-09-18,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
+2679808832,TRAMADOL,Active,2025-08-07,2025-08-13,,2025-09-15,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
+2099767005,PREDNISONE,Pending,2025-08-26,2025-07-31,,2025-09-14,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
+7341809153,PREDNISONE,Active,2025-08-01,2025-08-08,,2025-09-15,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
+6685506297,PREDNISONE,Pending,2025-07-24,2025-07-25,,2025-09-17,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
+7641264752,ACETAMINOPHEN,Active,2025-08-10,2025-07-16,2025-07-18,2025-09-16,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
+4107582499,ALBUTEROL,Pending,2025-08-26,2025-08-07,,2025-09-16,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
+1166663125,ALBUTEROL,Pending,2025-07-30,2025-07-09,2025-05-23,2025-09-17,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
+6473879250,ACETAMINOPHEN,Active,2025-07-22,2025-06-30,2025-07-31,2025-09-14,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
+7022656673,ACETAMINOPHEN,Pending,2025-06-30,2025-08-17,,2025-09-18,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
+3796292770,ACETAMINOPHEN,Pending,2025-07-21,2025-07-12,2025-06-07,2025-09-17,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
+1976943497,ACETAMINOPHEN,Pending,2025-08-11,2025-06-26,,2025-09-17,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
+2313855871,OMEPRAZOLE,Active,2025-08-06,2025-07-29,,2025-09-17,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
+3244493958,LISINOPRIL,Active,2025-08-14,2025-08-24,,2025-09-18,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
+3804156081,LISINOPRIL,Active,2025-07-27,2025-08-24,,2025-09-16,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
+3193369160,SERTRALINE,Active,2025-07-31,2025-09-01,,2025-09-17,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
+2812267158,METFORMIN,Active,2025-08-28,2025-08-08,,2025-09-17,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
+4272764301,SERTRALINE,Active,2025-08-03,2025-08-14,,2025-09-19,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
+3720332955,OMEPRAZOLE,Active,2025-07-31,2025-08-29,,2025-09-17,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
+9409191501,SERTRALINE,Pending,2025-08-25,2025-08-19,,2025-09-18,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
+9318786650,SERTRALINE,Active,2025-07-30,2025-08-01,,2025-09-18,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
+3233659725,SERTRALINE,Active,2025-07-24,2025-08-18,,2025-09-17,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
+4860575310,SERTRALINE,Active,2025-07-29,2025-08-29,,2025-09-17,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
+1346604939,OMEPRAZOLE,Active,2025-08-26,2025-08-29,,2025-09-19,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
+1225378822,OMEPRAZOLE,Active,2025-08-25,2025-08-05,,2025-09-18,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
+3190245007,LISINOPRIL,Pending,2025-08-26,2025-08-28,,2025-09-18,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
+2016757307,LISINOPRIL,Active,2025-08-04,2025-08-15,,2025-09-17,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
+2265350455,METFORMIN,Active,2025-07-29,2025-08-22,,2025-09-18,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
+2277271844,LISINOPRIL,Pending,2025-08-09,2025-08-05,,2025-09-18,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
+7675753664,SERTRALINE,Active,2025-08-24,2025-08-16,,2025-09-18,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
+7009932186,LISINOPRIL,Active,2025-07-24,2025-07-23,,2025-09-16,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
+7765224309,LISINOPRIL,Active,2025-08-02,2025-09-02,,2025-09-16,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
+1460512159,METFORMIN,Active,2025-08-06,2025-08-06,,2025-09-17,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
+2223673707,SERTRALINE,Active,2025-08-24,2025-08-23,,2025-09-17,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
+9532612867,METFORMIN,Active,2025-08-18,2025-07-25,,2025-09-17,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
+4883662456,SERTRALINE,Active,2025-07-27,2025-09-01,,2025-09-16,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
+7606979090,SERTRALINE,Active,2025-08-31,2025-07-26,,2025-09-18,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
+1113230410,METFORMIN,Pending,2025-08-15,2025-07-31,,2025-09-19,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
+5285850028,OMEPRAZOLE,Pending,2025-07-24,2025-07-28,,2025-09-18,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
+1331143740,OMEPRAZOLE,Active,2025-07-29,2025-08-11,,2025-09-17,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
+6034750232,LISINOPRIL,Active,2025-08-25,2025-08-17,,2025-09-17,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
+9500753609,SERTRALINE,Active,2025-07-28,2025-08-19,,2025-09-17,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported

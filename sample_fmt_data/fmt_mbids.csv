@@ -1,9 +1,27 @@
 mbid,description,tenant,begin_date,end_date,created_by,status
-AK123456,Antihistamines,MASTER,2024-01-01,,system,Active
-CV999001,Cardio - Statins,MASTER,2024-01-01,,system,Active
-IMM000777,Immunology - Insulins,MASTER,2024-01-01,,system,Active
-PAIN12345,Pain Management - NSAIDs,MASTER,2024-01-01,,system,Active
-ENDO55555,Endocrinology - Diabetes,MASTER,2024-01-01,,system,Active
-ONCO77777,Oncology - Immunotherapy,MASTER,2024-01-01,,system,Active
-AK123456_a,AK Antihistamines - sub,AK,2024-02-01,,system,Active
-MO888888,MO Specific Formulary,MO,2024-02-15,,system,Active
+CARDIO_ACE_001,Cardiovascular - ACE Inhibitors,MASTER,2024-07-23,,system,Active
+CARDIO_CCB_001,Cardiovascular - Calcium Channel Blockers,MASTER,2024-08-02,,system,Active
+CARDIO_BB_001,Cardiovascular - Beta Blockers,MASTER,2023-12-10,,system,Active
+CARDIO_ARB_001,Cardiovascular - ARBs,MASTER,2023-09-19,,system,Active
+CARDIO_STATIN_001,Cardiovascular - Statins (Simvastatin),MASTER,2024-05-24,,system,Active
+CARDIO_STATIN_002,Cardiovascular - Statins (Atorvastatin),MASTER,2024-01-11,,system,Active
+DIAB_METFORM_001,Diabetes - Metformin,MASTER,2024-02-06,,system,Active
+GI_PPI_001,GI - Proton Pump Inhibitors,MASTER,2024-05-04,,system,Active
+ENDO_THYROID_001,Endocrine - Thyroid Hormones,MASTER,2024-04-15,,system,Active
+RESP_BRONCH_001,Respiratory - Bronchodilators,MASTER,2024-07-13,,system,Active
+PSYCH_SSRI_001,Psychiatric - SSRIs,MASTER,2023-08-18,,system,Active
+NEURO_ANTI_001,Neurologic - Anticonvulsants,MASTER,2023-10-23,,system,Active
+AK_CARDIO_001,AK Cardio - Cold Weather Formulations,AK,2023-11-11,,ak_admin,Active
+AK_CARDIO_002,AK Cardio - Extended Release (Rural),AK,2023-09-01,,ak_admin,Active
+AK_CARDIO_003,AK Cardio - High Altitude Considerations,AK,2024-06-15,,ak_admin,Active
+AK_RESP_001,AK Respiratory - Cold Climate Approved,AK,2024-04-13,,ak_admin,Active
+AK_PAIN_001,AK Pain Management - Rural Access Program,AK,2024-06-21,,ak_admin,Active
+AK_DIAB_001,AK Diabetes - Remote Monitoring Compatible,AK,2024-04-09,,ak_admin,Active
+AK_GI_001,AK GI - Extended Supply Program,AK,2023-08-20,,ak_admin,Active
+AK_ENDO_001,AK Endocrine - Telehealth Compatible,AK,2023-11-13,,ak_admin,Active
+AK_PSYCH_001,AK Psychiatric - Behavioral Health Focus,AK,2023-10-25,,ak_admin,Active
+MO_CARDIO_001,MO Cardiovascular - Urban Health Initiative,MO,2023-07-14,,mo_admin,Active
+MO_CARDIO_002,MO Cardio - Community Care Network,MO,2023-09-26,,mo_admin,Active
+MO_CARDIO_003,MO Cardio - State Formulary Plus,MO,2024-08-03,,mo_admin,Active
+MO_DIAB_001,MO Diabetes - Enhanced Coverage Program,MO,2024-04-13,,mo_admin,Active
+MO_PSYCH_001,MO Psychiatric - Community Mental Health,MO,2024-03-20,,mo_admin,Active
