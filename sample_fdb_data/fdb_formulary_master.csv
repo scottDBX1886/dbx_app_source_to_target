@@ -1,151 +1,151 @@
 ndc,formulary_status,tier,pa_required,ql_limits,effective_date
-9853765106,Prior Auth,3,False,1/day,2025-05-03
-5233332846,Non-Preferred,4,True,1/day,2025-06-25
-8061902103,Prior Auth,3,True,60/30 days,2025-08-20
-7558677670,Prior Auth,4,False,30/30 days,2025-09-16
-9943426271,Preferred,3,True,1/day,2024-11-01
-2851684877,Prior Auth,2,False,30/30 days,2024-11-28
-8895141822,Preferred,4,True,1/day,2024-11-12
-7843147748,Prior Auth,3,False,60/30 days,2024-12-27
-2174673728,Preferred,2,False,90/30 days,2025-03-15
-4762716439,Non-Preferred,1,False,,2025-04-03
-9818364351,Non-Preferred,4,False,,2025-02-02
-4578112649,Not Covered,3,True,,2024-11-22
-6343951487,Prior Auth,1,False,90/30 days,2024-12-01
-7198167708,Preferred,4,False,90/30 days,2025-07-14
-4285398606,Not Covered,3,True,,2025-04-17
-1337413833,Non-Preferred,2,False,30/30 days,2025-09-16
-7572923713,Prior Auth,3,True,1/day,2025-09-09
-1732313098,Non-Preferred,2,False,60/30 days,2025-04-25
-6835258843,Not Covered,3,True,,2025-08-10
-3244677918,Preferred,4,False,30/30 days,2025-07-01
-2895305359,Non-Preferred,4,True,90/30 days,2025-09-17
-7565192109,Not Covered,3,False,30/30 days,2024-11-20
-7942707826,Non-Preferred,1,True,,2025-09-09
-5248265783,Preferred,3,True,30/30 days,2025-05-23
-9105940696,Non-Preferred,3,False,60/30 days,2024-11-15
-2977105655,Preferred,2,False,30/30 days,2025-02-07
-1653109157,Prior Auth,4,False,,2025-09-06
-6277512482,Preferred,1,False,60/30 days,2025-08-18
-6891784680,Prior Auth,2,True,1/day,2025-08-30
-8599553544,Non-Preferred,2,True,60/30 days,2025-08-19
-6143993133,Preferred,4,False,30/30 days,2024-09-21
-1185323994,Not Covered,4,False,,2025-04-30
-7545820872,Prior Auth,1,True,60/30 days,2025-07-13
-3150810934,Not Covered,1,False,60/30 days,2025-04-12
-4658629875,Preferred,2,True,1/day,2025-02-18
-5683445698,Non-Preferred,3,True,90/30 days,2025-07-10
-2533614190,Preferred,1,False,,2025-02-10
-8906116999,Prior Auth,4,False,60/30 days,2025-08-20
-2187162870,Non-Preferred,2,False,30/30 days,2025-04-14
-7529528405,Preferred,4,True,90/30 days,2025-07-11
-7385949944,Non-Preferred,1,False,90/30 days,2024-10-09
-4932574106,Prior Auth,4,False,60/30 days,2025-08-11
-4226456934,Preferred,2,False,60/30 days,2025-01-21
-4255947932,Preferred,3,False,,2025-08-07
-5971859002,Not Covered,1,False,,2025-08-03
-1373165772,Prior Auth,4,False,90/30 days,2025-06-27
-3486918901,Preferred,3,True,,2025-03-13
-4862798399,Non-Preferred,1,True,1/day,2025-03-27
-8237690694,Preferred,4,True,90/30 days,2025-01-27
-2216121354,Preferred,1,False,,2024-12-12
-9155585566,Non-Preferred,1,True,1/day,2025-04-19
-5462989904,Not Covered,2,False,90/30 days,2025-09-02
-1145863277,Not Covered,1,False,,2025-09-06
-7641121394,Prior Auth,4,False,90/30 days,2025-04-24
-1427732552,Not Covered,3,False,30/30 days,2025-02-01
-8033189849,Non-Preferred,1,False,,2024-11-16
-8773543498,Not Covered,3,False,90/30 days,2025-01-26
-1709969365,Non-Preferred,3,False,60/30 days,2025-07-01
-7954436153,Preferred,3,False,30/30 days,2025-05-12
-5659975661,Prior Auth,2,False,1/day,2025-07-04
-9489367959,Non-Preferred,4,True,90/30 days,2025-03-22
-6938251151,Non-Preferred,2,False,30/30 days,2025-04-02
-4020528194,Not Covered,2,False,,2024-12-27
-5204596802,Preferred,2,True,90/30 days,2024-10-27
-3832821158,Prior Auth,2,False,30/30 days,2024-10-07
-1951610776,Non-Preferred,1,True,60/30 days,2025-02-14
-8014170570,Preferred,2,False,30/30 days,2025-06-14
-9549696058,Non-Preferred,4,True,60/30 days,2025-04-02
-1891879076,Preferred,2,True,60/30 days,2025-02-10
-2004879703,Prior Auth,2,True,,2025-09-18
-6751444825,Non-Preferred,1,True,60/30 days,2025-05-22
-1719258858,Prior Auth,3,False,90/30 days,2024-11-25
-8015941581,Not Covered,1,False,30/30 days,2024-11-02
-5984529026,Not Covered,3,False,60/30 days,2025-07-26
-7206617887,Prior Auth,2,True,1/day,2024-11-24
-3499850525,Prior Auth,3,False,30/30 days,2025-02-06
-9120313802,Preferred,3,True,90/30 days,2025-08-04
-9343908551,Non-Preferred,4,True,30/30 days,2025-03-06
-6377308705,Not Covered,3,True,30/30 days,2025-05-12
-5737608744,Non-Preferred,2,True,30/30 days,2025-08-21
-1293948395,Preferred,1,True,60/30 days,2025-04-05
-7385878680,Non-Preferred,4,False,,2025-02-07
-1593549164,Non-Preferred,4,False,60/30 days,2025-02-23
-9804358426,Not Covered,1,False,90/30 days,2024-10-31
-4117795991,Preferred,1,False,90/30 days,2025-03-23
-9441367455,Preferred,3,False,60/30 days,2025-09-12
-4236370304,Preferred,2,True,30/30 days,2025-01-31
-2205663930,Prior Auth,3,False,90/30 days,2024-11-01
-2916481572,Non-Preferred,1,True,1/day,2025-08-23
-8375574957,Preferred,3,True,60/30 days,2025-06-20
-8822641190,Non-Preferred,2,False,30/30 days,2025-04-09
-6786567019,Preferred,3,True,1/day,2025-03-19
-2990282787,Prior Auth,3,True,30/30 days,2025-02-01
-5802940475,Preferred,2,False,1/day,2025-09-12
-6255198418,Not Covered,4,True,,2025-05-23
-7700293525,Non-Preferred,3,False,1/day,2024-12-05
-1812564246,Preferred,1,True,,2025-03-18
-3596986421,Prior Auth,4,False,1/day,2025-02-22
-3198636836,Not Covered,2,True,30/30 days,2025-07-09
-5130820773,Non-Preferred,3,True,60/30 days,2025-04-19
-5500804277,Prior Auth,2,False,60/30 days,2024-10-19
-2852180794,Not Covered,4,False,30/30 days,2025-02-02
-6501443273,Non-Preferred,1,True,60/30 days,2025-01-11
-5630176885,Prior Auth,2,False,,2024-10-02
-5044119121,Not Covered,1,False,60/30 days,2025-03-15
-1945786708,Preferred,3,False,60/30 days,2025-06-08
-6277224903,Prior Auth,4,False,30/30 days,2024-11-05
-5089429111,Not Covered,2,True,90/30 days,2025-01-05
-5816613918,Preferred,1,True,90/30 days,2024-10-22
-1227641595,Preferred,1,True,,2025-03-20
-2984250208,Preferred,1,False,1/day,2025-03-07
-1271828340,Prior Auth,1,True,60/30 days,2024-12-17
-5700601073,Non-Preferred,3,True,1/day,2024-11-14
-5672292500,Preferred,4,False,,2024-12-29
-9378279023,Prior Auth,3,True,60/30 days,2025-07-21
-9350321056,Prior Auth,3,True,30/30 days,2024-11-29
-3357175920,Prior Auth,3,True,1/day,2025-06-15
-2086439025,Not Covered,1,False,60/30 days,2025-09-07
-3935360812,Non-Preferred,3,True,60/30 days,2024-11-07
-4769715638,Non-Preferred,2,False,60/30 days,2024-12-07
-9416394469,Non-Preferred,4,True,,2025-04-08
-2009640925,Preferred,3,False,30/30 days,2025-03-18
-1338548294,Non-Preferred,3,False,,2025-06-22
-3871368495,Prior Auth,1,False,30/30 days,2025-04-16
-5185421235,Preferred,2,False,90/30 days,2024-10-11
-5365655090,Preferred,4,False,30/30 days,2025-06-08
-5355465123,Not Covered,3,False,30/30 days,2024-10-08
-4364752237,Prior Auth,1,False,90/30 days,2025-03-06
-8921646834,Preferred,4,True,60/30 days,2025-09-11
-9830757300,Not Covered,3,False,30/30 days,2025-02-21
-1499507211,Preferred,4,False,90/30 days,2024-10-08
-9678893980,Preferred,4,True,1/day,2025-07-05
-5910392156,Not Covered,2,True,,2025-02-12
-4456826802,Preferred,4,False,30/30 days,2025-01-28
-5479629890,Prior Auth,2,False,60/30 days,2025-04-18
-3749323544,Non-Preferred,1,False,1/day,2025-06-27
-3642471883,Preferred,4,True,60/30 days,2025-01-25
-7141573054,Prior Auth,2,True,,2025-05-06
-2195546135,Non-Preferred,1,True,90/30 days,2025-05-21
-1152916965,Prior Auth,3,True,90/30 days,2024-12-09
-2385558936,Non-Preferred,3,True,,2025-08-26
-4546823256,Preferred,1,True,1/day,2025-08-03
-4693456939,Non-Preferred,1,False,30/30 days,2024-09-23
-6456186203,Non-Preferred,3,False,90/30 days,2025-05-05
-9244390897,Preferred,2,False,1/day,2025-05-06
-1275168025,Non-Preferred,2,False,1/day,2025-03-07
-5028736655,Prior Auth,2,True,,2024-09-21
-8720313334,Prior Auth,4,True,60/30 days,2025-07-16
-5986956390,Preferred,2,True,30/30 days,2025-02-15
-8430745388,Non-Preferred,4,True,30/30 days,2024-11-11
+4148757719,Non-Preferred,2,True,90/30 days,2025-03-23
+4424235982,Not Covered,1,False,,2024-10-04
+4840788712,Not Covered,2,False,1/day,2025-05-22
+3194125395,Prior Auth,4,True,1/day,2024-10-27
+1105633480,Prior Auth,4,True,60/30 days,2025-02-17
+9243479420,Non-Preferred,3,False,,2025-01-11
+1974441668,Prior Auth,4,True,90/30 days,2025-05-01
+3671667795,Prior Auth,4,False,90/30 days,2024-10-27
+5079439670,Prior Auth,4,True,90/30 days,2024-10-06
+3594138885,Non-Preferred,3,True,1/day,2025-04-17
+9711905827,Not Covered,3,False,90/30 days,2025-05-01
+8805972163,Preferred,2,False,1/day,2025-04-06
+8760685580,Not Covered,3,False,30/30 days,2025-03-21
+6658173935,Preferred,2,False,90/30 days,2025-09-15
+1009428392,Not Covered,3,True,1/day,2025-05-18
+7097160169,Prior Auth,2,False,30/30 days,2024-12-15
+1348598727,Non-Preferred,4,True,90/30 days,2025-09-12
+7009932186,Prior Auth,4,False,30/30 days,2025-02-18
+6010664427,Preferred,3,True,90/30 days,2025-01-10
+1568338435,Preferred,3,False,60/30 days,2025-03-07
+5544731222,Prior Auth,2,True,60/30 days,2025-04-17
+7042622182,Prior Auth,4,True,,2025-07-30
+8887890804,Preferred,3,True,,2024-09-26
+7793836773,Preferred,1,False,,2025-08-31
+7745554435,Prior Auth,1,True,60/30 days,2025-08-06
+2584366503,Not Covered,3,False,90/30 days,2025-07-05
+8997999533,Non-Preferred,3,False,1/day,2025-05-12
+2265350455,Prior Auth,3,True,60/30 days,2024-11-15
+7437168343,Not Covered,1,True,30/30 days,2025-06-16
+6946528366,Not Covered,3,False,90/30 days,2025-09-13
+4272764301,Prior Auth,3,False,,2024-11-19
+9647622058,Preferred,2,False,90/30 days,2025-08-03
+7667179079,Non-Preferred,2,True,,2025-08-05
+1076247469,Not Covered,3,False,90/30 days,2024-11-13
+7234811870,Not Covered,3,True,60/30 days,2025-02-11
+9503133925,Non-Preferred,2,True,30/30 days,2025-02-07
+9812529406,Non-Preferred,3,False,1/day,2025-03-07
+6425236717,Preferred,3,False,1/day,2025-08-11
+1559925758,Not Covered,2,False,,2025-09-18
+7494883898,Not Covered,3,False,30/30 days,2025-05-20
+8373779153,Non-Preferred,2,True,90/30 days,2025-09-04
+5255397911,Prior Auth,3,False,1/day,2025-01-10
+7360733059,Non-Preferred,4,True,30/30 days,2025-03-25
+4682866547,Prior Auth,2,False,60/30 days,2025-02-05
+7495724863,Prior Auth,3,True,,2025-02-04
+9283629843,Prior Auth,2,False,,2025-08-30
+1185142368,Not Covered,1,True,1/day,2025-02-28
+1571971889,Non-Preferred,3,False,30/30 days,2025-07-11
+3304900558,Non-Preferred,2,True,30/30 days,2025-01-19
+5192805893,Non-Preferred,2,True,90/30 days,2025-09-02
+7563245808,Non-Preferred,3,True,1/day,2025-03-08
+7758619211,Preferred,2,False,,2025-06-29
+2312602678,Prior Auth,4,True,30/30 days,2025-05-30
+3110172904,Not Covered,1,False,60/30 days,2025-08-26
+6378276904,Preferred,2,True,,2024-12-17
+5569742011,Preferred,1,True,1/day,2025-07-25
+6001231818,Prior Auth,2,True,60/30 days,2025-03-24
+3515356030,Preferred,1,True,30/30 days,2024-10-31
+3693871386,Non-Preferred,1,True,90/30 days,2025-09-15
+6815517973,Prior Auth,1,False,1/day,2025-06-11
+1691540938,Preferred,3,True,90/30 days,2024-11-15
+6167753531,Non-Preferred,2,True,60/30 days,2025-04-10
+4603262287,Preferred,3,True,60/30 days,2025-07-17
+5228803725,Preferred,2,False,90/30 days,2025-06-19
+7725511239,Non-Preferred,1,True,,2025-06-19
+5676575787,Non-Preferred,1,False,60/30 days,2024-10-05
+7579305851,Prior Auth,4,False,90/30 days,2024-11-26
+8186700260,Prior Auth,3,False,,2025-05-22
+9975104530,Prior Auth,1,False,60/30 days,2025-07-31
+4951825175,Not Covered,3,True,90/30 days,2024-09-19
+4835658849,Preferred,1,True,60/30 days,2025-08-03
+6297907171,Preferred,3,False,30/30 days,2025-03-09
+9500753609,Prior Auth,1,True,1/day,2025-07-11
+9662482528,Prior Auth,1,True,60/30 days,2025-07-08
+7884428591,Not Covered,2,True,90/30 days,2025-01-04
+1612709487,Prior Auth,1,False,30/30 days,2025-06-18
+4477721364,Preferred,4,False,30/30 days,2025-03-17
+9132527704,Non-Preferred,4,True,1/day,2024-12-31
+1976943497,Non-Preferred,2,True,30/30 days,2024-12-28
+7005680047,Non-Preferred,4,False,1/day,2024-12-15
+3244493958,Prior Auth,3,True,1/day,2025-02-11
+4848550290,Preferred,4,True,30/30 days,2025-01-17
+3653298842,Preferred,3,True,60/30 days,2025-03-07
+6360319029,Preferred,2,True,60/30 days,2025-04-18
+8298103936,Non-Preferred,2,True,90/30 days,2024-12-18
+8770666263,Non-Preferred,4,False,,2025-03-29
+6293839765,Non-Preferred,2,False,60/30 days,2025-04-28
+4675317456,Prior Auth,2,False,,2024-12-05
+2754826781,Not Covered,2,True,30/30 days,2025-02-26
+9167157231,Prior Auth,1,True,60/30 days,2025-06-21
+3505416273,Non-Preferred,1,False,60/30 days,2025-06-11
+1331143740,Non-Preferred,1,True,1/day,2025-08-29
+8061939755,Non-Preferred,3,True,1/day,2025-09-17
+7762330563,Not Covered,4,True,1/day,2025-08-09
+9869859516,Prior Auth,3,True,1/day,2025-04-19
+9692137196,Non-Preferred,3,True,30/30 days,2025-06-12
+1902456498,Prior Auth,2,True,,2025-03-09
+5898551545,Prior Auth,4,True,1/day,2025-02-01
+5119192821,Prior Auth,3,False,60/30 days,2025-01-26
+8954541741,Preferred,4,True,60/30 days,2025-02-18
+7486749130,Preferred,1,False,90/30 days,2024-09-19
+4916261265,Non-Preferred,3,False,90/30 days,2025-01-10
+1510198953,Non-Preferred,2,True,30/30 days,2024-10-17
+6260724222,Non-Preferred,3,True,,2024-10-15
+6932477738,Preferred,3,True,1/day,2024-10-06
+8642804529,Non-Preferred,3,True,60/30 days,2025-09-14
+3015762722,Non-Preferred,4,True,30/30 days,2025-02-15
+4212961677,Non-Preferred,3,False,1/day,2025-07-09
+9563422231,Non-Preferred,3,False,60/30 days,2025-09-18
+6113123341,Prior Auth,2,False,1/day,2025-01-28
+2099767005,Non-Preferred,4,True,60/30 days,2025-09-04
+1606847229,Non-Preferred,2,False,1/day,2025-05-27
+3011787498,Preferred,2,False,,2025-01-08
+7553581765,Prior Auth,1,True,90/30 days,2025-01-08
+2478771260,Non-Preferred,4,True,90/30 days,2025-03-11
+7068893998,Not Covered,4,True,1/day,2024-12-24
+3720332955,Prior Auth,2,False,,2025-06-24
+7950805510,Preferred,3,False,30/30 days,2025-06-05
+2277271844,Prior Auth,1,True,60/30 days,2025-05-12
+4906836455,Prior Auth,4,True,90/30 days,2024-11-04
+3247337331,Prior Auth,2,False,30/30 days,2025-09-12
+4156635055,Prior Auth,2,True,,2025-07-31
+4654812668,Prior Auth,3,False,90/30 days,2025-08-29
+6172496669,Prior Auth,3,False,1/day,2025-06-27
+7763567608,Non-Preferred,1,False,1/day,2025-09-05
+4023765305,Not Covered,4,True,30/30 days,2024-09-28
+3594524461,Preferred,3,False,60/30 days,2024-12-08
+1158919264,Non-Preferred,2,False,,2025-07-06
+3183234608,Prior Auth,4,False,,2025-08-08
+8615301781,Non-Preferred,4,False,90/30 days,2024-12-01
+5667570407,Non-Preferred,3,False,60/30 days,2025-05-22
+2887559308,Prior Auth,1,False,1/day,2025-01-08
+1751325355,Not Covered,4,False,1/day,2025-05-19
+8398766301,Prior Auth,1,True,60/30 days,2025-04-28
+7067335765,Preferred,1,False,,2025-09-17
+8904413378,Non-Preferred,3,False,,2025-01-29
+4164880711,Non-Preferred,1,True,30/30 days,2025-04-12
+5513671390,Non-Preferred,3,True,60/30 days,2025-01-30
+6059586613,Non-Preferred,3,True,,2025-03-12
+5666116892,Not Covered,1,True,1/day,2025-03-05
+4263426627,Non-Preferred,2,False,90/30 days,2025-04-14
+1757544871,Prior Auth,3,False,,2025-01-27
+3875661353,Prior Auth,3,True,1/day,2024-10-31
+3859551369,Non-Preferred,4,True,90/30 days,2024-10-08
+5607862915,Not Covered,4,False,1/day,2025-05-31
+4878830965,Non-Preferred,3,True,90/30 days,2024-11-10
+3249560378,Preferred,3,False,,2024-12-25
+1507584015,Prior Auth,3,False,90/30 days,2025-04-18
+8251110183,Preferred,2,True,,2025-07-07
+4860575310,Preferred,2,True,1/day,2025-03-31

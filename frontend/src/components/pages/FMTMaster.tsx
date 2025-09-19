@@ -204,13 +204,13 @@ export function FMTMaster() {
                 className="btn" 
                 onClick={() => handleExport('json')}
               >
-                Export JSON
+                Copy JSON
               </button>
               <button 
                 className="btn" 
                 onClick={() => handleExport('csv')}
               >
-                Export CSV
+                Download CSV
               </button>
             </div>
           </div>
@@ -232,23 +232,12 @@ export function FMTMaster() {
               onKeyPress={handleKeyPress}
               placeholder="Search NDC, FMT Drug, MBID, Status"
               aria-label="Search FMT Master"
-              style={{ minWidth: '280px' }}
+              style={{ minWidth: '320px' }}
             />
-            <select
-              value={statusFilter}
-              onChange={(e) => setStatusFilter(e.target.value)}
-              aria-label="Filter by status"
-            >
-              <option value="">All Statuses</option>
-              <option value="PDL">PDL</option>
-              <option value="Approved">Approved</option>
-              <option value="Review">Review</option>
-              <option value="Restricted">Restricted</option>
-            </select>
             <button onClick={handleSearch} className="btn primary" disabled={loading}>
               {loading ? 'Searching...' : 'Search'}
             </button>
-            <span className="hint">NDC opens details drawer</span>
+            <span className="hint">View-only; NDC opens details drawer</span>
           </div>
         </div>
         
@@ -266,10 +255,6 @@ export function FMTMaster() {
 
         <div className="divider"></div>
         
-        <div style={{ marginBottom: '10px', color: 'var(--muted)', fontSize: '12px' }}>
-          {totalFound > 0 ? `Found ${totalFound} records` : 'No records found'}
-        </div>
-
         <div className="scroll">
           <table className="table">
             <thead>
@@ -278,8 +263,8 @@ export function FMTMaster() {
                 <th>FMT Drug</th>
                 <th>MBID</th>
                 <th>Status</th>
-                <th>Start Date</th>
-                <th>End Date</th>
+                <th>Start</th>
+                <th>End</th>
               </tr>
             </thead>
             <tbody>

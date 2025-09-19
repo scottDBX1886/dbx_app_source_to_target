@@ -4,7 +4,7 @@
     "name": "react-vendor"
   },
   "index.html": {
-    "file": "assets/index-SNXgDh0U.js",
+    "file": "assets/index-C7TdRwxo.js",
     "name": "index",
     "src": "index.html",
     "isEntry": true,
@@ -12,7 +12,7 @@
       "_react-vendor-BIylXNQr.js"
     ],
     "css": [
-      "assets/index-N73ZaIDg.css"
+      "assets/index-DZ38VRjY.css"
     ]
   }
 }

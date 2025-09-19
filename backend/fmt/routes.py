@@ -28,9 +28,18 @@ def load_fmt_data(tenant: str = "MASTER") -> pd.DataFrame:
     - Query: df_mbids = query(f"SELECT * FROM demo.gainwell.fmt_mbids WHERE tenant = '{tenant}' OR tenant = 'MASTER'", warehouse_id=warehouse_id, as_dict=False)
     """
     try:
-        # Load core FMT data from sample files
-        fmt_file = "sample_fmt_data/fmt_master.csv"
-        mbids_file = "sample_fmt_data/fmt_mbids.csv"
+        # Load core FMT data from sample files with absolute path
+        import os
+        base_dir = os.getcwd()
+        fmt_file = os.path.join(base_dir, "sample_fmt_data", "fmt_master.csv")
+        mbids_file = os.path.join(base_dir, "sample_fmt_data", "fmt_mbids.csv")
+        
+        logger.info(f"Looking for FMT files at: {fmt_file}, {mbids_file}")
+        
+        if not os.path.exists(fmt_file):
+            raise FileNotFoundError(f"FMT master file not found: {fmt_file}")
+        if not os.path.exists(mbids_file):
+            raise FileNotFoundError(f"MBID file not found: {mbids_file}")
         
         df_fmt = pd.read_csv(fmt_file)
         df_mbids = pd.read_csv(mbids_file)
@@ -79,14 +88,20 @@ def search_dataframe(df: pd.DataFrame, query: str) -> pd.DataFrame:
     
     query_lower = query.lower()
     
-    # Search across FMT-specific fields
-    mask = (
-        df['ndc'].astype(str).str.contains(query_lower, case=False, na=False) |
-        df['fmt_drug'].str.contains(query_lower, case=False, na=False) |
-        df['mbid'].astype(str).str.contains(query_lower, case=False, na=False) |
-        df['status'].str.contains(query_lower, case=False, na=False) |
-        df['description'].str.contains(query_lower, case=False, na=False)
-    )
+    # Start with False mask
+    mask = pd.Series([False] * len(df), index=df.index)
+    
+    # Search across available FMT-specific fields
+    if 'ndc' in df.columns:
+        mask = mask | df['ndc'].astype(str).str.contains(query_lower, case=False, na=False)
+    if 'fmt_drug' in df.columns:
+        mask = mask | df['fmt_drug'].str.contains(query_lower, case=False, na=False)
+    if 'mbid' in df.columns:
+        mask = mask | df['mbid'].astype(str).str.contains(query_lower, case=False, na=False)
+    if 'status' in df.columns:
+        mask = mask | df['status'].str.contains(query_lower, case=False, na=False)
+    if 'description' in df.columns:
+        mask = mask | df['description'].str.contains(query_lower, case=False, na=False)
     
     return df[mask]
 
@@ -203,32 +218,38 @@ async def get_fmt_details(
         # Get the first matching record (should be unique)
         row = record.iloc[0]
         
-        # Build detailed response matching prototype drawer structure
+        # Build detailed response with safe field access
+        def get_field(field_name, default=""):
+            """Safely get field value from row"""
+            if field_name in row.index and pd.notna(row[field_name]):
+                return str(row[field_name])
+            return default
+
         details = {
             "ndc": ndc,
             "core_info": {
-                "ndc": str(row['ndc']),
-                "fmt_drug": str(row['fmt_drug']) if pd.notna(row['fmt_drug']) else "",
-                "status": str(row['status']) if pd.notna(row['status']) else "",
-                "load_date": str(row['load_date']) if pd.notna(row['load_date']) else ""
+                "ndc": get_field('ndc'),
+                "fmt_drug": get_field('fmt_drug'),
+                "status": get_field('status'),
+                "load_date": get_field('load_date')
             },
             "mbid_info": {
-                "mbid": str(row['mbid']) if pd.notna(row['mbid']) else "",
-                "description": str(row['description']) if pd.notna(row['description']) else "",
-                "tenant": str(row.get('tenant_mbid', '')) if pd.notna(row.get('tenant_mbid', '')) else "",
-                "begin_date": str(row.get('begin_date', '')) if pd.notna(row.get('begin_date', '')) else ""
+                "mbid": get_field('mbid'),
+                "description": get_field('description'),
+                "tenant": get_field('tenant'),
+                "begin_date": get_field('begin_date')
             },
             "date_info": {
-                "start_date": str(row['start_date']) if pd.notna(row['start_date']) else "",
-                "end_date": str(row['end_date']) if pd.notna(row['end_date']) else "",
-                "effective_date": str(row.get('effective_date', '')) if pd.notna(row.get('effective_date', '')) else "",
-                "expiration_date": str(row.get('expiration_date', '')) if pd.notna(row.get('expiration_date', '')) else ""
+                "start_date": get_field('start_date'),
+                "end_date": get_field('end_date'),
+                "effective_date": get_field('effective_date'),
+                "expiration_date": get_field('expiration_date')
             },
             "audit_info": {
-                "created_by": str(row.get('created_by', '')) if pd.notna(row.get('created_by', '')) else "",
-                "updated_by": str(row.get('updated_by', '')) if pd.notna(row.get('updated_by', '')) else "",
-                "review_status": str(row.get('review_status', '')) if pd.notna(row.get('review_status', '')) else "",
-                "notes": str(row.get('notes', '')) if pd.notna(row.get('notes', '')) else ""
+                "created_by": get_field('created_by'),
+                "updated_by": get_field('updated_by'),
+                "review_status": get_field('review_status'),
+                "notes": get_field('notes')
             }
         }
         
