@@ -17,7 +17,6 @@ export function FMTMaster() {
 
   // Drawer state
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [selectedNDC, setSelectedNDC] = useState<string | null>(null);
   const [detailsData, setDetailsData] = useState<FMTDetailsResponse | null>(null);
   const [detailsLoading, setDetailsLoading] = useState(false);
 
@@ -78,7 +77,6 @@ export function FMTMaster() {
   };
 
   const openDrawer = async (ndc: string) => {
-    setSelectedNDC(ndc);
     setDrawerOpen(true);
     setDetailsLoading(true);
     setDetailsData(null);
@@ -96,7 +94,6 @@ export function FMTMaster() {
 
   const closeDrawer = () => {
     setDrawerOpen(false);
-    setSelectedNDC(null);
     setDetailsData(null);
   };
 
