@@ -217,79 +217,87 @@ export function FMTMaster() {
   return (
     <div className="page-container">
       <div className="panel" aria-labelledby="fmtLabel">
-        <div className="row stack">
-          <div className="row" style={{ flex: '1 1 auto' }}>
-            <label id="fmtLabel" className="sr-only">Search FMT Master</label>
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              onKeyPress={handleKeyPress}
-              placeholder="Search NDC, FMT Drug, MBID, Status"
-              aria-label="Search FMT Master"
-              style={{ minWidth: '320px' }}
-            />
-            <button onClick={handleSearch} className="btn primary" disabled={loading}>
-              {loading ? 'Searching...' : 'Search'}
-            </button>
-            <span className="hint">View-only; NDC opens details drawer</span>
-          </div>
+        <div className="panel-header">
+          <h2 className="panel-title">FMT Master - {tenant} Tenant</h2>
+        </div>
+        
+        <div className="row">
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            onKeyPress={handleKeyPress}
+            placeholder="Search NDC / FMT Drug / MBID / Status"
+            aria-label="Search FMT Master"
+            style={{ minWidth: '320px', flex: 1 }}
+            disabled={loading}
+          />
+          <button onClick={handleSearch} className="btn primary" disabled={loading}>
+            {loading ? 'Searching...' : 'Search'}
+          </button>
+          <span className="hint">View-only; NDC opens details drawer</span>
         </div>
         
         {error && (
-          <div style={{ 
-            color: 'var(--err)', 
-            padding: '8px', 
-            background: 'rgba(255, 107, 107, 0.1)', 
-            borderRadius: '4px', 
-            margin: '8px 0' 
-          }}>
-            {error}
+          <div className="alert error" style={{ marginTop: '16px' }}>
+            <strong>Error:</strong> {error}
           </div>
         )}
 
         <div className="divider"></div>
         
         <div className="scroll">
-          <table className="table">
-            <thead>
-              <tr>
-                <th>NDC</th>
-                <th>FMT Drug</th>
-                <th>MBID</th>
-                <th>Status</th>
-                <th>Start</th>
-                <th>End</th>
-              </tr>
-            </thead>
-            <tbody>
-              {records.map((record) => (
-                <tr key={record.ndc}>
-                  <td className="code">
-                    <a
-                      href="#"
-                      className="ndc-link"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        openDrawer(record.ndc);
-                      }}
-                    >
-                      {record.ndc}
-                    </a>
-                  </td>
-                  <td>{record.fmt_drug}</td>
-                  <td className="code">{record.mbid || '—'}</td>
-                  <td>
-                    <span className={`status ${record.status.toLowerCase()}`}>
-                      {record.status}
-                    </span>
-                  </td>
-                  <td>{record.start_date}</td>
-                  <td>{record.end_date || '—'}</td>
+          {loading ? (
+            <div style={{ textAlign: 'center', padding: '40px' }}>
+              Loading FMT data...
+            </div>
+          ) : records.length === 0 ? (
+            <div style={{ textAlign: 'center', padding: '40px', color: 'var(--color-text-muted)' }}>
+              {searchQuery ? 'No records found for your search.' : 'Enter a search term to find FMT records.'}
+            </div>
+          ) : (
+            <table className="data-table">
+              <thead>
+                <tr>
+                  <th>NDC</th>
+                  <th>FMT Drug</th>
+                  <th>MBID</th>
+                  <th>Status</th>
+                  <th>Start</th>
+                  <th>End</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {records.map((record) => (
+                  <tr key={record.ndc}>
+                    <td>
+                      <code>
+                        <a
+                          href="#"
+                          className="ndc-link"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            openDrawer(record.ndc);
+                          }}
+                        >
+                          {record.ndc}
+                        </a>
+                      </code>
+                    </td>
+                    <td>{record.fmt_drug}</td>
+                    <td><code>{record.mbid || '—'}</code></td>
+                    <td>
+                      <span className={`status ${record.status.toLowerCase()}`}>
+                        {record.status}
+                      </span>
+                    </td>
+                    <td>{record.start_date}</td>
+                    <td>{record.end_date || '—'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
         </div>
       </div>
 
