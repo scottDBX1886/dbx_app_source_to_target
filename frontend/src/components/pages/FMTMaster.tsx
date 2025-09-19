@@ -9,11 +9,9 @@ import { fmtApi, type FMTRecord, type FMTDetailsResponse } from '../../services/
 export function FMTMaster() {
   const { tenant } = useContext(TenantContext);
   const [searchQuery, setSearchQuery] = useState('');
-  const [statusFilter, setStatusFilter] = useState('');
   const [records, setRecords] = useState<FMTRecord[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [totalFound, setTotalFound] = useState(0);
 
   // Drawer state
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -25,32 +23,29 @@ export function FMTMaster() {
     loadData();
   }, [tenant]);
 
-  const loadData = async (query?: string, status?: string) => {
+  const loadData = async (query?: string) => {
     setLoading(true);
     setError(null);
     
     try {
-      const response = await fmtApi.searchRecords(tenant, query, status, 100);
+      const response = await fmtApi.searchRecords(tenant, query, undefined, 100);
       if (response.error) {
         setError(response.error);
         setRecords([]);
-        setTotalFound(0);
       } else {
         setRecords(response.records);
-        setTotalFound(response.total_found);
       }
     } catch (err) {
       console.error('Error loading FMT data:', err);
       setError(err instanceof Error ? err.message : 'Failed to load data');
       setRecords([]);
-      setTotalFound(0);
     } finally {
       setLoading(false);
     }
   };
 
   const handleSearch = () => {
-    loadData(searchQuery, statusFilter);
+    loadData(searchQuery);
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -61,7 +56,7 @@ export function FMTMaster() {
 
   const handleExport = async (format: 'csv' | 'json') => {
     try {
-      const blob = await fmtApi.exportData(tenant, format, searchQuery, statusFilter);
+      const blob = await fmtApi.exportData(tenant, format, searchQuery);
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
