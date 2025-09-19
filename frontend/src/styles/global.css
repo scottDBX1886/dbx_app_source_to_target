@@ -191,7 +191,7 @@ h4 {
 }
 
 .panel-title {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: var(--text);
   margin: 0;
@@ -394,9 +394,9 @@ input::placeholder {
 .data-table th,
 .data-table td {
   border-bottom: 1px solid #1f2c59;
-  padding: 8px 6px;
+  padding: 12px 10px;
   text-align: left;
-  font-size: 12px;
+  font-size: 14px;
   vertical-align: top;
 }
 

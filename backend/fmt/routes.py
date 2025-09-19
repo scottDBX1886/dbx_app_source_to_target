@@ -210,10 +210,18 @@ async def get_fmt_details(
         if df.empty:
             raise HTTPException(status_code=404, detail="No FMT data available")
         
-        # Find the specific NDC
-        record = df[df['ndc'] == ndc]
+        # Find the specific NDC (convert to string for comparison)
+        logger.info(f"Searching for NDC {ndc} in {len(df)} records")
+        logger.info(f"Available NDC sample: {df['ndc'].head().tolist()}")
+        
+        record = df[df['ndc'].astype(str) == str(ndc)]
         if record.empty:
-            raise HTTPException(status_code=404, detail=f"NDC {ndc} not found in FMT master")
+            logger.warning(f"NDC {ndc} not found. Trying alternative search...")
+            # Try without string conversion in case of type mismatch
+            record = df[df['ndc'] == ndc]
+            
+        if record.empty:
+            raise HTTPException(status_code=404, detail=f"NDC {ndc} not found in FMT master. Available: {len(df)} records")
         
         # Get the first matching record (should be unique)
         row = record.iloc[0]
