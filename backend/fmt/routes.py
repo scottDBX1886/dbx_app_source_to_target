@@ -17,9 +17,7 @@ router = APIRouter(prefix="/api/fmt", tags=["fmt-master"])
 def load_fmt_data(tenant: str = "MASTER") -> pd.DataFrame:
     """
     Load FMT Master data with tenant-specific filtering using sample data.
-    
-    TODO: Replace with actual database connection when ready.
-    Currently using sample CSV files from generate_fmt_data.py
+
     
     For production:
     - Connect to your database/data lake/API
@@ -28,36 +26,24 @@ def load_fmt_data(tenant: str = "MASTER") -> pd.DataFrame:
     - Query: df_mbids = query(f"SELECT * FROM demo.gainwell.fmt_mbids WHERE tenant = '{tenant}' OR tenant = 'MASTER'", warehouse_id=warehouse_id, as_dict=False)
     """
     try:
-        # Load core FMT data from sample files with absolute path
-        import os
-        base_dir = os.getcwd()
-        fmt_file = os.path.join(base_dir, "sample_fmt_data", "fmt_master.csv")
-        mbids_file = os.path.join(base_dir, "sample_fmt_data", "fmt_mbids.csv")
         
-        logger.info(f"Looking for FMT files at: {fmt_file}, {mbids_file}")
+        warehouse_id = get_settings().databricks_warehouse_id
         
-        if not os.path.exists(fmt_file):
-            raise FileNotFoundError(f"FMT master file not found: {fmt_file}")
-        if not os.path.exists(mbids_file):
-            raise FileNotFoundError(f"MBID file not found: {mbids_file}")
+        df_fmt_spark = query(f"SELECT * FROM demo.gainwell.fmt_master", warehouse_id=warehouse_id, as_dict=False)
+        df_mbids_spark = query(f"SELECT * FROM demo.gainwell.fmt_mbids WHERE tenant = '{tenant}'", warehouse_id=warehouse_id, as_dict=False)
         
-        df_fmt = pd.read_csv(fmt_file)
-        df_mbids = pd.read_csv(mbids_file)
-        
-        # Filter MBIDs for tenant (include MASTER + specific tenant)
-        df_mbids_filtered = df_mbids[
-            (df_mbids['tenant'] == 'MASTER') | (df_mbids['tenant'] == tenant)
-        ]
+        # Convert Spark DataFrames to pandas DataFrames for processing
+        df_fmt = df_fmt_spark.toPandas()
+        df_mbids = df_mbids_spark.toPandas()
         
         # Enhanced debugging
         logger.info(f"=== FMT TENANT: {tenant} ===")
         logger.info(f"FMT Master records: {len(df_fmt)}")
-        logger.info(f"MBID records for {tenant}: {len(df_mbids_filtered)}")
-        logger.info(f"FMT NDC sample: {df_fmt['ndc'].head().tolist()}")
+        logger.info(f"MBID records for {tenant}: {len(df_mbids)}")
+        logger.info(f"FMT NDC sample: {df_fmt['ndc'].head().tolist() if not df_fmt.empty else 'No data'}")
         
-        # Join FMT data with MBID descriptions
-        if not df_mbids_filtered.empty:
-            df = pd.merge(df_fmt, df_mbids_filtered, on='mbid', how='left', suffixes=('', '_mbid'))
+        if not df_mbids.empty:
+            df = pd.merge(df_fmt, df_mbids, on='mbid', how='inner', suffixes=('', '_mbid'))
         else:
             df = df_fmt
         
