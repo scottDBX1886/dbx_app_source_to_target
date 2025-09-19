@@ -1,160 +1,314 @@
 /**
- * FMT Master Page
- * Master formulary management with MBID assignment
+ * FMT Master Page - Matches FDB design with drawer functionality
+ * Formulary Management Tool with MBID assignment and status tracking
  */
 import React, { useState, useEffect, useContext } from 'react';
 import { TenantContext } from '../../App';
-
-// Tenant-specific FMT Master datasets
-const fmtMasterDatasets = {
-  MASTER: [
-    { ndc: "00011122233", fmt_drug: "AMOXICILLIN", mbid: "AK123456", status: "PDL", start: "2024-01-01", end: null },
-    { ndc: "99988877766", fmt_drug: "ZYRTEC", mbid: "AK123456", status: "PDL", start: "2024-03-01", end: null },
-    { ndc: "55544433322", fmt_drug: "LIPITOR", mbid: "CV999001", status: "PDL", start: "2024-06-01", end: null },
-    { ndc: "12312312312", fmt_drug: "HUMALOG", mbid: "IMM000777", status: "Approved", start: "2024-02-01", end: null },
-    { ndc: "11122233344", fmt_drug: "ADVIL", mbid: null, status: "Review", start: "2024-07-01", end: null }
-  ],
-  AK: [
-    { ndc: "00011122233", fmt_drug: "AMOXICILLIN", mbid: "AK123456", status: "PDL", start: "2024-01-01", end: null },
-    { ndc: "99988877766", fmt_drug: "ZYRTEC", mbid: "AK123456", status: "PDL", start: "2024-03-01", end: null },
-    { ndc: "AK001234567", fmt_drug: "CLARITIN-AK", mbid: "AK123456_a", status: "PDL", start: "2024-06-01", end: null },
-    { ndc: "AK987654321", fmt_drug: "ARCTIC-COUGH", mbid: "AK567890", status: "Approved", start: "2024-07-01", end: null }
-  ],
-  MO: [
-    { ndc: "55544433322", fmt_drug: "LIPITOR", mbid: "CV999001", status: "PDL", start: "2024-06-01", end: null },
-    { ndc: "12312312312", fmt_drug: "HUMALOG", mbid: "IMM000777", status: "Approved", start: "2024-02-01", end: null },
-    { ndc: "MO123456789", fmt_drug: "SHOW-ME STATIN", mbid: "MO999001", status: "PDL", start: "2024-08-01", end: null },
-    { ndc: "MO987654321", fmt_drug: "GATEWAY GLUCOSE", mbid: "MO888001", status: "Review", start: "2024-09-01", end: null },
-    { ndc: "MO555666777", fmt_drug: "OZARK OXY", mbid: "MO777001", status: "Restricted", start: "2024-10-01", end: null }
-  ]
-};
+import { fmtApi, type FMTRecord, type FMTDetailsResponse } from '../../services/fmt-api';
 
 export function FMTMaster() {
   const { tenant } = useContext(TenantContext);
   const [searchQuery, setSearchQuery] = useState('');
-  
-  // Get current tenant's data
-  const currentData = fmtMasterDatasets[tenant as keyof typeof fmtMasterDatasets] || fmtMasterDatasets.MASTER;
-  const [filteredData, setFilteredData] = useState(currentData);
+  const [statusFilter, setStatusFilter] = useState('');
+  const [records, setRecords] = useState<FMTRecord[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [totalFound, setTotalFound] = useState(0);
 
-  // Update filtered data when tenant changes
+  // Drawer state
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [selectedNDC, setSelectedNDC] = useState<string | null>(null);
+  const [detailsData, setDetailsData] = useState<FMTDetailsResponse | null>(null);
+  const [detailsLoading, setDetailsLoading] = useState(false);
+
+  // Load initial data when component mounts or tenant changes
   useEffect(() => {
-    const newData = fmtMasterDatasets[tenant as keyof typeof fmtMasterDatasets] || fmtMasterDatasets.MASTER;
-    setFilteredData(newData);
-    setSearchQuery(''); // Clear search when tenant changes
+    loadData();
   }, [tenant]);
 
-  // Filter data based on search query
-  const handleSearch = () => {
-    if (!searchQuery.trim()) {
-      setFilteredData(currentData);
-    } else {
-      const filtered = currentData.filter(record => 
-        record.ndc.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        record.fmt_drug.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        (record.mbid && record.mbid.toLowerCase().includes(searchQuery.toLowerCase())) ||
-        record.status.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-      setFilteredData(filtered);
+  const loadData = async (query?: string, status?: string) => {
+    setLoading(true);
+    setError(null);
+    
+    try {
+      const response = await fmtApi.searchRecords(tenant, query, status, 100);
+      if (response.error) {
+        setError(response.error);
+        setRecords([]);
+        setTotalFound(0);
+      } else {
+        setRecords(response.records);
+        setTotalFound(response.total_found);
+      }
+    } catch (err) {
+      console.error('Error loading FMT data:', err);
+      setError(err instanceof Error ? err.message : 'Failed to load data');
+      setRecords([]);
+      setTotalFound(0);
+    } finally {
+      setLoading(false);
     }
   };
 
-  // Handle Enter key in search input
-  const handleKeyDown = (e: React.KeyboardEvent) => {
+  const handleSearch = () => {
+    loadData(searchQuery, statusFilter);
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
       handleSearch();
     }
   };
 
-  // Download CSV function
-  const downloadCsv = () => {
-    const csvContent = [
-      'NDC,FMT Drug,MBID,Status,Start,End',
-      ...filteredData.map(row => 
-        `"${row.ndc}","${row.fmt_drug}","${row.mbid || ''}","${row.status}","${row.start}","${row.end || ''}"`)
-    ].join('\n');
-    
-    const blob = new Blob([csvContent], { type: 'text/csv' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `fmt_master_${tenant}_${new Date().toISOString().split('T')[0]}.csv`;
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    URL.revokeObjectURL(url);
-  };
-
-  // Get status styling
-  const getStatusClass = (status: string) => {
-    switch (status.toLowerCase()) {
-      case 'pdl': return 'status success';
-      case 'approved': return 'status success';
-      case 'review': return 'status warning';
-      case 'restricted': return 'status error';
-      default: return 'status';
+  const handleExport = async (format: 'csv' | 'json') => {
+    try {
+      const blob = await fmtApi.exportData(tenant, format, searchQuery, statusFilter);
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `fmt_export_${tenant.toLowerCase()}_${new Date().toISOString().slice(0, 10)}.${format}`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error('Export failed:', err);
+      setError(err instanceof Error ? err.message : 'Export failed');
     }
   };
 
-  return (
-    <div className="fmt-master-page">
-      <div className="page-header">
-        <h1>📋 FMT Master</h1>
-        <p className="muted">Master formulary management with MBID assignment and status tracking.</p>
-      </div>
+  const openDrawer = async (ndc: string) => {
+    setSelectedNDC(ndc);
+    setDrawerOpen(true);
+    setDetailsLoading(true);
+    setDetailsData(null);
 
-      {/* Search & Actions */}
-      <div className="panel">
-        <div className="panel-header">
-          <h2 className="panel-title">FMT Master Records</h2>
+    try {
+      const details = await fmtApi.getDetails(ndc, tenant);
+      setDetailsData(details);
+    } catch (err) {
+      console.error('Error loading NDC details:', err);
+      setError(err instanceof Error ? err.message : 'Failed to load details');
+    } finally {
+      setDetailsLoading(false);
+    }
+  };
+
+  const closeDrawer = () => {
+    setDrawerOpen(false);
+    setSelectedNDC(null);
+    setDetailsData(null);
+  };
+
+  const renderDetailsDrawer = () => {
+    if (!drawerOpen) return null;
+
+    return (
+      <>
+        {/* Backdrop */}
+        <div 
+          className="drawer-backdrop show" 
+          onClick={closeDrawer}
+          aria-hidden="false"
+        />
+        
+        {/* Drawer */}
+        <aside className={`drawer ${drawerOpen ? 'open' : ''}`} role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+          <div style={{
+            position: 'sticky',
+            top: 0,
+            zIndex: 2,
+            background: 'linear-gradient(180deg,#0b1670,#0b1455)',
+            borderBottom: '1px solid #2a3c74',
+            padding: '10px 14px',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '10px'
+          }}>
+            <div style={{ flex: '1 1 auto' }}>
+              <h2 id="drawerTitle" style={{ margin: 0, fontSize: '18px' }}>FMT Details</h2>
+              <div className="muted">Master formulary record with MBID • View-only</div>
+            </div>
+            <button className="btn ghost" onClick={closeDrawer} aria-label="Close drawer">✕</button>
+          </div>
+          
+          <div style={{ padding: '14px' }}>
+            {detailsLoading ? (
+              <div>Loading details...</div>
+            ) : detailsData ? (
+              <>
+                {/* Core Information */}
+                <div className="sec">
+                  <h4>Core Information</h4>
+                  <div className="kv">
+                    <div className="muted">NDC</div>
+                    <div>{detailsData.core_info.ndc}</div>
+                    <div className="muted">FMT Drug</div>
+                    <div>{detailsData.core_info.fmt_drug}</div>
+                    <div className="muted">Status</div>
+                    <div>{detailsData.core_info.status}</div>
+                    <div className="muted">Load Date</div>
+                    <div>{detailsData.core_info.load_date}</div>
+                  </div>
+                </div>
+
+                {/* MBID Information */}
+                <div className="sec">
+                  <h4>MBID Information</h4>
+                  <div className="kv">
+                    <div className="muted">MBID</div>
+                    <div>{detailsData.mbid_info.mbid || 'Not assigned'}</div>
+                    <div className="muted">Description</div>
+                    <div>{detailsData.mbid_info.description || '-'}</div>
+                    <div className="muted">Tenant</div>
+                    <div>{detailsData.mbid_info.tenant || '-'}</div>
+                    <div className="muted">Begin Date</div>
+                    <div>{detailsData.mbid_info.begin_date || '-'}</div>
+                  </div>
+                </div>
+
+                {/* Date Information */}
+                <div className="sec">
+                  <h4>Date Information</h4>
+                  <div className="kv">
+                    <div className="muted">Start Date</div>
+                    <div>{detailsData.date_info.start_date}</div>
+                    <div className="muted">End Date</div>
+                    <div>{detailsData.date_info.end_date || 'Open-ended'}</div>
+                    <div className="muted">Effective Date</div>
+                    <div>{detailsData.date_info.effective_date || '-'}</div>
+                    <div className="muted">Expiration Date</div>
+                    <div>{detailsData.date_info.expiration_date || '-'}</div>
+                  </div>
+                </div>
+
+                {/* Audit Information */}
+                <div className="sec">
+                  <h4>Audit Information</h4>
+                  <div className="kv">
+                    <div className="muted">Created By</div>
+                    <div>{detailsData.audit_info.created_by || '-'}</div>
+                    <div className="muted">Updated By</div>
+                    <div>{detailsData.audit_info.updated_by || '-'}</div>
+                    <div className="muted">Review Status</div>
+                    <div>{detailsData.audit_info.review_status || '-'}</div>
+                    <div className="muted">Notes</div>
+                    <div>{detailsData.audit_info.notes || '-'}</div>
+                  </div>
+                </div>
+              </>
+            ) : (
+              <div>No details available</div>
+            )}
+            
+            <div className="divider"></div>
+            <div className="row right">
+              <button 
+                className="btn" 
+                onClick={() => handleExport('json')}
+              >
+                Export JSON
+              </button>
+              <button 
+                className="btn" 
+                onClick={() => handleExport('csv')}
+              >
+                Export CSV
+              </button>
+            </div>
+          </div>
+        </aside>
+      </>
+    );
+  };
+
+  return (
+    <div className="page-container">
+      <div className="panel" aria-labelledby="fmtLabel">
+        <div className="row stack">
+          <div className="row" style={{ flex: '1 1 auto' }}>
+            <label id="fmtLabel" className="sr-only">Search FMT Master</label>
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              onKeyPress={handleKeyPress}
+              placeholder="Search NDC, FMT Drug, MBID, Status"
+              aria-label="Search FMT Master"
+              style={{ minWidth: '280px' }}
+            />
+            <select
+              value={statusFilter}
+              onChange={(e) => setStatusFilter(e.target.value)}
+              aria-label="Filter by status"
+            >
+              <option value="">All Statuses</option>
+              <option value="PDL">PDL</option>
+              <option value="Approved">Approved</option>
+              <option value="Review">Review</option>
+              <option value="Restricted">Restricted</option>
+            </select>
+            <button onClick={handleSearch} className="btn primary" disabled={loading}>
+              {loading ? 'Searching...' : 'Search'}
+            </button>
+            <span className="hint">NDC opens details drawer</span>
+          </div>
         </div>
         
-        <div className="row">
-          <input 
-            type="text" 
-            placeholder="Search NDC / FMT Drug / MBID / Status" 
-            style={{ minWidth: '320px', flex: 1 }}
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            onKeyDown={handleKeyDown}
-          />
-          <button className="btn primary" onClick={handleSearch}>
-            Search
-          </button>
-          <button className="btn" onClick={downloadCsv}>
-            Download CSV
-          </button>
-        </div>
-        
+        {error && (
+          <div style={{ 
+            color: 'var(--err)', 
+            padding: '8px', 
+            background: 'rgba(255, 107, 107, 0.1)', 
+            borderRadius: '4px', 
+            margin: '8px 0' 
+          }}>
+            {error}
+          </div>
+        )}
+
         <div className="divider"></div>
         
+        <div style={{ marginBottom: '10px', color: 'var(--muted)', fontSize: '12px' }}>
+          {totalFound > 0 ? `Found ${totalFound} records` : 'No records found'}
+        </div>
+
         <div className="scroll">
-          <table className="data-table">
+          <table className="table">
             <thead>
               <tr>
                 <th>NDC</th>
                 <th>FMT Drug</th>
                 <th>MBID</th>
                 <th>Status</th>
-                <th>Start</th>
-                <th>End</th>
-                <th>Actions</th>
+                <th>Start Date</th>
+                <th>End Date</th>
               </tr>
             </thead>
             <tbody>
-              {filteredData.map((record) => (
+              {records.map((record) => (
                 <tr key={record.ndc}>
-                  <td><code>{record.ndc}</code></td>
-                  <td>{record.fmt_drug}</td>
-                  <td><code>{record.mbid || '-'}</code></td>
-                  <td><span className={getStatusClass(record.status)}>{record.status}</span></td>
-                  <td>{record.start}</td>
-                  <td>{record.end || '-'}</td>
-                  <td>
-                    <button className="btn ghost" style={{ padding: '4px 8px', fontSize: '12px' }}>
-                      Edit
-                    </button>
+                  <td className="code">
+                    <a
+                      href="#"
+                      className="ndc-link"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        openDrawer(record.ndc);
+                      }}
+                    >
+                      {record.ndc}
+                    </a>
                   </td>
+                  <td>{record.fmt_drug}</td>
+                  <td className="code">{record.mbid || '—'}</td>
+                  <td>
+                    <span className={`status ${record.status.toLowerCase()}`}>
+                      {record.status}
+                    </span>
+                  </td>
+                  <td>{record.start_date}</td>
+                  <td>{record.end_date || '—'}</td>
                 </tr>
               ))}
             </tbody>
@@ -162,77 +316,7 @@ export function FMTMaster() {
         </div>
       </div>
 
-      {/* MBID Management */}
-      <div className="panel">
-        <div className="panel-header">
-          <h2 className="panel-title">🏷️ MBID Management</h2>
-        </div>
-        
-        <div className="alert info mb-2">
-          <strong>MBID Structure (Master/Child Model)</strong>
-          <div className="muted mt-1">
-            MBIDs are created only in MASTER with begin/end dates. Child tenants (AK, MO) reuse and may sub-scope.
-          </div>
-        </div>
-        
-        <div className="kv">
-          <div className="muted">MBID Format</div>
-          <div><code>SS######</code> (state abbrev + 6 digits), optional sub-suffix: _a, _b</div>
-          
-          <div className="muted">Relationship</div>
-          <div>1:1 between MBID and MBID description</div>
-          
-          <div className="muted">Validation Rules</div>
-          <div>
-            <ul>
-              <li>If one FMT Drug Name falls in two MBIDs → warn/confirm</li>
-              <li>If NDCs for same FMT Drug across two MBIDs differ in status → block approve</li>
-            </ul>
-          </div>
-          
-          <div className="muted">Available MBIDs</div>
-          <div>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-              <span className="pill">AK123456 - Antihistamines</span>
-              <span className="pill">CV999001 - Cardio – Statins</span>
-              <span className="pill">IMM000777 - Immunology – Insulins</span>
-              <span className="pill">AK123456_a - AK Antihistamines – sub</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* API Integration Info */}
-      <div className="panel">
-        <div className="panel-header">
-          <h2 className="panel-title">🔗 API Integration</h2>
-        </div>
-        
-        <div className="alert info">
-          <strong>Future API Wiring</strong>
-          <div className="muted mt-1">
-            This page will connect to Lakebase OLTP for operational FMT master data management.
-          </div>
-        </div>
-        
-        <div className="kv">
-          <div className="muted">Endpoint</div>
-          <div><code>GET /api/master/fmt?tenant=&lt;tenant&gt;</code></div>
-          
-          <div className="muted">Data Store</div>
-          <div>Lakebase OLTP (operational rows) + Delta OLAP (analytics & weekly extracts)</div>
-          
-          <div className="muted">Operations</div>
-          <div>
-            <ul>
-              <li>MBID assignment and validation</li>
-              <li>Status management (PDL, Review, Approved, Rejected)</li>
-              <li>Date range validation and conflict detection</li>
-              <li>Bulk operations and CSV import/export</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      {renderDetailsDrawer()}
     </div>
   );
 }

@@ -1,0 +1,9 @@
+mbid,description,tenant,begin_date,end_date,created_by,status
+AK123456,Antihistamines,MASTER,2024-01-01,,system,Active
+CV999001,Cardio - Statins,MASTER,2024-01-01,,system,Active
+IMM000777,Immunology - Insulins,MASTER,2024-01-01,,system,Active
+PAIN12345,Pain Management - NSAIDs,MASTER,2024-01-01,,system,Active
+ENDO55555,Endocrinology - Diabetes,MASTER,2024-01-01,,system,Active
+ONCO77777,Oncology - Immunotherapy,MASTER,2024-01-01,,system,Active
+AK123456_a,AK Antihistamines - sub,AK,2024-02-01,,system,Active
+MO888888,MO Specific Formulary,MO,2024-02-15,,system,Active

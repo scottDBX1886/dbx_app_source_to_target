@@ -1,113 +1,335 @@
-"""
-FMT Master API routes
-Future: Connect to real formulary data with MBID management
-"""
-from fastapi import APIRouter, Request, Query
+import os
+from fastapi import APIRouter, Request, Query, HTTPException
+from fastapi.responses import StreamingResponse
 from typing import Optional
 import logging
+import pandas as pd
+import json
+import io
+from backend.services.connector import query, insert_data
+from backend.config.settings import Settings, get_settings
 
 logger = logging.getLogger(__name__)
 
-# Create router for FMT endpoints
 router = APIRouter(prefix="/api/fmt", tags=["fmt-master"])
 
-@router.get("/records")
-async def get_fmt_records(
+
+def load_fmt_data(tenant: str = "MASTER") -> pd.DataFrame:
+    """
+    Load FMT Master data with tenant-specific filtering using sample data.
+    
+    TODO: Replace with actual database connection when ready.
+    Currently using sample CSV files from generate_fmt_data.py
+    
+    For production:
+    - Connect to your database/data lake/API
+    - Use: warehouse_id = get_settings().databricks_warehouse_id
+    - Query: df_fmt = query(f"SELECT * FROM demo.gainwell.fmt_master", warehouse_id=warehouse_id, as_dict=False)
+    - Query: df_mbids = query(f"SELECT * FROM demo.gainwell.fmt_mbids WHERE tenant = '{tenant}' OR tenant = 'MASTER'", warehouse_id=warehouse_id, as_dict=False)
+    """
+    try:
+        # Load core FMT data from sample files
+        fmt_file = "sample_fmt_data/fmt_master.csv"
+        mbids_file = "sample_fmt_data/fmt_mbids.csv"
+        
+        df_fmt = pd.read_csv(fmt_file)
+        df_mbids = pd.read_csv(mbids_file)
+        
+        # Filter MBIDs for tenant (include MASTER + specific tenant)
+        df_mbids_filtered = df_mbids[
+            (df_mbids['tenant'] == 'MASTER') | (df_mbids['tenant'] == tenant)
+        ]
+        
+        # Enhanced debugging
+        logger.info(f"=== FMT TENANT: {tenant} ===")
+        logger.info(f"FMT Master records: {len(df_fmt)}")
+        logger.info(f"MBID records for {tenant}: {len(df_mbids_filtered)}")
+        logger.info(f"FMT NDC sample: {df_fmt['ndc'].head().tolist()}")
+        
+        # Join FMT data with MBID descriptions
+        if not df_mbids_filtered.empty:
+            df = pd.merge(df_fmt, df_mbids_filtered, on='mbid', how='left', suffixes=('', '_mbid'))
+        else:
+            df = df_fmt
+        
+        logger.info(f"Final FMT dataset: {len(df)} records")
+        return df
+        
+    except Exception as e:
+        logger.error(f"Error loading FMT data for tenant {tenant}: {e}")
+        # Return empty DataFrame with expected columns to prevent crashes
+        empty_df = pd.DataFrame(columns=[
+            "ndc", "fmt_drug", "mbid", "status", "start_date", "end_date", "load_date",
+            "effective_date", "expiration_date", "created_by", "updated_by", "notes", "review_status",
+            "description", "tenant_mbid", "begin_date"
+        ])
+        
+        raise HTTPException(
+            status_code=500,
+            detail="No FMT data available - please check data files in sample_fmt_data/ or integrate your database connection."
+        )
+
+
+def search_dataframe(df: pd.DataFrame, query: str) -> pd.DataFrame:
+    """
+    Search dataframe across multiple FMT fields
+    """
+    if not query or df.empty:
+        return df
+    
+    query_lower = query.lower()
+    
+    # Search across FMT-specific fields
+    mask = (
+        df['ndc'].astype(str).str.contains(query_lower, case=False, na=False) |
+        df['fmt_drug'].str.contains(query_lower, case=False, na=False) |
+        df['mbid'].astype(str).str.contains(query_lower, case=False, na=False) |
+        df['status'].str.contains(query_lower, case=False, na=False) |
+        df['description'].str.contains(query_lower, case=False, na=False)
+    )
+    
+    return df[mask]
+
+
+@router.get("/search")
+async def search_fmt_records(
     request: Request,
     tenant: str = Query(..., description="Tenant (MASTER/AK/MO)"),
     query: Optional[str] = Query(None, description="Search query"),
-    status: Optional[str] = Query(None, description="Status filter (PDL/Approved/Review/Restricted)")
+    status: Optional[str] = Query(None, description="Status filter (PDL/Approved/Review/Restricted)"),
+    limit: Optional[int] = Query(100, description="Maximum records to return")
 ):
     """
-    Get FMT master records for tenant
-    Future: Query formulary database with MBID assignments
+    Search FMT master records for tenant
     
-    Example: GET /api/fmt/records?tenant=AK&status=PDL
+    Example: GET /api/fmt/search?tenant=AK&query=amoxicillin&limit=50
     """
-    
-    # TODO: Replace with real formulary query
-    # SELECT * FROM fmt_master 
-    # WHERE tenant_id = ? 
-    # AND status = ?
-    # ORDER BY fmt_drug
-    
-    return {
-        "message": "FMT Master API - Ready for real data integration",
-        "tenant": tenant,
-        "query": query,
-        "status": status,
-        "status": "placeholder",
-        "future_integration": {
-            "data_source": "Lakebase OLTP",
-            "table": "fmt_master",
-            "mbid_management": True,
-            "status_tracking": ["PDL", "Approved", "Review", "Restricted"],
-            "tenant_inheritance": "Child tenants inherit MASTER + own records"
+    try:
+        # Get user info from headers
+        user_email = request.headers.get("X-Forwarded-Email", "unknown")
+        logger.info(f"FMT search: tenant={tenant}, query={query}, status={status}, limit={limit}, user={user_email}")
+        
+        # Load data for the specified tenant
+        df = load_fmt_data(tenant)
+        
+        if df.empty:
+            return {
+                "tenant": tenant,
+                "query": query,
+                "error": "No data available - data loading not implemented",
+                "total_found": 0,
+                "records": []
+            }
+        
+        logger.info(f"Loaded {len(df)} FMT records for tenant {tenant}")
+        
+        # Apply search filter
+        if query:
+            df = search_dataframe(df, query)
+            logger.info(f"After search filter: {len(df)} records")
+        
+        # Apply status filter
+        if status:
+            df = df[df['status'].str.contains(status, case=False, na=False)]
+            logger.info(f"After status filter: {len(df)} records")
+        
+        # Apply limit
+        if limit and limit > 0:
+            df = df.head(limit)
+        
+        # Convert to JSON-serializable format - main FMT table fields
+        records = []
+        for _, row in df.iterrows():
+            try:
+                record = {
+                    "ndc": str(row['ndc']),
+                    "fmt_drug": str(row['fmt_drug']) if pd.notna(row['fmt_drug']) else "",
+                    "mbid": str(row['mbid']) if pd.notna(row['mbid']) else "",
+                    "status": str(row['status']) if pd.notna(row['status']) else "",
+                    "start_date": str(row['start_date']) if pd.notna(row['start_date']) else "",
+                    "end_date": str(row['end_date']) if pd.notna(row['end_date']) else ""
+                }
+                records.append(record)
+                
+            except Exception as row_error:
+                logger.error(f"Error processing row {row.name}: {row_error}")
+                continue
+        
+        return {
+            "tenant": tenant,
+            "query": query,
+            "status": status,
+            "total_found": len(records),
+            "records": records
         }
-    }
-
-@router.post("/records")
-async def create_fmt_record(
-    request: Request,
-    # record_data: FMTRecord (Pydantic model)
-):
-    """
-    Create new FMT master record
-    Future: Insert with MBID validation and conflict checking
-    """
-    
-    return {
-        "message": "FMT Master Create API - Ready for real data integration",
-        "status": "placeholder",
-        "future_integration": {
-            "validation": "MBID conflict detection",
-            "business_rules": "Status conflict blocking",
-            "audit_trail": "Track all changes with user/timestamp"
+        
+    except Exception as e:
+        logger.error(f"Error in FMT search: {e}")
+        return {
+            "tenant": tenant,
+            "query": query,
+            "error": f"Search failed: {str(e)}",
+            "total_found": 0,
+            "records": []
         }
-    }
 
-@router.put("/records/{ndc}")
-async def update_fmt_record(
-    request: Request,
+
+@router.get("/details/{ndc}")
+async def get_fmt_details(
     ndc: str,
-    tenant: str = Query(..., description="Tenant")
-):
-    """
-    Update FMT master record
-    Future: Update with full audit trail
-    """
-    
-    return {
-        "message": "FMT Master Update API - Ready for real data integration", 
-        "ndc": ndc,
-        "tenant": tenant,
-        "status": "placeholder",
-        "future_integration": {
-            "audit_logging": "Full change history",
-            "validation": "Date range overlap checks",
-            "workflow": "Approval workflow integration"
-        }
-    }
-
-@router.get("/mbids")
-async def get_mbids(
     request: Request,
     tenant: str = Query(..., description="Tenant (MASTER/AK/MO)")
 ):
     """
-    Get available MBIDs for tenant
-    Future: Query MBID master with inheritance rules
+    Get detailed FMT information for an NDC (for drawer popup)
     
-    Example: GET /api/fmt/mbids?tenant=AK
+    Example: GET /api/fmt/details/00011122233?tenant=AK
     """
-    
-    return {
-        "message": "MBID Management API - Ready for real data integration",
-        "tenant": tenant,
-        "status": "placeholder",
-        "future_integration": {
-            "inheritance_model": "MASTER creates, children can sub-scope",
-            "format_rules": "SS###### with optional _a, _b suffixes",
-            "relationship": "1:1 between MBID and description"
+    try:
+        user_email = request.headers.get("X-Forwarded-Email", "unknown")
+        logger.info(f"FMT details: ndc={ndc}, tenant={tenant}, user={user_email}")
+        
+        # Load data for the specified tenant
+        df = load_fmt_data(tenant)
+        
+        if df.empty:
+            raise HTTPException(status_code=404, detail="No FMT data available")
+        
+        # Find the specific NDC
+        record = df[df['ndc'] == ndc]
+        if record.empty:
+            raise HTTPException(status_code=404, detail=f"NDC {ndc} not found in FMT master")
+        
+        # Get the first matching record (should be unique)
+        row = record.iloc[0]
+        
+        # Build detailed response matching prototype drawer structure
+        details = {
+            "ndc": ndc,
+            "core_info": {
+                "ndc": str(row['ndc']),
+                "fmt_drug": str(row['fmt_drug']) if pd.notna(row['fmt_drug']) else "",
+                "status": str(row['status']) if pd.notna(row['status']) else "",
+                "load_date": str(row['load_date']) if pd.notna(row['load_date']) else ""
+            },
+            "mbid_info": {
+                "mbid": str(row['mbid']) if pd.notna(row['mbid']) else "",
+                "description": str(row['description']) if pd.notna(row['description']) else "",
+                "tenant": str(row.get('tenant_mbid', '')) if pd.notna(row.get('tenant_mbid', '')) else "",
+                "begin_date": str(row.get('begin_date', '')) if pd.notna(row.get('begin_date', '')) else ""
+            },
+            "date_info": {
+                "start_date": str(row['start_date']) if pd.notna(row['start_date']) else "",
+                "end_date": str(row['end_date']) if pd.notna(row['end_date']) else "",
+                "effective_date": str(row.get('effective_date', '')) if pd.notna(row.get('effective_date', '')) else "",
+                "expiration_date": str(row.get('expiration_date', '')) if pd.notna(row.get('expiration_date', '')) else ""
+            },
+            "audit_info": {
+                "created_by": str(row.get('created_by', '')) if pd.notna(row.get('created_by', '')) else "",
+                "updated_by": str(row.get('updated_by', '')) if pd.notna(row.get('updated_by', '')) else "",
+                "review_status": str(row.get('review_status', '')) if pd.notna(row.get('review_status', '')) else "",
+                "notes": str(row.get('notes', '')) if pd.notna(row.get('notes', '')) else ""
+            }
         }
-    }
+        
+        # Convert any numpy booleans to Python booleans for JSON serialization
+        def convert_numpy_types(obj):
+            if isinstance(obj, dict):
+                return {k: convert_numpy_types(v) for k, v in obj.items()}
+            elif hasattr(obj, 'item'):  # numpy scalar
+                return obj.item()
+            else:
+                return obj
+        
+        details = convert_numpy_types(details)
+        
+        return details
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error getting FMT details for NDC {ndc}: {e}")
+        raise HTTPException(status_code=500, detail=f"Failed to get details: {str(e)}")
+
+
+@router.get("/export")
+async def export_fmt_data(
+    request: Request,
+    tenant: str = Query(..., description="Tenant (MASTER/AK/MO)"),
+    format: str = Query("csv", description="Export format (csv/json)"),
+    query: Optional[str] = Query(None, description="Optional search filter"),
+    status: Optional[str] = Query(None, description="Optional status filter"),
+    limit: Optional[int] = Query(None, description="Optional record limit")
+):
+    """
+    Export FMT data in CSV or JSON format
+    
+    Example: GET /api/fmt/export?tenant=MO&format=csv&query=insulin&limit=1000
+    """
+    try:
+        user_email = request.headers.get("X-Forwarded-Email", "unknown")
+        logger.info(f"FMT export: tenant={tenant}, format={format}, query={query}, status={status}, user={user_email}")
+        
+        # Load data
+        df = load_fmt_data(tenant)
+        
+        if df.empty:
+            return {
+                "tenant": tenant,
+                "error": "No data available for export",
+                "record_count": 0
+            }
+        
+        # Apply filters
+        if query:
+            df = search_dataframe(df, query)
+        if status:
+            df = df[df['status'].str.contains(status, case=False, na=False)]
+        if limit and limit > 0:
+            df = df.head(limit)
+        
+        # Generate filename
+        from datetime import datetime
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        query_suffix = f"_{query}" if query else ""
+        filename = f"fmt_export_{tenant.lower()}{query_suffix}_{timestamp}.{format}"
+        
+        if format.lower() == "json":
+            # JSON export
+            records = []
+            for _, row in df.iterrows():
+                record = {col: str(val) if pd.notna(val) else "" for col, val in row.items()}
+                records.append(record)
+            
+            json_data = json.dumps({
+                "tenant": tenant,
+                "export_timestamp": timestamp,
+                "record_count": len(records),
+                "query": query,
+                "status": status,
+                "records": records
+            }, indent=2)
+            
+            return StreamingResponse(
+                io.StringIO(json_data),
+                media_type="application/json",
+                headers={"Content-Disposition": f"attachment; filename={filename}"}
+            )
+        
+        else:
+            # CSV export (default)
+            # Select main columns for export
+            export_columns = ['ndc', 'fmt_drug', 'mbid', 'status', 'start_date', 'end_date', 'load_date']
+            df_export = df[export_columns].copy()
+            
+            csv_data = df_export.to_csv(index=False)
+            
+            return StreamingResponse(
+                io.StringIO(csv_data),
+                media_type="text/csv",
+                headers={"Content-Disposition": f"attachment; filename={filename}"}
+            )
+    
+    except Exception as e:
+        logger.error(f"Error exporting FMT data: {e}")
+        raise HTTPException(status_code=500, detail=f"Export failed: {str(e)}")

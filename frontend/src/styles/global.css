@@ -452,6 +452,31 @@ input::placeholder {
   background: rgba(42, 90, 122, 0.1);
 }
 
+/* FMT-specific status styling */
+.status.pdl {
+  border-color: #2a7a4a;
+  color: #9bffbf;
+  background: rgba(42, 122, 74, 0.1);
+}
+
+.status.approved {
+  border-color: #2a5a7a;
+  color: #9bd2ff;
+  background: rgba(42, 90, 122, 0.1);
+}
+
+.status.review {
+  border-color: #7a5a2a;
+  color: #ffd19b;
+  background: rgba(122, 90, 42, 0.1);
+}
+
+.status.restricted {
+  border-color: #7a2a2a;
+  color: #ff9b9b;
+  background: rgba(122, 42, 42, 0.1);
+}
+
 /* Pills */
 .pill {
   font-size: 11px;

@@ -1,0 +1,201 @@
+ndc,fmt_drug,mbid,status,start_date,end_date,load_date,effective_date,expiration_date,created_by,updated_by,review_status,notes
+2985479473,ADVAIR,PAIN12345,Review,2025-06-12,,2025-09-14,2025-06-12,,manager,manager,,Formulary exception
+3862390295,SYNTHROID,ENDO55555,Restricted,2025-05-02,,2025-09-15,2025-05-02,,admin,pharmacist,Approved,
+2216121354,NEXIUM,PAIN12345,Review,2025-07-11,,2025-09-18,2025-07-11,,reviewer,manager,,Formulary exception
+9892565974,HUMIRA,IMM000777,Approved,2025-05-04,,2025-09-12,2025-05-04,,pharmacist,admin,,
+7565192109,METFORMIN,ENDO55555,Approved,2025-03-30,2025-09-15,2025-09-16,2025-03-30,2025-09-15,admin,manager,Rejected,Prior auth needed
+3357175920,TRULICITY,ENDO55555,Approved,2025-03-31,2025-08-29,2025-09-14,2025-03-31,2025-08-29,manager,manager,Rejected,Formulary exception
+9356653623,LIPITOR,CV999001,Restricted,2025-07-17,,2025-09-12,2025-07-17,,pharmacist,admin,Approved,
+7536357106,METFORMIN,ENDO55555,Restricted,2025-07-15,2025-08-30,2025-09-15,2025-07-15,2025-08-30,pharmacist,manager,,Formulary exception
+4658629875,ELIQUIS,CV999001,PDL,2025-04-06,,2025-09-13,2025-04-06,,admin,manager,Pending,Tier adjustment
+5802940475,ADVIL,PAIN12345,PDL,2025-06-08,,2025-09-13,2025-06-08,,manager,pharmacist,Rejected,
+1951610776,TRULICITY,ENDO55555,PDL,2025-06-26,,2025-09-14,2025-06-26,,reviewer,admin,Rejected,Prior auth needed
+1338548294,ZYRTEC,AK123456_a,Restricted,2025-07-26,,2025-09-12,2025-07-26,,admin,admin,Pending,Special handling required
+4401870718,KEYTRUDA,ONCO77777,Review,2025-05-11,,2025-09-17,2025-05-11,,manager,admin,Pending,Formulary exception
+7904765532,HUMALOG,IMM000777,PDL,2025-05-06,,2025-09-15,2025-05-06,,admin,reviewer,Pending,Tier adjustment
+6276877833,ELIQUIS,IMM000777,Restricted,2025-04-23,,2025-09-13,2025-04-23,,reviewer,manager,,
+9450735713,LANTUS,ENDO55555,PDL,2025-07-06,2025-08-23,2025-09-18,2025-07-06,2025-08-23,manager,admin,Pending,
+6554498269,MOTRIN,PAIN12345,PDL,2025-07-10,,2025-09-11,2025-07-10,,admin,reviewer,Rejected,Special handling required
+4375428777,ZYRTEC,AK123456,Restricted,2025-04-25,,2025-09-13,2025-04-25,,pharmacist,pharmacist,Approved,Prior auth needed
+7353672378,ADVIL,PAIN12345,Restricted,2025-06-25,,2025-09-18,2025-06-25,,manager,pharmacist,Pending,
+5520497237,ALLEREASE,AK123456,Review,2025-07-29,,2025-09-17,2025-07-29,,manager,pharmacist,Approved,Formulary exception
+4467742680,METFORMIN,ENDO55555,PDL,2025-08-13,,2025-09-16,2025-08-13,,pharmacist,pharmacist,,Special handling required
+2009640925,ADVAIR,AK123456,Review,2025-06-16,2025-08-30,2025-09-16,2025-06-16,2025-08-30,pharmacist,manager,,Special handling required
+9853765106,MOTRIN,PAIN12345,Review,2025-08-19,,2025-09-15,2025-08-19,,manager,manager,,Tier adjustment
+8906116999,HUMALOG,IMM000777,PDL,2025-04-08,2025-08-20,2025-09-13,2025-04-08,2025-08-20,admin,pharmacist,,Prior auth needed
+5984529026,METFORMIN,ENDO55555,Restricted,2025-04-03,,2025-09-18,2025-04-03,,manager,manager,Pending,Formulary exception
+4732196511,ZYRTEC,AK123456,Approved,2025-05-26,2025-08-22,2025-09-18,2025-05-26,2025-08-22,pharmacist,pharmacist,Rejected,Special handling required
+3944249554,TRULICITY,ENDO55555,Approved,2025-05-12,2025-09-11,2025-09-17,2025-05-12,2025-09-11,reviewer,manager,Approved,Tier adjustment
+6277512482,NOVOLOG,ENDO55555,PDL,2025-07-17,,2025-09-14,2025-07-17,,admin,pharmacist,Rejected,
+5312332251,TRULICITY,ENDO55555,PDL,2025-08-16,,2025-09-11,2025-08-16,,reviewer,manager,,Prior auth needed
+1709969365,TRULICITY,IMM000777,Approved,2025-08-12,2025-08-23,2025-09-15,2025-08-12,2025-08-23,admin,pharmacist,,Prior auth needed
+1867585699,XARELTO,PAIN12345,PDL,2025-04-09,,2025-09-13,2025-04-09,,pharmacist,manager,Rejected,Formulary exception
+4236370304,LIPITOR,CV999001,Approved,2025-06-06,,2025-09-16,2025-06-06,,reviewer,admin,Pending,
+3446407367,ALLEREASE,AK123456,Approved,2025-07-16,2025-08-29,2025-09-16,2025-07-16,2025-08-29,pharmacist,pharmacist,Rejected,Tier adjustment
+4515856939,HUMIRA,PAIN12345,PDL,2025-04-12,,2025-09-13,2025-04-12,,admin,pharmacist,Pending,Special handling required
+4792822452,MOTRIN,PAIN12345,Approved,2025-08-10,2025-09-13,2025-09-15,2025-08-10,2025-09-13,admin,manager,Approved,Tier adjustment
+3508305028,ZYRTEC,AK123456,Restricted,2025-06-26,,2025-09-12,2025-06-26,,reviewer,reviewer,Pending,Formulary exception
+8023272516,KEYTRUDA,ONCO77777,Restricted,2025-06-03,,2025-09-12,2025-06-03,,manager,reviewer,,Tier adjustment
+9256441016,ELIQUIS,CV999001,Review,2025-07-26,2025-09-09,2025-09-16,2025-07-26,2025-09-09,admin,pharmacist,,Prior auth needed
+5027661367,TRULICITY,IMM000777,Review,2025-06-24,,2025-09-12,2025-06-24,,admin,admin,Pending,Special handling required
+3497592097,XARELTO,AK123456,Review,2025-05-07,,2025-09-15,2025-05-07,,manager,reviewer,,Formulary exception
+4259493453,XARELTO,CV999001,Approved,2025-06-14,,2025-09-18,2025-06-14,,admin,admin,Rejected,Tier adjustment
+3511747525,ENBREL,PAIN12345,Approved,2025-03-23,2025-09-09,2025-09-13,2025-03-23,2025-09-09,admin,pharmacist,Approved,Tier adjustment
+2763313946,AMOXICILLIN,AK123456,Review,2025-06-06,2025-08-30,2025-09-12,2025-06-06,2025-08-30,reviewer,manager,Rejected,Tier adjustment
+2943804095,HUMALOG,IMM000777,Review,2025-07-11,2025-09-08,2025-09-17,2025-07-11,2025-09-08,admin,reviewer,Approved,Prior auth needed
+5672292500,ELIQUIS,IMM000777,Restricted,2025-07-15,2025-09-01,2025-09-14,2025-07-15,2025-09-01,manager,pharmacist,Approved,Tier adjustment
+9043462396,JARDIANCE,ENDO55555,Approved,2025-04-30,,2025-09-12,2025-04-30,,pharmacist,admin,Pending,Prior auth needed
+4420546446,NOVOLOG,IMM000777,Restricted,2025-05-26,,2025-09-17,2025-05-26,,manager,admin,,Formulary exception
+4980757410,XARELTO,PAIN12345,Review,2025-07-30,,2025-09-14,2025-07-30,,reviewer,pharmacist,Rejected,
+8220746523,HUMIRA,PAIN12345,Approved,2025-06-04,,2025-09-15,2025-06-04,,reviewer,reviewer,Approved,Formulary exception
+2813738850,ADVAIR,CV999001,Restricted,2025-05-05,,2025-09-12,2025-05-05,,reviewer,manager,Approved,Prior auth needed
+2929976327,ALLEREASE,AK123456,Review,2025-04-24,,2025-09-16,2025-04-24,,admin,manager,Approved,Special handling required
+8827695647,ENBREL,AK123456,PDL,2025-06-17,2025-08-20,2025-09-12,2025-06-17,2025-08-20,admin,reviewer,Pending,Tier adjustment
+7683398776,ENBREL,PAIN12345,Restricted,2025-05-09,,2025-09-11,2025-05-09,,reviewer,admin,Rejected,Formulary exception
+1891879076,ADVAIR,IMM000777,Approved,2025-08-09,,2025-09-16,2025-08-09,,manager,admin,Approved,Special handling required
+5089429111,HUMALOG,IMM000777,Restricted,2025-07-07,,2025-09-16,2025-07-07,,admin,pharmacist,Approved,Prior auth needed
+6242729586,OZEMPIC,IMM000777,Restricted,2025-05-07,,2025-09-14,2025-05-07,,reviewer,reviewer,,Special handling required
+3327988858,JARDIANCE,IMM000777,PDL,2025-06-19,2025-09-06,2025-09-15,2025-06-19,2025-09-06,reviewer,reviewer,,
+2728140515,HUMALOG,ENDO55555,Approved,2025-08-02,,2025-09-12,2025-08-02,,admin,manager,,Tier adjustment
+5013205704,ALLEREASE,AK123456,Review,2025-07-13,,2025-09-18,2025-07-13,,pharmacist,manager,,Prior auth needed
+2385558936,LANTUS,IMM000777,Review,2025-06-27,,2025-09-18,2025-06-27,,pharmacist,reviewer,Approved,Special handling required
+8064546855,OZEMPIC,ENDO55555,Approved,2025-06-20,,2025-09-14,2025-06-20,,manager,pharmacist,Rejected,Formulary exception
+5479629890,ADVAIR,IMM000777,Review,2025-07-03,,2025-09-15,2025-07-03,,pharmacist,pharmacist,Rejected,Formulary exception
+8499783251,HUMALOG,ENDO55555,Approved,2025-06-10,,2025-09-16,2025-06-10,,manager,manager,Pending,
+9105940696,ADVIL,PAIN12345,Approved,2025-05-03,2025-09-06,2025-09-13,2025-05-03,2025-09-06,reviewer,pharmacist,,Formulary exception
+9222569902,XARELTO,AK123456,Restricted,2025-08-06,,2025-09-13,2025-08-06,,pharmacist,manager,,Tier adjustment
+9358204617,ADVAIR,CV999001,Review,2025-07-27,,2025-09-15,2025-07-27,,admin,admin,Approved,Tier adjustment
+5028736655,TRULICITY,ENDO55555,Restricted,2025-07-26,,2025-09-15,2025-07-26,,manager,reviewer,Approved,Prior auth needed
+5223525356,MOTRIN,PAIN12345,PDL,2025-08-02,,2025-09-16,2025-08-02,,admin,reviewer,Pending,Prior auth needed
+8337844155,ZYRTEC,AK123456,PDL,2025-04-12,,2025-09-15,2025-04-12,,pharmacist,manager,Approved,Prior auth needed
+3678959387,HUMALOG,ENDO55555,PDL,2025-08-03,,2025-09-17,2025-08-03,,pharmacist,reviewer,,Prior auth needed
+8033189849,TRULICITY,ENDO55555,Restricted,2025-07-02,,2025-09-17,2025-07-02,,manager,manager,Approved,
+3424942588,ZYRTEC,AK123456,PDL,2025-06-07,,2025-09-17,2025-06-07,,pharmacist,pharmacist,Approved,Prior auth needed
+2195546135,MOTRIN,PAIN12345,PDL,2025-05-30,,2025-09-13,2025-05-30,,admin,manager,Approved,
+2205663930,XARELTO,AK123456,Review,2025-08-06,,2025-09-18,2025-08-06,,admin,manager,,Special handling required
+3233113428,LANTUS,ENDO55555,Approved,2025-06-26,,2025-09-15,2025-06-26,,reviewer,manager,Approved,
+3165714275,METFORMIN,ENDO55555,Approved,2025-07-07,,2025-09-13,2025-07-07,,reviewer,admin,Rejected,Special handling required
+3629718852,ENBREL,IMM000777,Approved,2025-05-02,,2025-09-13,2025-05-02,,manager,reviewer,Pending,Prior auth needed
+8840499227,JARDIANCE,IMM000777,Review,2025-06-06,2025-08-26,2025-09-13,2025-06-06,2025-08-26,manager,pharmacist,Rejected,Formulary exception
+6938251151,JARDIANCE,ENDO55555,Restricted,2025-07-11,,2025-09-17,2025-07-11,,manager,pharmacist,Approved,
+5711964575,KEYTRUDA,ONCO77777,PDL,2025-04-23,2025-08-30,2025-09-12,2025-04-23,2025-08-30,pharmacist,reviewer,Approved,Prior auth needed
+7641121394,LANTUS,IMM000777,Restricted,2025-07-23,,2025-09-16,2025-07-23,,manager,admin,Pending,Prior auth needed
+4027441892,ADVAIR,PAIN12345,Review,2025-04-03,,2025-09-17,2025-04-03,,pharmacist,admin,Rejected,Formulary exception
+6205449199,XARELTO,PAIN12345,Restricted,2025-06-27,2025-08-26,2025-09-15,2025-06-27,2025-08-26,manager,reviewer,,Tier adjustment
+8147356720,HUMIRA,IMM000777,Review,2025-08-13,,2025-09-13,2025-08-13,,admin,pharmacist,Approved,Formulary exception
+8821285168,LANTUS,ENDO55555,Review,2025-07-10,,2025-09-12,2025-07-10,,admin,pharmacist,Pending,Formulary exception
+2971105139,MOTRIN,PAIN12345,Restricted,2025-04-05,,2025-09-16,2025-04-05,,admin,reviewer,Approved,Tier adjustment
+1222249311,LANTUS,ENDO55555,PDL,2025-05-31,2025-08-25,2025-09-17,2025-05-31,2025-08-25,reviewer,pharmacist,Rejected,Special handling required
+8412414320,CRESTOR,CV999001,Review,2025-04-10,2025-08-26,2025-09-13,2025-04-10,2025-08-26,admin,manager,Rejected,Formulary exception
+4255947932,JARDIANCE,ENDO55555,Restricted,2025-07-18,,2025-09-16,2025-07-18,,admin,reviewer,,Special handling required
+1945786708,ADVAIR,PAIN12345,Review,2025-04-15,2025-09-07,2025-09-18,2025-04-15,2025-09-07,pharmacist,admin,Pending,Formulary exception
+9262720870,HUMALOG,IMM000777,PDL,2025-06-17,,2025-09-18,2025-06-17,,reviewer,pharmacist,Approved,Special handling required
+7558677670,LIPITOR,CV999001,Restricted,2025-05-24,,2025-09-15,2025-05-24,,manager,reviewer,,Formulary exception
+4693456939,KEYTRUDA,ONCO77777,Review,2025-04-20,,2025-09-18,2025-04-20,,reviewer,reviewer,,Special handling required
+1967491451,JARDIANCE,IMM000777,Review,2025-05-25,,2025-09-14,2025-05-25,,admin,admin,,
+6255198418,AMOXICILLIN,IMM000777,Approved,2025-04-13,,2025-09-14,2025-04-13,,reviewer,pharmacist,Pending,Formulary exception
+1365370953,ZYRTEC,AK123456_a,Approved,2025-07-15,2025-09-03,2025-09-18,2025-07-15,2025-09-03,pharmacist,reviewer,,
+6123298563,NOVOLOG,IMM000777,Review,2025-06-27,,2025-09-13,2025-06-27,,admin,manager,,
+2516499678,ZYRTEC,AK123456,Approved,2025-05-08,,2025-09-13,2025-05-08,,pharmacist,admin,Approved,Special handling required
+2522454545,ZYRTEC,AK123456_a,Approved,2025-05-31,,2025-09-14,2025-05-31,,admin,reviewer,Rejected,Formulary exception
+7400644543,NOVOLOG,IMM000777,PDL,2025-03-31,,2025-09-12,2025-03-31,,pharmacist,admin,Approved,
+7611266040,ADVIL,PAIN12345,Review,2025-04-06,,2025-09-18,2025-04-06,,manager,manager,Pending,Special handling required
+8061807984,CRESTOR,CV999001,Review,2025-06-10,,2025-09-18,2025-06-10,,reviewer,pharmacist,Pending,Special handling required
+4932574106,AMOXICILLIN,CV999001,Restricted,2025-07-26,2025-09-12,2025-09-16,2025-07-26,2025-09-12,manager,manager,,Tier adjustment
+2895305359,METFORMIN,ENDO55555,Review,2025-08-19,2025-08-23,2025-09-17,2025-08-19,2025-08-23,admin,reviewer,Rejected,Prior auth needed
+4478624244,METFORMIN,ENDO55555,Approved,2025-07-13,2025-09-07,2025-09-17,2025-07-13,2025-09-07,manager,pharmacist,Pending,Formulary exception
+5774785318,KEYTRUDA,ONCO77777,Approved,2025-03-26,,2025-09-18,2025-03-26,,admin,manager,,Formulary exception
+4092441533,METFORMIN,ENDO55555,Restricted,2025-07-06,,2025-09-14,2025-07-06,,manager,pharmacist,Approved,Tier adjustment
+8430745388,ZYRTEC,AK123456,Restricted,2025-05-05,,2025-09-18,2025-05-05,,reviewer,admin,Rejected,
+5081251365,SYNTHROID,ENDO55555,Approved,2025-08-13,2025-08-27,2025-09-12,2025-08-13,2025-08-27,pharmacist,pharmacist,,Prior auth needed
+9844820209,ELIQUIS,PAIN12345,Review,2025-05-24,2025-09-15,2025-09-13,2025-05-24,2025-09-15,manager,manager,,Tier adjustment
+9697455244,ELIQUIS,AK123456,Restricted,2025-06-01,,2025-09-12,2025-06-01,,admin,manager,Approved,
+6967973815,AMOXICILLIN,CV999001,Restricted,2025-07-14,,2025-09-15,2025-07-14,,manager,manager,Pending,Prior auth needed
+3244677918,METFORMIN,ENDO55555,Review,2025-06-08,2025-09-10,2025-09-15,2025-06-08,2025-09-10,manager,pharmacist,,
+6456186203,CRESTOR,CV999001,PDL,2025-07-09,,2025-09-18,2025-07-09,,admin,reviewer,,Special handling required
+9793922722,TRULICITY,ENDO55555,Review,2025-04-14,,2025-09-14,2025-04-14,,manager,pharmacist,Rejected,Prior auth needed
+8773543498,XARELTO,CV999001,PDL,2025-06-14,,2025-09-16,2025-06-14,,admin,reviewer,Pending,Tier adjustment
+4020528194,SYNTHROID,ENDO55555,Restricted,2025-04-23,,2025-09-16,2025-04-23,,admin,manager,,
+9082148296,NEXIUM,IMM000777,Restricted,2025-08-01,,2025-09-17,2025-08-01,,manager,admin,Rejected,
+5737608744,NOVOLOG,ENDO55555,PDL,2025-06-10,2025-09-06,2025-09-13,2025-06-10,2025-09-06,admin,reviewer,Pending,
+3708307018,AMOXICILLIN,CV999001,Approved,2025-04-23,,2025-09-12,2025-04-23,,admin,manager,Approved,Tier adjustment
+5130820773,AMOXICILLIN,PAIN12345,Approved,2025-05-29,,2025-09-16,2025-05-29,,admin,admin,,Formulary exception
+9706739106,ALLEREASE,AK123456,Restricted,2025-07-19,2025-09-02,2025-09-13,2025-07-19,2025-09-02,admin,admin,Rejected,Special handling required
+5674303124,TRULICITY,ENDO55555,Approved,2025-08-09,,2025-09-18,2025-08-09,,manager,reviewer,,Formulary exception
+1337413833,OZEMPIC,IMM000777,Restricted,2025-07-29,,2025-09-16,2025-07-29,,manager,pharmacist,Approved,
+9922458637,LANTUS,IMM000777,Approved,2025-05-21,2025-09-05,2025-09-18,2025-05-21,2025-09-05,reviewer,reviewer,,Prior auth needed
+5459540791,HUMIRA,PAIN12345,Review,2025-06-04,,2025-09-13,2025-06-04,,manager,reviewer,Approved,Formulary exception
+2518826413,TRULICITY,ENDO55555,Review,2025-04-11,,2025-09-16,2025-04-11,,admin,reviewer,Rejected,Special handling required
+7847446678,HUMIRA,PAIN12345,Approved,2025-08-08,,2025-09-18,2025-08-08,,manager,manager,Approved,Special handling required
+7198167708,KEYTRUDA,ONCO77777,Approved,2025-07-15,2025-08-30,2025-09-14,2025-07-15,2025-08-30,pharmacist,pharmacist,Rejected,Tier adjustment
+1152916965,KEYTRUDA,ONCO77777,Restricted,2025-05-06,,2025-09-11,2025-05-06,,manager,admin,Pending,Special handling required
+2990282787,ADVIL,PAIN12345,PDL,2025-05-19,,2025-09-18,2025-05-19,,pharmacist,pharmacist,,
+7572923713,AMOXICILLIN,CV999001,PDL,2025-07-04,,2025-09-15,2025-07-04,,manager,pharmacist,Approved,
+7942707826,HUMIRA,IMM000777,Review,2025-07-06,,2025-09-14,2025-07-06,,manager,manager,Approved,Formulary exception
+4364752237,HUMALOG,ENDO55555,Review,2025-07-28,,2025-09-17,2025-07-28,,pharmacist,manager,,Tier adjustment
+2576342278,HUMIRA,PAIN12345,PDL,2025-07-19,,2025-09-14,2025-07-19,,manager,pharmacist,Rejected,Special handling required
+8343469302,ADVIL,PAIN12345,Approved,2025-08-05,,2025-09-15,2025-08-05,,admin,admin,,Prior auth needed
+2710139973,ZYRTEC,AK123456_a,Restricted,2025-08-14,2025-09-10,2025-09-14,2025-08-14,2025-09-10,admin,reviewer,Approved,Formulary exception
+7700293525,ENBREL,CV999001,Review,2025-04-08,2025-08-30,2025-09-14,2025-04-08,2025-08-30,admin,pharmacist,Pending,Special handling required
+5986956390,ZYRTEC,AK123456_a,PDL,2025-07-01,,2025-09-13,2025-07-01,,admin,admin,Rejected,Formulary exception
+4627223354,MOTRIN,PAIN12345,Review,2025-06-17,,2025-09-15,2025-06-17,,manager,reviewer,Pending,Formulary exception
+5365655090,AMOXICILLIN,AK123456,PDL,2025-03-23,,2025-09-13,2025-03-23,,manager,manager,Rejected,Tier adjustment
+5371445288,ELIQUIS,AK123456,Review,2025-05-05,2025-09-14,2025-09-13,2025-05-05,2025-09-14,reviewer,reviewer,Approved,Prior auth needed
+8323919507,CRESTOR,CV999001,Review,2025-04-25,,2025-09-16,2025-04-25,,manager,admin,Rejected,Special handling required
+8895141822,SYNTHROID,ENDO55555,Approved,2025-07-24,,2025-09-12,2025-07-24,,pharmacist,admin,Pending,Special handling required
+1919644490,OZEMPIC,ENDO55555,Approved,2025-08-14,2025-09-15,2025-09-12,2025-08-14,2025-09-15,manager,reviewer,Pending,
+8599553544,ELIQUIS,AK123456,Review,2025-06-27,2025-08-25,2025-09-15,2025-06-27,2025-08-25,reviewer,manager,Rejected,
+1920563235,NEXIUM,AK123456,PDL,2025-05-19,,2025-09-17,2025-05-19,,pharmacist,pharmacist,,Prior auth needed
+4578112649,MOTRIN,PAIN12345,Review,2025-04-18,,2025-09-16,2025-04-18,,pharmacist,admin,Pending,Prior auth needed
+6445774074,LIPITOR,CV999001,Review,2025-05-26,2025-09-03,2025-09-12,2025-05-26,2025-09-03,manager,pharmacist,Approved,Special handling required
+8237690694,ALLEREASE,AK123456,Approved,2025-07-05,,2025-09-18,2025-07-05,,reviewer,admin,,Tier adjustment
+9416394469,METFORMIN,ENDO55555,Review,2025-07-22,,2025-09-13,2025-07-22,,admin,admin,Pending,Special handling required
+7571646342,HUMALOG,ENDO55555,Approved,2025-04-13,,2025-09-14,2025-04-13,,pharmacist,reviewer,Rejected,Formulary exception
+8041467760,SYNTHROID,ENDO55555,Approved,2025-05-25,,2025-09-18,2025-05-25,,manager,admin,Approved,Tier adjustment
+1593549164,ADVAIR,PAIN12345,Review,2025-08-03,,2025-09-12,2025-08-03,,reviewer,pharmacist,,Special handling required
+3003773927,LANTUS,ENDO55555,Approved,2025-06-18,,2025-09-17,2025-06-18,,pharmacist,pharmacist,Approved,Prior auth needed
+5819170765,KEYTRUDA,ONCO77777,PDL,2025-06-21,2025-08-20,2025-09-15,2025-06-21,2025-08-20,admin,admin,Pending,
+5813740541,JARDIANCE,IMM000777,PDL,2025-08-19,,2025-09-15,2025-08-19,,admin,pharmacist,,
+4285398606,METFORMIN,ENDO55555,PDL,2025-07-23,,2025-09-13,2025-07-23,,reviewer,admin,,
+9348389400,ENBREL,IMM000777,Approved,2025-06-28,,2025-09-17,2025-06-28,,admin,manager,,Special handling required
+8991598785,SYNTHROID,ENDO55555,Approved,2025-08-04,,2025-09-13,2025-08-04,,manager,manager,Pending,Tier adjustment
+5127851029,ZYRTEC,AK123456,Review,2025-07-29,,2025-09-17,2025-07-29,,reviewer,reviewer,Pending,Special handling required
+9782706559,XARELTO,IMM000777,Restricted,2025-04-01,2025-09-12,2025-09-15,2025-04-01,2025-09-12,admin,manager,Rejected,
+6786936426,METFORMIN,ENDO55555,Review,2025-03-30,,2025-09-12,2025-03-30,,pharmacist,pharmacist,Pending,Tier adjustment
+5876324347,ELIQUIS,PAIN12345,Approved,2025-07-07,,2025-09-12,2025-07-07,,admin,manager,Pending,
+8431791773,XARELTO,CV999001,Approved,2025-05-27,2025-09-14,2025-09-12,2025-05-27,2025-09-14,reviewer,reviewer,,
+8014170570,TRULICITY,IMM000777,PDL,2025-05-14,2025-08-21,2025-09-17,2025-05-14,2025-08-21,admin,admin,,
+5204596802,LANTUS,ENDO55555,Approved,2025-04-27,,2025-09-13,2025-04-27,,manager,reviewer,,
+5659975661,ZYRTEC,AK123456,Approved,2025-08-16,,2025-09-11,2025-08-16,,reviewer,reviewer,Approved,Tier adjustment
+5462700032,CRESTOR,CV999001,Approved,2025-07-03,2025-08-25,2025-09-14,2025-07-03,2025-08-25,admin,manager,,Tier adjustment
+1367367526,XARELTO,CV999001,PDL,2025-06-27,,2025-09-16,2025-06-27,,pharmacist,reviewer,Rejected,Prior auth needed
+8720313334,CRESTOR,CV999001,Approved,2025-08-12,,2025-09-17,2025-08-12,,reviewer,admin,Rejected,Formulary exception
+6786567019,KEYTRUDA,ONCO77777,Approved,2025-05-16,,2025-09-12,2025-05-16,,reviewer,pharmacist,Approved,
+8846149990,METFORMIN,ENDO55555,Approved,2025-03-24,2025-09-14,2025-09-16,2025-03-24,2025-09-14,manager,manager,Pending,Tier adjustment
+5358378854,NEXIUM,PAIN12345,Restricted,2025-05-08,2025-09-01,2025-09-17,2025-05-08,2025-09-01,manager,manager,Pending,Prior auth needed
+3150810934,ELIQUIS,IMM000777,Restricted,2025-06-28,,2025-09-18,2025-06-28,,admin,manager,Approved,Prior auth needed
+6966892889,ADVAIR,CV999001,Review,2025-06-23,2025-09-15,2025-09-12,2025-06-23,2025-09-15,pharmacist,pharmacist,Pending,Prior auth needed
+2110616674,ELIQUIS,PAIN12345,Review,2025-07-05,,2025-09-14,2025-07-05,,manager,reviewer,Rejected,Formulary exception
+5907805118,ZYRTEC,AK123456,Restricted,2025-06-20,,2025-09-16,2025-06-20,,reviewer,reviewer,Rejected,Formulary exception
+5700601073,KEYTRUDA,ONCO77777,PDL,2025-05-26,,2025-09-17,2025-05-26,,admin,manager,,Formulary exception
+6835258843,TRULICITY,ENDO55555,Restricted,2025-06-01,,2025-09-17,2025-06-01,,admin,manager,Pending,Prior auth needed
+4140866884,LIPITOR,CV999001,PDL,2025-05-31,,2025-09-12,2025-05-31,,admin,reviewer,Approved,Formulary exception
+5676271009,KEYTRUDA,ONCO77777,Approved,2025-05-02,2025-08-23,2025-09-13,2025-05-02,2025-08-23,admin,reviewer,Rejected,
+2984250208,HUMALOG,ENDO55555,PDL,2025-04-26,,2025-09-15,2025-04-26,,admin,pharmacist,Approved,Formulary exception
+5694425093,ZYRTEC,AK123456_a,Restricted,2025-05-11,,2025-09-12,2025-05-11,,admin,admin,Approved,Formulary exception
+9619959899,MOTRIN,PAIN12345,PDL,2025-07-09,,2025-09-15,2025-07-09,,pharmacist,admin,Approved,Prior auth needed
+8543762053,ZYRTEC,AK123456_a,Approved,2025-05-23,,2025-09-18,2025-05-23,,pharmacist,admin,Pending,Formulary exception
+4532866873,METFORMIN,ENDO55555,PDL,2025-08-08,2025-09-11,2025-09-13,2025-08-08,2025-09-11,pharmacist,manager,,
+9678893980,MOTRIN,PAIN12345,Approved,2025-07-21,2025-09-11,2025-09-14,2025-07-21,2025-09-11,reviewer,manager,,Prior auth needed
+3319722284,TRULICITY,ENDO55555,Review,2025-06-01,2025-08-22,2025-09-11,2025-06-01,2025-08-22,reviewer,reviewer,Pending,Prior auth needed
+3935360812,ADVIL,PAIN12345,Approved,2025-06-30,,2025-09-18,2025-06-30,,admin,admin,Rejected,Prior auth needed
+4099251210,JARDIANCE,ENDO55555,Review,2025-06-28,2025-09-06,2025-09-16,2025-06-28,2025-09-06,pharmacist,admin,,Tier adjustment
+7594109129,ELIQUIS,CV999001,Review,2025-07-16,2025-09-11,2025-09-14,2025-07-16,2025-09-11,manager,admin,Approved,Formulary exception
+8697309474,TRULICITY,ENDO55555,Restricted,2025-04-16,,2025-09-14,2025-04-16,,pharmacist,manager,,Tier adjustment
+5732486487,AMOXICILLIN,IMM000777,Approved,2025-05-06,,2025-09-18,2025-05-06,,pharmacist,reviewer,Approved,Special handling required
+6299590765,ZYRTEC,AK123456_a,PDL,2025-06-16,,2025-09-18,2025-06-16,,admin,pharmacist,Rejected,Special handling required
+3486918901,HUMALOG,ENDO55555,Review,2025-06-19,,2025-09-12,2025-06-19,,manager,pharmacist,,Special handling required
+9537582661,OZEMPIC,IMM000777,Restricted,2025-06-28,,2025-09-16,2025-06-28,,admin,manager,Approved,Prior auth needed
+9518485600,METFORMIN,ENDO55555,Restricted,2025-05-28,,2025-09-17,2025-05-28,,pharmacist,admin,Approved,Special handling required
+7946104753,OZEMPIC,ENDO55555,Review,2025-04-25,,2025-09-12,2025-04-25,,admin,pharmacist,Approved,Prior auth needed
+3964921325,CRESTOR,CV999001,PDL,2025-06-12,,2025-09-13,2025-06-12,,manager,admin,Rejected,Tier adjustment
