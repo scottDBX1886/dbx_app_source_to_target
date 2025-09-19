@@ -123,13 +123,7 @@ export function FDBSearch() {
   };
 
   return (
-    <div className="fdb-search-page">
-      <div className="page-header">
-        <h1>🔍 FDB Search</h1>
-        <p className="muted">Live data from Databricks Volume - Search ~20 FDB files across tenants</p>
-      </div>
-
-      {/* Main Search Panel */}
+    <div className="page-container">
       <div className="panel">
         <div className="panel-header">
           <h2 className="panel-title">FDB Records - {tenant} Tenant</h2>
