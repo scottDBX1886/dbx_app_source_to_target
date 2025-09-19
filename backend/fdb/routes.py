@@ -29,17 +29,13 @@ def load_fdb_data(tenant: str = "MASTER") -> pd.DataFrame:
     try:
         warehouse_id = get_settings().databricks_warehouse_id
         
-        df_core_spark = query(f"SELECT * FROM demo.gainwell.fdb_core_drugs", warehouse_id=warehouse_id,as_dict=False)
-        df_formulary_spark = query(f"SELECT * FROM demo.gainwell.fdb_formulary_{tenant.lower()}", warehouse_id=warehouse_id,as_dict=False)
+        df_core = query(f"SELECT * FROM demo.gainwell.fdb_core_drugs", warehouse_id=warehouse_id,as_dict=False)
         
-        # Convert Spark DataFrames to pandas DataFrames for processing
-        df_core = df_core_spark.toPandas()
-        df_formulary = df_formulary_spark.toPandas()
-        
-        logger.info(f"df_core preview:\n{df_core.head().to_string() if not df_core.empty else 'No data'} for tenant {tenant}")
-        logger.info(f"df_formulary preview:\n{df_formulary.head().to_string() if not df_formulary.empty else 'No data'} for tenant {tenant}")
+        df_formulary = query(f"SELECT * FROM demo.gainwell.fdb_formulary_{tenant.lower()}", warehouse_id=warehouse_id,as_dict=False)
+        logger.info(f"df_core preview:\n{df_core.head().to_string()} for tenant {tenant}")
+        logger.info(f"df_formulary preview:\n{df_formulary.head().to_string()} for tenant {tenant}")
 
-        df = pd.merge(df_core, df_formulary, on='ndc', how='inner')
+        df = df_core.merge(df_formulary, on='ndc', how='inner')
         
         logger.info(f"Loaded {len(df)} FDB records for tenant {tenant}")
         return df
