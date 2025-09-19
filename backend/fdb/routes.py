@@ -6,6 +6,8 @@ import logging
 import pandas as pd
 import json
 import io
+from backend.services.connector import query, insert_data
+from backend.config.settings import Settings, get_settings
 
 logger = logging.getLogger(__name__)
 
@@ -14,33 +16,38 @@ router = APIRouter(prefix="/api/fdb", tags=["fdb-search"])
 def load_fdb_data(tenant: str = "MASTER") -> pd.DataFrame:
     """
     Load FDB data from your data source
-    
-    TODO: Replace with actual data loading logic
-    - Connect to your database/data lake/API
-    - Apply tenant-specific filtering
-    - Return DataFrame with required columns
-    
-    Required columns for main table:
-    - ndc, gsn, brand, generic, rx_otc, pkg_size, hic3, hicl, dcc, mfr, load_date
-    
-    Additional columns for details popup:
-    - obsolete, rebate, pkg_origin, gsn_desc, pkg_form
-    - formulary_status, tier, pa_required, ql_limits (if tenant-specific)
     """
+
+    """
+    def read_table(table_name, conn):
+    with conn.cursor() as cursor:
+        query = f"SELECT * FROM {table_name}"
+        cursor.execute(query)
+        return cursor.fetchall_arrow().to_pandas()
+    """
+
     try:
-        # TODO: Implement your data loading logic here
-        # Examples:
-        # - df = pd.read_sql(query, connection)
-        # - df = spark.read.table("catalog.schema.fdb_table").filter(f"tenant='{tenant}'").toPandas()
-        # - df = pd.read_parquet(f"/path/to/data/{tenant}/fdb_data.parquet")
+        warehouse_id = get_settings().databricks_warehouse_id
         
-        # Placeholder - return empty DataFrame
-        logger.warning(f"FDB data loading not implemented for tenant: {tenant}")
-        return pd.DataFrame()
+        df_core = query(f"SELECT * FROM demo.gainwell.fdb_core_drugs", warehouse_id=warehouse_id,as_dict=False)
+        
+        df_formulary = query(f"SELECT * FROM demo.gainwell.fdb_formulary_{tenant.lower()}", warehouse_id=warehouse_id,as_dict=False)
+        logger.info(f"df_core preview:\n{df_core.head().to_string()} for tenant {tenant}")
+        logger.info(f"df_formulary preview:\n{df_formulary.head().to_string()} for tenant {tenant}")
+
+        df = df_core.merge(df_formulary, on='ndc', how='inner')
+        
+        logger.info(f"Loaded {len(df)} FDB records for tenant {tenant}")
+        return df
         
     except Exception as e:
         logger.error(f"Error loading FDB data for tenant {tenant}: {e}")
-        return pd.DataFrame()
+        # Return empty DataFrame with expected columns to prevent crashes
+        return pd.DataFrame(columns=[
+            "ndc", "gsn", "brand", "generic", "rx_otc", "pkg_size", "hic3", "hicl", "dcc", "mfr", "load_date",
+            "obsolete", "rebate", "pkg_origin", "gsn_desc", "pkg_form",
+            "formulary_status", "tier", "pa_required", "ql_limits"
+        ])
 
 def search_dataframe(df: pd.DataFrame, query: str) -> pd.DataFrame:
     """

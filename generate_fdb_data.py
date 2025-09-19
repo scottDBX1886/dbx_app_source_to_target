@@ -1,339 +1,172 @@
 #!/usr/bin/env python3
 """
-FDB Sample Data Generator
-Creates 20+ realistic pharmaceutical data files for different tenants
+FDB Sample Data Generator - FIXED VERSION
+Creates datasets with matching NDCs that can be properly joined
 """
 import csv
 import json
 import random
 from datetime import datetime, timedelta
 from pathlib import Path
-import uuid
 
 # Output directory
 OUTPUT_DIR = Path("sample_fdb_data")
 OUTPUT_DIR.mkdir(exist_ok=True)
 
-# Realistic pharmaceutical data
-BRAND_NAMES = [
-    "Lipitor", "Humira", "Advair", "Nexium", "Crestor", "Lantus", "Rituxan", "Enbrel", 
-    "Copaxone", "Neulasta", "Lucentis", "Avastin", "Herceptin", "Remicade", "Synagis",
-    "Gleevec", "Taxotere", "Procrit", "Epogen", "Aranesp", "Zyprexa", "Seroquel",
-    "Risperdal", "Abilify", "Geodon", "Xanax", "Ativan", "Valium", "Ambien", "Lunesta",
-    "Viagra", "Cialis", "Levitra", "Flomax", "Avodart", "Proscar", "Cardura", "Hytrin",
-    "Prinivil", "Zestril", "Vasotec", "Capoten", "Altace", "Mavik", "Univasc", "Accupril",
-    "Norvasc", "Procardia", "Cardizem", "Verapamil", "Diltiazem", "Adalat", "DynaCirc",
-    "Zocor", "Pravachol", "Lescol", "Mevacor", "Vytorin", "Zetia", "WelChol", "Questran",
-    "Glucophage", "Amaryl", "Glucotrol", "Diabeta", "Micronase", "Prandin", "Starlix",
-    "Actos", "Avandia", "Januvia", "Onglyza", "Tradjenta", "Victoza", "Byetta", "Symlin"
+# Core drug information
+DRUGS = [
+    {"brand": "Lipitor", "generic": "atorvastatin", "mfr": "Pfizer", "hic3": "002", "hicl": "HMG-CoA Reductase Inhibitors", "dcc": "CARDIO"},
+    {"brand": "Humira", "generic": "adalimumab", "mfr": "AbbVie", "hic3": "011", "hicl": "TNF Blockers", "dcc": "IMMUNO"},
+    {"brand": "Advair", "generic": "fluticasone-salmeterol", "mfr": "GlaxoSmithKline", "hic3": "080", "hicl": "Corticosteroids", "dcc": "RESPIR"},
+    {"brand": "Nexium", "generic": "esomeprazole", "mfr": "AstraZeneca", "hic3": "030", "hicl": "Proton Pump Inhibitors", "dcc": "GI"},
+    {"brand": "Crestor", "generic": "rosuvastatin", "mfr": "AstraZeneca", "hic3": "002", "hicl": "HMG-CoA Reductase Inhibitors", "dcc": "CARDIO"},
+    {"brand": "Lantus", "generic": "insulin glargine", "mfr": "Sanofi", "hic3": "080", "hicl": "Insulin", "dcc": "ENDO"},
+    {"brand": "Enbrel", "generic": "etanercept", "mfr": "Amgen", "hic3": "025", "hicl": "TNF Blockers", "dcc": "IMMUNO"},
+    {"brand": "Metformin", "generic": "metformin", "mfr": "Teva", "hic3": "040", "hicl": "Biguanides", "dcc": "ENDO"},
+    {"brand": "Synthroid", "generic": "levothyroxine", "mfr": "AbbVie", "hic3": "060", "hicl": "Thyroid Hormones", "dcc": "ENDO"},
+    {"brand": "Xarelto", "generic": "rivaroxaban", "mfr": "Bayer", "hic3": "015", "hicl": "Anticoagulants", "dcc": "CARDIO"},
+    {"brand": "Eliquis", "generic": "apixaban", "mfr": "Bristol-Myers Squibb", "hic3": "015", "hicl": "Anticoagulants", "dcc": "CARDIO"},
+    {"brand": "Ozempic", "generic": "semaglutide", "mfr": "Novo Nordisk", "hic3": "041", "hicl": "GLP-1 Agonists", "dcc": "ENDO"},
+    {"brand": "Jardiance", "generic": "empagliflozin", "mfr": "Boehringer Ingelheim", "hic3": "042", "hicl": "SGLT2 Inhibitors", "dcc": "ENDO"},
+    {"brand": "Keytruda", "generic": "pembrolizumab", "mfr": "Merck", "hic3": "090", "hicl": "Immunotherapy", "dcc": "ONCO"},
+    {"brand": "Trulicity", "generic": "dulaglutide", "mfr": "Eli Lilly", "hic3": "041", "hicl": "GLP-1 Agonists", "dcc": "ENDO"},
 ]
 
-GENERIC_NAMES = [
-    "atorvastatin", "adalimumab", "fluticasone-salmeterol", "esomeprazole", "rosuvastatin",
-    "insulin glargine", "rituximab", "etanercept", "glatiramer", "pegfilgrastim",
-    "ranibizumab", "bevacizumab", "trastuzumab", "infliximab", "palivizumab",
-    "imatinib", "docetaxel", "epoetin alfa", "epoetin alfa", "darbepoetin alfa",
-    "olanzapine", "quetiapine", "risperidone", "aripiprazole", "ziprasidone",
-    "alprazolam", "lorazepam", "diazepam", "zolpidem", "eszopiclone",
-    "sildenafil", "tadalafil", "vardenafil", "tamsulosin", "dutasteride",
-    "finasteride", "doxazosin", "terazosin", "lisinopril", "lisinopril",
-    "enalapril", "captopril", "ramipril", "trandolapril", "moexipril", "quinapril",
-    "amlodipine", "nifedipine", "diltiazem", "verapamil", "diltiazem", "nifedipine",
-    "simvastatin", "pravastatin", "fluvastatin", "lovastatin", "ezetimibe-simvastatin",
-    "ezetimibe", "colesevelam", "cholestyramine", "metformin", "glimepiride",
-    "glipizide", "glyburide", "glyburide", "repaglinide", "nateglinide",
-    "pioglitazone", "rosiglitazone", "sitagliptin", "saxagliptin", "linagliptin",
-    "liraglutide", "exenatide", "pramlintide"
-]
+# Generate a FIXED list of NDCs that will be used across ALL tables
+def generate_master_ndc_list(count=500):
+    """Generate a master list of NDCs to be used consistently"""
+    print(f"Generating master list of {count} NDCs...")
+    ndcs = []
+    for i in range(count):
+        # Generate realistic-looking 10-digit NDCs
+        ndc = f"{random.randint(1000, 9999)}{random.randint(100000, 999999)}"
+        ndcs.append(ndc)
+    return ndcs
 
-MANUFACTURERS = [
-    "Pfizer", "AbbVie", "GlaxoSmithKline", "AstraZeneca", "Crestor Inc", "Sanofi",
-    "Genentech", "Amgen", "Teva", "Biogen", "Lucentis Pharma", "Genentech",
-    "Roche", "Johnson & Johnson", "MedImmune", "Novartis", "Sanofi", "Amgen",
-    "Janssen", "Eli Lilly", "AstraZeneca", "Janssen", "Otsuka", "Pfizer",
-    "Pfizer", "Pfizer", "Roche", "Sanofi", "Lunesta Inc", "Pfizer",
-    "Eli Lilly", "Bayer", "Boehringer Ingelheim", "GSK", "Merck", "Abbott",
-    "Pfizer", "Pfizer", "Bristol-Myers Squibb", "Bristol-Myers Squibb",
-    "Bristol-Myers Squibb", "Bristol-Myers Squibb", "Aventis", "Abbott", "Abbott",
-    "Pfizer", "Pfizer", "Forest", "Verapamil Inc", "Forest", "Pfizer", "Sandoz",
-    "Merck", "Bristol-Myers Squibb", "Novartis", "Merck", "Merck", "Merck",
-    "Daiichi Sankyo", "WelChol Inc", "Bristol-Myers Squibb", "Takeda", "GSK",
-    "Merck", "Takeda", "Boehringer Ingelheim", "Novo Nordisk", "AstraZeneca", "Symlin Inc"
-]
+def generate_date(start_days_ago=365, end_days_ago=0):
+    """Generate random date within range"""
+    start = datetime.now() - timedelta(days=start_days_ago)
+    end = datetime.now() - timedelta(days=end_days_ago)
+    random_date = start + (end - start) * random.random()
+    return random_date.strftime('%Y-%m-%d')
 
-DRUG_CLASSES = [
-    "HMG-CoA Reductase Inhibitors", "TNF Blockers", "Corticosteroids", "Proton Pump Inhibitors",
-    "HMG-CoA Reductase Inhibitors", "Insulin", "Monoclonal Antibodies", "TNF Blockers",
-    "Multiple Sclerosis Agents", "Colony Stimulating Factors", "VEGF Inhibitors",
-    "Monoclonal Antibodies", "HER2 Receptor Antagonists", "TNF Blockers", "Monoclonal Antibodies",
-    "Tyrosine Kinase Inhibitors", "Taxanes", "Erythropoiesis Stimulating Agents", 
-    "Erythropoiesis Stimulating Agents", "Erythropoiesis Stimulating Agents",
-    "Atypical Antipsychotics", "Atypical Antipsychotics", "Atypical Antipsychotics",
-    "Atypical Antipsychotics", "Atypical Antipsychotics", "Benzodiazepines",
-    "Benzodiazepines", "Benzodiazepines", "Hypnotics", "Hypnotics",
-    "PDE5 Inhibitors", "PDE5 Inhibitors", "PDE5 Inhibitors", "Alpha Blockers", "5-Alpha Reductase Inhibitors"
-]
-
-HIC3_CODES = ["001", "002", "003", "010", "011", "020", "025", "030", "040", "050", "060", "070", "080", "090", "100"]
-DCC_CODES = ["CV", "ENDO", "NEURO", "GI", "RESP", "ONCO", "RHEU", "URO", "PSYCH", "INFECT", "DERM", "OPHTH"]
-
-def generate_ndc():
-    """Generate realistic NDC-11 format"""
-    labeler = f"{random.randint(10000, 99999):05d}"
-    product = f"{random.randint(100, 999):03d}"
-    package = f"{random.randint(10, 99):02d}"
-    return f"{labeler}{product}{package}"
-
-def generate_dates():
-    """Generate realistic load dates over past year"""
-    base_date = datetime.now() - timedelta(days=365)
-    return base_date + timedelta(days=random.randint(0, 365))
-
-def create_core_fdb_file():
-    """Core FDB drug information"""
-    filename = OUTPUT_DIR / "fdb_core_drugs.csv"
+def create_core_data(master_ndcs):
+    """Create core FDB data using the master NDC list"""
+    print(f"Creating core data with {len(master_ndcs)} records...")
     
-    with open(filename, 'w', newline='') as f:
-        writer = csv.writer(f)
-        writer.writerow([
-            'ndc', 'gsn', 'brand', 'generic', 'rx_otc', 'pkg_size', 
-            'hic3', 'hicl', 'dcc', 'mfr', 'obsolete', 'rebate',
-            'load_date', 'pkg_origin', 'gsn_desc', 'pkg_form'
-        ])
+    records = []
+    for i, ndc in enumerate(master_ndcs):
+        drug = random.choice(DRUGS)
         
-        for i in range(500):
-            brand_idx = i % len(BRAND_NAMES)
-            drug_class = DRUG_CLASSES[brand_idx % len(DRUG_CLASSES)]
-            writer.writerow([
-                generate_ndc(),
-                10000 + i,
-                BRAND_NAMES[brand_idx],
-                GENERIC_NAMES[brand_idx % len(GENERIC_NAMES)],
-                random.choice(['RX', 'OTC']),
-                random.choice(['30', '60', '90', '100', '120', '5ml', '10ml', '1']),
-                random.choice(HIC3_CODES),
-                drug_class,
-                random.choice(DCC_CODES),
-                MANUFACTURERS[brand_idx % len(MANUFACTURERS)],
-                random.choice([True, False]),
-                random.choice([True, False]),
-                generate_dates().strftime('%Y-%m-%d'),
-                random.choice(['US', 'CA', 'DE', 'UK', 'FR']),
-                drug_class,
-                random.choice(['Tablet', 'Capsule', 'Injection', 'Cream', 'Solution', 'Suspension'])
-            ])
-
-def create_pricing_file():
-    """FDB pricing information"""
-    filename = OUTPUT_DIR / "fdb_pricing.csv"
-    
-    with open(filename, 'w', newline='') as f:
-        writer = csv.writer(f)
-        writer.writerow(['ndc', 'awp', 'wac', 'nadac', 'federal_rebate', 'state_rebate', 'effective_date'])
-        
-        for i in range(300):
-            awp = round(random.uniform(10.50, 2500.00), 2)
-            wac = round(awp * 0.85, 2)  # WAC typically ~85% of AWP
-            nadac = round(awp * 0.40, 2)  # NADAC typically much lower
-            
-            writer.writerow([
-                generate_ndc(),
-                awp,
-                wac, 
-                nadac,
-                round(random.uniform(0.10, 0.23), 4),  # 10-23% federal rebate
-                round(random.uniform(0.05, 0.15), 4),  # 5-15% state rebate
-                generate_dates().strftime('%Y-%m-%d')
-            ])
-
-def create_tenant_specific_files():
-    """Create tenant-specific FDB files"""
-    tenants = ['MASTER', 'AK', 'MO']
-    
-    for tenant in tenants:
-        # Formulary file
-        filename = OUTPUT_DIR / f"fdb_formulary_{tenant.lower()}.csv"
-        with open(filename, 'w', newline='') as f:
-            writer = csv.writer(f)
-            writer.writerow(['ndc', 'formulary_status', 'tier', 'pa_required', 'ql_limits', 'effective_date'])
-            
-            for i in range(150):
-                writer.writerow([
-                    generate_ndc(),
-                    random.choice(['Preferred', 'Non-Preferred', 'Not Covered', 'Prior Auth']),
-                    random.choice([1, 2, 3, 4]),
-                    random.choice([True, False]),
-                    random.choice(['30/30 days', '60/30 days', '90/30 days', None, '1/day']),
-                    generate_dates().strftime('%Y-%m-%d')
-                ])
-        
-        # Regional preferences
-        filename = OUTPUT_DIR / f"fdb_regional_{tenant.lower()}.csv"
-        with open(filename, 'w', newline='') as f:
-            writer = csv.writer(f)
-            writer.writerow(['ndc', 'regional_code', 'preference_score', 'local_mfr', 'distribution_notes'])
-            
-            regional_preferences = {
-                'MASTER': ['US-NATIONAL'],
-                'AK': ['US-AK', 'US-NORTHWEST'], 
-                'MO': ['US-MO', 'US-MIDWEST']
-            }
-            
-            for i in range(100):
-                writer.writerow([
-                    generate_ndc(),
-                    random.choice(regional_preferences[tenant]),
-                    random.randint(1, 10),
-                    f"{tenant} Pharmaceuticals" if tenant != 'MASTER' else random.choice(MANUFACTURERS[:10]),
-                    f"Distributed in {tenant} region" if tenant != 'MASTER' else "National distribution"
-                ])
-
-def create_therapeutic_class_files():
-    """Create files organized by therapeutic class"""
-    classes = ['cardiovascular', 'diabetes', 'oncology', 'neurology', 'respiratory']
-    
-    for drug_class in classes:
-        filename = OUTPUT_DIR / f"fdb_therapeutic_{drug_class}.csv"
-        with open(filename, 'w', newline='') as f:
-            writer = csv.writer(f)
-            writer.writerow(['ndc', 'therapeutic_class', 'subclass', 'mechanism', 'contraindications'])
-            
-            for i in range(80):
-                mechanisms = {
-                    'cardiovascular': ['ACE Inhibitor', 'Beta Blocker', 'Calcium Channel Blocker', 'ARB', 'Diuretic'],
-                    'diabetes': ['Metformin', 'Insulin', 'GLP-1 Agonist', 'DPP-4 Inhibitor', 'SGLT2 Inhibitor'],
-                    'oncology': ['Chemotherapy', 'Targeted Therapy', 'Immunotherapy', 'Hormone Therapy'],
-                    'neurology': ['Anticonvulsant', 'Dopamine Agonist', 'Cholinesterase Inhibitor'],
-                    'respiratory': ['Beta Agonist', 'Corticosteroid', 'Anticholinergic', 'Leukotriene Modifier']
-                }
-                
-                writer.writerow([
-                    generate_ndc(),
-                    drug_class.title(),
-                    f"{drug_class.title()} Subclass {random.randint(1,5)}",
-                    random.choice(mechanisms.get(drug_class, ['Unknown'])),
-                    f"Standard {drug_class} contraindications apply"
-                ])
-
-def create_manufacturer_files():
-    """Create manufacturer-specific files"""
-    major_mfrs = ['Pfizer', 'Johnson & Johnson', 'Merck', 'AbbVie', 'Bristol-Myers Squibb']
-    
-    for mfr in major_mfrs:
-        filename = OUTPUT_DIR / f"fdb_manufacturer_{mfr.replace(' ', '_').replace('&', 'and').lower()}.csv"
-        with open(filename, 'w', newline='') as f:
-            writer = csv.writer(f)
-            writer.writerow(['ndc', 'manufacturer', 'manufacturing_site', 'lot_info', 'expiry_tracking'])
-            
-            for i in range(60):
-                writer.writerow([
-                    generate_ndc(),
-                    mfr,
-                    f"{mfr} {random.choice(['Plant A', 'Plant B', 'Facility 1', 'Facility 2'])}",
-                    f"LOT{random.randint(100000, 999999)}",
-                    f"{random.randint(12, 36)} months"
-                ])
-
-def create_update_history_files():
-    """Create files showing historical updates"""
-    months = ['2024-01', '2024-02', '2024-03', '2024-04', '2024-05', '2024-06']
-    
-    for month in months:
-        filename = OUTPUT_DIR / f"fdb_updates_{month}.csv"
-        with open(filename, 'w', newline='') as f:
-            writer = csv.writer(f)
-            writer.writerow(['ndc', 'change_type', 'old_value', 'new_value', 'change_date', 'reason'])
-            
-            change_types = ['Price Update', 'Formulary Change', 'Manufacturer Change', 'Discontinuation', 'New Product']
-            
-            for i in range(40):
-                change_type = random.choice(change_types)
-                writer.writerow([
-                    generate_ndc(),
-                    change_type,
-                    f"Old {change_type} value",
-                    f"New {change_type} value", 
-                    f"{month}-{random.randint(1, 28):02d}",
-                    f"Routine {change_type.lower()}"
-                ])
-
-def create_metadata_file():
-    """Create metadata about the dataset"""
-    metadata = {
-        "dataset_info": {
-            "name": "FDB Sample Dataset",
-            "version": "1.0", 
-            "created_date": datetime.now().isoformat(),
-            "total_files": 20,
-            "description": "Sample pharmaceutical data for Formulary Management Tool testing"
-        },
-        "tenants": {
-            "MASTER": {
-                "description": "Master/Mother tenant with base pharmaceutical data",
-                "record_count_estimate": 500,
-                "coverage": "National"
-            },
-            "AK": {
-                "description": "Alaska child tenant with regional preferences", 
-                "record_count_estimate": 250,
-                "coverage": "Alaska region",
-                "inherits_from": "MASTER"
-            },
-            "MO": {
-                "description": "Missouri child tenant with regional preferences",
-                "record_count_estimate": 250, 
-                "coverage": "Missouri region",
-                "inherits_from": "MASTER"
-            }
-        },
-        "file_descriptions": {
-            "fdb_core_drugs.csv": "Primary drug information (NDC, brand, generic, etc.)",
-            "fdb_pricing.csv": "Drug pricing information (AWP, WAC, NADAC)",
-            "fdb_formulary_*.csv": "Tenant-specific formulary status",
-            "fdb_regional_*.csv": "Regional distribution preferences",
-            "fdb_therapeutic_*.csv": "Therapeutic class organization",
-            "fdb_manufacturer_*.csv": "Manufacturer-specific information",
-            "fdb_updates_*.csv": "Historical change tracking"
+        record = {
+            'ndc': ndc,  # Use the master NDC
+            'gsn': 10000 + i,
+            'brand': drug['brand'],
+            'generic': drug['generic'],
+            'rx_otc': random.choice(['RX', 'OTC']),
+            'pkg_size': random.choice(['30', '60', '90', '120', '1ml', '5ml']),
+            'hic3': drug['hic3'],
+            'hicl': drug['hicl'],
+            'dcc': drug['dcc'],
+            'mfr': drug['mfr'],
+            'obsolete': random.choice([True, False]),
+            'rebate': random.choice([True, False]),
+            'load_date': generate_date(180, 0),
+            'pkg_origin': random.choice(['US', 'CA', 'DE', 'FR', 'UK']),
+            'gsn_desc': drug['hicl'],
+            'pkg_form': random.choice(['Tablet', 'Capsule', 'Injection', 'Cream', 'Solution'])
         }
-    }
+        records.append(record)
     
-    with open(OUTPUT_DIR / "dataset_metadata.json", 'w') as f:
-        json.dump(metadata, f, indent=2)
+    return records
+
+def create_formulary_data(master_ndcs, tenant, num_records=150):
+    """Create formulary data using NDCs from the master list"""
+    print(f"Creating formulary data for {tenant} with {num_records} records...")
+    
+    # Select a random subset of NDCs from the master list
+    selected_ndcs = random.sample(master_ndcs, min(num_records, len(master_ndcs)))
+    
+    # Different formulary preferences by tenant
+    if tenant == "master":
+        status_choices = ["Preferred", "Non-Preferred", "Prior Auth", "Not Covered"]
+        status_weights = [0.3, 0.3, 0.25, 0.15]
+        tier_weights = [0.2, 0.3, 0.3, 0.2]
+    elif tenant == "ak":
+        status_choices = ["Preferred", "Non-Preferred", "Prior Auth", "Not Covered"]
+        status_weights = [0.4, 0.35, 0.15, 0.1]  # More generous
+        tier_weights = [0.3, 0.4, 0.2, 0.1]
+    elif tenant == "mo":
+        status_choices = ["Preferred", "Non-Preferred", "Prior Auth", "Not Covered"]
+        status_weights = [0.35, 0.3, 0.2, 0.15]  # Balanced
+        tier_weights = [0.25, 0.35, 0.25, 0.15]
+    else:
+        status_choices = ["Preferred", "Non-Preferred", "Prior Auth", "Not Covered"]
+        status_weights = [0.25, 0.25, 0.25, 0.25]
+        tier_weights = [0.25, 0.25, 0.25, 0.25]
+    
+    records = []
+    for ndc in selected_ndcs:
+        record = {
+            'ndc': ndc,  # Use the exact same NDC from master list
+            'formulary_status': random.choices(status_choices, weights=status_weights)[0],
+            'tier': random.choices([1, 2, 3, 4], weights=tier_weights)[0],
+            'pa_required': random.choice([True, False]),
+            'ql_limits': random.choice(['30/30 days', '60/30 days', '90/30 days', '1/day', '']),
+            'effective_date': generate_date(365, 0)
+        }
+        records.append(record)
+    
+    return records
+
+def save_csv(filename, records, fieldnames):
+    """Save records to CSV"""
+    filepath = OUTPUT_DIR / filename
+    print(f"Saving {filepath} with {len(records)} records")
+    
+    with open(filepath, 'w', newline='', encoding='utf-8') as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(records)
 
 def main():
-    """Generate all sample FDB files"""
-    print("🔧 Generating FDB sample dataset...")
+    print("=== Generating FDB Data with Matching NDCs ===\n")
     
-    # Core files
-    print("  📋 Creating core drug file...")
-    create_core_fdb_file()
+    # STEP 1: Generate master list of NDCs (used by ALL tables)
+    master_ndcs = generate_master_ndc_list(500)
     
-    print("  💰 Creating pricing file...")
-    create_pricing_file()
+    # STEP 2: Create core data using master NDCs
+    core_records = create_core_data(master_ndcs)
+    core_fieldnames = [
+        'ndc', 'gsn', 'brand', 'generic', 'rx_otc', 'pkg_size', 'hic3', 'hicl', 'dcc', 'mfr',
+        'obsolete', 'rebate', 'load_date', 'pkg_origin', 'gsn_desc', 'pkg_form'
+    ]
+    save_csv('fdb_core_drugs.csv', core_records, core_fieldnames)
     
-    print("  🏢 Creating tenant-specific files...")
-    create_tenant_specific_files()
+    # STEP 3: Create formulary data for each tenant using master NDCs
+    formulary_fieldnames = ['ndc', 'formulary_status', 'tier', 'pa_required', 'ql_limits', 'effective_date']
     
-    print("  🩺 Creating therapeutic class files...")
-    create_therapeutic_class_files()
+    tenants = ['master', 'ak', 'mo']
+    for tenant in tenants:
+        formulary_records = create_formulary_data(master_ndcs, tenant, 150)
+        save_csv(f'fdb_formulary_{tenant}.csv', formulary_records, formulary_fieldnames)
     
-    print("  🏭 Creating manufacturer files...")
-    create_manufacturer_files()
+    print(f"\n=== VERIFICATION ===")
+    print(f"Master NDCs generated: {len(master_ndcs)}")
     
-    print("  📅 Creating update history files...")
-    create_update_history_files()
+    # Verify joins will work
+    core_ndcs = set(record['ndc'] for record in core_records)
+    print(f"Core data NDCs: {len(core_ndcs)}")
     
-    print("  📄 Creating metadata file...")
-    create_metadata_file()
+    for tenant in tenants:
+        filepath = OUTPUT_DIR / f'fdb_formulary_{tenant}.csv'
+        with open(filepath, 'r') as f:
+            reader = csv.DictReader(f)
+            formulary_ndcs = {row['ndc'] for row in reader}
+            overlap = core_ndcs.intersection(formulary_ndcs)
+            print(f"{tenant.upper()} formulary: {len(formulary_ndcs)} NDCs, {len(overlap)} match core ({len(overlap)/len(formulary_ndcs)*100:.0f}% join success)")
     
-    # Count files
-    file_count = len(list(OUTPUT_DIR.glob("*.csv"))) + len(list(OUTPUT_DIR.glob("*.json")))
-    print(f"\n✅ Generated {file_count} files in {OUTPUT_DIR}/")
-    
-    print("\n📂 Files created:")
-    for file_path in sorted(OUTPUT_DIR.iterdir()):
-        file_size = file_path.stat().st_size
-        print(f"  {file_path.name} ({file_size:,} bytes)")
+    print(f"\n✅ Data generation complete! All datasets can now be properly joined.")
 
 if __name__ == "__main__":
     main()

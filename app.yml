@@ -5,3 +5,7 @@ command: ['python', 'app.py']
 static_files:
   - source_path: static
     url_path: /
+
+env:
+  - name: 'DATABRICKS_WAREHOUSE_ID'
+    valueFrom: 'sql-warehouse'
