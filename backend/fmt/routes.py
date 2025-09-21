@@ -3,7 +3,7 @@ from fastapi import APIRouter, Request, Query, HTTPException
 from fastapi.responses import StreamingResponse
 from typing import Optional
 import logging
-# Removed pandas import - using pure Spark DataFrames
+import pandas as pd
 import json
 import io
 from backend.services.connector import query, insert_data
@@ -30,27 +30,24 @@ def load_fmt_data(tenant: str = "MASTER") -> pd.DataFrame:
         warehouse_id = get_settings().databricks_warehouse_id
         
         df_fmt = query(f"SELECT * FROM demo.gainwell.fmt_master", warehouse_id=warehouse_id, as_dict=False)
-        df_mbids = query(f"SELECT * FROM demo.gainwell.fmt_mbids WHERE tenant = '{tenant}'", warehouse_id=warehouse_id, as_dict=False)
+        df_mbids = query(f"SELECT mbid,description,tenant,begin_date FROM demo.gainwell.fmt_mbids WHERE tenant = '{tenant}'", warehouse_id=warehouse_id, as_dict=False)
         
         # Enhanced debugging
         logger.info(f"=== FMT TENANT: {tenant} ===")
         logger.info(f"FMT Master records: {df_fmt.count()}")
         logger.info(f"MBID records for {tenant}: {df_mbids.count()}")
         
-        # Sample NDCs for logging
-        try:
-            ndc_sample = [row.ndc for row in df_fmt.select('ndc').limit(5).collect()]
-            logger.info(f"FMT NDC sample: {ndc_sample}")
-        except:
-            logger.info(f"FMT NDC sample: No data")
+
+        logger.info(f"FMT columns: {list(df_fmt.columns)}")
+        logger.info(f"MBID columns: {list(df_mbids.columns)}")
         
-        # Join DataFrames if mbids available
-        if df_mbids.count() > 0:
-            df = df_fmt.join(df_mbids, on='mbid', how='inner')
-        else:
-            df = df_fmt
+        # Use pandas merge for consistent column handling
+
+        df = df_fmt.merge(df_mbids, on='mbid', how='inner')
+
         
-        logger.info(f"Final FMT dataset: {df.count()} records")
+        logger.info(f"Final columns after join: {list(df.columns)}")
+        logger.info(f"Final FMT dataset: {len(df)} records")
         return df
         
     except Exception as e:
@@ -63,11 +60,11 @@ def load_fmt_data(tenant: str = "MASTER") -> pd.DataFrame:
         )
 
 
-def search_dataframe(df, query: str):
+def search_dataframe(df: pd.DataFrame, query: str):
     """
     Search Spark DataFrame across multiple FMT fields
     """
-    if not query or df.count() == 0:
+    if not query or df.empty:
         return df
     
     from pyspark.sql.functions import col, lower, when, isnull
@@ -128,7 +125,7 @@ async def search_fmt_records(
         # Load data for the specified tenant
         df = load_fmt_data(tenant)
         
-        if df.count() == 0:
+        if df.empty:
             return {
                 "tenant": tenant,
                 "query": query,
@@ -152,22 +149,19 @@ async def search_fmt_records(
         
         # Apply limit
         if limit and limit > 0:
-            df = df.limit(limit)
+            df = df.head(limit)
         
         # Convert to JSON-serializable format - main FMT table fields
         records = []
-        for row in df.collect():
-            try:
-                def safe_str(value):
-                    return str(value) if value is not None else ""
-                
+        for _, row in df.iterrows():
+            try:            
                 record = {
-                    "ndc": safe_str(row['ndc']),
-                    "fmt_drug": safe_str(row['fmt_drug']),
-                    "mbid": safe_str(row['mbid']),
-                    "status": safe_str(row['status']),
-                    "start_date": safe_str(row['start_date']),
-                    "end_date": safe_str(row['end_date'])
+                    "ndc": str(row['ndc']),
+                    "fmt_drug": str(row['fmt_drug']),
+                    "mbid": str(row['mbid']),
+                    "status": str(row['status']),
+                    "start_date": str(row['start_date']),
+                    "end_date": str(row['end_date'])
                 }
                 records.append(record)
                 
@@ -212,37 +206,28 @@ async def get_fmt_details(
         # Load data for the specified tenant
         df = load_fmt_data(tenant)
         
-        if df.count() == 0:
+        if df.empty:
             raise HTTPException(status_code=404, detail="No FMT data available")
         
         # Find the specific NDC (convert to string for comparison)
-        logger.info(f"Searching for NDC {ndc} in {df.count()} records")
+        logger.info(f"Searching for NDC {ndc} in {len(df)} records")
         
-        # Sample NDCs for logging
-        try:
-            ndc_sample = [row.ndc for row in df.select('ndc').limit(5).collect()]
-            logger.info(f"Available NDC sample: {ndc_sample}")
-        except:
-            logger.info(f"Available NDC sample: No data")
-        
-        from pyspark.sql.functions import col
-        
-        # Find matching records
-        record = df.filter(col('ndc').cast('string') == str(ndc))
-        if record.count() == 0:
+        # Find matching records using pandas filtering
+        record = df[df['ndc'].astype(str) == str(ndc)]
+        if record.empty:
             logger.warning(f"NDC {ndc} not found. Trying alternative search...")
             # Try without string conversion in case of type mismatch
-            record = df.filter(col('ndc') == ndc)
+            record = df[df['ndc'] == ndc]
             
-        if record.count() == 0:
-            raise HTTPException(status_code=404, detail=f"NDC {ndc} not found in FMT master. Available: {df.count()} records")
+        if record.empty:
+            raise HTTPException(status_code=404, detail=f"NDC {ndc} not found in FMT master. Available: {len(df)} records")
         
         # Get the first matching record (should be unique)
-        row = record.collect()[0]
+        row = record.iloc[0]
         
         # Build detailed response with safe field access
         def get_field(field_name, default=""):
-            """Safely get field value from Spark Row"""
+            """Safely get field value from pandas Series"""
             try:
                 value = row[field_name]
                 return str(value) if value is not None else default
@@ -318,7 +303,7 @@ async def export_fmt_data(
         # Load data
         df = load_fmt_data(tenant)
         
-        if df.count() == 0:
+        if df.empty:
             return {
                 "tenant": tenant,
                 "error": "No data available for export",
@@ -332,7 +317,7 @@ async def export_fmt_data(
             from pyspark.sql.functions import col, lower
             df = df.filter(lower(col('status')).contains(status.lower()))
         if limit and limit > 0:
-            df = df.limit(limit)
+            df = df.head(limit)
         
         # Generate filename
         from datetime import datetime
@@ -343,7 +328,7 @@ async def export_fmt_data(
         if format.lower() == "json":
             # JSON export
             records = []
-            for row in df.collect():
+            for _, row in df.iterrows():
                 record = {col: str(row[col]) if row[col] is not None else "" for col in df.columns}
                 records.append(record)
             
@@ -367,11 +352,10 @@ async def export_fmt_data(
             # Select main columns for export
             export_columns = ['ndc', 'fmt_drug', 'mbid', 'status', 'start_date', 'end_date', 'load_date']
             available_columns = [col for col in export_columns if col in df.columns]
-            df_export = df.select(available_columns)
+            df_export = df[available_columns]
             
-            # Convert to pandas for CSV output (temporary conversion just for export)
-            import pandas as pd
-            csv_data = df_export.toPandas().to_csv(index=False)
+            # Convert to CSV
+            csv_data = df_export.to_csv(index=False)
             
             return StreamingResponse(
                 io.StringIO(csv_data),
