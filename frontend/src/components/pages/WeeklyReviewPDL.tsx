@@ -3,7 +3,41 @@
  * Weekly review process for PDL with automated POS export generation
  */
 
+import { useState, useEffect, useContext } from 'react';
+import { TenantContext } from '../../App';
+import { weeklyReviewApi, type WeeklyPoolResponse } from '../../services/weekly-review-api';
+
 export function WeeklyReviewPDL() {
+  const { tenant } = useContext(TenantContext);
+  const [weekEnding, setWeekEnding] = useState('2024-12-15');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [poolData, setPoolData] = useState<WeeklyPoolResponse | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  // Load pool data on component mount and when dependencies change
+  useEffect(() => {
+    loadPoolData();
+  }, [tenant, weekEnding]);
+
+  const loadPoolData = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const poolResponse = await weeklyReviewApi.getWeeklyPool('pdl', tenant, weekEnding, searchQuery || undefined);
+      
+      setPoolData(poolResponse);
+    } catch (err) {
+      console.error('Error loading weekly review data:', err);
+      setError(err instanceof Error ? err.message : 'Failed to load data');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleSearch = () => {
+    loadPoolData();
+  };
   return (
     <div className="weekly-review-pdl-page">
       <div className="page-header">
@@ -20,15 +54,24 @@ export function WeeklyReviewPDL() {
         <div className="row">
           <div className="row" style={{ gap: '14px' }}>
             <label className="muted">Week ending</label>
-            <input type="date" defaultValue="2024-12-15" />
+            <input 
+              type="date" 
+              value={weekEnding}
+              onChange={(e) => setWeekEnding(e.target.value)}
+            />
           </div>
           <div className="row" style={{ gap: '8px', flex: 1 }}>
             <input 
               type="text" 
               placeholder="Search pool: NDC / Brand / GSN / HIC3 / MFR" 
               style={{ minWidth: '320px', flex: 1 }}
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
             />
-            <button className="btn primary">Refresh</button>
+            <button className="btn primary" onClick={handleSearch} disabled={loading}>
+              {loading ? 'Loading...' : 'Refresh'}
+            </button>
           </div>
         </div>
         
@@ -39,7 +82,15 @@ export function WeeklyReviewPDL() {
         <div className="divider"></div>
         
         <div className="pool-summary">
-          <span className="muted">8 new drugs for PDL coding (100% match: 2, gsn match: 3, brand match: 2, no match: 1)</span>
+          {error ? (
+            <span className="muted error">Error: {error}</span>
+          ) : poolData ? (
+            <span className="muted">
+              {poolData.summary.total_new_drugs} new drugs for PDL coding ({Object.entries(poolData.summary.match_counts).map(([type, count]) => `${type}: ${count}`).join(', ')})
+            </span>
+          ) : (
+            <span className="muted">{loading ? 'Loading pool data...' : 'No data loaded'}</span>
+          )}
         </div>
       </div>
 

@@ -1,519 +1,351 @@
-ndc,pdl_drug,status,load_date,effective_date,expiration_date,last_updated,created_by,updated_by,notes,pos_export_status
-8331326310,METOPROLOL,Active,2025-01-14,2025-03-14,,2025-08-23,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-8331326310,METOPROLOL,Active,2025-04-24,2025-04-06,,2025-09-12,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Exported
-8331326310,METOPROLOL,Active,2025-06-13,2025-05-15,,2025-09-11,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
-9308678525,ALBUTEROL,Active,2025-02-10,2025-03-04,,2025-09-15,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-9308678525,ALBUTEROL,Active,2025-07-27,2025-05-24,,2025-09-14,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-2362849751,HYDROCHLOROTHIAZIDE,Active,2025-03-11,2024-12-30,,2025-09-10,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-2362849751,HYDROCHLOROTHIAZIDE,Pending,2025-06-11,2025-06-18,,2025-09-12,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - pending per state formulary,Exported
-7203228933,OMEPRAZOLE,Active,2024-12-14,2024-12-18,,2025-09-01,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-7203228933,OMEPRAZOLE,Active,2025-04-27,2025-05-09,,2025-09-16,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Exported
-7203228933,OMEPRAZOLE,Active,2025-07-07,2025-07-14,,2025-09-13,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
-5708871550,CLOPIDOGREL,Active,2025-01-11,2025-03-25,,2025-09-05,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-5708871550,CLOPIDOGREL,Active,2025-03-27,2025-03-27,,2025-09-13,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Exported
-5708871550,CLOPIDOGREL,Inactive,2025-07-04,2025-06-11,,2025-09-15,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - inactive per state formulary,Exported
-4347655264,GABAPENTIN,Active,2025-03-07,2025-01-19,,2025-09-14,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-4347655264,GABAPENTIN,Active,2025-05-30,2025-05-11,,2025-09-18,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Pending
-4347655264,GABAPENTIN,Pending,2025-05-04,2025-07-27,,2025-09-16,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - pending per state formulary,Exported
-8380967066,LEVOTHYROXINE,Inactive,2025-03-18,2025-03-15,,2025-09-15,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-8380967066,LEVOTHYROXINE,Active,2025-03-15,2025-05-10,,2025-09-11,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Exported
-8380967066,LEVOTHYROXINE,Active,2025-05-31,2025-06-06,,2025-09-10,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
-8025249652,LEVOTHYROXINE,Under Review,2025-02-20,2025-02-05,,2025-08-28,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-8025249652,LEVOTHYROXINE,Inactive,2025-03-30,2025-05-11,,2025-09-14,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - inactive for remote access,Pending
-8025249652,LEVOTHYROXINE,Active,2025-06-13,2025-07-19,,2025-09-14,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-7149784386,AMOXICILLIN,Active,2025-03-17,2025-03-28,,2025-09-09,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-7149784386,AMOXICILLIN,Active,2025-03-21,2025-03-24,,2025-09-10,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Pending
-7149784386,AMOXICILLIN,Pending,2025-05-25,2025-05-09,,2025-09-12,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - pending per state formulary,Exported
-8661997481,TRAMADOL,Active,2025-03-10,2025-02-10,,2025-08-24,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-8661997481,TRAMADOL,Active,2025-05-13,2025-05-24,,2025-09-15,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-8470443577,LOSARTAN,Active,2024-12-13,2024-12-30,,2025-08-23,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-8470443577,LOSARTAN,Active,2025-07-19,2025-06-23,,2025-09-13,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
-1320794066,LISINOPRIL,Pending,2024-12-02,2025-03-22,,2025-08-20,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-1320794066,LISINOPRIL,Active,2025-06-06,2025-07-13,,2025-09-12,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
-1691540938,TRAMADOL,Active,2025-02-11,2025-03-31,,2025-09-05,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-1691540938,TRAMADOL,Under Review,2025-04-05,2025-06-26,2025-06-08,2025-09-10,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - under review for remote access,Pending
-1691540938,TRAMADOL,Pending,2025-07-04,2025-06-20,,2025-09-12,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - pending per state formulary,Not Required
-7488784199,PANTOPRAZOLE,Active,2025-04-19,2024-11-28,,2025-09-04,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-7488784199,PANTOPRAZOLE,Inactive,2025-06-22,2025-04-18,,2025-09-08,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - inactive for remote access,Exported
-7488784199,PANTOPRAZOLE,Active,2025-05-28,2025-06-05,,2025-09-13,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-8904413378,CLOPIDOGREL,Active,2025-01-04,2024-12-29,,2025-09-11,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-8904413378,CLOPIDOGREL,Active,2025-03-20,2025-05-29,,2025-09-14,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Pending
-8904413378,CLOPIDOGREL,Active,2025-07-04,2025-05-31,,2025-09-10,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
-6719494304,LOSARTAN,Active,2025-03-14,2025-02-03,,2025-08-30,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-6719494304,LOSARTAN,Active,2025-07-16,2025-07-03,,2025-09-14,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
-1053861788,IBUPROFEN,Pending,2025-03-29,2025-03-26,,2025-08-28,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-1053861788,IBUPROFEN,Pending,2025-04-15,2025-04-13,2025-05-30,2025-09-12,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - pending for remote access,Exported
-4900626301,SIMVASTATIN,Pending,2025-03-22,2025-04-06,,2025-09-07,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-4900626301,SIMVASTATIN,Active,2025-07-30,2025-04-23,,2025-09-17,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-7653481000,ALBUTEROL,Active,2024-11-30,2024-12-11,,2025-09-12,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-7653481000,ALBUTEROL,Active,2025-06-28,2025-06-06,,2025-09-05,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
-7653481000,ALBUTEROL,Active,2025-06-27,2025-05-08,,2025-09-19,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-5136828758,ACETAMINOPHEN,Active,2025-04-08,2025-04-20,,2025-09-05,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-5136828758,ACETAMINOPHEN,Pending,2025-07-14,2025-06-15,,2025-09-16,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - pending per state formulary,Exported
-7679211703,OMEPRAZOLE,Active,2025-03-20,2024-12-22,,2025-09-10,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-6901317675,AMLODIPINE,Active,2024-12-24,2024-12-30,,2025-08-22,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-6901317675,AMLODIPINE,Inactive,2025-06-03,2025-04-02,,2025-09-06,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - inactive for remote access,Exported
-6901317675,AMLODIPINE,Active,2025-04-28,2025-07-05,,2025-09-11,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-5119192821,AMOXICILLIN,Active,2025-02-17,2025-03-22,,2025-09-16,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-5119192821,AMOXICILLIN,Active,2025-04-26,2025-05-04,,2025-09-19,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-8805972163,HYDROCHLOROTHIAZIDE,Active,2024-12-10,2025-01-11,,2025-09-06,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-8805972163,HYDROCHLOROTHIAZIDE,Active,2025-04-11,2025-04-01,,2025-09-17,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
-8805972163,HYDROCHLOROTHIAZIDE,Active,2025-06-22,2025-07-01,,2025-09-16,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-5494434588,PREDNISONE,Active,2025-04-03,2024-11-30,,2025-08-29,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-5494434588,PREDNISONE,Active,2025-06-14,2025-07-23,,2025-09-15,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
-2831986176,WARFARIN,Inactive,2025-01-05,2024-12-14,,2025-08-30,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-2831986176,WARFARIN,Active,2025-07-21,2025-05-26,,2025-09-10,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
-2756505153,CLOPIDOGREL,Active,2025-04-05,2024-12-03,,2025-09-11,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-2756505153,CLOPIDOGREL,Inactive,2025-06-04,2025-04-17,,2025-09-11,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - inactive for remote access,Exported
-2756505153,CLOPIDOGREL,Under Review,2025-06-26,2025-06-23,,2025-09-17,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - under review per state formulary,Exported
-3705303491,AZITHROMYCIN,Active,2024-12-14,2024-12-01,,2025-09-01,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-3705303491,AZITHROMYCIN,Pending,2025-05-24,2025-05-24,2025-04-10,2025-09-06,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - pending for remote access,Exported
-3705303491,AZITHROMYCIN,Active,2025-07-29,2025-05-23,,2025-09-18,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
-2235223532,ALBUTEROL,Inactive,2024-12-09,2025-04-22,,2025-09-10,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-2235223532,ALBUTEROL,Inactive,2025-06-23,2025-06-10,,2025-09-16,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - inactive per state formulary,Not Required
-3705784427,AMOXICILLIN,Inactive,2025-04-02,2025-04-11,,2025-09-07,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-3705784427,AMOXICILLIN,Pending,2025-05-16,2025-05-12,2025-04-05,2025-09-05,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - pending for remote access,Exported
-3110172904,ALBUTEROL,Pending,2024-12-03,2025-01-21,,2025-08-22,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-3110172904,ALBUTEROL,Active,2025-07-23,2025-05-03,,2025-09-12,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-5513671390,LEVOTHYROXINE,Pending,2025-03-20,2025-04-14,,2025-08-22,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-5513671390,LEVOTHYROXINE,Inactive,2025-04-10,2025-06-26,,2025-09-18,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - inactive for remote access,Pending
-5513671390,LEVOTHYROXINE,Active,2025-07-23,2025-05-22,,2025-09-17,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-8129463130,METOPROLOL,Inactive,2025-01-19,2025-03-28,,2025-08-29,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-8129463130,METOPROLOL,Active,2025-04-26,2025-03-06,,2025-09-07,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
-8129463130,METOPROLOL,Pending,2025-04-26,2025-06-08,,2025-09-15,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - pending per state formulary,Not Required
-9711905827,TRAMADOL,Active,2025-03-05,2024-11-30,,2025-09-09,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-9711905827,TRAMADOL,Active,2025-04-12,2025-06-11,,2025-09-17,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
-9711905827,TRAMADOL,Active,2025-05-11,2025-05-16,,2025-09-10,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-6498746277,SIMVASTATIN,Active,2024-12-10,2025-03-29,,2025-08-30,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-6498746277,SIMVASTATIN,Active,2025-05-23,2025-03-20,,2025-09-15,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
-6498746277,SIMVASTATIN,Active,2025-05-11,2025-05-01,,2025-09-12,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
-1700529332,AMLODIPINE,Pending,2025-02-11,2025-01-23,,2025-08-31,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-1700529332,AMLODIPINE,Pending,2025-04-25,2025-04-23,2025-06-05,2025-09-18,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - pending for remote access,Pending
-1700529332,AMLODIPINE,Active,2025-06-15,2025-07-15,,2025-09-13,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-8298103936,TRAMADOL,Active,2025-02-01,2024-12-04,,2025-08-22,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-8298103936,TRAMADOL,Active,2025-06-17,2025-04-23,,2025-09-13,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
-3689312210,LOSARTAN,Pending,2025-01-07,2024-12-04,,2025-09-05,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-3689312210,LOSARTAN,Active,2025-06-14,2025-05-21,,2025-09-09,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
-3689312210,LOSARTAN,Active,2025-06-22,2025-07-06,,2025-09-18,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-8889516158,HYDROCHLOROTHIAZIDE,Active,2025-01-21,2024-12-12,,2025-08-30,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-8889516158,HYDROCHLOROTHIAZIDE,Active,2025-06-27,2025-03-07,,2025-09-05,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Exported
-8889516158,HYDROCHLOROTHIAZIDE,Active,2025-05-10,2025-05-05,,2025-09-10,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-5898551545,SERTRALINE,Active,2025-04-18,2024-12-06,,2025-08-31,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-5898551545,SERTRALINE,Active,2025-05-21,2025-06-13,,2025-09-12,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
-5898551545,SERTRALINE,Active,2025-05-22,2025-06-02,,2025-09-13,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
-1101131385,GABAPENTIN,Active,2025-04-14,2025-02-21,,2025-09-06,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-1101131385,GABAPENTIN,Active,2025-03-17,2025-05-03,,2025-09-17,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
-1101131385,GABAPENTIN,Active,2025-04-26,2025-06-05,,2025-09-16,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
-7533824680,SERTRALINE,Active,2024-12-21,2025-04-12,,2025-09-11,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-7533824680,SERTRALINE,Active,2025-03-14,2025-06-18,,2025-09-09,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Exported
-7533824680,SERTRALINE,Active,2025-07-17,2025-05-06,,2025-09-09,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-6293839765,TRAMADOL,Active,2025-04-18,2025-04-10,,2025-09-09,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-6293839765,TRAMADOL,Pending,2025-05-01,2025-04-29,2025-06-13,2025-09-13,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - pending for remote access,Exported
-6293839765,TRAMADOL,Active,2025-07-17,2025-07-09,,2025-09-11,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-5747878523,AZITHROMYCIN,Active,2025-03-19,2025-01-15,,2025-08-27,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-5747878523,AZITHROMYCIN,Active,2025-03-20,2025-06-06,,2025-09-16,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Exported
-5747878523,AZITHROMYCIN,Active,2025-06-16,2025-06-27,,2025-09-11,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
-7246526346,HYDROCHLOROTHIAZIDE,Pending,2025-03-04,2024-11-26,,2025-09-16,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-7246526346,HYDROCHLOROTHIAZIDE,Active,2025-07-02,2025-06-27,,2025-09-14,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-3262717209,FUROSEMIDE,Active,2025-01-09,2024-12-02,,2025-08-21,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-3262717209,FUROSEMIDE,Active,2025-06-18,2025-04-16,,2025-09-11,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
-7950805510,PREDNISONE,Inactive,2025-02-05,2025-01-22,,2025-08-25,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-7950805510,PREDNISONE,Pending,2025-03-05,2025-04-27,2025-04-11,2025-09-07,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - pending for remote access,Pending
-7950805510,PREDNISONE,Active,2025-05-08,2025-06-03,,2025-09-11,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
-5912155877,LOSARTAN,Active,2025-03-01,2025-03-10,,2025-09-09,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-5912155877,LOSARTAN,Inactive,2025-06-07,2025-03-21,,2025-09-18,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - inactive for remote access,Pending
-5912155877,LOSARTAN,Pending,2025-05-24,2025-04-25,,2025-09-10,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - pending per state formulary,Not Required
-4360826110,PANTOPRAZOLE,Active,2025-02-16,2025-02-18,,2025-08-20,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-4360826110,PANTOPRAZOLE,Active,2025-04-01,2025-05-14,,2025-09-16,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Exported
-4360826110,PANTOPRAZOLE,Active,2025-05-28,2025-06-24,,2025-09-11,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-3671667795,LEVOTHYROXINE,Active,2024-12-16,2024-12-22,,2025-08-21,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-3671667795,LEVOTHYROXINE,Active,2025-05-11,2025-07-30,,2025-09-14,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-1412959328,SERTRALINE,Under Review,2025-04-03,2024-12-30,,2025-09-12,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-1412959328,SERTRALINE,Active,2025-04-25,2025-04-27,,2025-09-08,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Exported
-1412959328,SERTRALINE,Inactive,2025-06-03,2025-06-07,,2025-09-14,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - inactive per state formulary,Not Required
-6479439827,IBUPROFEN,Active,2025-01-06,2024-12-05,,2025-09-15,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-6479439827,IBUPROFEN,Active,2025-05-28,2025-03-22,,2025-09-12,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
-1571971889,PREDNISONE,Under Review,2025-03-22,2025-01-28,,2025-08-25,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-1571971889,PREDNISONE,Active,2025-05-28,2025-04-07,,2025-09-15,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
-1571971889,PREDNISONE,Active,2025-05-27,2025-06-23,,2025-09-12,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-7103348799,FUROSEMIDE,Active,2025-01-29,2024-11-30,,2025-09-13,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-7103348799,FUROSEMIDE,Pending,2025-03-28,2025-04-17,2025-06-13,2025-09-12,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - pending for remote access,Pending
-7103348799,FUROSEMIDE,Pending,2025-07-21,2025-05-11,,2025-09-14,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - pending per state formulary,Exported
-9127906958,SERTRALINE,Inactive,2025-01-24,2024-12-11,,2025-08-31,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-9127906958,SERTRALINE,Inactive,2025-05-21,2025-06-05,,2025-09-15,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - inactive per state formulary,Exported
-1511326375,METFORMIN,Under Review,2025-02-16,2025-04-16,,2025-09-11,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-1511326375,METFORMIN,Active,2025-05-10,2025-03-04,,2025-09-14,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Pending
-1511326375,METFORMIN,Inactive,2025-04-23,2025-07-06,,2025-09-19,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - inactive per state formulary,Not Required
-1009428392,HYDROCHLOROTHIAZIDE,Active,2025-02-22,2025-02-17,,2025-09-16,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-1009428392,HYDROCHLOROTHIAZIDE,Under Review,2025-05-20,2025-03-08,2025-04-10,2025-09-10,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - under review for remote access,Pending
-5228803725,ATORVASTATIN,Active,2025-04-15,2024-12-24,,2025-08-21,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-5228803725,ATORVASTATIN,Active,2025-03-31,2025-05-04,,2025-09-05,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Exported
-5228803725,ATORVASTATIN,Active,2025-05-14,2025-07-26,,2025-09-12,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-7097160169,AMOXICILLIN,Under Review,2025-02-25,2024-12-25,,2025-09-16,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-7097160169,AMOXICILLIN,Active,2025-05-11,2025-04-23,,2025-09-10,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Exported
-7097160169,AMOXICILLIN,Active,2025-05-29,2025-06-20,,2025-09-10,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-6576725730,SERTRALINE,Active,2025-03-09,2025-02-08,,2025-08-30,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-6576725730,SERTRALINE,Pending,2025-06-14,2025-04-30,2025-07-26,2025-09-11,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - pending for remote access,Exported
-6576725730,SERTRALINE,Active,2025-07-13,2025-05-06,,2025-09-17,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
-1911350010,GABAPENTIN,Active,2025-02-19,2025-01-25,,2025-09-16,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-1911350010,GABAPENTIN,Active,2025-06-14,2025-06-12,,2025-09-14,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Exported
-1911350010,GABAPENTIN,Active,2025-06-28,2025-05-18,,2025-09-16,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
-9435524835,OMEPRAZOLE,Pending,2025-03-07,2025-01-05,,2025-09-11,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-9435524835,OMEPRAZOLE,Pending,2025-03-07,2025-06-15,2025-07-16,2025-09-15,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - pending for remote access,Exported
-8107389623,FUROSEMIDE,Active,2025-01-31,2025-04-15,,2025-09-15,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-8107389623,FUROSEMIDE,Active,2025-04-16,2025-06-03,,2025-09-13,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
-8107389623,FUROSEMIDE,Active,2025-06-25,2025-06-30,,2025-09-14,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
-5960196797,CLOPIDOGREL,Inactive,2024-12-31,2024-12-10,,2025-09-01,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-5960196797,CLOPIDOGREL,Active,2025-03-15,2025-04-08,,2025-09-09,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
-5960196797,CLOPIDOGREL,Active,2025-07-25,2025-05-14,,2025-09-17,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-5867639038,AMOXICILLIN,Active,2024-12-19,2025-02-20,,2025-08-21,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-5867639038,AMOXICILLIN,Active,2025-04-26,2025-06-03,,2025-09-17,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Exported
-5867639038,AMOXICILLIN,Active,2025-05-29,2025-05-04,,2025-09-19,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-3247337331,PREDNISONE,Pending,2025-04-18,2025-02-01,,2025-09-06,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-3247337331,PREDNISONE,Under Review,2025-05-02,2025-03-14,2025-05-13,2025-09-10,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - under review for remote access,Exported
-3247337331,PREDNISONE,Active,2025-05-20,2025-07-04,,2025-09-12,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-1216609549,IBUPROFEN,Active,2025-04-01,2025-04-20,,2025-09-09,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-1216609549,IBUPROFEN,Active,2025-07-05,2025-06-14,,2025-09-17,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-8258424449,ACETAMINOPHEN,Active,2025-03-29,2025-01-11,,2025-08-20,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-8258424449,ACETAMINOPHEN,Active,2025-05-11,2025-04-04,,2025-09-08,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
-8258424449,ACETAMINOPHEN,Active,2025-05-25,2025-06-16,,2025-09-11,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-7360733059,LISINOPRIL,Active,2025-02-03,2024-12-30,,2025-09-14,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-7360733059,LISINOPRIL,Active,2025-05-29,2025-06-29,,2025-09-10,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Pending
-7360733059,LISINOPRIL,Active,2025-05-26,2025-06-03,,2025-09-18,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-1445828320,LISINOPRIL,Inactive,2025-03-20,2024-12-05,,2025-09-02,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-1445828320,LISINOPRIL,Active,2025-05-10,2025-06-12,,2025-09-12,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Pending
-1445828320,LISINOPRIL,Active,2025-05-14,2025-06-29,,2025-09-13,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
-6987544085,AZITHROMYCIN,Inactive,2024-12-23,2024-12-16,,2025-09-03,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-6987544085,AZITHROMYCIN,Active,2025-03-28,2025-03-24,,2025-09-19,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Exported
-6987544085,AZITHROMYCIN,Active,2025-05-04,2025-07-03,,2025-09-17,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-7762330563,TRAMADOL,Active,2025-04-02,2024-12-18,,2025-08-24,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-7762330563,TRAMADOL,Pending,2025-03-17,2025-03-16,2025-08-11,2025-09-08,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - pending for remote access,Exported
-7762330563,TRAMADOL,Active,2025-07-04,2025-06-21,,2025-09-13,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-1105633480,PANTOPRAZOLE,Active,2025-03-30,2024-12-19,,2025-08-29,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-1105633480,PANTOPRAZOLE,Pending,2025-03-09,2025-03-14,2025-07-03,2025-09-05,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - pending for remote access,Pending
-1105633480,PANTOPRAZOLE,Active,2025-07-18,2025-04-22,,2025-09-14,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
-5083708161,AZITHROMYCIN,Inactive,2025-01-01,2024-12-01,,2025-09-12,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-5083708161,AZITHROMYCIN,Active,2025-04-29,2025-03-16,,2025-09-14,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Exported
-5083708161,AZITHROMYCIN,Active,2025-05-04,2025-06-28,,2025-09-10,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-8251110183,LEVOTHYROXINE,Under Review,2024-11-28,2024-11-26,,2025-08-23,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-8251110183,LEVOTHYROXINE,Pending,2025-06-16,2025-03-19,2025-04-05,2025-09-06,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - pending for remote access,Pending
-8251110183,LEVOTHYROXINE,Active,2025-05-19,2025-04-24,,2025-09-10,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
-9494231050,ATORVASTATIN,Active,2025-04-09,2025-01-24,,2025-09-18,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-9494231050,ATORVASTATIN,Active,2025-05-01,2025-03-15,,2025-09-07,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Exported
-9494231050,ATORVASTATIN,Active,2025-05-24,2025-06-14,,2025-09-14,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-4164880711,ACETAMINOPHEN,Active,2024-12-31,2025-04-09,,2025-08-27,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-4164880711,ACETAMINOPHEN,Inactive,2025-05-06,2025-05-26,,2025-09-10,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - inactive per state formulary,Exported
-5544731222,SERTRALINE,Inactive,2024-12-22,2025-04-09,,2025-08-30,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-5544731222,SERTRALINE,Under Review,2025-06-22,2025-04-25,2025-07-17,2025-09-11,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - under review for remote access,Exported
-5544731222,SERTRALINE,Active,2025-07-01,2025-07-28,,2025-09-14,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-2312602678,FUROSEMIDE,Pending,2025-03-10,2025-03-26,,2025-08-21,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-2312602678,FUROSEMIDE,Pending,2025-03-19,2025-04-05,2025-07-15,2025-09-08,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - pending for remote access,Pending
-2312602678,FUROSEMIDE,Pending,2025-06-06,2025-06-24,,2025-09-13,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - pending per state formulary,Not Required
-1185142368,METOPROLOL,Active,2024-12-31,2025-03-10,,2025-08-31,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-1185142368,METOPROLOL,Inactive,2025-05-02,2025-04-22,,2025-09-05,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - inactive for remote access,Exported
-1185142368,METOPROLOL,Active,2025-07-19,2025-06-21,,2025-09-14,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-8061939755,ACETAMINOPHEN,Under Review,2025-03-31,2025-01-10,,2025-08-24,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-8061939755,ACETAMINOPHEN,Under Review,2025-05-25,2025-04-20,2025-06-08,2025-09-12,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - under review for remote access,Pending
-8061939755,ACETAMINOPHEN,Active,2025-05-22,2025-07-25,,2025-09-15,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
-3015762722,HYDROCHLOROTHIAZIDE,Active,2024-12-09,2025-04-22,,2025-09-16,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-3015762722,HYDROCHLOROTHIAZIDE,Active,2025-05-21,2025-05-28,,2025-09-11,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Exported
-3015762722,HYDROCHLOROTHIAZIDE,Active,2025-06-28,2025-06-12,,2025-09-10,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-9355354271,IBUPROFEN,Active,2025-04-11,2025-02-18,,2025-08-27,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-9355354271,IBUPROFEN,Inactive,2025-05-21,2025-05-01,,2025-09-05,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - inactive for remote access,Exported
-9355354271,IBUPROFEN,Active,2025-04-29,2025-07-29,,2025-09-09,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
-9810359791,AZITHROMYCIN,Active,2024-11-28,2024-12-24,,2025-09-01,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-9810359791,AZITHROMYCIN,Active,2025-04-17,2025-04-16,,2025-09-09,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Exported
-9810359791,AZITHROMYCIN,Inactive,2025-07-14,2025-05-19,,2025-09-11,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - inactive per state formulary,Not Required
-5192805893,AZITHROMYCIN,Active,2025-03-31,2025-04-13,,2025-09-11,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-5192805893,AZITHROMYCIN,Inactive,2025-03-27,2025-03-08,,2025-09-12,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - inactive for remote access,Exported
-9302724976,AMLODIPINE,Active,2025-04-02,2025-01-01,,2025-09-12,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-6691316698,LISINOPRIL,Pending,2024-12-31,2025-02-19,,2025-09-18,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-6691316698,LISINOPRIL,Active,2025-06-18,2025-03-18,,2025-09-15,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Exported
-6691316698,LISINOPRIL,Active,2025-07-06,2025-05-01,,2025-09-18,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-9432416335,OMEPRAZOLE,Pending,2025-04-11,2025-03-06,,2025-09-06,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-5070124937,CLOPIDOGREL,Active,2025-01-03,2025-04-07,,2025-09-14,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-5070124937,CLOPIDOGREL,Active,2025-04-05,2025-04-13,,2025-09-09,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Exported
-5070124937,CLOPIDOGREL,Active,2025-07-18,2025-06-20,,2025-09-10,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-9020967910,IBUPROFEN,Active,2025-01-27,2024-12-07,,2025-09-07,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-9020967910,IBUPROFEN,Active,2025-07-08,2025-05-11,,2025-09-18,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-1699169388,SIMVASTATIN,Active,2025-01-20,2025-03-30,,2025-09-05,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-6904452356,AMLODIPINE,Active,2025-02-10,2025-03-06,,2025-09-17,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-6904452356,AMLODIPINE,Under Review,2025-05-15,2025-03-29,2025-05-21,2025-09-06,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - under review for remote access,Pending
-6904452356,AMLODIPINE,Active,2025-06-24,2025-06-28,,2025-09-15,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-8743697098,LISINOPRIL,Inactive,2024-12-08,2025-03-26,,2025-08-20,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-8743697098,LISINOPRIL,Inactive,2025-06-29,2025-05-29,,2025-09-05,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - inactive for remote access,Exported
-8743697098,LISINOPRIL,Inactive,2025-07-22,2025-06-18,,2025-09-12,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - inactive per state formulary,Exported
-2566306779,SIMVASTATIN,Active,2024-12-31,2025-01-28,,2025-09-19,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-2566306779,SIMVASTATIN,Pending,2025-06-18,2025-06-03,2025-07-24,2025-09-14,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - pending for remote access,Pending
-2566306779,SIMVASTATIN,Under Review,2025-07-06,2025-04-27,,2025-09-12,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - under review per state formulary,Not Required
-9503133925,FUROSEMIDE,Under Review,2025-02-28,2024-11-24,,2025-08-29,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-9503133925,FUROSEMIDE,Active,2025-06-20,2025-05-01,,2025-09-07,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Exported
-9503133925,FUROSEMIDE,Active,2025-06-06,2025-06-06,,2025-09-09,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
-7007934187,ALBUTEROL,Inactive,2025-02-20,2025-04-17,,2025-09-17,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-7007934187,ALBUTEROL,Pending,2025-03-06,2025-05-25,2025-08-19,2025-09-10,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - pending for remote access,Exported
-7007934187,ALBUTEROL,Active,2025-05-08,2025-04-25,,2025-09-16,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-4592872183,LEVOTHYROXINE,Pending,2025-02-17,2024-12-24,,2025-09-14,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-4592872183,LEVOTHYROXINE,Pending,2025-06-09,2025-07-01,2025-06-07,2025-09-17,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - pending for remote access,Pending
-4592872183,LEVOTHYROXINE,Active,2025-06-26,2025-07-16,,2025-09-15,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
-1224811583,WARFARIN,Inactive,2025-01-04,2025-02-22,,2025-09-15,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-7199691766,LISINOPRIL,Active,2025-02-24,2025-03-10,,2025-08-22,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-7199691766,LISINOPRIL,Active,2025-05-07,2025-03-08,,2025-09-16,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
-7199691766,LISINOPRIL,Active,2025-05-13,2025-07-01,,2025-09-11,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-8511183502,AMLODIPINE,Under Review,2024-12-27,2025-04-08,,2025-08-26,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-8511183502,AMLODIPINE,Under Review,2025-06-10,2025-05-21,,2025-09-17,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - under review per state formulary,Exported
-3859551369,TRAMADOL,Pending,2025-04-05,2025-01-12,,2025-09-02,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-3859551369,TRAMADOL,Active,2025-03-31,2025-05-09,,2025-09-11,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
-9862150983,LISINOPRIL,Active,2025-04-03,2025-03-24,,2025-09-05,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-9862150983,LISINOPRIL,Pending,2025-05-29,2025-05-18,2025-07-12,2025-09-16,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - pending for remote access,Pending
-4148757719,AZITHROMYCIN,Under Review,2024-11-25,2025-02-21,,2025-08-31,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-4148757719,AZITHROMYCIN,Active,2025-04-27,2025-07-29,,2025-09-14,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-4215794577,LOSARTAN,Inactive,2025-04-12,2025-01-20,,2025-09-01,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-4215794577,LOSARTAN,Active,2025-07-15,2025-07-10,,2025-09-11,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-4475167976,AZITHROMYCIN,Active,2025-04-01,2025-03-21,,2025-09-07,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-4475167976,AZITHROMYCIN,Under Review,2025-03-18,2025-05-31,2025-06-11,2025-09-04,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - under review for remote access,Pending
-4475167976,AZITHROMYCIN,Inactive,2025-06-15,2025-07-20,,2025-09-18,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - inactive per state formulary,Not Required
-6024475102,AZITHROMYCIN,Active,2025-01-08,2025-04-06,,2025-09-10,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-6024475102,AZITHROMYCIN,Pending,2025-04-19,2025-05-19,2025-08-07,2025-09-04,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - pending for remote access,Exported
-6024475102,AZITHROMYCIN,Active,2025-07-25,2025-05-03,,2025-09-13,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-5607862915,AMOXICILLIN,Active,2025-01-01,2024-12-15,,2025-09-17,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-5919285406,LEVOTHYROXINE,Active,2025-04-03,2025-01-01,,2025-09-09,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-5919285406,LEVOTHYROXINE,Active,2025-03-23,2025-04-23,,2025-09-09,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
-5919285406,LEVOTHYROXINE,Active,2025-06-08,2025-07-20,,2025-09-14,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-2810942167,METOPROLOL,Active,2024-12-01,2025-04-01,,2025-08-24,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-2810942167,METOPROLOL,Active,2025-04-29,2025-05-29,,2025-09-17,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-6167753531,AMLODIPINE,Active,2024-12-01,2025-03-13,,2025-09-16,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-6167753531,AMLODIPINE,Active,2025-03-08,2025-05-03,,2025-09-09,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
-6167753531,AMLODIPINE,Active,2025-06-06,2025-07-28,,2025-09-15,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-2515899609,AMLODIPINE,Active,2024-11-29,2025-03-12,,2025-08-20,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-2515899609,AMLODIPINE,Active,2025-05-29,2025-05-10,,2025-09-12,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-7804370836,AMLODIPINE,Active,2024-12-14,2025-01-04,,2025-09-19,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-7804370836,AMLODIPINE,Inactive,2025-05-24,2025-03-23,,2025-09-07,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - inactive for remote access,Pending
-3877163187,OMEPRAZOLE,Active,2025-01-20,2024-12-27,,2025-09-13,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-3877163187,OMEPRAZOLE,Active,2025-06-13,2025-05-05,,2025-09-17,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-9869859516,LEVOTHYROXINE,Active,2024-12-13,2025-04-21,,2025-09-18,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-9869859516,LEVOTHYROXINE,Active,2025-06-01,2025-05-17,,2025-09-17,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Pending
-9869859516,LEVOTHYROXINE,Active,2025-06-28,2025-06-11,,2025-09-13,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
-7042622182,SIMVASTATIN,Active,2025-01-21,2024-12-11,,2025-08-24,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-7042622182,SIMVASTATIN,Pending,2025-06-10,2025-04-07,2025-04-14,2025-09-17,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - pending for remote access,Pending
-7042622182,SIMVASTATIN,Inactive,2025-04-30,2025-07-14,,2025-09-09,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - inactive per state formulary,Not Required
-1839946326,ALBUTEROL,Active,2025-03-30,2025-03-06,,2025-09-05,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-1839946326,ALBUTEROL,Active,2025-05-05,2025-06-04,,2025-09-11,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-4424235982,OMEPRAZOLE,Active,2025-03-18,2025-04-06,,2025-09-17,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-4424235982,OMEPRAZOLE,Active,2025-07-12,2025-05-28,,2025-09-16,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-1621461765,METOPROLOL,Pending,2025-01-19,2025-03-18,,2025-09-05,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-1621461765,METOPROLOL,Active,2025-05-02,2025-07-10,,2025-09-17,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
-1839956360,METOPROLOL,Pending,2025-02-08,2025-01-10,,2025-09-14,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-1839956360,METOPROLOL,Inactive,2025-05-19,2025-06-09,,2025-09-09,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - inactive for remote access,Pending
-1839956360,METOPROLOL,Active,2025-07-03,2025-07-17,,2025-09-15,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-8225522363,LEVOTHYROXINE,Active,2025-01-14,2025-03-02,,2025-09-04,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-8225522363,LEVOTHYROXINE,Inactive,2025-05-25,2025-04-29,,2025-09-18,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - inactive for remote access,Pending
-8225522363,LEVOTHYROXINE,Active,2025-05-31,2025-07-23,,2025-09-18,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-6378276904,HYDROCHLOROTHIAZIDE,Active,2025-03-30,2025-01-25,,2025-09-06,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-6378276904,HYDROCHLOROTHIAZIDE,Active,2025-04-22,2025-05-27,,2025-09-12,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
-6378276904,HYDROCHLOROTHIAZIDE,Active,2025-07-05,2025-05-15,,2025-09-14,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-8932843683,ATORVASTATIN,Pending,2024-12-28,2025-02-27,,2025-09-09,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-8932843683,ATORVASTATIN,Active,2025-06-19,2025-06-01,,2025-09-16,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-8694647469,IBUPROFEN,Inactive,2025-04-07,2024-12-18,,2025-09-02,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-8694647469,IBUPROFEN,Under Review,2025-03-05,2025-06-29,2025-04-04,2025-09-06,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - under review for remote access,Exported
-8849441730,PANTOPRAZOLE,Under Review,2025-01-16,2025-02-27,,2025-08-21,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-8849441730,PANTOPRAZOLE,Pending,2025-05-06,2025-07-03,,2025-09-12,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - pending per state formulary,Not Required
-5255397911,WARFARIN,Pending,2025-03-31,2024-12-27,,2025-09-05,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-5255397911,WARFARIN,Active,2025-03-12,2025-04-01,,2025-09-05,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Exported
-5255397911,WARFARIN,Active,2025-07-28,2025-06-19,,2025-09-11,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
-2215706759,METOPROLOL,Inactive,2025-03-10,2025-03-06,,2025-09-14,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-2215706759,METOPROLOL,Active,2025-03-26,2025-05-21,,2025-09-11,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
-2215706759,METOPROLOL,Active,2025-04-29,2025-07-29,,2025-09-11,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-1734871024,ACETAMINOPHEN,Active,2024-12-06,2025-03-21,,2025-09-01,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-1734871024,ACETAMINOPHEN,Inactive,2025-04-30,2025-06-27,,2025-09-17,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - inactive for remote access,Pending
-1734871024,ACETAMINOPHEN,Active,2025-06-29,2025-07-16,,2025-09-15,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
-5389984538,ALBUTEROL,Inactive,2024-12-23,2025-03-01,,2025-09-06,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-5389984538,ALBUTEROL,Active,2025-06-03,2025-05-30,,2025-09-10,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Exported
-5389984538,ALBUTEROL,Active,2025-07-12,2025-06-16,,2025-09-17,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
-3495233425,METFORMIN,Active,2025-02-01,2025-02-26,,2025-09-18,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-3495233425,METFORMIN,Inactive,2025-05-13,2025-03-08,,2025-09-16,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - inactive for remote access,Exported
-3495233425,METFORMIN,Active,2025-06-08,2025-06-07,,2025-09-18,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-9853740488,LOSARTAN,Active,2025-03-12,2024-12-15,,2025-09-10,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-9853740488,LOSARTAN,Under Review,2025-04-01,2025-05-21,2025-07-12,2025-09-05,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - under review for remote access,Pending
-9463225258,ALBUTEROL,Inactive,2025-03-15,2025-01-25,,2025-09-03,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-9463225258,ALBUTEROL,Active,2025-06-21,2025-03-05,,2025-09-06,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Pending
-9463225258,ALBUTEROL,Pending,2025-05-04,2025-05-27,,2025-09-17,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - pending per state formulary,Not Required
-8414246160,OMEPRAZOLE,Pending,2025-03-28,2025-02-24,,2025-09-07,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-8414246160,OMEPRAZOLE,Under Review,2025-04-17,2025-06-15,2025-04-09,2025-09-08,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - under review for remote access,Pending
-5392376819,HYDROCHLOROTHIAZIDE,Active,2024-12-07,2024-12-08,,2025-09-08,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-5392376819,HYDROCHLOROTHIAZIDE,Active,2025-06-18,2025-06-08,,2025-09-13,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Exported
-5392376819,HYDROCHLOROTHIAZIDE,Active,2025-07-26,2025-07-20,,2025-09-17,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-1002213896,CLOPIDOGREL,Active,2025-02-05,2025-04-03,,2025-09-01,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-1002213896,CLOPIDOGREL,Active,2025-07-14,2025-05-30,,2025-09-11,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
-8040635284,PREDNISONE,Pending,2025-03-22,2025-01-23,,2025-08-21,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-8040635284,PREDNISONE,Pending,2025-06-02,2025-03-27,2025-07-13,2025-09-13,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - pending for remote access,Pending
-8040635284,PREDNISONE,Active,2025-07-29,2025-05-24,,2025-09-11,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
-6310226266,PANTOPRAZOLE,Inactive,2024-12-20,2025-02-21,,2025-09-02,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-6310226266,PANTOPRAZOLE,Active,2025-04-05,2025-05-20,,2025-09-05,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
-6310226266,PANTOPRAZOLE,Active,2025-06-23,2025-07-22,,2025-09-18,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
-4952379323,ATORVASTATIN,Active,2025-03-31,2024-12-19,,2025-09-05,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-4952379323,ATORVASTATIN,Under Review,2025-06-28,2025-03-10,2025-08-07,2025-09-07,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - under review for remote access,Pending
-4952379323,ATORVASTATIN,Active,2025-05-26,2025-06-22,,2025-09-09,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
-4835658849,HYDROCHLOROTHIAZIDE,Under Review,2025-03-25,2025-01-24,,2025-08-25,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-4835658849,HYDROCHLOROTHIAZIDE,Active,2025-05-07,2025-03-18,,2025-09-11,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
-4835658849,HYDROCHLOROTHIAZIDE,Active,2025-04-23,2025-05-29,,2025-09-09,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-4720856717,SERTRALINE,Active,2025-04-07,2025-01-29,,2025-09-04,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-4720856717,SERTRALINE,Inactive,2025-04-18,2025-03-29,,2025-09-08,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - inactive for remote access,Pending
-4720856717,SERTRALINE,Active,2025-06-12,2025-06-05,,2025-09-15,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-7168319021,TRAMADOL,Under Review,2025-01-05,2024-12-08,,2025-08-30,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-7168319021,TRAMADOL,Active,2025-05-29,2025-06-19,,2025-09-05,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
-7168319021,TRAMADOL,Active,2025-07-11,2025-07-23,,2025-09-17,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
-4832759161,ESCITALOPRAM,Active,2025-01-29,2025-01-12,,2025-09-10,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-4832759161,ESCITALOPRAM,Active,2025-05-08,2025-05-11,,2025-09-09,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
-7563245808,FUROSEMIDE,Active,2025-02-13,2025-01-02,,2025-09-01,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-7563245808,FUROSEMIDE,Inactive,2025-06-07,2025-03-10,,2025-09-09,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - inactive for remote access,Pending
-7563245808,FUROSEMIDE,Inactive,2025-07-30,2025-06-30,,2025-09-19,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - inactive per state formulary,Not Required
-5297849867,GABAPENTIN,Active,2024-12-03,2025-02-07,,2025-09-08,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-5297849867,GABAPENTIN,Active,2025-05-29,2025-04-10,,2025-09-10,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
-5297849867,GABAPENTIN,Active,2025-04-29,2025-05-12,,2025-09-17,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-9426758083,LEVOTHYROXINE,Active,2025-04-11,2024-12-25,,2025-08-31,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-9426758083,LEVOTHYROXINE,Pending,2025-07-16,2025-07-29,,2025-09-18,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - pending per state formulary,Exported
-4998295437,AZITHROMYCIN,Active,2025-04-12,2025-03-22,,2025-08-21,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-4998295437,AZITHROMYCIN,Inactive,2025-03-11,2025-04-10,,2025-09-08,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - inactive for remote access,Pending
-8689966026,PANTOPRAZOLE,Active,2025-01-22,2024-12-08,,2025-08-24,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-8689966026,PANTOPRAZOLE,Active,2025-04-20,2025-03-16,,2025-09-09,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Exported
-8186700260,METFORMIN,Active,2025-02-12,2025-02-09,,2025-08-27,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-8186700260,METFORMIN,Active,2025-06-25,2025-07-15,,2025-09-12,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
-8343947494,SIMVASTATIN,Inactive,2024-12-23,2025-04-08,,2025-09-14,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-8343947494,SIMVASTATIN,Pending,2025-05-31,2025-04-17,2025-06-14,2025-09-15,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - pending for remote access,Pending
-8343947494,SIMVASTATIN,Active,2025-06-29,2025-06-20,,2025-09-11,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
-6610523344,OMEPRAZOLE,Active,2025-03-24,2025-02-09,,2025-08-24,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-6610523344,OMEPRAZOLE,Active,2025-03-21,2025-05-19,,2025-09-12,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Pending
-6610523344,OMEPRAZOLE,Active,2025-06-10,2025-04-25,,2025-09-18,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-4695833631,GABAPENTIN,Active,2025-01-05,2025-01-27,,2025-09-16,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-4037124251,ACETAMINOPHEN,Active,2025-01-22,2025-01-15,,2025-08-20,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-4037124251,ACETAMINOPHEN,Active,2025-04-09,2025-03-12,,2025-09-11,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Exported
-4037124251,ACETAMINOPHEN,Active,2025-06-28,2025-05-09,,2025-09-11,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
-4156635055,LEVOTHYROXINE,Active,2025-01-12,2025-02-21,,2025-08-24,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-4156635055,LEVOTHYROXINE,Active,2025-03-07,2025-04-02,,2025-09-04,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Exported
-4156635055,LEVOTHYROXINE,Active,2025-07-25,2025-05-29,,2025-09-13,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-4157208448,METFORMIN,Inactive,2025-04-11,2024-12-20,,2025-09-16,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-4157208448,METFORMIN,Inactive,2025-04-29,2025-05-26,,2025-09-16,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - inactive per state formulary,Exported
-3783584446,LOSARTAN,Active,2024-11-24,2025-01-06,,2025-08-22,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-3783584446,LOSARTAN,Inactive,2025-06-11,2025-06-20,,2025-09-11,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - inactive per state formulary,Exported
-4906836455,IBUPROFEN,Active,2025-04-06,2025-01-16,,2025-08-30,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-4906836455,IBUPROFEN,Pending,2025-03-17,2025-03-14,2025-07-22,2025-09-09,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - pending for remote access,Exported
-4906836455,IBUPROFEN,Pending,2025-05-08,2025-07-07,,2025-09-14,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - pending per state formulary,Exported
-9496684205,LOSARTAN,Active,2025-01-16,2025-01-10,,2025-09-16,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-9975104530,SERTRALINE,Active,2025-02-07,2024-12-02,,2025-09-12,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-9975104530,SERTRALINE,Active,2025-04-23,2025-07-07,,2025-09-18,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-1921317338,AZITHROMYCIN,Active,2025-04-16,2025-03-17,,2025-08-25,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-1921317338,AZITHROMYCIN,Active,2025-07-22,2025-06-13,,2025-09-11,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-1403409684,AMLODIPINE,Pending,2025-01-13,2025-02-12,,2025-09-09,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-3399798355,ATORVASTATIN,Active,2024-11-28,2025-01-23,,2025-08-21,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-3399798355,ATORVASTATIN,Active,2025-04-28,2025-06-25,,2025-09-10,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-2056168526,IBUPROFEN,Active,2024-12-16,2024-12-04,,2025-09-04,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-2056168526,IBUPROFEN,Inactive,2025-06-13,2025-06-21,,2025-09-18,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - inactive for remote access,Exported
-2056168526,IBUPROFEN,Active,2025-04-23,2025-06-07,,2025-09-11,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
-7880709711,METFORMIN,Pending,2024-11-24,2025-03-07,,2025-08-21,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-7880709711,METFORMIN,Active,2025-05-16,2025-03-17,,2025-09-12,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Pending
-7880709711,METFORMIN,Active,2025-06-15,2025-07-10,,2025-09-11,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-2605853200,LOSARTAN,Active,2024-12-13,2024-12-25,,2025-09-15,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-2605853200,LOSARTAN,Active,2025-05-16,2025-07-12,,2025-09-18,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-9243479420,AMOXICILLIN,Active,2024-12-26,2024-12-25,,2025-09-12,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-9243479420,AMOXICILLIN,Active,2025-03-07,2025-05-19,,2025-09-05,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Pending
-9243479420,AMOXICILLIN,Active,2025-06-23,2025-05-01,,2025-09-15,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
-6260724222,GABAPENTIN,Active,2025-03-08,2025-02-23,,2025-09-10,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-6260724222,GABAPENTIN,Active,2025-03-07,2025-04-24,,2025-09-08,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
-6260724222,GABAPENTIN,Active,2025-07-24,2025-06-10,,2025-09-18,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-6946528366,LOSARTAN,Pending,2025-04-19,2025-02-05,,2025-09-07,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-6946528366,LOSARTAN,Active,2025-06-13,2025-06-13,,2025-09-09,mo_pdl_manager,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Exported
-4263426627,ACETAMINOPHEN,Inactive,2025-03-12,2025-01-26,,2025-08-23,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-4263426627,ACETAMINOPHEN,Active,2025-06-18,2025-04-20,,2025-09-14,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
-4263426627,ACETAMINOPHEN,Under Review,2025-05-10,2025-05-17,,2025-09-19,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - under review per state formulary,Not Required
-2851131694,AMLODIPINE,Pending,2024-12-07,2025-04-06,,2025-09-07,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-2851131694,AMLODIPINE,Active,2025-03-03,2025-04-15,,2025-09-06,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Exported
-2851131694,AMLODIPINE,Pending,2025-05-14,2025-06-05,,2025-09-18,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - pending per state formulary,Not Required
-7459700640,AZITHROMYCIN,Active,2024-12-11,2025-04-01,,2025-09-06,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-7459700640,AZITHROMYCIN,Active,2025-06-15,2025-04-16,,2025-09-10,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
-7459700640,AZITHROMYCIN,Active,2025-07-22,2025-07-15,,2025-09-12,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Not Required
-4926255051,ESCITALOPRAM,Active,2024-11-23,2025-01-29,,2025-09-15,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-4926255051,ESCITALOPRAM,Active,2025-05-09,2025-07-02,,2025-09-12,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-9662355122,AMLODIPINE,Pending,2025-01-05,2025-04-05,,2025-09-01,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-9662355122,AMLODIPINE,Pending,2025-03-28,2025-03-11,2025-04-16,2025-09-10,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - pending for remote access,Pending
-9662355122,AMLODIPINE,Pending,2025-05-07,2025-05-14,,2025-09-16,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - pending per state formulary,Not Required
-4675317456,AMLODIPINE,Active,2024-12-13,2025-01-15,,2025-08-28,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-4675317456,AMLODIPINE,Pending,2025-05-20,2025-05-27,2025-04-04,2025-09-17,ak_rural_specialist,ak_pdl_coordinator,AK rural healthcare PDL - pending for remote access,Exported
-1076247469,LOSARTAN,Active,2025-01-25,2025-03-21,,2025-08-21,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-1076247469,LOSARTAN,Active,2025-06-03,2025-06-16,,2025-09-16,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-5028771608,LISINOPRIL,Active,2025-03-06,2025-03-16,,2025-09-17,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-5028771608,LISINOPRIL,Active,2025-03-28,2025-05-30,,2025-09-07,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
-5028771608,LISINOPRIL,Active,2025-05-13,2025-06-17,,2025-09-16,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-3169261527,SERTRALINE,Active,2025-02-08,2025-01-29,,2025-09-18,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-3169261527,SERTRALINE,Pending,2025-06-12,2025-05-26,2025-07-16,2025-09-11,ak_rural_specialist,ak_rural_specialist,AK rural healthcare PDL - pending for remote access,Exported
-1612262970,LISINOPRIL,Active,2025-03-16,2025-01-10,,2025-08-20,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-1612262970,LISINOPRIL,Inactive,2025-06-21,2025-07-12,,2025-09-16,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - inactive per state formulary,Exported
-3039678075,HYDROCHLOROTHIAZIDE,Active,2025-02-04,2025-03-10,,2025-08-30,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-3039678075,HYDROCHLOROTHIAZIDE,Active,2025-06-20,2025-04-30,,2025-09-11,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
-3039678075,HYDROCHLOROTHIAZIDE,Active,2025-06-13,2025-05-27,,2025-09-09,mo_medicaid_coordinator,mo_medicaid_coordinator,MO Medicaid PDL - active per state formulary,Not Required
-7202350685,PREDNISONE,Inactive,2025-03-24,2025-02-17,,2025-09-13,pdl_admin,pdl_admin,MASTER PDL baseline entry,Pending
-7202350685,PREDNISONE,Active,2025-05-06,2025-05-09,,2025-09-13,ak_pdl_coordinator,ak_rural_specialist,AK rural healthcare PDL - active for remote access,Pending
-1519229767,OMEPRAZOLE,Active,2024-11-23,2025-02-07,,2025-09-04,pdl_admin,pdl_admin,MASTER PDL baseline entry,Not Required
-1519229767,OMEPRAZOLE,Active,2025-05-29,2025-04-27,,2025-09-14,mo_medicaid_coordinator,mo_pdl_manager,MO Medicaid PDL - active per state formulary,Exported
-3653298842,HYDROCHLOROTHIAZIDE,Active,2025-03-13,2024-12-02,,2025-08-28,pdl_admin,pdl_admin,MASTER PDL baseline entry,Exported
-3653298842,HYDROCHLOROTHIAZIDE,Active,2025-05-16,2025-03-04,,2025-09-09,ak_pdl_coordinator,ak_pdl_coordinator,AK rural healthcare PDL - active for remote access,Exported
-3653298842,HYDROCHLOROTHIAZIDE,Pending,2025-05-26,2025-05-31,,2025-09-10,mo_pdl_manager,mo_pdl_manager,MO Medicaid PDL - pending per state formulary,Not Required
-8616599196,TRAMADOL,Active,2025-06-29,2025-06-23,,2025-09-18,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
-6539577736,TRAMADOL,Active,2025-07-22,2025-07-08,,2025-09-18,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
-4477721364,ALBUTEROL,Active,2025-08-16,2025-08-18,,2025-09-16,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
-7280233624,TRAMADOL,Active,2025-07-16,2025-07-17,,2025-09-18,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
-7029943247,PREDNISONE,Pending,2025-08-24,2025-07-06,,2025-09-16,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
-6658173935,PREDNISONE,Active,2025-07-18,2025-07-21,2025-07-27,2025-09-16,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
-8294806525,ACETAMINOPHEN,Pending,2025-08-01,2025-08-24,,2025-09-18,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
-7857477825,ACETAMINOPHEN,Pending,2025-08-07,2025-08-28,2025-06-04,2025-09-16,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
-7793836773,ALBUTEROL,Pending,2025-06-30,2025-07-24,,2025-09-18,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
-3994344489,TRAMADOL,Pending,2025-07-29,2025-08-09,,2025-09-17,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
-9404184090,PREDNISONE,Pending,2025-07-27,2025-08-26,,2025-09-16,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
-4162379327,PREDNISONE,Pending,2025-07-19,2025-07-08,,2025-09-14,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
-8127868456,TRAMADOL,Pending,2025-06-26,2025-07-19,2025-07-12,2025-09-14,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
-7579305851,ALBUTEROL,Pending,2025-06-24,2025-08-22,,2025-09-18,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
-3165118481,ALBUTEROL,Active,2025-07-09,2025-08-30,2025-08-03,2025-09-15,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
-7763567608,ALBUTEROL,Active,2025-07-23,2025-06-29,2025-06-28,2025-09-14,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
-1568338435,ACETAMINOPHEN,Pending,2025-06-26,2025-08-06,,2025-09-16,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
-4718124639,ALBUTEROL,Pending,2025-08-14,2025-08-01,,2025-09-14,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
-5667570407,ACETAMINOPHEN,Active,2025-07-29,2025-07-08,2025-07-09,2025-09-18,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
-2679808832,TRAMADOL,Active,2025-08-07,2025-08-13,,2025-09-15,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
-2099767005,PREDNISONE,Pending,2025-08-26,2025-07-31,,2025-09-14,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
-7341809153,PREDNISONE,Active,2025-08-01,2025-08-08,,2025-09-15,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
-6685506297,PREDNISONE,Pending,2025-07-24,2025-07-25,,2025-09-17,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
-7641264752,ACETAMINOPHEN,Active,2025-08-10,2025-07-16,2025-07-18,2025-09-16,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
-4107582499,ALBUTEROL,Pending,2025-08-26,2025-08-07,,2025-09-16,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
-1166663125,ALBUTEROL,Pending,2025-07-30,2025-07-09,2025-05-23,2025-09-17,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
-6473879250,ACETAMINOPHEN,Active,2025-07-22,2025-06-30,2025-07-31,2025-09-14,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
-7022656673,ACETAMINOPHEN,Pending,2025-06-30,2025-08-17,,2025-09-18,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
-3796292770,ACETAMINOPHEN,Pending,2025-07-21,2025-07-12,2025-06-07,2025-09-17,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
-1976943497,ACETAMINOPHEN,Pending,2025-08-11,2025-06-26,,2025-09-17,ak_rural_program,ak_rural_program,AK-specific PDL for rural healthcare initiative,Pending
-2313855871,OMEPRAZOLE,Active,2025-08-06,2025-07-29,,2025-09-17,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
-3244493958,LISINOPRIL,Active,2025-08-14,2025-08-24,,2025-09-18,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
-3804156081,LISINOPRIL,Active,2025-07-27,2025-08-24,,2025-09-16,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
-3193369160,SERTRALINE,Active,2025-07-31,2025-09-01,,2025-09-17,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
-2812267158,METFORMIN,Active,2025-08-28,2025-08-08,,2025-09-17,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
-4272764301,SERTRALINE,Active,2025-08-03,2025-08-14,,2025-09-19,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
-3720332955,OMEPRAZOLE,Active,2025-07-31,2025-08-29,,2025-09-17,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
-9409191501,SERTRALINE,Pending,2025-08-25,2025-08-19,,2025-09-18,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
-9318786650,SERTRALINE,Active,2025-07-30,2025-08-01,,2025-09-18,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
-3233659725,SERTRALINE,Active,2025-07-24,2025-08-18,,2025-09-17,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
-4860575310,SERTRALINE,Active,2025-07-29,2025-08-29,,2025-09-17,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
-1346604939,OMEPRAZOLE,Active,2025-08-26,2025-08-29,,2025-09-19,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
-1225378822,OMEPRAZOLE,Active,2025-08-25,2025-08-05,,2025-09-18,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
-3190245007,LISINOPRIL,Pending,2025-08-26,2025-08-28,,2025-09-18,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
-2016757307,LISINOPRIL,Active,2025-08-04,2025-08-15,,2025-09-17,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
-2265350455,METFORMIN,Active,2025-07-29,2025-08-22,,2025-09-18,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
-2277271844,LISINOPRIL,Pending,2025-08-09,2025-08-05,,2025-09-18,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
-7675753664,SERTRALINE,Active,2025-08-24,2025-08-16,,2025-09-18,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
-7009932186,LISINOPRIL,Active,2025-07-24,2025-07-23,,2025-09-16,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
-7765224309,LISINOPRIL,Active,2025-08-02,2025-09-02,,2025-09-16,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
-1460512159,METFORMIN,Active,2025-08-06,2025-08-06,,2025-09-17,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
-2223673707,SERTRALINE,Active,2025-08-24,2025-08-23,,2025-09-17,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
-9532612867,METFORMIN,Active,2025-08-18,2025-07-25,,2025-09-17,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
-4883662456,SERTRALINE,Active,2025-07-27,2025-09-01,,2025-09-16,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
-7606979090,SERTRALINE,Active,2025-08-31,2025-07-26,,2025-09-18,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
-1113230410,METFORMIN,Pending,2025-08-15,2025-07-31,,2025-09-19,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
-5285850028,OMEPRAZOLE,Pending,2025-07-24,2025-07-28,,2025-09-18,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
-1331143740,OMEPRAZOLE,Active,2025-07-29,2025-08-11,,2025-09-17,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
-6034750232,LISINOPRIL,Active,2025-08-25,2025-08-17,,2025-09-17,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
-9500753609,SERTRALINE,Active,2025-07-28,2025-08-19,,2025-09-17,mo_medicaid_plus,mo_medicaid_plus,MO Medicaid Plus program - enhanced PDL coverage,Exported
+ndc,pdl_drug,manufacturer,dosage_form,strength,package_size,status,load_date,effective_date,expiration_date,created_by,updated_by,review_status,notes
+4010494099,ALPRAZOLAM,Bristol-Myers,Cream,73 units,191 mL,Inactive,2025-07-14,2025-06-25,2026-08-05,pdl_manager,data_loader,Under Review,PDL baseline entry - specialty drug
+9577302812,QUETIAPINE,Pfizer,Tablet,2 g,348 tablets,Active,2024-11-27,2024-11-06,,data_loader,pdl_manager,Pending,PDL baseline entry - tier 2 non-preferred
+4800278377,LEVOTHYROXINE,Roche,Cream,91 mL,343 tablets,Under Review,2024-10-26,2024-09-28,2026-02-20,system_admin,data_loader,Under Review,PDL baseline entry - standard coverage
+4164880711,ASPIRIN,Actavis,Cream,27 mL,134 mL,Pending,2024-11-14,2024-10-22,,pdl_manager,system_admin,Approved,PDL baseline entry - specialty drug
+8414246160,ACETAMINOPHEN,Sandoz,Suspension,57 units,391 units,Active,2025-02-09,2025-02-08,2026-04-15,system_admin,system_admin,Pending,PDL baseline entry - prior auth required
+8889516158,HYDROCHLOROTHIAZIDE,Novartis,Capsule,6 mL,216 tablets,Under Review,2024-10-09,2024-09-13,,data_loader,data_loader,Approved,PDL baseline entry - tier 2 non-preferred
+3247337331,HYDROCHLOROTHIAZIDE,Gilead,Capsule,21 mcg,481 units,Active,2025-07-04,2025-06-06,,data_loader,pdl_manager,Rejected,PDL baseline entry - tier 1 preferred
+9109937051,SIMVASTATIN,Novartis,Tablet,61 mcg,132 units,Under Review,2025-02-04,2025-01-30,,pdl_manager,data_loader,Pending,PDL baseline entry - standard coverage
+2808900837,METOPROLOL,Johnson & Johnson,Solution,45 units,234 mL,Active,2024-12-28,2024-12-16,,system_admin,pdl_manager,Pending,PDL baseline entry - prior auth required
+4347655264,CITALOPRAM,AbbVie,Solution,56 units,291 tablets,Pending,2025-02-03,2025-02-02,2026-09-12,data_loader,pdl_manager,Approved,PDL baseline entry - specialty drug
+4400366371,CARBAMAZEPINE,Bristol-Myers,Suspension,95 mcg,216 units,Active,2024-09-21,2024-09-05,,pdl_manager,pdl_manager,Approved,PDL baseline entry - tier 2 non-preferred
+3165118481,SERTRALINE,Novartis,Suspension,38 units,95 capsules,Pending,2025-06-07,2025-05-29,,clinical_reviewer,data_loader,Under Review,PDL baseline entry - specialty drug
+7667179079,PREDNISONE,Novartis,Cream,78 mL,268 units,Pending,2025-06-28,2025-06-02,2026-10-26,data_loader,clinical_reviewer,Pending,PDL baseline entry - standard coverage
+4695833631,FLUOXETINE,Teva,Capsule,87 mL,145 capsules,Inactive,2025-02-13,2025-01-28,,system_admin,system_admin,Pending,PDL baseline entry - specialty drug
+6297907171,FUROSEMIDE,AbbVie,Suspension,50 g,234 capsules,Inactive,2024-10-28,2024-10-14,,system_admin,system_admin,Rejected,PDL baseline entry - tier 1 preferred
+5524824739,LITHIUM,Roche,Tablet,72 mcg,499 tablets,Pending,2024-12-20,2024-11-25,,data_loader,clinical_reviewer,Under Review,PDL baseline entry - specialty drug
+5285850028,TRAZODONE,Gilead,Capsule,96 g,260 mL,Inactive,2025-06-06,2025-05-24,,pdl_manager,clinical_reviewer,Pending,PDL baseline entry - tier 2 non-preferred
+9721780145,IBUPROFEN,Actavis,Solution,41 units,71 capsules,Inactive,2025-05-04,2025-05-02,,data_loader,clinical_reviewer,Pending,PDL baseline entry - tier 1 preferred
+6815517973,CARBAMAZEPINE,Roche,Injection,8 mcg,456 units,Pending,2024-10-23,2024-10-10,,system_admin,clinical_reviewer,Rejected,PDL baseline entry - standard coverage
+4718124639,ALPRAZOLAM,GSK,Suspension,95 units,439 capsules,Pending,2025-03-20,2025-03-11,,data_loader,pdl_manager,Rejected,PDL baseline entry - specialty drug
+2605853200,LORAZEPAM,AbbVie,Capsule,60 mcg,348 tablets,Pending,2024-10-05,2024-09-23,,system_admin,system_admin,Rejected,PDL baseline entry - tier 1 preferred
+7340691240,SERTRALINE,Mylan,Injection,42 mL,419 units,Under Review,2025-05-15,2025-05-10,2026-11-20,clinical_reviewer,pdl_manager,Approved,PDL baseline entry - specialty drug
+2756505153,CITALOPRAM,Mylan,Suspension,9 mg,416 tablets,Inactive,2024-09-30,2024-09-07,,data_loader,system_admin,Pending,PDL baseline entry - tier 1 preferred
+7097160169,PREDNISONE,Roche,Suspension,33 mL,115 tablets,Inactive,2024-11-24,2024-11-09,,pdl_manager,system_admin,Approved,PDL baseline entry - tier 2 non-preferred
+1612262970,VENLAFAXINE,Novartis,Suspension,26 mg,333 capsules,Active,2025-07-12,2025-06-21,,pdl_manager,system_admin,Approved,PDL baseline entry - tier 2 non-preferred
+2515899609,METOPROLOL,GSK,Suspension,44 mg,464 units,Pending,2025-06-20,2025-06-07,,system_admin,clinical_reviewer,Under Review,PDL baseline entry - specialty drug
+7798427907,ASPIRIN,Merck,Cream,100 g,268 units,Under Review,2024-12-08,2024-11-25,2026-08-19,pdl_manager,data_loader,Approved,PDL baseline entry - tier 2 non-preferred
+1074182147,VENLAFAXINE,Pfizer,Tablet,64 mL,123 units,Inactive,2025-05-09,2025-05-02,,pdl_manager,pdl_manager,Under Review,PDL baseline entry - tier 2 non-preferred
+1460512159,OMEPRAZOLE,Mylan,Suspension,53 g,314 capsules,Pending,2025-02-09,2025-01-23,2026-04-30,clinical_reviewer,clinical_reviewer,Approved,PDL baseline entry - standard coverage
+2223673707,IBUPROFEN,Actavis,Suspension,75 mL,272 mL,Pending,2025-02-18,2025-02-11,,pdl_manager,pdl_manager,Rejected,PDL baseline entry - tier 2 non-preferred
+2679808832,SERTRALINE,Teva,Suspension,69 mcg,128 capsules,Pending,2025-02-24,2025-02-16,2026-05-25,pdl_manager,pdl_manager,Approved,PDL baseline entry - tier 1 preferred
+7762330563,CLOPIDOGREL,Generic Pharmaceuticals,Suspension,69 mcg,170 tablets,Active,2025-02-19,2025-02-12,,pdl_manager,data_loader,Rejected,PDL baseline entry - standard coverage
+3304900558,TRAZODONE,Pfizer,Capsule,7 mL,471 units,Active,2024-09-27,2024-09-09,2026-05-12,system_admin,clinical_reviewer,Rejected,PDL baseline entry - standard coverage
+6471571892,HYDROCHLOROTHIAZIDE,Sandoz,Cream,39 mg,157 tablets,Pending,2025-07-13,2025-06-23,,data_loader,clinical_reviewer,Rejected,PDL baseline entry - specialty drug
+8743697098,ZOLPIDEM,Actavis,Cream,80 mg,342 tablets,Inactive,2025-02-20,2025-01-24,,data_loader,pdl_manager,Approved,PDL baseline entry - tier 1 preferred
+1571971889,LEVOTHYROXINE,Generic Pharmaceuticals,Injection,58 units,270 mL,Active,2025-01-21,2025-01-16,,data_loader,pdl_manager,Under Review,PDL baseline entry - specialty drug
+2919345816,FUROSEMIDE,Novartis,Tablet,70 mcg,361 capsules,Under Review,2024-10-27,2024-10-06,2026-02-18,data_loader,system_admin,Approved,PDL baseline entry - tier 1 preferred
+9795700513,WARFARIN,Roche,Tablet,60 mL,388 units,Under Review,2025-02-25,2025-02-06,,clinical_reviewer,clinical_reviewer,Approved,PDL baseline entry - prior auth required
+5192805893,SERTRALINE,Merck,Solution,4 mg,147 tablets,Under Review,2024-10-11,2024-09-13,,system_admin,data_loader,Rejected,PDL baseline entry - prior auth required
+4272764301,ZOLPIDEM,Bristol-Myers,Injection,12 g,208 units,Under Review,2025-05-05,2025-04-06,2027-01-30,pdl_manager,system_admin,Pending,PDL baseline entry - tier 2 non-preferred
+1166663125,LORAZEPAM,Amgen,Cream,5 g,75 mL,Under Review,2025-04-19,2025-03-28,,pdl_manager,system_admin,Rejected,PDL baseline entry - prior auth required
+7717131487,QUETIAPINE,Novartis,Tablet,25 units,215 units,Pending,2024-09-21,2024-08-31,,system_admin,data_loader,Under Review,PDL baseline entry - prior auth required
+8954541741,OLANZAPINE,Teva,Tablet,81 units,439 capsules,Inactive,2024-11-27,2024-10-29,2026-10-21,pdl_manager,system_admin,Rejected,PDL baseline entry - standard coverage
+2851131694,QUETIAPINE,Teva,Suspension,20 g,396 mL,Under Review,2025-01-14,2024-12-19,,clinical_reviewer,clinical_reviewer,Rejected,PDL baseline entry - tier 1 preferred
+8689966026,ARIPIPRAZOLE,AbbVie,Capsule,9 mL,425 units,Under Review,2025-05-12,2025-04-25,2026-07-31,pdl_manager,system_admin,Under Review,PDL baseline entry - tier 2 non-preferred
+5119192821,OLANZAPINE,Amgen,Capsule,58 units,277 mL,Under Review,2025-07-18,2025-06-30,,clinical_reviewer,clinical_reviewer,Under Review,PDL baseline entry - tier 1 preferred
+7745554435,ALPRAZOLAM,Generic Pharmaceuticals,Solution,96 g,391 units,Pending,2025-01-21,2025-01-03,,data_loader,clinical_reviewer,Approved,PDL baseline entry - tier 1 preferred
+8225522363,SIMVASTATIN,Amgen,Injection,13 units,496 units,Active,2025-06-05,2025-05-06,,data_loader,clinical_reviewer,Pending,PDL baseline entry - standard coverage
+8849441730,FLUOXETINE,Merck,Suspension,51 mg,466 mL,Pending,2025-05-19,2025-04-24,,pdl_manager,clinical_reviewer,Approved,PDL baseline entry - prior auth required
+8041561622,WARFARIN,Mylan,Suspension,12 g,80 tablets,Pending,2024-10-26,2024-10-19,,data_loader,pdl_manager,Approved,PDL baseline entry - standard coverage
+4212961677,DULOXETINE,Novartis,Capsule,32 units,240 capsules,Inactive,2025-03-06,2025-02-09,2026-08-11,data_loader,system_admin,Rejected,PDL baseline entry - prior auth required
+6685506297,HYDROCHLOROTHIAZIDE,Mylan,Injection,82 mL,265 mL,Active,2025-01-22,2025-01-07,,clinical_reviewer,pdl_manager,Pending,PDL baseline entry - standard coverage
+5110788469,CLOPIDOGREL,Bristol-Myers,Injection,89 mL,263 mL,Inactive,2025-05-05,2025-04-05,,clinical_reviewer,clinical_reviewer,Approved,PDL baseline entry - tier 1 preferred
+9154911738,WARFARIN,AbbVie,Solution,3 g,170 tablets,Active,2025-04-04,2025-03-17,,clinical_reviewer,pdl_manager,Pending,PDL baseline entry - prior auth required
+6705810526,ACETAMINOPHEN,Bristol-Myers,Suspension,99 mcg,351 tablets,Active,2025-03-20,2025-03-13,,pdl_manager,clinical_reviewer,Approved,PDL baseline entry - prior auth required
+7334884594,SERTRALINE,AbbVie,Injection,23 mcg,97 mL,Under Review,2025-03-26,2025-03-03,2026-08-01,data_loader,pdl_manager,Rejected,PDL baseline entry - tier 2 non-preferred
+6425236717,HYDROCHLOROTHIAZIDE,Johnson & Johnson,Capsule,87 g,463 mL,Active,2025-03-13,2025-02-16,2026-03-26,clinical_reviewer,system_admin,Under Review,PDL baseline entry - prior auth required
+7199691766,ACETAMINOPHEN,Merck,Injection,82 mL,85 capsules,Pending,2024-11-23,2024-11-09,,system_admin,pdl_manager,Pending,PDL baseline entry - standard coverage
+4654812668,ALPRAZOLAM,Teva,Capsule,6 mg,185 units,Active,2025-05-16,2025-04-17,,system_admin,data_loader,Pending,PDL baseline entry - specialty drug
+9869859516,CARBAMAZEPINE,Novartis,Cream,96 mcg,483 units,Active,2025-05-11,2025-04-30,,clinical_reviewer,clinical_reviewer,Under Review,PDL baseline entry - standard coverage
+9810359791,IBUPROFEN,Amgen,Solution,13 mL,308 mL,Active,2025-03-29,2025-03-23,,clinical_reviewer,pdl_manager,Pending,PDL baseline entry - standard coverage
+5912155877,METFORMIN,Generic Pharmaceuticals,Solution,32 mcg,432 capsules,Active,2025-05-11,2025-05-09,,data_loader,data_loader,Pending,PDL baseline entry - tier 2 non-preferred
+2277271844,LISINOPRIL,Actavis,Capsule,17 units,158 capsules,Active,2024-12-05,2024-11-10,,system_admin,data_loader,Approved,PDL baseline entry - tier 2 non-preferred
+2360658867,ALBUTEROL,Actavis,Tablet,17 g,299 tablets,Active,2025-01-20,2025-01-02,,clinical_reviewer,clinical_reviewer,Under Review,PDL baseline entry - prior auth required
+4524245206,ATORVASTATIN,AbbVie,Suspension,67 mL,264 tablets,Active,2024-11-15,2024-11-01,,clinical_reviewer,clinical_reviewer,Rejected,PDL baseline entry - standard coverage
+4603262287,METOPROLOL,Gilead,Tablet,42 units,105 tablets,Inactive,2025-05-30,2025-05-08,,pdl_manager,pdl_manager,Rejected,PDL baseline entry - prior auth required
+7804370836,ZOLPIDEM,Teva,Suspension,15 units,399 capsules,Pending,2025-06-19,2025-06-10,,clinical_reviewer,data_loader,Rejected,PDL baseline entry - tier 2 non-preferred
+4682866547,SIMVASTATIN,Pfizer,Injection,41 mL,221 capsules,Pending,2025-05-11,2025-04-29,,system_admin,system_admin,Approved,PDL baseline entry - standard coverage
+2042541697,DULOXETINE,Johnson & Johnson,Capsule,72 mg,330 mL,Active,2025-04-30,2025-04-27,,clinical_reviewer,pdl_manager,Rejected,PDL baseline entry - standard coverage
+8107389623,SIMVASTATIN,Merck,Cream,28 mcg,366 units,Inactive,2025-02-15,2025-01-27,,system_admin,pdl_manager,Under Review,PDL baseline entry - standard coverage
+9463225258,METFORMIN,Merck,Suspension,89 mL,44 capsules,Under Review,2025-02-10,2025-01-23,2026-08-30,pdl_manager,pdl_manager,Under Review,PDL baseline entry - standard coverage
+3671667795,LORAZEPAM,Teva,Capsule,95 mg,76 capsules,Pending,2024-12-22,2024-11-25,2026-10-27,clinical_reviewer,clinical_reviewer,Under Review,PDL baseline entry - tier 1 preferred
+1002213896,OMEPRAZOLE,Gilead,Tablet,20 mcg,416 tablets,Active,2025-03-29,2025-03-20,,pdl_manager,clinical_reviewer,Rejected,PDL baseline entry - specialty drug
+3156170663,LOSARTAN,Pfizer,Injection,15 mL,377 units,Under Review,2025-05-05,2025-04-22,2027-01-09,system_admin,data_loader,Rejected,PDL baseline entry - prior auth required
+7149784386,GABAPENTIN,Johnson & Johnson,Solution,38 mL,91 tablets,Pending,2024-10-19,2024-10-19,2026-02-04,clinical_reviewer,data_loader,Pending,PDL baseline entry - specialty drug
+9503133925,CITALOPRAM,Teva,Injection,95 mg,253 tablets,Pending,2025-06-20,2025-05-29,2027-03-11,system_admin,pdl_manager,Rejected,PDL baseline entry - prior auth required
+5960196797,WARFARIN,Teva,Injection,3 mL,117 units,Under Review,2025-04-16,2025-03-25,,system_admin,clinical_reviewer,Approved,PDL baseline entry - tier 1 preferred
+3877163187,OMEPRAZOLE,Novartis,Solution,96 mL,143 mL,Inactive,2025-05-02,2025-04-14,,system_admin,system_admin,Pending,PDL baseline entry - tier 2 non-preferred
+8127868456,HYDROCHLOROTHIAZIDE,Mylan,Tablet,19 mL,131 capsules,Inactive,2025-03-19,2025-02-24,,system_admin,data_loader,Rejected,PDL baseline entry - specialty drug
+2308999470,SERTRALINE,Amgen,Suspension,41 mcg,255 tablets,Pending,2025-07-06,2025-06-12,,clinical_reviewer,pdl_manager,Under Review,PDL baseline entry - prior auth required
+1976943497,CLOPIDOGREL,Roche,Injection,5 mg,218 mL,Active,2024-10-19,2024-10-08,,system_admin,clinical_reviewer,Rejected,PDL baseline entry - prior auth required
+3015762722,ATORVASTATIN,Roche,Cream,84 mcg,194 units,Inactive,2025-07-01,2025-06-01,,system_admin,clinical_reviewer,Approved,PDL baseline entry - tier 2 non-preferred
+3635252300,ATORVASTATIN,Mylan,Suspension,57 g,298 capsules,Under Review,2024-11-03,2024-10-18,,pdl_manager,pdl_manager,Rejected,PDL baseline entry - specialty drug
+2009630575,FLUOXETINE,Teva,Solution,13 units,377 units,Under Review,2025-03-13,2025-02-20,,pdl_manager,data_loader,Under Review,PDL baseline entry - standard coverage
+3742146348,CLOPIDOGREL,Bristol-Myers,Suspension,85 g,96 tablets,Under Review,2025-07-16,2025-06-25,2026-12-21,clinical_reviewer,pdl_manager,Pending,PDL baseline entry - prior auth required
+7360733059,ARIPIPRAZOLE,Pfizer,Tablet,47 mL,122 capsules,Under Review,2024-11-07,2024-10-18,,clinical_reviewer,data_loader,Pending,PDL baseline entry - tier 1 preferred
+9409191501,ARIPIPRAZOLE,Johnson & Johnson,Cream,95 units,49 mL,Inactive,2024-12-09,2024-12-07,2026-01-27,clinical_reviewer,data_loader,Pending,PDL baseline entry - tier 1 preferred
+3099383762,ALPRAZOLAM,Pfizer,Suspension,93 mcg,257 mL,Pending,2024-12-14,2024-11-21,,data_loader,data_loader,Under Review,PDL baseline entry - specialty drug
+7772462958,TRAZODONE,Roche,Solution,100 g,287 units,Inactive,2024-12-29,2024-12-18,,data_loader,data_loader,Under Review,PDL baseline entry - standard coverage
+2777899166,SIMVASTATIN,AbbVie,Cream,16 mL,72 capsules,Under Review,2025-05-25,2025-04-28,,clinical_reviewer,data_loader,Rejected,PDL baseline entry - standard coverage
+9127906958,CITALOPRAM,Gilead,Tablet,54 mg,232 mL,Inactive,2025-01-12,2024-12-17,,clinical_reviewer,system_admin,Under Review,PDL baseline entry - tier 1 preferred
+7246526346,FLUOXETINE,Johnson & Johnson,Capsule,18 mg,176 units,Inactive,2024-10-05,2024-09-25,,clinical_reviewer,clinical_reviewer,Approved,PDL baseline entry - standard coverage
+8186700260,LITHIUM,Novartis,Tablet,100 mL,151 mL,Active,2024-09-30,2024-09-22,2025-12-07,system_admin,data_loader,Rejected,PDL baseline entry - prior auth required
+5642110714,CARBAMAZEPINE,Generic Pharmaceuticals,Suspension,66 units,153 capsules,Under Review,2025-05-13,2025-05-11,2027-01-21,clinical_reviewer,system_admin,Under Review,PDL baseline entry - tier 1 preferred
+7992268550,OMEPRAZOLE,GSK,Solution,9 units,308 tablets,Pending,2025-07-10,2025-06-27,2027-06-04,clinical_reviewer,system_admin,Rejected,PDL baseline entry - tier 2 non-preferred
+1331143740,CITALOPRAM,Mylan,Suspension,85 mg,425 mL,Inactive,2025-01-28,2025-01-05,2026-02-08,system_admin,pdl_manager,Under Review,PDL baseline entry - tier 1 preferred
+1225378822,ALBUTEROL,Johnson & Johnson,Capsule,9 g,48 mL,Inactive,2025-05-16,2025-04-24,,system_admin,data_loader,Approved,PDL baseline entry - tier 2 non-preferred
+9484377097,CARBAMAZEPINE,Roche,Solution,5 mcg,176 mL,Active,2025-02-26,2025-02-10,,pdl_manager,pdl_manager,Approved,PDL baseline entry - tier 2 non-preferred
+8517210722,TRAZODONE,Gilead,Injection,44 mcg,284 units,Under Review,2025-05-02,2025-04-04,,pdl_manager,system_admin,Rejected,PDL baseline entry - standard coverage
+8373779153,ALBUTEROL,GSK,Solution,42 mg,70 mL,Under Review,2025-04-29,2025-04-10,,pdl_manager,clinical_reviewer,Rejected,PDL baseline entry - tier 1 preferred
+5971764818,CITALOPRAM,Merck,Injection,36 mg,68 units,Under Review,2025-05-06,2025-04-25,,data_loader,system_admin,Pending,PDL baseline entry - prior auth required
+3471480200,DULOXETINE,Pfizer,Injection,73 mg,339 capsules,Pending,2025-05-03,2025-05-02,2026-08-30,pdl_manager,pdl_manager,Rejected,PDL baseline entry - standard coverage
+9447970950,LORAZEPAM,Pfizer,Suspension,36 mcg,88 tablets,Inactive,2025-07-11,2025-07-07,,clinical_reviewer,clinical_reviewer,Approved,PDL baseline entry - tier 2 non-preferred
+3495233425,WARFARIN,AbbVie,Injection,26 mg,99 tablets,Pending,2025-02-01,2025-01-10,,data_loader,clinical_reviewer,Approved,PDL baseline entry - tier 2 non-preferred
+1117539623,WARFARIN,Gilead,Solution,21 mcg,436 mL,Inactive,2025-03-17,2025-02-23,2026-11-27,system_admin,data_loader,Pending,PDL baseline entry - tier 1 preferred
+3594138885,DULOXETINE,Roche,Cream,17 units,482 tablets,Active,2025-05-31,2025-05-31,,pdl_manager,clinical_reviewer,Rejected,PDL baseline entry - prior auth required
+7781722721,METOPROLOL,Sandoz,Solution,83 mg,260 units,Under Review,2025-04-19,2025-03-26,,data_loader,data_loader,Pending,PDL baseline entry - specialty drug
+6658173935,LOSARTAN,GSK,Capsule,39 mcg,112 mL,Inactive,2025-06-05,2025-05-07,,pdl_manager,pdl_manager,Approved,PDL baseline entry - tier 2 non-preferred
+9270760492,ASPIRIN,Sandoz,Suspension,39 units,303 tablets,Inactive,2024-12-30,2024-12-10,,data_loader,data_loader,Under Review,PDL baseline entry - prior auth required
+5667570407,OMEPRAZOLE,Generic Pharmaceuticals,Suspension,99 units,165 capsules,Pending,2024-10-12,2024-09-16,,system_admin,clinical_reviewer,Under Review,PDL baseline entry - tier 2 non-preferred
+7533824680,LORAZEPAM,Actavis,Injection,10 mg,110 units,Pending,2025-05-26,2025-05-19,,clinical_reviewer,clinical_reviewer,Pending,PDL baseline entry - tier 2 non-preferred
+8763774895,SERTRALINE,AbbVie,Solution,52 mcg,419 mL,Active,2024-12-03,2024-11-23,,pdl_manager,data_loader,Rejected,PDL baseline entry - standard coverage
+1757544871,AMLODIPINE,Actavis,Injection,79 g,157 capsules,Under Review,2025-02-04,2025-01-21,2026-03-11,pdl_manager,data_loader,Pending,PDL baseline entry - specialty drug
+6473879250,CLOPIDOGREL,Roche,Tablet,12 g,288 units,Inactive,2025-06-11,2025-05-28,,data_loader,pdl_manager,Approved,PDL baseline entry - standard coverage
+1153324588,RISPERIDONE,Actavis,Cream,2 mg,250 capsules,Under Review,2025-02-12,2025-01-28,,pdl_manager,clinical_reviewer,Under Review,PDL baseline entry - standard coverage
+2313855871,FUROSEMIDE,Pfizer,Cream,37 mg,227 units,Under Review,2025-04-14,2025-04-13,,system_admin,data_loader,Approved,PDL baseline entry - specialty drug
+5182150253,DULOXETINE,Johnson & Johnson,Capsule,26 units,290 units,Active,2025-03-31,2025-03-06,,system_admin,system_admin,Pending,PDL baseline entry - tier 2 non-preferred
+2831986176,ARIPIPRAZOLE,Sandoz,Solution,79 mL,113 units,Under Review,2025-05-21,2025-05-05,,pdl_manager,clinical_reviewer,Under Review,PDL baseline entry - specialty drug
+9662355122,LOSARTAN,Novartis,Cream,40 mg,335 units,Under Review,2024-09-29,2024-09-18,,data_loader,system_admin,Rejected,PDL baseline entry - tier 1 preferred
+5890751133,VENLAFAXINE,Sandoz,Suspension,32 mg,323 tablets,Inactive,2025-06-16,2025-05-27,,system_admin,clinical_reviewer,Under Review,PDL baseline entry - specialty drug
+6691316698,ALPRAZOLAM,GSK,Cream,61 mg,391 capsules,Inactive,2024-12-07,2024-11-24,,pdl_manager,clinical_reviewer,Rejected,PDL baseline entry - tier 2 non-preferred
+2887559308,FLUOXETINE,GSK,Solution,87 mL,342 units,Inactive,2024-12-18,2024-12-04,,data_loader,pdl_manager,Under Review,PDL baseline entry - tier 1 preferred
+1158919264,OLANZAPINE,Pfizer,Injection,45 units,437 mL,Under Review,2025-02-20,2025-01-27,2026-05-13,system_admin,clinical_reviewer,Rejected,PDL baseline entry - tier 2 non-preferred
+8805972163,OMEPRAZOLE,Pfizer,Injection,84 mL,412 units,Inactive,2024-12-04,2024-11-25,2026-11-25,data_loader,pdl_manager,Under Review,PDL baseline entry - tier 1 preferred
+1048953219,IBUPROFEN,Mylan,Tablet,86 units,145 capsules,Active,2024-11-15,2024-10-27,,system_admin,clinical_reviewer,Under Review,PDL baseline entry - specialty drug
+6932477738,LISINOPRIL,GSK,Capsule,53 g,274 capsules,Under Review,2024-11-11,2024-10-21,,pdl_manager,pdl_manager,Approved,PDL baseline entry - standard coverage
+2478771260,ATORVASTATIN,Gilead,Capsule,54 mcg,500 tablets,Pending,2025-07-11,2025-07-04,,clinical_reviewer,data_loader,Under Review,PDL baseline entry - standard coverage
+7341809153,SIMVASTATIN,Gilead,Solution,37 g,358 units,Inactive,2024-09-25,2024-09-16,,clinical_reviewer,pdl_manager,Pending,PDL baseline entry - standard coverage
+4926982435,ACETAMINOPHEN,AbbVie,Capsule,2 mL,434 mL,Inactive,2025-03-09,2025-03-04,,data_loader,clinical_reviewer,Rejected,PDL baseline entry - prior auth required
+4952379323,SIMVASTATIN,Sandoz,Capsule,62 mL,157 tablets,Under Review,2025-03-07,2025-03-05,,clinical_reviewer,data_loader,Rejected,PDL baseline entry - tier 2 non-preferred
+7029943247,LISINOPRIL,Actavis,Suspension,47 mcg,61 tablets,Pending,2025-03-08,2025-02-27,,pdl_manager,data_loader,Rejected,PDL baseline entry - prior auth required
+9862150983,DULOXETINE,Merck,Capsule,29 mcg,274 capsules,Pending,2025-02-27,2025-02-05,2026-07-06,pdl_manager,clinical_reviewer,Rejected,PDL baseline entry - prior auth required
+7009932186,OMEPRAZOLE,GSK,Injection,68 mL,69 tablets,Active,2025-01-10,2024-12-17,2026-10-18,data_loader,data_loader,Pending,PDL baseline entry - tier 2 non-preferred
+8128714944,OLANZAPINE,Teva,Cream,58 mg,262 capsules,Pending,2025-06-14,2025-05-31,2026-09-13,clinical_reviewer,system_admin,Rejected,PDL baseline entry - tier 2 non-preferred
+4840788712,PREDNISONE,Merck,Tablet,6 g,206 tablets,Active,2024-10-02,2024-09-20,2025-09-21,system_admin,clinical_reviewer,Approved,PDL baseline entry - tier 2 non-preferred
+6010664427,ALPRAZOLAM,Pfizer,Injection,58 g,222 tablets,Inactive,2025-04-18,2025-04-13,,pdl_manager,system_admin,Pending,PDL baseline entry - prior auth required
+1357932008,LISINOPRIL,Johnson & Johnson,Tablet,39 g,374 units,Pending,2025-04-10,2025-03-25,2026-07-17,data_loader,data_loader,Rejected,PDL baseline entry - tier 2 non-preferred
+7103348799,ATORVASTATIN,Johnson & Johnson,Suspension,54 units,422 tablets,Inactive,2024-12-09,2024-12-01,2026-01-27,data_loader,system_admin,Approved,PDL baseline entry - prior auth required
+3515356030,AMLODIPINE,Mylan,Suspension,6 g,254 capsules,Inactive,2024-10-08,2024-09-24,,system_admin,data_loader,Under Review,PDL baseline entry - tier 1 preferred
+9151310022,SERTRALINE,Mylan,Solution,19 units,143 units,Under Review,2025-07-12,2025-07-02,,pdl_manager,system_admin,Pending,PDL baseline entry - specialty drug
+5556492856,VENLAFAXINE,Johnson & Johnson,Cream,41 g,239 capsules,Under Review,2025-07-02,2025-06-17,2026-12-10,clinical_reviewer,data_loader,Rejected,PDL baseline entry - tier 1 preferred
+5513671390,HYDROCHLOROTHIAZIDE,Johnson & Johnson,Injection,8 units,241 units,Inactive,2025-01-14,2025-01-05,,clinical_reviewer,data_loader,Under Review,PDL baseline entry - tier 1 preferred
+5139620261,DULOXETINE,Teva,Cream,93 mcg,56 mL,Pending,2025-03-09,2025-02-17,2026-10-05,system_admin,system_admin,Pending,PDL baseline entry - prior auth required
+4916261265,FLUOXETINE,Actavis,Tablet,28 mcg,409 tablets,Pending,2025-07-04,2025-06-28,,data_loader,data_loader,Rejected,PDL baseline entry - tier 1 preferred
+4215794577,VENLAFAXINE,Roche,Cream,84 mL,187 mL,Under Review,2025-06-30,2025-06-20,,clinical_reviewer,clinical_reviewer,Approved,PDL baseline entry - specialty drug
+7486749130,ALPRAZOLAM,Generic Pharmaceuticals,Cream,29 mcg,38 mL,Pending,2025-03-03,2025-02-02,2026-07-12,pdl_manager,data_loader,Pending,PDL baseline entry - tier 2 non-preferred
+8298103936,IBUPROFEN,Roche,Cream,84 mL,161 units,Pending,2025-01-16,2025-01-04,,clinical_reviewer,data_loader,Under Review,PDL baseline entry - tier 1 preferred
+8642804529,ALBUTEROL,Gilead,Cream,83 mg,298 tablets,Active,2024-12-01,2024-11-08,,system_admin,system_admin,Rejected,PDL baseline entry - tier 1 preferred
+6113123341,LISINOPRIL,Mylan,Cream,59 mL,60 units,Pending,2025-01-17,2025-01-15,,system_admin,system_admin,Rejected,PDL baseline entry - standard coverage
+5494434588,CARBAMAZEPINE,Actavis,Tablet,65 g,442 capsules,Active,2024-09-29,2024-09-13,,system_admin,data_loader,Pending,PDL baseline entry - tier 1 preferred
+5708871550,ASPIRIN,Johnson & Johnson,Injection,11 mL,237 units,Inactive,2025-06-17,2025-06-09,,data_loader,pdl_manager,Approved,PDL baseline entry - standard coverage
+1412959328,RISPERIDONE,Generic Pharmaceuticals,Suspension,2 mcg,72 units,Pending,2024-11-07,2024-10-26,,pdl_manager,system_admin,Approved,PDL baseline entry - tier 1 preferred
+5070124937,RISPERIDONE,Actavis,Tablet,10 mL,490 tablets,Inactive,2025-01-07,2024-12-10,,pdl_manager,system_admin,Pending,PDL baseline entry - prior auth required
+7712492999,LORAZEPAM,Gilead,Tablet,39 mcg,318 capsules,Pending,2024-12-03,2024-11-09,,pdl_manager,clinical_reviewer,Pending,PDL baseline entry - standard coverage
+4615361026,AMLODIPINE,Teva,Injection,30 mg,204 units,Under Review,2025-06-04,2025-05-12,,system_admin,pdl_manager,Rejected,PDL baseline entry - specialty drug
+7494883898,VENLAFAXINE,Novartis,Capsule,88 units,368 units,Active,2025-01-15,2025-01-04,,pdl_manager,data_loader,Approved,PDL baseline entry - standard coverage
+8119917624,HYDROCHLOROTHIAZIDE,AbbVie,Injection,41 mL,84 tablets,Active,2025-02-05,2025-02-01,,pdl_manager,clinical_reviewer,Under Review,PDL baseline entry - tier 2 non-preferred
+4477721364,TRAZODONE,GSK,Cream,66 g,82 tablets,Active,2024-11-12,2024-11-08,2026-06-16,pdl_manager,system_admin,Under Review,PDL baseline entry - specialty drug
+4160480297,OMEPRAZOLE,AbbVie,Cream,32 units,296 capsules,Pending,2024-09-27,2024-09-18,,data_loader,data_loader,Under Review,PDL baseline entry - tier 2 non-preferred
+7736786747,ZOLPIDEM,Actavis,Injection,39 g,430 tablets,Under Review,2025-02-05,2025-01-21,2026-04-16,pdl_manager,data_loader,Rejected,PDL baseline entry - prior auth required
+1751171313,LISINOPRIL,Novartis,Solution,80 g,441 mL,Pending,2024-12-30,2024-12-16,2026-05-20,pdl_manager,clinical_reviewer,Pending,PDL baseline entry - tier 2 non-preferred
+9426758083,FUROSEMIDE,Roche,Solution,23 g,193 mL,Pending,2025-03-04,2025-02-13,,data_loader,pdl_manager,Rejected,PDL baseline entry - tier 2 non-preferred
+3193369160,FUROSEMIDE,Merck,Cream,24 units,43 units,Inactive,2025-04-10,2025-03-30,2027-01-12,clinical_reviewer,pdl_manager,Approved,PDL baseline entry - specialty drug
+4592872183,IBUPROFEN,Actavis,Suspension,20 g,434 units,Active,2025-06-03,2025-05-30,,clinical_reviewer,clinical_reviewer,Rejected,PDL baseline entry - prior auth required
+7552587340,ALPRAZOLAM,GSK,Tablet,47 units,334 tablets,Active,2025-06-07,2025-05-09,,data_loader,pdl_manager,Pending,PDL baseline entry - prior auth required
+3783584446,LORAZEPAM,Johnson & Johnson,Solution,56 mg,35 tablets,Under Review,2024-10-13,2024-09-25,,data_loader,data_loader,Rejected,PDL baseline entry - tier 2 non-preferred
+5083708161,ARIPIPRAZOLE,Sandoz,Solution,4 g,83 mL,Pending,2025-04-09,2025-03-26,,system_admin,system_admin,Pending,PDL baseline entry - tier 2 non-preferred
+9031660797,PREDNISONE,GSK,Injection,45 g,79 units,Pending,2025-02-27,2025-02-17,,pdl_manager,system_admin,Under Review,PDL baseline entry - standard coverage
+9623515257,SIMVASTATIN,Bristol-Myers,Capsule,95 mcg,294 capsules,Inactive,2024-11-18,2024-11-18,,pdl_manager,clinical_reviewer,Rejected,PDL baseline entry - tier 1 preferred
+6360319029,ZOLPIDEM,Novartis,Tablet,95 units,482 capsules,Pending,2025-04-16,2025-03-27,2027-02-17,clinical_reviewer,clinical_reviewer,Approved,PDL baseline entry - tier 1 preferred
+9975104530,METOPROLOL,Merck,Tablet,69 mcg,217 mL,Inactive,2025-01-04,2024-12-27,,clinical_reviewer,system_admin,Under Review,PDL baseline entry - specialty drug
+3399798355,VENLAFAXINE,Merck,Injection,76 mg,208 mL,Pending,2025-06-18,2025-05-19,,data_loader,pdl_manager,Approved,PDL baseline entry - tier 1 preferred
+5041104051,ALBUTEROL,Pfizer,Suspension,19 units,228 units,Inactive,2025-02-28,2025-02-25,2026-04-25,clinical_reviewer,clinical_reviewer,Pending,PDL baseline entry - specialty drug
+8025249652,ALBUTEROL,GSK,Capsule,63 mL,101 capsules,Under Review,2025-06-23,2025-06-01,,clinical_reviewer,system_admin,Under Review,PDL baseline entry - standard coverage
+3011787498,ARIPIPRAZOLE,Bristol-Myers,Injection,53 g,242 units,Pending,2025-05-27,2025-05-23,2026-12-05,data_loader,system_admin,Approved,PDL baseline entry - tier 1 preferred
+6310226266,WARFARIN,Sandoz,Injection,73 g,311 tablets,Active,2025-02-17,2025-02-16,2026-11-18,pdl_manager,pdl_manager,Approved,PDL baseline entry - specialty drug
+3233659725,SIMVASTATIN,AbbVie,Suspension,97 mcg,182 tablets,Pending,2025-06-27,2025-06-21,,pdl_manager,pdl_manager,Approved,PDL baseline entry - specialty drug
+9167157231,PREDNISONE,Johnson & Johnson,Suspension,76 mL,470 units,Inactive,2024-11-20,2024-10-27,,data_loader,data_loader,Pending,PDL baseline entry - standard coverage
+1606847229,CARBAMAZEPINE,Sandoz,Solution,91 mL,178 mL,Active,2025-07-09,2025-06-28,,data_loader,clinical_reviewer,Approved,PDL baseline entry - tier 2 non-preferred
+6911343145,IBUPROFEN,Sandoz,Suspension,42 mcg,419 units,Pending,2024-11-24,2024-11-02,,data_loader,pdl_manager,Rejected,PDL baseline entry - specialty drug
+6987544085,OMEPRAZOLE,Novartis,Cream,96 mL,385 mL,Pending,2025-05-10,2025-05-08,,clinical_reviewer,pdl_manager,Approved,PDL baseline entry - standard coverage
+9243479420,CITALOPRAM,Amgen,Tablet,69 g,141 units,Inactive,2025-05-13,2025-04-23,,clinical_reviewer,pdl_manager,Under Review,PDL baseline entry - tier 2 non-preferred
+7308877253,OLANZAPINE,Johnson & Johnson,Solution,88 mg,53 tablets,Pending,2025-03-12,2025-02-23,,system_admin,system_admin,Pending,PDL baseline entry - specialty drug
+6286310785,ZOLPIDEM,Mylan,Suspension,17 mL,111 mL,Active,2025-05-12,2025-05-12,,pdl_manager,pdl_manager,Approved,PDL baseline entry - tier 2 non-preferred
+5946358456,CLOPIDOGREL,AbbVie,Suspension,97 mcg,249 tablets,Active,2024-12-14,2024-12-13,,system_admin,data_loader,Rejected,PDL baseline entry - standard coverage
+8408829738,TRAZODONE,Generic Pharmaceuticals,Tablet,90 mL,448 tablets,Pending,2024-11-27,2024-11-09,2026-10-23,data_loader,clinical_reviewer,Approved,PDL baseline entry - tier 1 preferred
+7495724863,SIMVASTATIN,Teva,Solution,48 mL,100 units,Inactive,2025-04-05,2025-04-03,,data_loader,system_admin,Approved,PDL baseline entry - prior auth required
+9020967910,PREDNISONE,Bristol-Myers,Suspension,20 g,345 units,Inactive,2024-12-14,2024-11-30,,system_admin,system_admin,Pending,PDL baseline entry - standard coverage
+1519229767,SERTRALINE,Johnson & Johnson,Capsule,32 mL,360 tablets,Inactive,2025-04-05,2025-03-25,,pdl_manager,system_admin,Under Review,PDL baseline entry - tier 1 preferred
+7993541274,LORAZEPAM,Actavis,Suspension,7 mcg,283 units,Active,2025-06-13,2025-05-25,,data_loader,clinical_reviewer,Approved,PDL baseline entry - prior auth required
+5079439670,GABAPENTIN,Novartis,Cream,54 mL,309 capsules,Pending,2024-09-27,2024-09-16,,system_admin,system_admin,Approved,PDL baseline entry - standard coverage
+1105633480,LORAZEPAM,GSK,Solution,81 units,422 units,Pending,2025-02-02,2025-01-27,2026-02-26,clinical_reviewer,system_admin,Pending,PDL baseline entry - tier 2 non-preferred
+8887890804,HYDROCHLOROTHIAZIDE,GSK,Solution,51 units,354 tablets,Under Review,2024-11-02,2024-10-24,2026-02-05,clinical_reviewer,data_loader,Approved,PDL baseline entry - tier 1 preferred
+6901317675,QUETIAPINE,Merck,Cream,8 mL,371 capsules,Active,2024-11-04,2024-10-06,,system_admin,data_loader,Approved,PDL baseline entry - tier 1 preferred
+7950805510,LITHIUM,Johnson & Johnson,Suspension,34 mcg,220 capsules,Under Review,2025-06-02,2025-05-03,,system_admin,system_admin,Under Review,PDL baseline entry - specialty drug
+5028771608,METOPROLOL,Roche,Injection,66 mL,58 units,Inactive,2025-02-07,2025-01-22,2027-01-21,pdl_manager,data_loader,Under Review,PDL baseline entry - standard coverage
+7022656673,TRAMADOL,AbbVie,Cream,1 mg,469 tablets,Inactive,2025-07-11,2025-06-20,,system_admin,clinical_reviewer,Under Review,PDL baseline entry - specialty drug
+9318786650,ATORVASTATIN,GSK,Suspension,95 g,144 mL,Inactive,2024-12-06,2024-12-01,,clinical_reviewer,pdl_manager,Under Review,PDL baseline entry - standard coverage
+8572900652,AMLODIPINE,Sandoz,Capsule,67 mg,235 tablets,Pending,2025-07-10,2025-06-29,2027-06-08,pdl_manager,pdl_manager,Under Review,PDL baseline entry - standard coverage
+2566306779,WARFARIN,Merck,Solution,95 units,154 units,Under Review,2025-07-01,2025-06-17,2026-09-27,clinical_reviewer,data_loader,Pending,PDL baseline entry - tier 1 preferred
+8947871252,TRAMADOL,GSK,Solution,82 mg,201 tablets,Pending,2024-09-24,2024-08-26,,pdl_manager,system_admin,Pending,PDL baseline entry - prior auth required
+1921317338,AMLODIPINE,Sandoz,Suspension,36 mg,52 capsules,Pending,2025-01-20,2025-01-07,,pdl_manager,clinical_reviewer,Approved,PDL baseline entry - prior auth required
+7007934187,METOPROLOL,Merck,Cream,8 g,369 capsules,Inactive,2024-11-08,2024-10-23,2026-05-12,pdl_manager,pdl_manager,Under Review,PDL baseline entry - specialty drug
+8483937948,TRAMADOL,Teva,Capsule,18 units,85 capsules,Active,2025-03-07,2025-02-25,,data_loader,clinical_reviewer,Rejected,PDL baseline entry - tier 2 non-preferred
+7758619211,PREDNISONE,Roche,Solution,60 mL,466 tablets,Active,2025-04-17,2025-04-14,,data_loader,pdl_manager,Approved,PDL baseline entry - tier 1 preferred
+2866703460,CITALOPRAM,Novartis,Cream,7 mL,163 capsules,Active,2025-03-07,2025-03-03,2026-07-08,clinical_reviewer,clinical_reviewer,Pending,PDL baseline entry - standard coverage
+7721794949,GABAPENTIN,Teva,Tablet,8 mcg,96 capsules,Pending,2025-05-15,2025-05-12,,pdl_manager,system_admin,Under Review,PDL baseline entry - standard coverage
+2754826781,TRAZODONE,Johnson & Johnson,Capsule,12 mL,92 tablets,Pending,2024-10-02,2024-09-30,2026-08-26,system_admin,data_loader,Rejected,PDL baseline entry - specialty drug
+1839956360,ZOLPIDEM,Sandoz,Solution,28 mcg,170 mL,Pending,2025-06-02,2025-06-02,,data_loader,system_admin,Pending,PDL baseline entry - tier 2 non-preferred
+8694647469,RISPERIDONE,Generic Pharmaceuticals,Tablet,36 g,100 units,Inactive,2025-06-03,2025-05-21,,data_loader,system_admin,Rejected,PDL baseline entry - tier 2 non-preferred
+8251110183,CITALOPRAM,Gilead,Cream,65 mL,228 mL,Inactive,2025-05-24,2025-05-07,,system_admin,pdl_manager,Pending,PDL baseline entry - standard coverage
+5120229589,RISPERIDONE,GSK,Solution,99 units,149 capsules,Active,2025-02-11,2025-02-10,,data_loader,data_loader,Under Review,PDL baseline entry - prior auth required
+9171900890,TRAMADOL,Merck,Injection,46 mcg,120 capsules,Under Review,2024-10-19,2024-09-25,,pdl_manager,system_admin,Under Review,PDL baseline entry - prior auth required
+4832759161,FUROSEMIDE,Amgen,Injection,70 mL,119 units,Active,2025-07-06,2025-07-02,,system_admin,system_admin,Pending,PDL baseline entry - prior auth required
+8997999533,LISINOPRIL,Pfizer,Cream,26 mcg,204 capsules,Under Review,2025-01-11,2025-01-11,,system_admin,system_admin,Pending,PDL baseline entry - prior auth required
+1320794066,DULOXETINE,Teva,Solution,91 g,330 tablets,Under Review,2024-12-02,2024-11-08,2026-08-04,pdl_manager,pdl_manager,Pending,PDL baseline entry - tier 1 preferred
+7005680047,OLANZAPINE,Bristol-Myers,Solution,23 units,385 mL,Inactive,2025-05-02,2025-04-07,,data_loader,clinical_reviewer,Under Review,PDL baseline entry - tier 2 non-preferred
+2810942167,LORAZEPAM,Amgen,Cream,5 mcg,338 mL,Inactive,2024-11-25,2024-11-20,,system_admin,clinical_reviewer,Pending,PDL baseline entry - tier 2 non-preferred
+6378276904,SERTRALINE,Sandoz,Suspension,12 mL,258 tablets,Under Review,2024-10-30,2024-10-23,,data_loader,data_loader,Approved,PDL baseline entry - tier 2 non-preferred
+9435524835,AMLODIPINE,Novartis,Injection,94 g,115 units,Pending,2025-01-30,2025-01-05,2026-01-05,clinical_reviewer,pdl_manager,Rejected,PDL baseline entry - standard coverage
+2292971586,TRAMADOL,Sandoz,Injection,10 mg,180 tablets,Under Review,2025-05-24,2025-04-29,,pdl_manager,system_admin,Approved,PDL baseline entry - tier 2 non-preferred
+1734871024,METOPROLOL,GSK,Tablet,44 units,344 units,Active,2024-12-17,2024-11-19,,clinical_reviewer,data_loader,Rejected,PDL baseline entry - tier 1 preferred
+1101131385,FUROSEMIDE,Novartis,Suspension,71 units,165 mL,Under Review,2024-10-18,2024-10-15,,data_loader,system_admin,Approved,PDL baseline entry - specialty drug
+8380967066,HYDROCHLOROTHIAZIDE,Generic Pharmaceuticals,Solution,1 g,74 mL,Pending,2025-07-10,2025-06-23,,data_loader,system_admin,Approved,PDL baseline entry - tier 1 preferred
+7857477825,RISPERIDONE,Amgen,Tablet,40 g,271 units,Under Review,2024-12-17,2024-11-27,2026-01-07,system_admin,clinical_reviewer,Pending,PDL baseline entry - tier 2 non-preferred
+6293839765,ACETAMINOPHEN,Roche,Injection,34 mcg,458 mL,Active,2025-04-04,2025-03-24,2026-04-15,data_loader,system_admin,Approved,PDL baseline entry - tier 2 non-preferred
+8169116841,TRAMADOL,GSK,Tablet,50 units,244 units,Inactive,2025-06-25,2025-06-12,,clinical_reviewer,pdl_manager,Approved,PDL baseline entry - specialty drug
+3594524461,LITHIUM,Johnson & Johnson,Cream,87 units,105 tablets,Pending,2024-10-08,2024-09-22,,data_loader,data_loader,Pending,PDL baseline entry - tier 1 preferred
+5136828758,ZOLPIDEM,Mylan,Suspension,19 units,162 mL,Active,2024-11-24,2024-11-23,,system_admin,clinical_reviewer,Rejected,PDL baseline entry - prior auth required
+2312602678,LISINOPRIL,Johnson & Johnson,Suspension,80 units,297 units,Active,2025-03-06,2025-02-07,2026-09-29,clinical_reviewer,data_loader,Pending,PDL baseline entry - prior auth required
+7614408980,SIMVASTATIN,Gilead,Tablet,73 mg,432 mL,Under Review,2025-07-16,2025-06-22,,clinical_reviewer,pdl_manager,Rejected,PDL baseline entry - specialty drug
+9500753609,ALBUTEROL,Actavis,Injection,19 units,341 units,Active,2025-07-10,2025-06-21,,clinical_reviewer,pdl_manager,Pending,PDL baseline entry - standard coverage
+5220242022,METFORMIN,Pfizer,Solution,40 mL,461 units,Active,2025-05-22,2025-04-23,2026-10-30,data_loader,data_loader,Under Review,PDL baseline entry - specialty drug
+8214827901,OMEPRAZOLE,Mylan,Injection,28 g,409 units,Under Review,2025-03-04,2025-02-24,,system_admin,data_loader,Approved,PDL baseline entry - tier 2 non-preferred
+2320611961,METFORMIN,Sandoz,Capsule,26 mg,157 tablets,Pending,2025-06-07,2025-05-26,2027-02-18,system_admin,pdl_manager,Pending,PDL baseline entry - tier 2 non-preferred
+4900626301,LORAZEPAM,Bristol-Myers,Tablet,88 mg,153 mL,Pending,2025-03-28,2025-03-02,,clinical_reviewer,data_loader,Rejected,PDL baseline entry - prior auth required
+9812529406,ACETAMINOPHEN,AbbVie,Suspension,12 mL,44 units,Active,2025-06-30,2025-06-19,,data_loader,data_loader,Pending,PDL baseline entry - tier 1 preferred
+5747878523,ARIPIPRAZOLE,Generic Pharmaceuticals,Suspension,2 g,496 capsules,Inactive,2025-01-04,2024-12-27,,system_admin,data_loader,Under Review,PDL baseline entry - prior auth required
+1403409684,ASPIRIN,Novartis,Injection,45 g,159 capsules,Pending,2025-02-24,2025-02-02,,pdl_manager,clinical_reviewer,Approved,PDL baseline entry - standard coverage
+8615301781,DULOXETINE,GSK,Suspension,77 units,174 mL,Active,2025-06-09,2025-05-19,,clinical_reviewer,system_admin,Under Review,PDL baseline entry - tier 2 non-preferred
+7793836773,CLOPIDOGREL,Mylan,Capsule,67 mcg,490 tablets,Pending,2025-03-06,2025-02-07,2027-01-08,pdl_manager,data_loader,Approved,PDL baseline entry - specialty drug
+2025399484,LORAZEPAM,Novartis,Suspension,5 units,392 capsules,Under Review,2025-02-19,2025-02-11,,data_loader,clinical_reviewer,Under Review,PDL baseline entry - prior auth required
+7993170504,ALBUTEROL,Actavis,Tablet,61 mcg,409 mL,Inactive,2025-02-21,2025-01-25,2026-12-27,pdl_manager,system_admin,Pending,PDL baseline entry - tier 2 non-preferred
+2384726249,ALPRAZOLAM,Johnson & Johnson,Solution,48 mL,329 mL,Pending,2025-01-13,2024-12-21,,system_admin,clinical_reviewer,Approved,PDL baseline entry - prior auth required
+1113230410,RISPERIDONE,Gilead,Capsule,65 mg,474 units,Under Review,2025-07-15,2025-06-15,,clinical_reviewer,system_admin,Pending,PDL baseline entry - tier 1 preferred
+8671802097,QUETIAPINE,Sandoz,Solution,92 mcg,428 tablets,Pending,2025-01-01,2024-12-22,,pdl_manager,data_loader,Under Review,PDL baseline entry - standard coverage
+5178797828,LEVOTHYROXINE,Roche,Tablet,17 units,252 units,Pending,2024-09-23,2024-09-09,2025-12-04,clinical_reviewer,clinical_reviewer,Rejected,PDL baseline entry - standard coverage
+7234811870,LISINOPRIL,Gilead,Solution,97 units,127 tablets,Active,2024-10-10,2024-09-23,2026-04-02,data_loader,data_loader,Under Review,PDL baseline entry - tier 2 non-preferred
+2215706759,CLOPIDOGREL,Sandoz,Tablet,6 mL,178 units,Under Review,2024-11-26,2024-11-23,,clinical_reviewer,data_loader,Under Review,PDL baseline entry - specialty drug
+7675753664,METFORMIN,Mylan,Capsule,94 mcg,138 tablets,Inactive,2025-03-23,2025-02-27,2026-09-21,system_admin,pdl_manager,Approved,PDL baseline entry - specialty drug
+9302724976,AMLODIPINE,Merck,Tablet,85 mg,364 tablets,Active,2025-01-29,2025-01-05,,system_admin,clinical_reviewer,Rejected,PDL baseline entry - specialty drug
+6001231818,HYDROCHLOROTHIAZIDE,Mylan,Suspension,88 mg,184 units,Active,2024-11-23,2024-11-06,2026-10-31,pdl_manager,data_loader,Rejected,PDL baseline entry - standard coverage
+6645961231,WARFARIN,Teva,Tablet,64 mcg,341 capsules,Under Review,2025-06-09,2025-05-17,,data_loader,pdl_manager,Rejected,PDL baseline entry - tier 2 non-preferred
+6455230342,PREDNISONE,AbbVie,Injection,43 mcg,31 tablets,Active,2024-12-12,2024-12-11,,system_admin,clinical_reviewer,Pending,PDL baseline entry - standard coverage
+3478112622,SIMVASTATIN,Gilead,Solution,83 mcg,263 mL,Under Review,2025-06-09,2025-06-07,,clinical_reviewer,system_admin,Approved,PDL baseline entry - tier 1 preferred
+7924123885,SERTRALINE,Novartis,Suspension,15 mg,465 tablets,Active,2024-10-11,2024-09-14,2026-08-26,data_loader,data_loader,Under Review,PDL baseline entry - tier 2 non-preferred
+4665346617,OMEPRAZOLE,Pfizer,Solution,24 mg,235 units,Pending,2025-05-03,2025-04-03,,pdl_manager,clinical_reviewer,Rejected,PDL baseline entry - specialty drug
+8398766301,LEVOTHYROXINE,Teva,Injection,76 g,440 units,Inactive,2024-12-15,2024-12-12,2026-01-11,clinical_reviewer,pdl_manager,Approved,PDL baseline entry - tier 1 preferred
+1700529332,ALPRAZOLAM,Roche,Tablet,9 mL,365 mL,Active,2025-05-26,2025-04-27,,data_loader,pdl_manager,Approved,PDL baseline entry - specialty drug
+1507584015,VENLAFAXINE,Sandoz,Cream,79 mg,35 capsules,Pending,2025-01-26,2025-01-11,,clinical_reviewer,data_loader,Approved,PDL baseline entry - specialty drug
+6786104712,ASPIRIN,Generic Pharmaceuticals,Cream,29 units,359 units,Pending,2025-03-04,2025-02-25,,data_loader,system_admin,Rejected,PDL baseline entry - specialty drug
+7042622182,TRAZODONE,Pfizer,Tablet,64 mg,82 units,Pending,2025-07-11,2025-06-27,2027-03-09,system_admin,system_admin,Approved,PDL baseline entry - prior auth required
+3190245007,PREDNISONE,Bristol-Myers,Suspension,59 mL,216 tablets,Inactive,2025-02-23,2025-01-26,,clinical_reviewer,pdl_manager,Rejected,PDL baseline entry - tier 2 non-preferred
+3244493958,TRAMADOL,Generic Pharmaceuticals,Solution,46 mL,310 mL,Active,2025-05-10,2025-05-07,2027-04-09,system_admin,data_loader,Rejected,PDL baseline entry - tier 1 preferred
+5255397911,FUROSEMIDE,Teva,Injection,28 g,452 capsules,Under Review,2025-04-18,2025-04-15,2026-07-24,system_admin,clinical_reviewer,Approved,PDL baseline entry - prior auth required
+1974441668,QUETIAPINE,Bristol-Myers,Cream,65 mcg,285 tablets,Active,2024-11-23,2024-10-30,,clinical_reviewer,clinical_reviewer,Pending,PDL baseline entry - prior auth required
+7653481000,SIMVASTATIN,Novartis,Suspension,77 units,481 mL,Pending,2024-12-18,2024-11-25,,clinical_reviewer,data_loader,Under Review,PDL baseline entry - specialty drug
+9964356659,GABAPENTIN,Sandoz,Injection,78 units,183 mL,Inactive,2025-03-15,2025-03-06,,data_loader,data_loader,Under Review,PDL baseline entry - tier 2 non-preferred
+9283629843,ALBUTEROL,GSK,Cream,89 mL,393 tablets,Under Review,2024-11-27,2024-11-05,,clinical_reviewer,clinical_reviewer,Under Review,PDL baseline entry - specialty drug
+3859551369,HYDROCHLOROTHIAZIDE,Generic Pharmaceuticals,Suspension,8 mcg,166 capsules,Under Review,2024-09-27,2024-09-11,2026-03-25,pdl_manager,data_loader,Approved,PDL baseline entry - tier 2 non-preferred
+8258424449,CITALOPRAM,Amgen,Injection,14 units,474 capsules,Pending,2025-01-03,2024-12-10,,data_loader,pdl_manager,Approved,PDL baseline entry - specialty drug
+6241629054,SERTRALINE,GSK,Tablet,2 mL,133 units,Inactive,2025-04-07,2025-03-25,,pdl_manager,data_loader,Pending,PDL baseline entry - tier 2 non-preferred
+3804156081,METOPROLOL,Sandoz,Capsule,95 units,91 units,Active,2025-05-08,2025-05-03,,clinical_reviewer,pdl_manager,Under Review,PDL baseline entry - tier 1 preferred
+4951825175,LISINOPRIL,Pfizer,Injection,91 mcg,50 capsules,Under Review,2024-12-12,2024-11-24,,system_admin,pdl_manager,Rejected,PDL baseline entry - prior auth required
+1378697397,SERTRALINE,GSK,Capsule,24 units,64 capsules,Pending,2025-06-29,2025-06-18,2027-06-15,clinical_reviewer,system_admin,Under Review,PDL baseline entry - tier 1 preferred
+4263426627,DULOXETINE,Actavis,Capsule,97 units,301 units,Active,2025-01-08,2024-12-18,,system_admin,pdl_manager,Rejected,PDL baseline entry - tier 1 preferred
+1224811583,VENLAFAXINE,Gilead,Tablet,50 mL,306 mL,Active,2025-01-23,2024-12-24,2026-06-06,pdl_manager,clinical_reviewer,Rejected,PDL baseline entry - standard coverage
+4720856717,SERTRALINE,GSK,Tablet,13 mcg,425 tablets,Active,2025-02-19,2025-01-22,,data_loader,data_loader,Rejected,PDL baseline entry - standard coverage
+3693871386,ZOLPIDEM,Bristol-Myers,Tablet,96 mcg,42 units,Under Review,2025-01-04,2024-12-18,,system_admin,system_admin,Approved,PDL baseline entry - standard coverage
+1838410579,TRAMADOL,Gilead,Solution,53 g,260 units,Pending,2024-12-21,2024-11-26,2026-01-01,pdl_manager,system_admin,Rejected,PDL baseline entry - standard coverage
+1254751600,METOPROLOL,Johnson & Johnson,Suspension,75 mg,388 tablets,Under Review,2025-06-21,2025-06-21,,system_admin,pdl_manager,Under Review,PDL baseline entry - prior auth required
+5389984538,TRAZODONE,Novartis,Injection,85 mg,272 capsules,Inactive,2024-11-04,2024-10-26,,data_loader,clinical_reviewer,Under Review,PDL baseline entry - tier 1 preferred
+5607862915,DULOXETINE,Generic Pharmaceuticals,Cream,72 mcg,93 tablets,Active,2025-02-20,2025-01-30,,clinical_reviewer,system_admin,Under Review,PDL baseline entry - tier 1 preferred
+2812267158,ARIPIPRAZOLE,Sandoz,Capsule,24 mcg,345 mL,Inactive,2025-03-16,2025-03-10,,system_admin,data_loader,Approved,PDL baseline entry - prior auth required
+1911150159,WARFARIN,Bristol-Myers,Tablet,33 mg,131 units,Under Review,2025-05-15,2025-04-25,,pdl_manager,data_loader,Pending,PDL baseline entry - standard coverage
+3653298842,SERTRALINE,Roche,Injection,43 units,367 mL,Inactive,2025-02-13,2025-01-25,2026-05-04,pdl_manager,pdl_manager,Rejected,PDL baseline entry - tier 1 preferred
+5676409646,ZOLPIDEM,Actavis,Solution,18 mL,479 units,Pending,2024-09-23,2024-09-13,2026-01-04,clinical_reviewer,pdl_manager,Under Review,PDL baseline entry - specialty drug
+1839946326,OMEPRAZOLE,Amgen,Solution,18 units,130 mL,Active,2025-06-30,2025-06-27,2027-05-03,system_admin,system_admin,Approved,PDL baseline entry - prior auth required
+7168319021,PREDNISONE,Gilead,Tablet,71 mL,308 units,Inactive,2025-07-14,2025-07-02,,pdl_manager,clinical_reviewer,Pending,PDL baseline entry - prior auth required
+3262717209,ARIPIPRAZOLE,Teva,Injection,47 units,35 capsules,Inactive,2025-02-16,2025-02-12,,data_loader,clinical_reviewer,Pending,PDL baseline entry - tier 1 preferred
+4926255051,HYDROCHLOROTHIAZIDE,AbbVie,Suspension,62 mL,50 capsules,Pending,2025-07-07,2025-06-07,,data_loader,system_admin,Under Review,PDL baseline entry - tier 2 non-preferred
+5919285406,LITHIUM,Gilead,Solution,50 g,499 units,Active,2025-01-18,2025-01-17,,system_admin,pdl_manager,Approved,PDL baseline entry - prior auth required
+1346604939,CARBAMAZEPINE,Merck,Capsule,49 g,217 tablets,Under Review,2025-02-08,2025-01-13,,clinical_reviewer,data_loader,Rejected,PDL baseline entry - tier 2 non-preferred
+4998295437,LISINOPRIL,GSK,Capsule,57 mcg,147 tablets,Under Review,2025-03-16,2025-03-01,,data_loader,data_loader,Pending,PDL baseline entry - tier 1 preferred
+9753492873,LOSARTAN,Bristol-Myers,Capsule,54 mL,398 tablets,Pending,2025-03-25,2025-03-06,,clinical_reviewer,clinical_reviewer,Pending,PDL baseline entry - prior auth required
+9308678525,METFORMIN,Mylan,Tablet,17 units,333 capsules,Inactive,2024-12-12,2024-11-22,,system_admin,data_loader,Approved,PDL baseline entry - tier 1 preferred
+2099767005,METFORMIN,Gilead,Suspension,94 mL,73 capsules,Pending,2025-01-31,2025-01-02,2026-07-28,clinical_reviewer,clinical_reviewer,Pending,PDL baseline entry - tier 1 preferred
+3705784427,ALBUTEROL,Merck,Suspension,66 mL,115 mL,Pending,2025-04-19,2025-03-31,2027-01-23,system_admin,data_loader,Rejected,PDL baseline entry - specialty drug
+9646926463,ARIPIPRAZOLE,Bristol-Myers,Injection,20 units,79 capsules,Pending,2024-11-27,2024-11-24,2026-08-18,system_admin,system_admin,Approved,PDL baseline entry - specialty drug
+4162379327,LISINOPRIL,Gilead,Suspension,84 g,297 units,Under Review,2024-11-26,2024-10-29,,system_admin,clinical_reviewer,Pending,PDL baseline entry - specialty drug
+2266442791,SIMVASTATIN,Novartis,Capsule,33 g,422 capsules,Active,2025-04-04,2025-03-24,,pdl_manager,clinical_reviewer,Under Review,PDL baseline entry - tier 1 preferred
+6719494304,LISINOPRIL,Merck,Cream,16 units,33 units,Inactive,2024-09-23,2024-09-01,,pdl_manager,clinical_reviewer,Under Review,PDL baseline entry - standard coverage
+7080700142,ACETAMINOPHEN,Actavis,Cream,55 units,217 mL,Pending,2024-12-09,2024-11-26,,data_loader,clinical_reviewer,Rejected,PDL baseline entry - tier 1 preferred
+8040635284,ACETAMINOPHEN,Actavis,Cream,45 g,406 capsules,Active,2025-03-29,2025-03-12,,data_loader,clinical_reviewer,Pending,PDL baseline entry - standard coverage
+1510198953,FLUOXETINE,Johnson & Johnson,Cream,79 mg,112 units,Active,2025-01-08,2024-12-23,,system_admin,data_loader,Rejected,PDL baseline entry - prior auth required
+4107582499,DULOXETINE,Teva,Cream,5 g,235 mL,Active,2025-05-01,2025-04-29,2026-08-20,data_loader,clinical_reviewer,Rejected,PDL baseline entry - standard coverage
+6539577736,LITHIUM,Actavis,Capsule,5 units,291 capsules,Inactive,2025-01-02,2024-12-06,,system_admin,pdl_manager,Pending,PDL baseline entry - standard coverage
+7202350685,LORAZEPAM,Pfizer,Suspension,51 g,330 capsules,Active,2024-12-10,2024-12-08,,system_admin,system_admin,Under Review,PDL baseline entry - prior auth required
+4023765305,ASPIRIN,Mylan,Cream,25 g,236 tablets,Under Review,2025-07-16,2025-07-05,,data_loader,clinical_reviewer,Approved,PDL baseline entry - prior auth required
+7212916332,ARIPIPRAZOLE,Actavis,Cream,74 mL,385 units,Pending,2024-10-28,2024-10-12,2025-12-10,clinical_reviewer,data_loader,Under Review,PDL baseline entry - specialty drug
+5228803725,METFORMIN,Roche,Tablet,34 mg,225 capsules,Inactive,2025-05-14,2025-04-16,,pdl_manager,clinical_reviewer,Under Review,PDL baseline entry - prior auth required
+1911350010,ACETAMINOPHEN,Mylan,Solution,12 g,374 mL,Active,2025-06-22,2025-06-22,,data_loader,clinical_reviewer,Under Review,PDL baseline entry - tier 2 non-preferred
+4037124251,ALBUTEROL,AbbVie,Suspension,25 g,407 capsules,Inactive,2025-01-10,2024-12-13,,data_loader,pdl_manager,Pending,PDL baseline entry - tier 1 preferred
+8156402765,CITALOPRAM,Sandoz,Tablet,16 mg,376 units,Active,2025-01-02,2024-12-07,2026-10-19,system_admin,clinical_reviewer,Under Review,PDL baseline entry - prior auth required
+1445828320,ASPIRIN,Roche,Capsule,98 units,173 units,Inactive,2025-03-01,2025-02-14,,data_loader,system_admin,Rejected,PDL baseline entry - specialty drug
+8723190426,LORAZEPAM,Amgen,Suspension,100 mcg,264 tablets,Pending,2025-06-24,2025-06-23,,pdl_manager,system_admin,Approved,PDL baseline entry - tier 1 preferred
+1262481838,ACETAMINOPHEN,Sandoz,Cream,34 mcg,167 units,Under Review,2025-04-03,2025-03-16,2026-09-17,pdl_manager,data_loader,Rejected,PDL baseline entry - specialty drug
+9853740488,DULOXETINE,Pfizer,Injection,36 g,122 capsules,Inactive,2025-01-06,2024-12-24,,system_admin,pdl_manager,Pending,PDL baseline entry - prior auth required
+1902456498,HYDROCHLOROTHIAZIDE,Johnson & Johnson,Suspension,20 g,442 tablets,Inactive,2025-04-30,2025-04-03,,clinical_reviewer,clinical_reviewer,Pending,PDL baseline entry - prior auth required
+1924508136,OLANZAPINE,Actavis,Solution,72 units,54 units,Active,2025-06-21,2025-05-29,,data_loader,system_admin,Pending,PDL baseline entry - tier 2 non-preferred
+4860575310,TRAZODONE,AbbVie,Solution,34 mL,214 mL,Under Review,2025-05-22,2025-04-26,,system_admin,clinical_reviewer,Approved,PDL baseline entry - tier 2 non-preferred
+7553581765,CARBAMAZEPINE,Sandoz,Solution,46 mL,374 units,Pending,2024-12-31,2024-12-13,,system_admin,clinical_reviewer,Under Review,PDL baseline entry - specialty drug
+1604629525,ALPRAZOLAM,Bristol-Myers,Cream,74 g,464 tablets,Active,2024-12-04,2024-11-07,2026-04-28,data_loader,pdl_manager,Pending,PDL baseline entry - tier 2 non-preferred
+5392376819,LORAZEPAM,Actavis,Injection,100 mL,412 units,Pending,2025-03-02,2025-02-10,2026-06-26,data_loader,data_loader,Approved,PDL baseline entry - tier 1 preferred
+9490878306,OMEPRAZOLE,Mylan,Capsule,51 mg,78 tablets,Pending,2025-01-19,2024-12-29,2026-12-22,system_admin,system_admin,Rejected,PDL baseline entry - prior auth required
+7725511239,OMEPRAZOLE,Bristol-Myers,Injection,40 mcg,156 mL,Pending,2024-11-02,2024-10-30,2026-01-17,data_loader,data_loader,Pending,PDL baseline entry - standard coverage
+8343947494,SERTRALINE,Amgen,Injection,60 units,169 units,Inactive,2024-10-08,2024-09-17,,data_loader,clinical_reviewer,Rejected,PDL baseline entry - prior auth required
+8661997481,RISPERIDONE,GSK,Capsule,12 g,187 mL,Pending,2025-06-21,2025-06-12,,pdl_manager,data_loader,Under Review,PDL baseline entry - standard coverage
+7437168343,GABAPENTIN,Pfizer,Solution,61 units,34 units,Pending,2024-09-21,2024-09-05,,pdl_manager,system_admin,Rejected,PDL baseline entry - tier 2 non-preferred
+7579305851,FUROSEMIDE,Novartis,Cream,56 g,157 capsules,Pending,2025-01-17,2024-12-23,2026-07-02,clinical_reviewer,data_loader,Under Review,PDL baseline entry - standard coverage
+8520543646,ASPIRIN,Actavis,Suspension,96 units,444 mL,Pending,2025-04-25,2025-04-05,2027-02-12,data_loader,system_admin,Pending,PDL baseline entry - tier 1 preferred
+8225447860,TRAZODONE,Actavis,Suspension,80 g,126 mL,Active,2025-02-16,2025-02-13,,data_loader,system_admin,Approved,PDL baseline entry - tier 1 preferred
+3435761533,LISINOPRIL,Mylan,Tablet,20 mg,282 capsules,Under Review,2024-11-12,2024-11-03,2026-06-15,clinical_reviewer,pdl_manager,Rejected,PDL baseline entry - tier 2 non-preferred
+5569742011,FLUOXETINE,Teva,Capsule,8 mL,427 units,Active,2025-05-16,2025-04-24,,clinical_reviewer,data_loader,Pending,PDL baseline entry - tier 2 non-preferred
+9132527704,IBUPROFEN,Novartis,Injection,32 mg,131 units,Active,2025-04-04,2025-03-09,2027-03-09,data_loader,clinical_reviewer,Rejected,PDL baseline entry - tier 2 non-preferred
+3783511081,ATORVASTATIN,AbbVie,Cream,67 mg,159 units,Under Review,2025-03-05,2025-02-28,,data_loader,pdl_manager,Approved,PDL baseline entry - tier 1 preferred
+8331326310,SERTRALINE,Generic Pharmaceuticals,Capsule,36 units,91 units,Inactive,2024-11-17,2024-11-10,,system_admin,system_admin,Rejected,PDL baseline entry - prior auth required
+3039678075,IBUPROFEN,Sandoz,Injection,12 units,203 tablets,Active,2024-12-09,2024-11-28,,pdl_manager,data_loader,Approved,PDL baseline entry - tier 1 preferred
+9738314434,CITALOPRAM,Johnson & Johnson,Injection,94 mcg,40 units,Under Review,2025-05-28,2025-05-21,,data_loader,pdl_manager,Approved,PDL baseline entry - specialty drug
+8068590019,OLANZAPINE,Mylan,Cream,24 units,208 mL,Pending,2025-05-03,2025-04-16,2027-04-07,pdl_manager,data_loader,Approved,PDL baseline entry - prior auth required
+4922206011,CARBAMAZEPINE,Pfizer,Injection,1 units,224 capsules,Active,2024-12-09,2024-11-25,2026-04-08,pdl_manager,data_loader,Under Review,PDL baseline entry - standard coverage
+3279528820,LITHIUM,Bristol-Myers,Injection,99 units,108 mL,Under Review,2025-06-23,2025-05-28,,clinical_reviewer,pdl_manager,Approved,PDL baseline entry - standard coverage
+8511183502,ALBUTEROL,Amgen,Tablet,26 mg,278 capsules,Active,2025-06-15,2025-05-25,2026-07-30,system_admin,clinical_reviewer,Rejected,PDL baseline entry - prior auth required
+8294806525,METOPROLOL,Generic Pharmaceuticals,Capsule,84 g,485 tablets,Pending,2025-01-30,2025-01-29,,system_admin,pdl_manager,Rejected,PDL baseline entry - tier 2 non-preferred
+9404184090,LITHIUM,Generic Pharmaceuticals,Suspension,10 mL,69 capsules,Active,2024-10-20,2024-09-24,,system_admin,data_loader,Rejected,PDL baseline entry - tier 1 preferred
+7563245808,ALBUTEROL,GSK,Suspension,72 g,412 tablets,Under Review,2024-12-28,2024-12-12,,clinical_reviewer,clinical_reviewer,Approved,PDL baseline entry - tier 1 preferred
+7203228933,FLUOXETINE,Bristol-Myers,Capsule,69 units,256 mL,Under Review,2024-12-22,2024-12-05,,pdl_manager,pdl_manager,Rejected,PDL baseline entry - specialty drug
+7641264752,PREDNISONE,Novartis,Cream,96 mL,214 units,Pending,2025-03-05,2025-02-14,2026-11-20,clinical_reviewer,system_admin,Approved,PDL baseline entry - tier 2 non-preferred
+2574758348,LISINOPRIL,Actavis,Capsule,28 mL,41 mL,Inactive,2024-09-29,2024-09-13,2026-02-14,system_admin,system_admin,Rejected,PDL baseline entry - tier 2 non-preferred
+7729398263,IBUPROFEN,Mylan,Solution,39 mg,322 units,Inactive,2024-12-09,2024-12-05,2026-09-29,system_admin,pdl_manager,Rejected,PDL baseline entry - tier 1 preferred

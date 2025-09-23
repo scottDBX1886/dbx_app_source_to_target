@@ -13,44 +13,34 @@ router = APIRouter(prefix="/api/pdl", tags=["pdl-coding"])
 
 def load_pdl_data(tenant: str = "MASTER") -> pd.DataFrame:
     """
-    Load PDL data with tenant-specific filtering.
-    TODO: Replace with real database queries via services.connector
+    Load PDL data with tenant-specific filtering from database tables.
     """
     try:
-        # TODO: Replace with database queries
-        # from backend.services.connector import query
-        # from backend.config.settings import get_settings
-        # warehouse_id = get_settings().databricks_warehouse_id
-        # df_pdl = query(f"SELECT * FROM demo.gainwell.pdl_master", warehouse_id=warehouse_id, as_dict=False)
-        # df_keycodes = query(f"SELECT * FROM demo.gainwell.pdl_keycodes WHERE tenant = '{tenant}' OR tenant = 'MASTER'", warehouse_id=warehouse_id, as_dict=False)
+        from backend.services.connector import query
+        from backend.config.settings import get_settings
+        warehouse_id = get_settings().databricks_warehouse_id
         
-        # For now, use sample data
-        pdl_master_path = os.path.join(os.getcwd(), "sample_pdl_data", "pdl_master.csv")
-        keycodes_path = os.path.join(os.getcwd(), "sample_pdl_data", "pdl_keycodes.csv")
+        # Query PDL master data and keycodes
+        df_pdl = query(f"SELECT * FROM demo.gainwell.pdl_master", warehouse_id=warehouse_id, as_dict=False)
+        df_keycodes = query(f"SELECT ndc,key_code,template,tenant,status,generation_date FROM demo.gainwell.pdl_keycodes WHERE tenant = '{tenant}'", warehouse_id=warehouse_id, as_dict=False)
         
-        if os.path.exists(pdl_master_path) and os.path.exists(keycodes_path):
-            df_pdl = pd.read_csv(pdl_master_path)
-            df_keycodes = pd.read_csv(keycodes_path)
-            
-            # Filter keycodes by tenant
-            df_keycodes_filtered = df_keycodes[
-                (df_keycodes['tenant'] == tenant) | (df_keycodes['tenant'] == 'MASTER')
-            ]
-            
-            logger.info(f"=== PDL TENANT: {tenant} ===")
-            logger.info(f"PDL Master records: {len(df_pdl)}")
-            logger.info(f"Keycode records for {tenant}: {len(df_keycodes_filtered)}")
-            
-            if not df_keycodes_filtered.empty:
-                df = pd.merge(df_pdl, df_keycodes_filtered, on='ndc', how='left', suffixes=('', '_keycode'))
-            else:
-                df = df_pdl
-            
-            logger.info(f"Final PDL dataset: {len(df)} records")
-            return df
+        # Enhanced debugging
+        logger.info(f"=== PDL TENANT: {tenant} ===")
+        logger.info(f"PDL Master records: {len(df_pdl)}")
+        logger.info(f"Keycode records for {tenant}: {len(df_keycodes)}")
+
+        logger.info(f"PDL columns: {list(df_pdl.columns)}")
+        logger.info(f"Keycode columns: {list(df_keycodes.columns)}")
+        
+        # Use pandas merge for consistent column handling
+        if not df_keycodes.empty:
+            df = df_pdl.merge(df_keycodes, on='ndc', how='inner')
         else:
-            logger.warning(f"PDL sample data files not found")
-            return pd.DataFrame()
+            df = df_pdl
+        
+        logger.info(f"Final columns after join: {list(df.columns)}")
+        logger.info(f"Final PDL dataset: {len(df)} records")
+        return df
             
     except Exception as e:
         logger.error(f"Error loading PDL data for tenant {tenant}: {e}")
@@ -127,7 +117,7 @@ async def search_pdl_records(
                     "ndc": str(row['ndc']),
                     "pdl_drug": str(row.get('pdl_drug', '')) if pd.notna(row.get('pdl_drug', '')) else "",
                     "key_code": str(row.get('key_code', '')) if pd.notna(row.get('key_code', '')) else "",
-                    "status": str(row.get('status', '')) if pd.notna(row.get('status', '')) else "",
+                    "status": str(row.get('status_x', '')) if pd.notna(row.get('status_x', '')) else "",
                     "template": str(row.get('template', '')) if pd.notna(row.get('template', '')) else "",
                     "effective_date": str(row.get('effective_date', '')) if pd.notna(row.get('effective_date', '')) else ""
                 }
@@ -190,13 +180,13 @@ async def get_pdl_details(
             "core_info": {
                 "ndc": str(row['ndc']),
                 "pdl_drug": str(row.get('pdl_drug', '')) if pd.notna(row.get('pdl_drug', '')) else "",
-                "status": str(row.get('status', '')) if pd.notna(row.get('status', '')) else "",
+                "status": str(row.get('status_y', '')) if pd.notna(row.get('status', '')) else "",
                 "load_date": str(row.get('load_date', '')) if pd.notna(row.get('load_date', '')) else ""
             },
             "keycode_info": {
                 "key_code": str(row.get('key_code', '')) if pd.notna(row.get('key_code', '')) else "",
                 "template": str(row.get('template', '')) if pd.notna(row.get('template', '')) else "",
-                "tenant": str(row.get('tenant_keycode', '')) if pd.notna(row.get('tenant_keycode', '')) else "",
+                "tenant": str(row.get('tenant', '')) if pd.notna(row.get('tenant', '')) else "",
                 "generation_date": str(row.get('generation_date', '')) if pd.notna(row.get('generation_date', '')) else ""
             },
             "date_info": {

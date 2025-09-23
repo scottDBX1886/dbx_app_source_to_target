@@ -3,7 +3,46 @@
  * Weekly review process for FMT with dual reviewer workflow
  */
 
+import { useState, useEffect, useContext } from 'react';
+import { TenantContext } from '../../App';
+import { weeklyReviewApi, type WeeklyPoolResponse, type ReviewGroupsResponse } from '../../services/weekly-review-api';
+
 export function WeeklyReviewFMT() {
+  const { tenant } = useContext(TenantContext);
+  const [weekEnding, setWeekEnding] = useState('2024-12-15');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [poolData, setPoolData] = useState<WeeklyPoolResponse | null>(null);
+  const [groupsData, setGroupsData] = useState<ReviewGroupsResponse | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  // Load pool data on component mount and when dependencies change
+  useEffect(() => {
+    loadPoolData();
+  }, [tenant, weekEnding]);
+
+  const loadPoolData = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const [poolResponse, groupsResponse] = await Promise.all([
+        weeklyReviewApi.getWeeklyPool('fmt', tenant, weekEnding, searchQuery || undefined),
+        weeklyReviewApi.getReviewGroups('fmt', tenant, weekEnding)
+      ]);
+      
+      setPoolData(poolResponse);
+      setGroupsData(groupsResponse);
+    } catch (err) {
+      console.error('Error loading weekly review data:', err);
+      setError(err instanceof Error ? err.message : 'Failed to load data');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleSearch = () => {
+    loadPoolData();
+  };
   return (
     <div className="weekly-review-fmt-page">
       <div className="page-header">
@@ -20,15 +59,24 @@ export function WeeklyReviewFMT() {
         <div className="row">
           <div className="row" style={{ gap: '14px' }}>
             <label className="muted">Week ending</label>
-            <input type="date" defaultValue="2024-12-15" />
+            <input 
+              type="date" 
+              value={weekEnding}
+              onChange={(e) => setWeekEnding(e.target.value)}
+            />
           </div>
           <div className="row" style={{ gap: '8px', flex: 1 }}>
             <input 
               type="text" 
               placeholder="Search pool: NDC / Brand / GSN / HIC3 / MFR" 
               style={{ minWidth: '320px', flex: 1 }}
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
             />
-            <button className="btn primary">Refresh</button>
+            <button className="btn primary" onClick={handleSearch} disabled={loading}>
+              {loading ? 'Loading...' : 'Refresh'}
+            </button>
           </div>
         </div>
         
@@ -39,7 +87,15 @@ export function WeeklyReviewFMT() {
         <div className="divider"></div>
         
         <div className="pool-summary">
-          <span className="muted">12 new drugs (100% match: 3, gsn match: 4, brand match: 2, no match: 3)</span>
+          {error ? (
+            <span className="muted error">Error: {error}</span>
+          ) : poolData ? (
+            <span className="muted">
+              {poolData.summary.total_new_drugs} new drugs ({Object.entries(poolData.summary.match_counts).map(([type, count]) => `${type}: ${count}`).join(', ')})
+            </span>
+          ) : (
+            <span className="muted">{loading ? 'Loading pool data...' : 'No data loaded'}</span>
+          )}
         </div>
       </div>
 
@@ -49,116 +105,72 @@ export function WeeklyReviewFMT() {
           <h2 className="panel-title">📊 Review Groups</h2>
         </div>
         
-        {/* 100% Match Group */}
-        <details className="group" open>
-          <summary>
-            <span className="title">100% match</span>
-            <span className="counts">
-              <span className="c">A=1</span>
-              <span className="c">B=1</span>
-              <span className="c">both=1</span>
-              <span className="c">rejected=0</span>
-              <span className="c">pending=0</span>
-            </span>
-          </summary>
-          
-          <div className="panel" style={{ margin: '10px' }}>
-            <div className="row">
-              <label><input type="checkbox" /> Select all in '100% match'</label>
-              <div className="row" style={{ marginLeft: 'auto', gap: '8px' }}>
-                <button className="btn success">Add to Reviewer A</button>
-                <button className="btn primary">Add to Reviewer B</button>
-                <button className="btn warn">Reject selected</button>
+        {groupsData && Object.entries(groupsData.groups).map(([matchType, group]) => (
+          <details className="group" key={matchType} open={matchType === '100% match'}>
+            <summary>
+              <span className="title">{matchType}</span>
+              <span className="counts">
+                <span className="c">A={group.counts.A}</span>
+                <span className="c">B={group.counts.B}</span>
+                <span className="c">both={group.counts.both}</span>
+                <span className="c">rejected={group.counts.rejected}</span>
+                <span className="c">pending={group.counts.pending}</span>
+              </span>
+            </summary>
+            
+            <div className="panel" style={{ margin: '10px' }}>
+              <div className="row">
+                <label><input type="checkbox" /> Select all in '{matchType}'</label>
+                <div className="row" style={{ marginLeft: 'auto', gap: '8px' }}>
+                  <button className="btn success">Add to Reviewer A</button>
+                  <button className="btn primary">Add to Reviewer B</button>
+                  <button className="btn warn">Reject selected</button>
+                </div>
+              </div>
+              
+              <div className="divider"></div>
+              
+              <div className="scroll">
+                <table className="data-table">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>NDC</th>
+                      <th>Brand</th>
+                      <th>GSN</th>
+                      <th>HIC3</th>
+                      <th>MFR</th>
+                      <th>Load</th>
+                      <th>Suggested MBID</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {group.records.map((record) => (
+                      <tr key={record.ndc}>
+                        <td><input type="checkbox" /></td>
+                        <td><code>{record.ndc}</code></td>
+                        <td>{record.brand}</td>
+                        <td>{record.gsn}</td>
+                        <td>{record.hic3}</td>
+                        <td>{record.mfr}</td>
+                        <td>{record.load_date}</td>
+                        <td><code>{record.suggested_mbid || '-'}</code></td>
+                        <td><span className={`status ${record.status}`}>{record.status}</span></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             </div>
-            
-            <div className="divider"></div>
-            
-            <div className="scroll">
-              <table className="data-table">
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th>NDC</th>
-                    <th>Brand</th>
-                    <th>GSN</th>
-                    <th>HIC3</th>
-                    <th>MFR</th>
-                    <th>Load</th>
-                    <th>Suggested MBID</th>
-                    <th>Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><input type="checkbox" /></td>
-                    <td><code>22233344455</code></td>
-                    <td>Motrin</td>
-                    <td>40002</td>
-                    <td>555</td>
-                    <td>Omega</td>
-                    <td>2024-12-15</td>
-                    <td><code>-</code></td>
-                    <td><span className="status both">both</span></td>
-                  </tr>
-                  <tr>
-                    <td><input type="checkbox" /></td>
-                    <td><code>77766655544</code></td>
-                    <td>AllerEase</td>
-                    <td>50001</td>
-                    <td>456</td>
-                    <td>Delta</td>
-                    <td>2024-12-15</td>
-                    <td><code>AK123456</code></td>
-                    <td><span className="status A">A</span></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+          </details>
+        ))}
+        
+        {!groupsData && !loading && (
+          <div className="muted" style={{ padding: '20px', textAlign: 'center' }}>
+            No review groups data available. Try refreshing or selecting a different week.
           </div>
-        </details>
-
-        {/* GSN Match Group */}
-        <details className="group">
-          <summary>
-            <span className="title">gsn match</span>
-            <span className="counts">
-              <span className="c">A=2</span>
-              <span className="c">B=1</span>
-              <span className="c">both=0</span>
-              <span className="c">rejected=0</span>
-              <span className="c">pending=1</span>
-            </span>
-          </summary>
-        </details>
-
-        {/* Brand Match Group */}
-        <details className="group">
-          <summary>
-            <span className="title">brand match</span>
-            <span className="counts">
-              <span className="c">A=1</span>
-              <span className="c">B=0</span>
-              <span className="c">both=0</span>
-              <span className="c">rejected=0</span>
-              <span className="c">pending=1</span>
-            </span>
-          </summary>
-        </details>
-
-        {/* No Match Group */}
-        <details className="group">
-          <summary>
-            <span className="title">no match</span>
-            <span className="counts">
-              <span className="c">A=0</span>
-              <span className="c">B=1</span>
-              <span className="c">both=0</span>
-              <span className="c">rejected=0</span>
-              <span className="c">pending=2</span>
-            </span>
-          </summary>
-        </details>
+        )}
       </div>
 
       {/* Reviewer A */}

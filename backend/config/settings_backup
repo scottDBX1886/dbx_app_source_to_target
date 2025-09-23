@@ -1,4 +1,11 @@
 """
+Application settings using Pydantic BaseSettings.
+
+This module defines the application settings that can be set
+via environment variables.
+"""
+
+"""
 Application settings using environment variables.
 """
 import os
