@@ -1,70 +1,106 @@
 # Gainwell Main App
 
-A modular Databricks application with React frontend and FastAPI backend, designed for deployment on Databricks Apps platform.
+A modular Databricks application with React frontend and FastAPI backend, designed for deployment on Databricks Apps platform. Features FDB search, FMT management, PDL coding, and weekly review workflows.
 
 ## Project Structure
 
 ```
 gainwell_main_app/
 ├── backend/                    # FastAPI backend application
-│   ├── app/
-│   │   ├── __init__.py
-│   │   ├── main.py            # Main FastAPI application
-│   │   ├── api/               # API endpoints
-│   │   │   ├── __init__.py
-│   │   │   └── endpoints/
-│   │   │       ├── __init__.py
-│   │   │       └── health.py  # Health check endpoints
-│   │   ├── core/              # Core functionality
-│   │   │   ├── __init__.py
-│   │   │   ├── config.py      # Configuration settings
-│   │   │   └── auth.py        # Authentication and authorization
-│   │   └── services/          # Business logic services
-│   │       ├── __init__.py
-│   │       └── databricks_service.py
-│   └── requirements.txt       # Python dependencies
+│   ├── auth/                  # Authentication endpoints
+│   ├── config/                # Configuration and settings
+│   ├── fdb/                   # FDB Search module
+│   ├── fmt/                   # FMT Master module
+│   ├── pdl/                   # PDL Coding module
+│   ├── weekly/                # Weekly Review modules (FMT/PDL)
+│   └── services/              # Core services (connector, tables)
 ├── frontend/                   # React frontend application
-│   ├── public/
 │   ├── src/
-│   │   ├── components/        # React components
-│   │   │   ├── Layout/        # Layout components
-│   │   │   └── Pages/         # Page components
+│   │   ├── components/pages/  # Page components (FDB, FMT, PDL, Weekly Review)
 │   │   ├── services/          # API service layer
-│   │   ├── hooks/             # Custom React hooks
-│   │   ├── types/             # TypeScript type definitions
-│   │   ├── App.tsx           # Main App component
-│   │   └── main.tsx          # Application entry point
-│   ├── package.json          # Node.js dependencies
-│   └── vite.config.ts        # Vite configuration
-├── static/                    # Static files directory
+│   │   ├── styles/            # Global CSS styles
+│   │   └── types/             # TypeScript type definitions
+│   ├── package.json           # Node.js dependencies
+│   └── vite.config.ts         # Vite configuration
+├── database/                   # Database setup and DDL files
+│   ├── create_assignment_tables.sql      # Complete DDL for assignment tables
+│   ├── create_assignment_tables_databricks.py # Python execution script
+│   ├── Create_Assignment_Tables.py       # Databricks notebook format
+│   └── README.md              # Database documentation
+├── data_generation/            # Sample data generation scripts
+│   ├── generate_fdb_data.py   # FDB sample data generator
+│   ├── generate_fmt_tenant_data.py # FMT tenant-specific data
+│   ├── generate_pdl_tenant_data.py # PDL tenant-specific data
+│   ├── verify_tenant_data.py  # Data quality verification
+│   └── README.md              # Data generation documentation
+├── scripts/                    # Deployment and utility scripts
+│   ├── deploy-simple.sh       # Application deployment script
+│   ├── upload_to_databricks.sh # Data upload script
+│   └── README.md              # Scripts documentation
+├── docs/                       # Documentation and prototypes
+│   ├── fmt_interactive_prototype.html # Original FMT UI prototype
+│   ├── settings_backup        # Configuration backup
+│   └── README.md              # Documentation index
+├── sample_fdb_data/           # Generated FDB sample data
+├── sample_fmt_data/           # Generated FMT sample data
+├── sample_pdl_data/           # Generated PDL sample data
+├── static/                    # Built frontend assets
+├── app.py                     # Main FastAPI application
 ├── databricks.yml            # Databricks Apps configuration
-├── .env.example              # Environment variables template
+├── requirements.txt          # Python dependencies
 └── README.md                 # This file
 ```
+
+## Application Modules
+
+### FDB Search
+- **Drug Database Search**: Search and filter pharmaceutical drug database
+- **Tenant-Specific Data**: Filter by tenant (MASTER, AK, MO) for state-specific formularies
+- **Detailed Drug Information**: Click NDC for comprehensive drug details in sidebar drawer
+- **Export Functionality**: Export search results to CSV/JSON formats
+
+### FMT Master (Formulary Management Tool)
+- **Formulary Management**: Manage Master Benefit IDs (MBIDs) and drug assignments
+- **Dual Interface**: Main data table with detailed sidebar drawer
+- **MBID Tracking**: Track formulary decisions and effective dates
+- **Status Management**: Monitor assignment status and approval workflows
+
+### PDL Coding (Preferred Drug List)
+- **Key Code Assignment**: Assign PDL key codes (PA, QL, ST, etc.) to drugs
+- **Template Management**: Use predefined templates for coding decisions
+- **POS Export**: Generate Point of Service export files
+- **Tenant-Specific Rules**: Different coding rules per tenant
+
+### Weekly Review Workflow
+- **FMT Review**: Weekly review process for new FMT assignments
+- **PDL Review**: Weekly review process for new PDL coding
+- **Dual Reviewer System**: Assign records to Reviewer A or B
+- **Conflict Resolution**: Resolve differences between reviewers
+- **Approval Process**: Final approval and sync to master tables
 
 ## Features
 
 ### Backend (FastAPI)
-- **Modular Architecture**: Organized into core, API, and service layers
-- **Service Principal Authentication**: Secure authentication using Databricks service principals
-- **User Verification**: Automatic user authentication through Databricks Apps headers
-- **Databricks Integration**: Built-in services for interacting with Databricks APIs
-- **Health Checks**: Comprehensive health monitoring endpoints
-- **Static File Serving**: Serves React build files and static assets
+- **Modular Architecture**: Organized into domain-specific modules (FDB, FMT, PDL, Weekly)
+- **Live Data Integration**: Direct connection to Databricks SQL Warehouse
+- **Pandas/Spark Integration**: Seamless data processing with both pandas and Spark DataFrames
+- **Assignment Tables**: Full CRUD operations for reviewer assignments
+- **User Authentication**: Automatic user authentication through Databricks Apps headers
+- **API Documentation**: Auto-generated OpenAPI/Swagger documentation
 
 ### Frontend (React + TypeScript)
 - **Modern React**: Built with React 18+ and TypeScript
-- **Databricks Design System**: Uses official Databricks UI components
-- **Responsive Layout**: Professional layout with navigation and routing
-- **API Integration**: Complete integration with FastAPI backend
-- **Real-time Status**: Live connection status and user information
-- **Component Organization**: Well-structured component hierarchy
+- **Responsive Design**: Clean, professional UI with consistent styling
+- **Interactive Tables**: Searchable, filterable data tables with detailed drawers
+- **Tenant Switching**: Dynamic tenant selection with immediate data updates
+- **Real-time Feedback**: Loading states, error handling, and success notifications
+- **Type Safety**: Full TypeScript integration with proper API interfaces
 
-### Databricks Integration
-- **Service Principal Auth**: Automatic service principal authentication
-- **User Forwarding**: Leverages Databricks Apps user forwarding
-- **Workspace Integration**: Direct integration with Databricks workspace
-- **Cluster Management**: View and interact with Databricks clusters
+### Database Integration
+- **Delta Lake Tables**: Optimized for Databricks with partitioning and clustering
+- **Change Data Feed**: Full audit trail for all data changes
+- **Tenant Isolation**: Data partitioned by tenant for performance and security
+- **Sample Data**: Comprehensive test data for development and validation
 
 ## Getting Started
 
@@ -123,21 +159,42 @@ gainwell_main_app/
 
 ### Deployment to Databricks
 
-1. **Configure Databricks CLI**:
+1. **Quick Deployment** (Recommended):
    ```bash
+   # Use the provided deployment script
+   ./scripts/deploy-simple.sh
+   ```
+
+2. **Manual Deployment**:
+   ```bash
+   # Configure Databricks CLI
    databricks configure
-   ```
-
-2. **Deploy Application**:
-   ```bash
-   # Deploy to development
-   databricks bundle deploy --target dev
    
-   # Deploy to production
-   databricks bundle deploy --target prod
+   # Deploy using bundle
+   databricks bundle deploy --target dev
    ```
 
-3. **Access Application**:
+3. **Setup Sample Data**:
+   ```bash
+   # Generate and upload sample data
+   python data_generation/generate_fdb_data.py
+   python data_generation/generate_fmt_tenant_data.py
+   python data_generation/generate_pdl_tenant_data.py
+   
+   # Upload to Databricks volumes
+   ./scripts/upload_to_databricks.sh
+   ```
+
+4. **Create Assignment Tables**:
+   ```bash
+   # Using Python script
+   python database/create_assignment_tables_databricks.py
+   
+   # Or import the notebook into Databricks workspace
+   # database/Create_Assignment_Tables.py
+   ```
+
+5. **Access Application**:
    The app will be available at the URL provided by Databricks Apps after deployment.
 
 ## Configuration

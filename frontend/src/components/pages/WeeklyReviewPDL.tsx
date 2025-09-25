@@ -5,7 +5,7 @@
 
 import { useState, useEffect, useContext } from 'react';
 import { TenantContext } from '../../App';
-import { weeklyReviewApi, type WeeklyPoolResponse } from '../../services/weekly-review-api';
+import { weeklyReviewApi, type WeeklyPoolResponse, type PDLAssignment } from '../../services/weekly-review-api';
 
 export function WeeklyReviewPDL() {
   const { tenant } = useContext(TenantContext);
@@ -14,6 +14,8 @@ export function WeeklyReviewPDL() {
   const [poolData, setPoolData] = useState<WeeklyPoolResponse | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [selectedNDCs, setSelectedNDCs] = useState<Set<string>>(new Set());
+  const [assignmentLoading, setAssignmentLoading] = useState(false);
 
   // Load pool data on component mount and when dependencies change
   useEffect(() => {
@@ -37,6 +39,98 @@ export function WeeklyReviewPDL() {
 
   const handleSearch = () => {
     loadPoolData();
+  };
+
+  const handleNDCSelection = (ndc: string, isChecked: boolean) => {
+    const newSelected = new Set(selectedNDCs);
+    if (isChecked) {
+      newSelected.add(ndc);
+    } else {
+      newSelected.delete(ndc);
+    }
+    setSelectedNDCs(newSelected);
+  };
+
+  const handleSelectAllVisible = (isChecked: boolean) => {
+    if (!poolData) return;
+    
+    const newSelected = new Set(selectedNDCs);
+    poolData.pool_data.forEach(record => {
+      if (isChecked) {
+        newSelected.add(record.ndc);
+      } else {
+        newSelected.delete(record.ndc);
+      }
+    });
+    setSelectedNDCs(newSelected);
+  };
+
+  const handleAssignToReviewer = async (reviewer: 'A' | 'B') => {
+    if (selectedNDCs.size === 0) {
+      alert('Please select at least one NDC to assign.');
+      return;
+    }
+
+    setAssignmentLoading(true);
+    try {
+      const assignments: PDLAssignment[] = Array.from(selectedNDCs).map(ndc => ({
+        ndc,
+        reviewer,
+        keycode: '', // TODO: Add keycode suggestion logic
+        template: 'PENDING_REVIEW', // Default template
+        eff_date: weekEnding
+      }));
+
+      await weeklyReviewApi.assignReviews({
+        review_type: 'pdl',
+        tenant,
+        week_ending: weekEnding,
+        assignments
+      });
+
+      // Clear selections and reload data to show updated status
+      setSelectedNDCs(new Set());
+      await loadPoolData();
+      
+      alert(`Successfully assigned ${assignments.length} NDCs to Reviewer ${reviewer}`);
+    } catch (error) {
+      console.error('Error assigning PDL reviews:', error);
+      alert(`Failed to assign NDCs: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    } finally {
+      setAssignmentLoading(false);
+    }
+  };
+
+  const handleRejectSelected = async () => {
+    if (selectedNDCs.size === 0) {
+      alert('Please select at least one NDC to reject.');
+      return;
+    }
+
+    const reason = prompt('Enter rejection reason:');
+    if (!reason) return;
+
+    setAssignmentLoading(true);
+    try {
+      await weeklyReviewApi.rejectItems({
+        review_type: 'pdl',
+        tenant,
+        week_ending: weekEnding,
+        rejected_ndcs: Array.from(selectedNDCs),
+        rejection_reason: reason
+      });
+
+      // Clear selections and reload data
+      setSelectedNDCs(new Set());
+      await loadPoolData();
+      
+      alert(`Successfully rejected ${selectedNDCs.size} NDCs`);
+    } catch (error) {
+      console.error('Error rejecting PDL NDCs:', error);
+      alert(`Failed to reject NDCs: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    } finally {
+      setAssignmentLoading(false);
+    }
   };
   return (
     <div className="weekly-review-pdl-page">
@@ -94,120 +188,122 @@ export function WeeklyReviewPDL() {
         </div>
       </div>
 
-      {/* Review Groups */}
+        {/* Review Groups - Dynamic Data */}
       <div className="panel">
         <div className="panel-header">
-          <h2 className="panel-title">📊 Review Groups</h2>
+          <h2 className="panel-title">📊 PDL Review Pool</h2>
         </div>
         
-        {/* 100% Match Group */}
-        <details className="group" open>
-          <summary>
-            <span className="title">100% match</span>
-            <span className="counts">
-              <span className="c">A=1</span>
-              <span className="c">B=1</span>
-              <span className="c">both=0</span>
-              <span className="c">rejected=0</span>
-              <span className="c">pending=0</span>
-            </span>
-          </summary>
-          
-          <div className="panel" style={{ margin: '10px' }}>
-            <div className="row">
-              <label><input type="checkbox" /> Select all in '100% match'</label>
-              <div className="row" style={{ marginLeft: 'auto', gap: '8px' }}>
-                <button className="btn success">Add to Reviewer A</button>
-                <button className="btn primary">Add to Reviewer B</button>
-                <button className="btn warn">Reject selected</button>
+        {loading && (
+          <div style={{ padding: '20px', textAlign: 'center' }}>Loading PDL pool data...</div>
+        )}
+
+        {error && (
+          <div className="alert error" style={{ margin: '10px' }}>{error}</div>
+        )}
+
+        {poolData && (
+          <details className="group" open>
+            <summary>
+              <span className="title">PDL Pool ({poolData.summary.total_new_drugs} new NDCs)</span>
+              <span className="counts">
+                {Object.entries(poolData.summary.match_counts).map(([type, count]) => (
+                  <span key={type} className="c">{type}={count}</span>
+                ))}
+              </span>
+            </summary>
+            
+            <div className="panel" style={{ margin: '10px' }}>
+              <div className="row">
+                <label>
+                  <input 
+                    type="checkbox" 
+                    onChange={(e) => handleSelectAllVisible(e.target.checked)}
+                    checked={poolData.pool_data.every(record => selectedNDCs.has(record.ndc))}
+                  /> 
+                  Select all visible
+                </label>
+                <div className="row" style={{ marginLeft: 'auto', gap: '8px' }}>
+                  <button 
+                    className="btn success" 
+                    onClick={() => handleAssignToReviewer('A')}
+                    disabled={assignmentLoading || selectedNDCs.size === 0}
+                  >
+                    Add to Reviewer A
+                  </button>
+                  <button 
+                    className="btn primary" 
+                    onClick={() => handleAssignToReviewer('B')}
+                    disabled={assignmentLoading || selectedNDCs.size === 0}
+                  >
+                    Add to Reviewer B
+                  </button>
+                  <button 
+                    className="btn warn" 
+                    onClick={handleRejectSelected}
+                    disabled={assignmentLoading || selectedNDCs.size === 0}
+                  >
+                    Reject selected
+                  </button>
+                </div>
+              </div>
+              
+              <div className="divider"></div>
+              
+              <div className="scroll">
+                <table className="data-table">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>NDC</th>
+                      <th>Brand</th>
+                      <th>GSN</th>
+                      <th>HIC3</th>
+                      <th>MFR</th>
+                      <th>Load</th>
+                      <th>Suggested Key Code</th>
+                      <th>Match Type</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {poolData.pool_data.map((record) => (
+                      <tr key={record.ndc}>
+                        <td>
+                          <input 
+                            type="checkbox" 
+                            checked={selectedNDCs.has(record.ndc)}
+                            onChange={(e) => handleNDCSelection(record.ndc, e.target.checked)}
+                          />
+                        </td>
+                        <td><code>{record.ndc}</code></td>
+                        <td>{record.brand}</td>
+                        <td>{record.gsn}</td>
+                        <td>{record.hic3}</td>
+                        <td>{record.mfr}</td>
+                        <td>{record.load_date}</td>
+                        <td><code>-</code></td>
+                        <td><span className={`status ${record.match_type.replace(/\s+/g, '-')}`}>{record.match_type}</span></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             </div>
-            
-            <div className="divider"></div>
-            
-            <div className="scroll">
-              <table className="data-table">
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th>NDC</th>
-                    <th>Brand</th>
-                    <th>GSN</th>
-                    <th>HIC3</th>
-                    <th>MFR</th>
-                    <th>Load</th>
-                    <th>Suggested Key Code</th>
-                    <th>Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><input type="checkbox" /></td>
-                    <td><code>22233344455</code></td>
-                    <td>Motrin</td>
-                    <td>40002</td>
-                    <td>555</td>
-                    <td>Omega</td>
-                    <td>2024-12-15</td>
-                    <td><code>40002|MOTRIN|RX|60</code></td>
-                    <td><span className="status A">A</span></td>
-                  </tr>
-                  <tr>
-                    <td><input type="checkbox" /></td>
-                    <td><code>77766655544</code></td>
-                    <td>AllerEase</td>
-                    <td>50001</td>
-                    <td>456</td>
-                    <td>Delta</td>
-                    <td>2024-12-15</td>
-                    <td><code>50001|ALLERE|OTC|30</code></td>
-                    <td><span className="status B">B</span></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+          </details>
+        )}
+
+        
+        {!poolData && !loading && (
+          <div className="muted" style={{ padding: '20px', textAlign: 'center' }}>
+            No PDL pool data available. Try refreshing or selecting a different week.
           </div>
-        </details>
+        )}
 
-        {/* Other Groups (collapsed for brevity) */}
-        <details className="group">
-          <summary>
-            <span className="title">gsn match</span>
-            <span className="counts">
-              <span className="c">A=1</span>
-              <span className="c">B=1</span>
-              <span className="c">both=0</span>
-              <span className="c">rejected=0</span>
-              <span className="c">pending=1</span>
-            </span>
-          </summary>
-        </details>
-
-        <details className="group">
-          <summary>
-            <span className="title">brand match</span>
-            <span className="counts">
-              <span className="c">A=1</span>
-              <span className="c">B=0</span>
-              <span className="c">both=0</span>
-              <span className="c">rejected=0</span>
-              <span className="c">pending=1</span>
-            </span>
-          </summary>
-        </details>
-
-        <details className="group">
-          <summary>
-            <span className="title">no match</span>
-            <span className="counts">
-              <span className="c">A=0</span>
-              <span className="c">B=0</span>
-              <span className="c">both=0</span>
-              <span className="c">rejected=0</span>
-              <span className="c">pending=1</span>
-            </span>
-          </summary>
-        </details>
+        {selectedNDCs.size > 0 && (
+          <div className="alert info" style={{ margin: '10px 0' }}>
+            {selectedNDCs.size} NDC{selectedNDCs.size !== 1 ? 's' : ''} selected
+          </div>
+        )}
       </div>
 
       {/* Reviewer A */}

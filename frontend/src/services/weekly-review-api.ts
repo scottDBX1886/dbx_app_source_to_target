@@ -56,15 +56,27 @@ export interface ReviewGroupsResponse {
   review_type: string;
 }
 
-export interface ReviewAssignment {
+export interface FMTAssignment {
   ndc: string;
   reviewer: 'A' | 'B';
   mbid: string;
   eff_date: string;
   end_date: string | null;
-  status: string;
-  assignment_date: string;
+  status?: string;
+  assignment_date?: string;
 }
+
+export interface PDLAssignment {
+  ndc: string;
+  reviewer: 'A' | 'B';
+  keycode: string;
+  template: string;
+  eff_date: string;
+  status?: string;
+  assignment_date?: string;
+}
+
+export type ReviewAssignment = FMTAssignment | PDLAssignment;
 
 export interface ReviewAssignmentsResponse {
   assignments: {
@@ -80,38 +92,51 @@ export interface AssignmentRequest {
   review_type: 'fmt' | 'pdl';
   tenant: string;
   week_ending: string;
-  assignments: {
-    ndc: string;
-    reviewer: 'A' | 'B';
-    mbid: string;
-    eff_date: string;
-    end_date: string | null;
-  }[];
+  assignments: (FMTAssignment | PDLAssignment)[];
+}
+
+export interface FMTResolution {
+  ndc: string;
+  resolution: 'AUTO' | 'A' | 'B' | 'CUSTOM';
+  final_mbid: string;
+  final_eff_date: string;
+  final_end_date: string | null;
+}
+
+export interface PDLResolution {
+  ndc: string;
+  resolution: 'AUTO' | 'A' | 'B' | 'CUSTOM';
+  final_keycode: string;
+  final_template: string;
+  final_eff_date: string;
 }
 
 export interface ResolutionRequest {
   review_type: 'fmt' | 'pdl';
   tenant: string;
   week_ending: string;
-  resolutions: {
-    ndc: string;
-    resolution: 'AUTO' | 'A' | 'B' | 'CUSTOM';
-    final_mbid: string;
-    final_eff_date: string;
-    final_end_date: string | null;
-  }[];
+  resolutions: (FMTResolution | PDLResolution)[];
+}
+
+export interface FMTApproval {
+  ndc: string;
+  mbid: string;
+  eff_date: string;
+  end_date: string | null;
+}
+
+export interface PDLApproval {
+  ndc: string;
+  keycode: string;
+  template: string;
+  eff_date: string;
 }
 
 export interface ApprovalRequest {
   review_type: 'fmt' | 'pdl';
   tenant: string;
   week_ending: string;
-  approved_items: {
-    ndc: string;
-    mbid: string;
-    eff_date: string;
-    end_date: string | null;
-  }[];
+  approved_items: (FMTApproval | PDLApproval)[];
 }
 
 export interface RejectionRequest {
@@ -142,7 +167,9 @@ export interface ComparisonResponse {
 // ============= API SERVICE CLASS =============
 
 class WeeklyReviewApiService {
-  private baseUrl = '/api/weekly';
+  private getBaseUrl(reviewType: 'fmt' | 'pdl'): string {
+    return `/api/weekly/${reviewType}`;
+  }
 
   /**
    * Get weekly review pool data
@@ -162,7 +189,7 @@ class WeeklyReviewApiService {
       params.append('search', search);
     }
 
-    const response = await fetch(`${this.baseUrl}/pool/${reviewType}?${params}`);
+    const response = await fetch(`${this.getBaseUrl(reviewType)}/pool?${params}`);
     
     if (!response.ok) {
       throw new Error(`Failed to fetch weekly pool: ${response.statusText}`);
@@ -184,7 +211,7 @@ class WeeklyReviewApiService {
       week_ending: weekEnding,
     });
 
-    const response = await fetch(`${this.baseUrl}/groups/${reviewType}?${params}`);
+    const response = await fetch(`${this.getBaseUrl(reviewType)}/groups?${params}`);
     
     if (!response.ok) {
       throw new Error(`Failed to fetch review groups: ${response.statusText}`);
@@ -206,7 +233,7 @@ class WeeklyReviewApiService {
       week_ending: weekEnding,
     });
 
-    const response = await fetch(`${this.baseUrl}/assignments/${reviewType}?${params}`);
+    const response = await fetch(`${this.getBaseUrl(reviewType)}/assignments?${params}`);
     
     if (!response.ok) {
       throw new Error(`Failed to fetch reviewer assignments: ${response.statusText}`);
@@ -219,7 +246,7 @@ class WeeklyReviewApiService {
    * Assign NDCs to reviewers
    */
   async assignReviews(data: AssignmentRequest): Promise<any> {
-    const response = await fetch(`${this.baseUrl}/assign`, {
+    const response = await fetch(`${this.getBaseUrl(data.review_type)}/assign`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -238,7 +265,7 @@ class WeeklyReviewApiService {
    * Resolve conflicts between reviewers
    */
   async resolveConflicts(data: ResolutionRequest): Promise<any> {
-    const response = await fetch(`${this.baseUrl}/resolve`, {
+    const response = await fetch(`${this.getBaseUrl(data.review_type)}/resolve`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -257,7 +284,7 @@ class WeeklyReviewApiService {
    * Final approval and sync to master tables
    */
   async approveWeeklyReview(data: ApprovalRequest): Promise<any> {
-    const response = await fetch(`${this.baseUrl}/approve`, {
+    const response = await fetch(`${this.getBaseUrl(data.review_type)}/approve`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -276,7 +303,7 @@ class WeeklyReviewApiService {
    * Reject selected items
    */
   async rejectItems(data: RejectionRequest): Promise<any> {
-    const response = await fetch(`${this.baseUrl}/reject`, {
+    const response = await fetch(`${this.getBaseUrl(data.review_type)}/reject`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -304,7 +331,7 @@ class WeeklyReviewApiService {
       week_ending: weekEnding,
     });
 
-    const response = await fetch(`${this.baseUrl}/comparison/${reviewType}?${params}`);
+    const response = await fetch(`${this.getBaseUrl(reviewType)}/comparison?${params}`);
     
     if (!response.ok) {
       throw new Error(`Failed to fetch comparison data: ${response.statusText}`);

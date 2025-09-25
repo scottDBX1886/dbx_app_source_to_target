@@ -5,7 +5,7 @@
 
 import { useState, useEffect, useContext } from 'react';
 import { TenantContext } from '../../App';
-import { weeklyReviewApi, type WeeklyPoolResponse, type ReviewGroupsResponse } from '../../services/weekly-review-api';
+import { weeklyReviewApi, type WeeklyPoolResponse, type ReviewGroupsResponse, type FMTAssignment } from '../../services/weekly-review-api';
 
 export function WeeklyReviewFMT() {
   const { tenant } = useContext(TenantContext);
@@ -15,6 +15,8 @@ export function WeeklyReviewFMT() {
   const [groupsData, setGroupsData] = useState<ReviewGroupsResponse | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [selectedNDCs, setSelectedNDCs] = useState<Set<string>>(new Set());
+  const [assignmentLoading, setAssignmentLoading] = useState(false);
 
   // Load pool data on component mount and when dependencies change
   useEffect(() => {
@@ -42,6 +44,101 @@ export function WeeklyReviewFMT() {
 
   const handleSearch = () => {
     loadPoolData();
+  };
+
+  const handleNDCSelection = (ndc: string, isChecked: boolean) => {
+    const newSelected = new Set(selectedNDCs);
+    if (isChecked) {
+      newSelected.add(ndc);
+    } else {
+      newSelected.delete(ndc);
+    }
+    setSelectedNDCs(newSelected);
+  };
+
+  const handleSelectAllInGroup = (matchType: string, isChecked: boolean) => {
+    if (!groupsData) return;
+    
+    const group = groupsData.groups[matchType];
+    if (!group) return;
+    
+    const newSelected = new Set(selectedNDCs);
+    group.records.forEach(record => {
+      if (isChecked) {
+        newSelected.add(record.ndc);
+      } else {
+        newSelected.delete(record.ndc);
+      }
+    });
+    setSelectedNDCs(newSelected);
+  };
+
+  const handleAssignToReviewer = async (reviewer: 'A' | 'B') => {
+    if (selectedNDCs.size === 0) {
+      alert('Please select at least one NDC to assign.');
+      return;
+    }
+
+    setAssignmentLoading(true);
+    try {
+      const assignments: FMTAssignment[] = Array.from(selectedNDCs).map(ndc => ({
+        ndc,
+        reviewer,
+        mbid: '', // TODO: Add MBID suggestion logic
+        eff_date: weekEnding,
+        end_date: null
+      }));
+
+      await weeklyReviewApi.assignReviews({
+        review_type: 'fmt',
+        tenant,
+        week_ending: weekEnding,
+        assignments
+      });
+
+      // Clear selections and reload data to show updated status
+      setSelectedNDCs(new Set());
+      await loadPoolData();
+      
+      alert(`Successfully assigned ${assignments.length} NDCs to Reviewer ${reviewer}`);
+    } catch (error) {
+      console.error('Error assigning reviews:', error);
+      alert(`Failed to assign NDCs: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    } finally {
+      setAssignmentLoading(false);
+    }
+  };
+
+  const handleRejectSelected = async () => {
+    if (selectedNDCs.size === 0) {
+      alert('Please select at least one NDC to reject.');
+      return;
+    }
+
+    const reason = prompt('Enter rejection reason:');
+    if (!reason) return;
+
+    setAssignmentLoading(true);
+    try {
+      await weeklyReviewApi.rejectItems({
+        review_type: 'fmt',
+        tenant,
+        week_ending: weekEnding,
+        rejected_ndcs: Array.from(selectedNDCs),
+        rejection_reason: reason
+      });
+
+      // Clear selections and reload data
+      setSelectedNDCs(new Set());
+      await loadPoolData();
+      
+      alert(`Successfully rejected ${selectedNDCs.size} NDCs`);
+    } catch (error) {
+      console.error('Error rejecting NDCs:', error);
+      alert(`Failed to reject NDCs: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    } finally {
+      setAssignmentLoading(false);
+    }
   };
   return (
     <div className="weekly-review-fmt-page">
@@ -120,11 +217,36 @@ export function WeeklyReviewFMT() {
             
             <div className="panel" style={{ margin: '10px' }}>
               <div className="row">
-                <label><input type="checkbox" /> Select all in '{matchType}'</label>
+                <label>
+                  <input 
+                    type="checkbox" 
+                    onChange={(e) => handleSelectAllInGroup(matchType, e.target.checked)}
+                    checked={group.records.every(record => selectedNDCs.has(record.ndc))}
+                  /> 
+                  Select all in '{matchType}'
+                </label>
                 <div className="row" style={{ marginLeft: 'auto', gap: '8px' }}>
-                  <button className="btn success">Add to Reviewer A</button>
-                  <button className="btn primary">Add to Reviewer B</button>
-                  <button className="btn warn">Reject selected</button>
+                  <button 
+                    className="btn success" 
+                    onClick={() => handleAssignToReviewer('A')}
+                    disabled={assignmentLoading || selectedNDCs.size === 0}
+                  >
+                    Add to Reviewer A
+                  </button>
+                  <button 
+                    className="btn primary" 
+                    onClick={() => handleAssignToReviewer('B')}
+                    disabled={assignmentLoading || selectedNDCs.size === 0}
+                  >
+                    Add to Reviewer B
+                  </button>
+                  <button 
+                    className="btn warn" 
+                    onClick={handleRejectSelected}
+                    disabled={assignmentLoading || selectedNDCs.size === 0}
+                  >
+                    Reject selected
+                  </button>
                 </div>
               </div>
               
@@ -148,7 +270,13 @@ export function WeeklyReviewFMT() {
                   <tbody>
                     {group.records.map((record) => (
                       <tr key={record.ndc}>
-                        <td><input type="checkbox" /></td>
+                        <td>
+                          <input 
+                            type="checkbox" 
+                            checked={selectedNDCs.has(record.ndc)}
+                            onChange={(e) => handleNDCSelection(record.ndc, e.target.checked)}
+                          />
+                        </td>
                         <td><code>{record.ndc}</code></td>
                         <td>{record.brand}</td>
                         <td>{record.gsn}</td>
@@ -169,6 +297,12 @@ export function WeeklyReviewFMT() {
         {!groupsData && !loading && (
           <div className="muted" style={{ padding: '20px', textAlign: 'center' }}>
             No review groups data available. Try refreshing or selecting a different week.
+          </div>
+        )}
+
+        {selectedNDCs.size > 0 && (
+          <div className="alert info" style={{ margin: '10px 0' }}>
+            {selectedNDCs.size} NDC{selectedNDCs.size !== 1 ? 's' : ''} selected
           </div>
         )}
       </div>

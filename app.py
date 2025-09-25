@@ -15,7 +15,8 @@ from backend.fdb.routes import router as fdb_router
 from backend.fmt.routes import router as fmt_router
 from backend.pdl.routes import router as pdl_router
 from backend.config.routes import router as config_router
-from backend.weekly.routes import router as weekly_router
+from backend.weekly.fmt_routes import router as weekly_fmt_router
+from backend.weekly.pdl_routes import router as weekly_pdl_router
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -38,12 +39,13 @@ if static_dir.exists():
         app.mount("/assets", StaticFiles(directory=str(static_dir / "assets")), name="assets")
 
 # Include all modular routers
-app.include_router(auth_router)    # /api/health/*, /api/debug/*
-app.include_router(fdb_router)     # /api/fdb/*
-app.include_router(fmt_router)     # /api/fmt/*
-app.include_router(pdl_router)     # /api/pdl/*
-app.include_router(config_router)  # /api/config/*
-app.include_router(weekly_router)  # /api/weekly/*
+app.include_router(auth_router)         # /api/health/*, /api/debug/*
+app.include_router(fdb_router)          # /api/fdb/*
+app.include_router(fmt_router)          # /api/fmt/*
+app.include_router(pdl_router)          # /api/pdl/*
+app.include_router(config_router)       # /api/config/*
+app.include_router(weekly_fmt_router)   # /api/weekly/fmt/*
+app.include_router(weekly_pdl_router)   # /api/weekly/pdl/*
 
 # ================== STATIC FILE SERVING ==================
 
@@ -64,7 +66,7 @@ async def health_check():
         "version": "2.0.0",
         "architecture": "modular backend",
         "modules": [
-            "auth", "fdb", "fmt", "pdl", "config", "weekly"
+            "auth", "fdb", "fmt", "pdl", "config", "weekly-fmt", "weekly-pdl"
         ]
     }
 
