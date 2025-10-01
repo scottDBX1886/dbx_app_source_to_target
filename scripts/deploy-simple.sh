@@ -5,7 +5,7 @@
 
 set -e
 
-PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 PROFILE="dbx_shared_demo"
 APP_NAME="gainwell-main-app"
 WORKSPACE_PATH="/Workspace/Users/scott.johnson@databricks.com/.bundle/gainwell-main-app/demo/files"

@@ -16,10 +16,16 @@ export function WeeklyReviewPDL() {
   const [error, setError] = useState<string | null>(null);
   const [selectedNDCs, setSelectedNDCs] = useState<Set<string>>(new Set());
   const [assignmentLoading, setAssignmentLoading] = useState(false);
+  const [reviewerAData, setReviewerAData] = useState<any[]>([]);
+  const [reviewerBData, setReviewerBData] = useState<any[]>([]);
+  const [finalApprovalData, setFinalApprovalData] = useState<any[]>([]);
+  const [comparisonData, setComparisonData] = useState<any[]>([]);
+  const [dataLoading, setDataLoading] = useState(false);
 
   // Load pool data on component mount and when dependencies change
   useEffect(() => {
     loadPoolData();
+    loadReviewerData();
   }, [tenant, weekEnding]);
 
   const loadPoolData = async () => {
@@ -34,6 +40,28 @@ export function WeeklyReviewPDL() {
       setError(err instanceof Error ? err.message : 'Failed to load data');
     } finally {
       setLoading(false);
+    }
+  };
+
+  const loadReviewerData = async () => {
+    setDataLoading(true);
+    try {
+      const [reviewerAResponse, reviewerBResponse, finalApprovalResponse, comparisonResponse] = await Promise.all([
+        weeklyReviewApi.getReviewerAAssignments('pdl', tenant, weekEnding),
+        weeklyReviewApi.getReviewerBAssignments('pdl', tenant, weekEnding),
+        weeklyReviewApi.getFinalApprovalData('pdl', tenant, weekEnding),
+        weeklyReviewApi.getComparisonData('pdl', tenant, weekEnding)
+      ]);
+      
+      setReviewerAData(reviewerAResponse.assignments || []);
+      setReviewerBData(reviewerBResponse.assignments || []);
+      setFinalApprovalData(finalApprovalResponse.final_approval_items || []);
+      setComparisonData(comparisonResponse.comparison_data || []);
+    } catch (err) {
+      console.error('Error loading reviewer data:', err);
+      // Don't show error to user for reviewer data, just log it
+    } finally {
+      setDataLoading(false);
     }
   };
 
@@ -91,6 +119,7 @@ export function WeeklyReviewPDL() {
       // Clear selections and reload data to show updated status
       setSelectedNDCs(new Set());
       await loadPoolData();
+      await loadReviewerData();
       
       alert(`Successfully assigned ${assignments.length} NDCs to Reviewer ${reviewer}`);
     } catch (error) {
@@ -132,6 +161,70 @@ export function WeeklyReviewPDL() {
       setAssignmentLoading(false);
     }
   };
+
+  const handlePromoteResolved = async () => {
+    if (comparisonData.length === 0) {
+      alert('No conflicts to resolve.');
+      return;
+    }
+
+    try {
+      const resolutions = comparisonData.map(item => ({
+        ndc: item.ndc,
+        resolution: item.auto_resolution || 'AUTO',
+        final_keycode: item.reviewer_a?.keycode || '',
+        final_template: item.reviewer_a?.template || '',
+        final_eff_date: item.reviewer_a?.eff_date || weekEnding
+      }));
+
+      await weeklyReviewApi.resolveConflicts({
+        review_type: 'pdl',
+        tenant,
+        week_ending: weekEnding,
+        resolutions
+      });
+
+      // Reload data to show updated status
+      await loadReviewerData();
+      
+      alert(`Successfully resolved ${resolutions.length} conflicts`);
+    } catch (error) {
+      console.error('Error resolving conflicts:', error);
+      alert(`Failed to resolve conflicts: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    }
+  };
+
+  const handleApproveSync = async () => {
+    if (finalApprovalData.length === 0) {
+      alert('No items ready for final approval.');
+      return;
+    }
+
+    try {
+      const approvedItems = finalApprovalData.map(item => ({
+        ndc: item.ndc,
+        keycode: item.keycode,
+        template: item.template,
+        eff_date: item.eff_date
+      }));
+
+      await weeklyReviewApi.approveWeeklyReview({
+        review_type: 'pdl',
+        tenant,
+        week_ending: weekEnding,
+        approved_items: approvedItems
+      });
+
+      // Reload data to show updated status
+      await loadReviewerData();
+      
+      alert(`Successfully approved and synced ${approvedItems.length} items to master tables`);
+    } catch (error) {
+      console.error('Error approving items:', error);
+      alert(`Failed to approve items: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    }
+  };
+
   return (
     <div className="weekly-review-pdl-page">
       <div className="page-header">
@@ -257,9 +350,7 @@ export function WeeklyReviewPDL() {
                       <th></th>
                       <th>NDC</th>
                       <th>Brand</th>
-                      <th>GSN</th>
-                      <th>HIC3</th>
-                      <th>MFR</th>
+                      <th>Key Code</th>
                       <th>Load</th>
                       <th>Suggested Key Code</th>
                       <th>Match Type</th>
@@ -277,9 +368,7 @@ export function WeeklyReviewPDL() {
                         </td>
                         <td><code>{record.ndc}</code></td>
                         <td>{record.brand}</td>
-                        <td>{record.gsn}</td>
-                        <td>{record.hic3}</td>
-                        <td>{record.mfr}</td>
+                        <td><code>{record.keycode || '-'}</code></td>
                         <td>{record.load_date}</td>
                         <td><code>-</code></td>
                         <td><span className={`status ${record.match_type.replace(/\s+/g, '-')}`}>{record.match_type}</span></td>
@@ -317,20 +406,36 @@ export function WeeklyReviewPDL() {
             <thead>
               <tr>
                 <th>NDC</th>
-                <th>Generated Key Code</th>
-                <th>Custom Key Code</th>
+                <th>Key Code</th>
+                <th>Template</th>
                 <th>Eff Date</th>
-                <th>End Date</th>
+                <th>Status</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td><code>22233344455</code></td>
-                <td><code>40002|MOTRIN|RX|60</code></td>
-                <td><input type="text" placeholder="Override if needed" /></td>
-                <td><input type="date" defaultValue="2024-12-15" /></td>
-                <td><input type="date" /></td>
-              </tr>
+              {dataLoading ? (
+                <tr>
+                  <td colSpan={5} style={{ textAlign: 'center', padding: '20px' }}>
+                    Loading Reviewer A assignments...
+                  </td>
+                </tr>
+              ) : reviewerAData.length === 0 ? (
+                <tr>
+                  <td colSpan={5} style={{ textAlign: 'center', padding: '20px', color: '#666' }}>
+                    No assignments for Reviewer A
+                  </td>
+                </tr>
+              ) : (
+                reviewerAData.map((assignment, index) => (
+                  <tr key={assignment.assignment_id || index}>
+                    <td><code>{assignment.ndc}</code></td>
+                    <td><code>{assignment.keycode || '-'}</code></td>
+                    <td><code>{assignment.template || '-'}</code></td>
+                    <td><input type="date" defaultValue={assignment.eff_date || weekEnding} /></td>
+                    <td><span className={`status ${assignment.status?.toLowerCase() || 'assigned'}`}>{assignment.status || 'ASSIGNED'}</span></td>
+                  </tr>
+                ))
+              )}
             </tbody>
           </table>
         </div>
@@ -347,20 +452,36 @@ export function WeeklyReviewPDL() {
             <thead>
               <tr>
                 <th>NDC</th>
-                <th>Generated Key Code</th>
-                <th>Custom Key Code</th>
+                <th>Key Code</th>
+                <th>Template</th>
                 <th>Eff Date</th>
-                <th>End Date</th>
+                <th>Status</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td><code>77766655544</code></td>
-                <td><code>50001|ALLERE|OTC|30</code></td>
-                <td><input type="text" placeholder="Override if needed" /></td>
-                <td><input type="date" defaultValue="2024-12-15" /></td>
-                <td><input type="date" /></td>
-              </tr>
+              {dataLoading ? (
+                <tr>
+                  <td colSpan={5} style={{ textAlign: 'center', padding: '20px' }}>
+                    Loading Reviewer B assignments...
+                  </td>
+                </tr>
+              ) : reviewerBData.length === 0 ? (
+                <tr>
+                  <td colSpan={5} style={{ textAlign: 'center', padding: '20px', color: '#666' }}>
+                    No assignments for Reviewer B
+                  </td>
+                </tr>
+              ) : (
+                reviewerBData.map((assignment, index) => (
+                  <tr key={assignment.assignment_id || index}>
+                    <td><code>{assignment.ndc}</code></td>
+                    <td><code>{assignment.keycode || '-'}</code></td>
+                    <td><code>{assignment.template || '-'}</code></td>
+                    <td><input type="date" defaultValue={assignment.eff_date || weekEnding} /></td>
+                    <td><span className={`status ${assignment.status?.toLowerCase() || 'assigned'}`}>{assignment.status || 'ASSIGNED'}</span></td>
+                  </tr>
+                ))
+              )}
             </tbody>
           </table>
         </div>
@@ -378,40 +499,62 @@ export function WeeklyReviewPDL() {
               <tr>
                 <th>NDC</th>
                 <th>A: Key Code</th>
-                <th>A: Dates</th>
+                <th>A: Template</th>
+                <th>A: Eff Date</th>
                 <th>B: Key Code</th>
-                <th>B: Dates</th>
+                <th>B: Template</th>
+                <th>B: Eff Date</th>
                 <th>Resolution</th>
-                <th>Final Key Code</th>
-                <th>Final Dates</th>
+                <th>Final Values</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td><code>22233344455</code></td>
-                <td><code>40002|MOTRIN|RX|60</code></td>
-                <td>2024-12-15</td>
-                <td>-</td>
-                <td>-</td>
-                <td>
-                  <select>
-                    <option value="A" selected>Use A</option>
-                    <option value="B">Use B</option>
-                    <option value="CUSTOM">Custom</option>
-                  </select>
-                </td>
-                <td><input type="text" defaultValue="40002|MOTRIN|RX|60" /></td>
-                <td>
-                  <input type="date" defaultValue="2024-12-15" />
-                  <input type="date" />
-                </td>
-              </tr>
+              {dataLoading ? (
+                <tr>
+                  <td colSpan={9} style={{ textAlign: 'center', padding: '20px' }}>
+                    Loading comparison data...
+                  </td>
+                </tr>
+              ) : comparisonData.length === 0 ? (
+                <tr>
+                  <td colSpan={9} style={{ textAlign: 'center', padding: '20px', color: '#666' }}>
+                    No conflicts to resolve
+                  </td>
+                </tr>
+              ) : (
+                comparisonData.map((item, index) => (
+                  <tr key={item.ndc || index}>
+                    <td><code>{item.ndc}</code></td>
+                    <td><code>{item.reviewer_a?.keycode || '-'}</code></td>
+                    <td><code>{item.reviewer_a?.template || '-'}</code></td>
+                    <td>{item.reviewer_a?.eff_date || '-'}</td>
+                    <td><code>{item.reviewer_b?.keycode || '-'}</code></td>
+                    <td><code>{item.reviewer_b?.template || '-'}</code></td>
+                    <td>{item.reviewer_b?.eff_date || '-'}</td>
+                    <td>
+                      <select defaultValue={item.auto_resolution || 'AUTO'}>
+                        <option value="AUTO">AUTO (matched)</option>
+                        <option value="A">Use A</option>
+                        <option value="B">Use B</option>
+                        <option value="CUSTOM">Custom</option>
+                      </select>
+                    </td>
+                    <td>
+                      <input type="text" defaultValue={item.reviewer_a?.keycode || ''} placeholder="Key code" />
+                      <input type="text" defaultValue={item.reviewer_a?.template || ''} placeholder="Template" />
+                      <input type="date" defaultValue={item.reviewer_a?.eff_date || weekEnding} />
+                    </td>
+                  </tr>
+                ))
+              )}
             </tbody>
           </table>
         </div>
         
         <div className="row right" style={{ marginTop: '12px' }}>
-          <button className="btn primary">Promote Resolved → Final Review</button>
+          <button className="btn primary" onClick={handlePromoteResolved} disabled={comparisonData.length === 0}>
+            Promote Resolved → Final Review
+          </button>
         </div>
       </div>
 
@@ -420,7 +563,9 @@ export function WeeklyReviewPDL() {
         <div className="panel-header">
           <h2 className="panel-title">✅ Final Review & POS Export</h2>
           <span className="hint">Deduped by NDC</span>
-          <button className="btn success" style={{ marginLeft: 'auto' }}>Approve & Generate POS Export</button>
+          <button className="btn success" style={{ marginLeft: 'auto' }} onClick={handleApproveSync} disabled={finalApprovalData.length === 0}>
+            Approve & Generate POS Export
+          </button>
         </div>
         
         <div className="scroll">
@@ -428,27 +573,36 @@ export function WeeklyReviewPDL() {
             <thead>
               <tr>
                 <th>NDC</th>
-                <th>PDL Key Code</th>
+                <th>Key Code</th>
+                <th>Template</th>
                 <th>Eff</th>
-                <th>End</th>
-                <th>POS Action</th>
+                <th>Resolution</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td><code>22233344455</code></td>
-                <td><code>40002|MOTRIN|RX|60</code></td>
-                <td>2024-12-15</td>
-                <td></td>
-                <td><span className="status success">ADD</span></td>
-              </tr>
-              <tr>
-                <td><code>77766655544</code></td>
-                <td><code>50001|ALLERE|OTC|30</code></td>
-                <td>2024-12-15</td>
-                <td></td>
-                <td><span className="status success">ADD</span></td>
-              </tr>
+              {dataLoading ? (
+                <tr>
+                  <td colSpan={5} style={{ textAlign: 'center', padding: '20px' }}>
+                    Loading final approval data...
+                  </td>
+                </tr>
+              ) : finalApprovalData.length === 0 ? (
+                <tr>
+                  <td colSpan={5} style={{ textAlign: 'center', padding: '20px', color: '#666' }}>
+                    No items ready for final approval
+                  </td>
+                </tr>
+              ) : (
+                finalApprovalData.map((item, index) => (
+                  <tr key={item.ndc || index}>
+                    <td><code>{item.ndc}</code></td>
+                    <td><code>{item.keycode || '-'}</code></td>
+                    <td><code>{item.template || '-'}</code></td>
+                    <td>{item.eff_date || '-'}</td>
+                    <td><span className="status auto">{item.resolution_type || 'AUTO'}</span></td>
+                  </tr>
+                ))
+              )}
             </tbody>
           </table>
         </div>

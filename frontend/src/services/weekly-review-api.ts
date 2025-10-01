@@ -8,9 +8,7 @@
 export interface WeeklyPoolData {
   ndc: string;
   brand: string;
-  gsn: string;
-  hic3: string;
-  mfr: string;
+  keycode?: string;
   load_date: string;
   status: string;
   match_type: '100% match' | 'brand match' | 'no match';
@@ -30,9 +28,7 @@ export interface WeeklyPoolResponse {
 export interface ReviewGroupData {
   ndc: string;
   brand: string;
-  gsn: string;
-  hic3: string;
-  mfr: string;
+  mbid?: string;
   load_date: string;
   status: 'A' | 'B' | 'both' | 'rejected' | 'pending';
   suggested_mbid: string;
@@ -204,12 +200,17 @@ class WeeklyReviewApiService {
   async getReviewGroups(
     reviewType: 'fmt' | 'pdl',
     tenant: string,
-    weekEnding: string
+    weekEnding: string,
+    search?: string
   ): Promise<ReviewGroupsResponse> {
     const params = new URLSearchParams({
       tenant,
       week_ending: weekEnding,
     });
+
+    if (search) {
+      params.append('search', search);
+    }
 
     const response = await fetch(`${this.getBaseUrl(reviewType)}/groups?${params}`);
     
@@ -335,6 +336,72 @@ class WeeklyReviewApiService {
     
     if (!response.ok) {
       throw new Error(`Failed to fetch comparison data: ${response.statusText}`);
+    }
+    
+    return response.json();
+  }
+
+  /**
+   * Get Reviewer A assignments
+   */
+  async getReviewerAAssignments(
+    reviewType: 'fmt' | 'pdl',
+    tenant: string,
+    weekEnding: string
+  ): Promise<any> {
+    const params = new URLSearchParams({
+      tenant,
+      week_ending: weekEnding,
+    });
+
+    const response = await fetch(`${this.getBaseUrl(reviewType)}/reviewer-a?${params}`);
+    
+    if (!response.ok) {
+      throw new Error(`Failed to fetch Reviewer A assignments: ${response.statusText}`);
+    }
+    
+    return response.json();
+  }
+
+  /**
+   * Get Reviewer B assignments
+   */
+  async getReviewerBAssignments(
+    reviewType: 'fmt' | 'pdl',
+    tenant: string,
+    weekEnding: string
+  ): Promise<any> {
+    const params = new URLSearchParams({
+      tenant,
+      week_ending: weekEnding,
+    });
+
+    const response = await fetch(`${this.getBaseUrl(reviewType)}/reviewer-b?${params}`);
+    
+    if (!response.ok) {
+      throw new Error(`Failed to fetch Reviewer B assignments: ${response.statusText}`);
+    }
+    
+    return response.json();
+  }
+
+  /**
+   * Get final approval data
+   */
+  async getFinalApprovalData(
+    reviewType: 'fmt' | 'pdl',
+    tenant: string,
+    weekEnding: string
+  ): Promise<any> {
+    const params = new URLSearchParams({
+      tenant,
+      week_ending: weekEnding,
+    });
+
+    const response = await fetch(`${this.getBaseUrl(reviewType)}/final-approval?${params}`);
+    
+    if (!response.ok) {
+      throw new Error(`Failed to fetch final approval data: ${response.statusText}`);
     }
     
     return response.json();
