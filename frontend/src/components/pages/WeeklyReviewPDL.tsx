@@ -5,7 +5,7 @@
 
 import { useState, useEffect, useContext } from 'react';
 import { TenantContext } from '../../App';
-import { weeklyReviewApi, type WeeklyPoolResponse, type PDLAssignment } from '../../services/weekly-review-api';
+import { weeklyReviewApi, type WeeklyPoolResponse } from '../../services/weekly-review-api';
 
 export function WeeklyReviewPDL() {
   const { tenant } = useContext(TenantContext);
@@ -15,26 +15,52 @@ export function WeeklyReviewPDL() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [selectedNDCs, setSelectedNDCs] = useState<Set<string>>(new Set());
-  const [assignmentLoading, setAssignmentLoading] = useState(false);
   const [reviewerAData, setReviewerAData] = useState<any[]>([]);
   const [reviewerBData, setReviewerBData] = useState<any[]>([]);
   const [finalApprovalData, setFinalApprovalData] = useState<any[]>([]);
   const [comparisonData, setComparisonData] = useState<any[]>([]);
-  const [dataLoading, setDataLoading] = useState(false);
+  const [userKeycodeSelections] = useState<Record<string, string>>({});
+  
+  // Single data source - all data comes from this
+  const [masterData, setMasterData] = useState<any[]>([]);
 
   // Load pool data on component mount and when dependencies change
   useEffect(() => {
     loadPoolData();
-    loadReviewerData();
   }, [tenant, weekEnding]);
+
+  // Debug effect to log when comparison data changes
+  useEffect(() => {
+    console.log('DEBUG: PDL Comparison data updated:', comparisonData);
+  }, [comparisonData]);
+
+  // Debug effect to log when user selections change
+  useEffect(() => {
+    console.log('DEBUG: PDL User keycode selections updated:', userKeycodeSelections);
+  }, [userKeycodeSelections]);
 
   const loadPoolData = async () => {
     setLoading(true);
     setError(null);
     try {
+      console.log('DEBUG: Loading PDL pool data with search query:', searchQuery);
       const poolResponse = await weeklyReviewApi.getWeeklyPool('pdl', tenant, weekEnding, searchQuery || undefined);
       
+      console.log('DEBUG: PDL Pool response records:', poolResponse.pool_data?.length);
       setPoolData(poolResponse);
+      
+      // Set master data - single source of truth
+      setMasterData(poolResponse.pool_data || []);
+      
+      // Initialize other data as empty (frontend-only management)
+      setReviewerAData([]);
+      setReviewerBData([]);
+      setFinalApprovalData([]);
+      setComparisonData([]);
+      
+      // Transform pool data to groups format (not used in PDL)
+      transformPoolDataToGroups(poolResponse);
+      
     } catch (err) {
       console.error('Error loading weekly review data:', err);
       setError(err instanceof Error ? err.message : 'Failed to load data');
@@ -43,27 +69,71 @@ export function WeeklyReviewPDL() {
     }
   };
 
-  const loadReviewerData = async () => {
-    setDataLoading(true);
-    try {
-      const [reviewerAResponse, reviewerBResponse, finalApprovalResponse, comparisonResponse] = await Promise.all([
-        weeklyReviewApi.getReviewerAAssignments('pdl', tenant, weekEnding),
-        weeklyReviewApi.getReviewerBAssignments('pdl', tenant, weekEnding),
-        weeklyReviewApi.getFinalApprovalData('pdl', tenant, weekEnding),
-        weeklyReviewApi.getComparisonData('pdl', tenant, weekEnding)
-      ]);
-      
-      setReviewerAData(reviewerAResponse.assignments || []);
-      setReviewerBData(reviewerBResponse.assignments || []);
-      setFinalApprovalData(finalApprovalResponse.final_approval_items || []);
-      setComparisonData(comparisonResponse.comparison_data || []);
-    } catch (err) {
-      console.error('Error loading reviewer data:', err);
-      // Don't show error to user for reviewer data, just log it
-    } finally {
-      setDataLoading(false);
+  // Transform pool data to groups format (similar to FMT)
+  const transformPoolDataToGroups = (poolResponse: any) => {
+    if (!poolResponse.pool_data || poolResponse.pool_data.length === 0) {
+      return {
+        groups: {},
+        tenant: poolResponse.tenant,
+        week_ending: poolResponse.week_ending,
+        review_type: poolResponse.review_type
+      };
     }
+
+    const groups: any = {};
+    poolResponse.pool_data.forEach((record: any) => {
+      const matchType = record.match_type || 'no match';
+      if (!groups[matchType]) {
+        groups[matchType] = {
+          records: [],
+          counts: { 'A': 0, 'B': 0, 'both': 0, 'rejected': 0, 'pending': 0 }
+        };
+      }
+      groups[matchType].records.push({
+        ndc: record.ndc,
+        brand: record.brand,
+        load_date: record.load_date,
+        status: 'pending', // Hardcoded 'pending' status
+        suggested_keycode: ''
+      });
+      groups[matchType].counts.pending += 1;
+    });
+    return {
+      groups,
+      tenant: poolResponse.tenant,
+      week_ending: poolResponse.week_ending,
+      review_type: poolResponse.review_type
+    };
   };
+
+  // Update comparison data when reviewer data changes
+  const updateComparisonData = () => {
+    const reviewerANDCs = new Set(reviewerAData.map(item => item.ndc));
+    const reviewerBNDCs = new Set(reviewerBData.map(item => item.ndc));
+    
+    const commonNDCs = [...reviewerANDCs].filter(ndc => reviewerBNDCs.has(ndc));
+    
+    const newComparisonData = commonNDCs.map(ndc => {
+      const reviewerAItem = reviewerAData.find(item => item.ndc === ndc);
+      const reviewerBItem = reviewerBData.find(item => item.ndc === ndc);
+      
+      return {
+        ndc,
+        reviewer_a: reviewerAItem,
+        reviewer_b: reviewerBItem,
+        auto_resolution: reviewerAItem?.keycode === reviewerBItem?.keycode ? 'AUTO' : 'CUSTOM',
+        user_selected_keycode: userKeycodeSelections[ndc] || '',
+        updated_at: new Date().toISOString()
+      };
+    });
+    
+    setComparisonData(newComparisonData);
+  };
+
+  // Update comparison data when reviewer data or user selections change
+  useEffect(() => {
+    updateComparisonData();
+  }, [reviewerAData, reviewerBData, userKeycodeSelections]);
 
   const handleSearch = () => {
     loadPoolData();
@@ -93,44 +163,34 @@ export function WeeklyReviewPDL() {
     setSelectedNDCs(newSelected);
   };
 
-  const handleAssignToReviewer = async (reviewer: 'A' | 'B') => {
+  const handleAssignToReviewer = (reviewer: 'A' | 'B') => {
     if (selectedNDCs.size === 0) {
       alert('Please select at least one NDC to assign.');
       return;
     }
 
-    setAssignmentLoading(true);
-    try {
-      const assignments: PDLAssignment[] = Array.from(selectedNDCs).map(ndc => ({
-        ndc,
-        reviewer,
-        keycode: '', // TODO: Add keycode suggestion logic
-        template: 'PENDING_REVIEW', // Default template
-        eff_date: weekEnding
-      }));
+    // Get selected records from master data
+    const selectedRecords = masterData.filter(record => selectedNDCs.has(record.ndc));
+    const newAssignments = selectedRecords.map(record => ({
+      ndc: record.ndc,
+      brand: record.brand,
+      keycode: '', // TODO: Add keycode suggestion logic
+      template: 'PENDING_REVIEW', // Default template
+      eff_date: weekEnding,
+      end_date: null,
+      assigned_at: new Date().toISOString()
+    }));
 
-      await weeklyReviewApi.assignReviews({
-        review_type: 'pdl',
-        tenant,
-        week_ending: weekEnding,
-        assignments
-      });
-
-      // Clear selections and reload data to show updated status
-      setSelectedNDCs(new Set());
-      await loadPoolData();
-      await loadReviewerData();
-      
-      alert(`Successfully assigned ${assignments.length} NDCs to Reviewer ${reviewer}`);
-    } catch (error) {
-      console.error('Error assigning PDL reviews:', error);
-      alert(`Failed to assign NDCs: ${error instanceof Error ? error.message : 'Unknown error'}`);
-    } finally {
-      setAssignmentLoading(false);
+    if (reviewer === 'A') {
+      setReviewerAData(prev => [...prev, ...newAssignments]);
+    } else {
+      setReviewerBData(prev => [...prev, ...newAssignments]);
     }
+    setSelectedNDCs(new Set());
+    alert(`Successfully assigned ${newAssignments.length} NDCs to Reviewer ${reviewer}`);
   };
 
-  const handleRejectSelected = async () => {
+  const handleRejectSelected = () => {
     if (selectedNDCs.size === 0) {
       alert('Please select at least one NDC to reject.');
       return;
@@ -139,59 +199,37 @@ export function WeeklyReviewPDL() {
     const reason = prompt('Enter rejection reason:');
     if (!reason) return;
 
-    setAssignmentLoading(true);
-    try {
-      await weeklyReviewApi.rejectItems({
-        review_type: 'pdl',
-        tenant,
-        week_ending: weekEnding,
-        rejected_ndcs: Array.from(selectedNDCs),
-        rejection_reason: reason
-      });
-
-      // Clear selections and reload data
-      setSelectedNDCs(new Set());
-      await loadPoolData();
-      
-      alert(`Successfully rejected ${selectedNDCs.size} NDCs`);
-    } catch (error) {
-      console.error('Error rejecting PDL NDCs:', error);
-      alert(`Failed to reject NDCs: ${error instanceof Error ? error.message : 'Unknown error'}`);
-    } finally {
-      setAssignmentLoading(false);
-    }
+    // Remove rejected NDCs from master data
+    setMasterData(prev => prev.filter(record => !selectedNDCs.has(record.ndc)));
+    setSelectedNDCs(new Set());
+    alert(`Successfully rejected ${selectedNDCs.size} NDCs`);
   };
 
-  const handlePromoteResolved = async () => {
+  const handlePromoteResolved = () => {
     if (comparisonData.length === 0) {
       alert('No conflicts to resolve.');
       return;
     }
 
-    try {
-      const resolutions = comparisonData.map(item => ({
-        ndc: item.ndc,
-        resolution: item.auto_resolution || 'AUTO',
-        final_keycode: item.reviewer_a?.keycode || '',
-        final_template: item.reviewer_a?.template || '',
-        final_eff_date: item.reviewer_a?.eff_date || weekEnding
-      }));
-
-      await weeklyReviewApi.resolveConflicts({
-        review_type: 'pdl',
-        tenant,
-        week_ending: weekEnding,
-        resolutions
-      });
-
-      // Reload data to show updated status
-      await loadReviewerData();
-      
-      alert(`Successfully resolved ${resolutions.length} conflicts`);
-    } catch (error) {
-      console.error('Error resolving conflicts:', error);
-      alert(`Failed to resolve conflicts: ${error instanceof Error ? error.message : 'Unknown error'}`);
-    }
+    // Move resolved items to Final Review
+    const resolvedItems = comparisonData.map(item => ({
+      ndc: item.ndc,
+      brand: item.reviewer_a?.brand || item.reviewer_b?.brand || '',
+      keycode: item.user_selected_keycode || item.reviewer_a?.keycode || item.reviewer_b?.keycode || '',
+      template: item.reviewer_a?.template || item.reviewer_b?.template || '',
+      eff_date: item.reviewer_a?.eff_date || item.reviewer_b?.eff_date || weekEnding,
+      end_date: item.reviewer_a?.end_date || item.reviewer_b?.end_date || null,
+      resolved_at: new Date().toISOString()
+    }));
+    
+    setFinalApprovalData(prev => [...prev, ...resolvedItems]);
+    
+    // Remove resolved NDCs from reviewer dataframes
+    const resolvedNDCs = new Set(comparisonData.map(item => item.ndc));
+    setReviewerAData(prev => prev.filter(item => !resolvedNDCs.has(item.ndc)));
+    setReviewerBData(prev => prev.filter(item => !resolvedNDCs.has(item.ndc)));
+    
+    alert(`Successfully resolved ${resolvedItems.length} conflicts`);
   };
 
   const handleApproveSync = async () => {
@@ -215,8 +253,8 @@ export function WeeklyReviewPDL() {
         approved_items: approvedItems
       });
 
-      // Reload data to show updated status
-      await loadReviewerData();
+      // Clear final approval data (items are now synced)
+      setFinalApprovalData([]);
       
       alert(`Successfully approved and synced ${approvedItems.length} items to master tables`);
     } catch (error) {
@@ -224,6 +262,7 @@ export function WeeklyReviewPDL() {
       alert(`Failed to approve items: ${error instanceof Error ? error.message : 'Unknown error'}`);
     }
   };
+
 
   return (
     <div className="weekly-review-pdl-page">
@@ -320,21 +359,21 @@ export function WeeklyReviewPDL() {
                   <button 
                     className="btn success" 
                     onClick={() => handleAssignToReviewer('A')}
-                    disabled={assignmentLoading || selectedNDCs.size === 0}
+                    disabled={selectedNDCs.size === 0}
                   >
                     Add to Reviewer A
                   </button>
                   <button 
                     className="btn primary" 
                     onClick={() => handleAssignToReviewer('B')}
-                    disabled={assignmentLoading || selectedNDCs.size === 0}
+                    disabled={selectedNDCs.size === 0}
                   >
                     Add to Reviewer B
                   </button>
                   <button 
                     className="btn warn" 
                     onClick={handleRejectSelected}
-                    disabled={assignmentLoading || selectedNDCs.size === 0}
+                    disabled={selectedNDCs.size === 0}
                   >
                     Reject selected
                   </button>
@@ -413,7 +452,7 @@ export function WeeklyReviewPDL() {
               </tr>
             </thead>
             <tbody>
-              {dataLoading ? (
+              {false ? (
                 <tr>
                   <td colSpan={5} style={{ textAlign: 'center', padding: '20px' }}>
                     Loading Reviewer A assignments...
@@ -429,7 +468,28 @@ export function WeeklyReviewPDL() {
                 reviewerAData.map((assignment, index) => (
                   <tr key={assignment.assignment_id || index}>
                     <td><code>{assignment.ndc}</code></td>
-                    <td><code>{assignment.keycode || '-'}</code></td>
+                    <td>
+                      <select 
+                        value={assignment.keycode || ''}
+                        onChange={(e) => {
+                          // Update keycode in reviewer data
+                          setReviewerAData(prev => prev.map(item => 
+                            item.ndc === assignment.ndc ? { ...item, keycode: e.target.value } : item
+                          ));
+                        }}
+                        style={{ minWidth: '120px' }}
+                      >
+                        <option value="">Select Keycode</option>
+                        <option value="PA">PA - Prior Auth Required</option>
+                        <option value="ST">ST - Step Therapy</option>
+                        <option value="QL">QL - Quantity Limit</option>
+                        <option value="DA">DA - Days Supply Limit</option>
+                        <option value="GE">GE - Generic Required</option>
+                        <option value="BR">BR - Brand Required</option>
+                        <option value="EX">EX - Excluded</option>
+                        <option value="IN">IN - Included</option>
+                      </select>
+                    </td>
                     <td><code>{assignment.template || '-'}</code></td>
                     <td><input type="date" defaultValue={assignment.eff_date || weekEnding} /></td>
                     <td><span className={`status ${assignment.status?.toLowerCase() || 'assigned'}`}>{assignment.status || 'ASSIGNED'}</span></td>
@@ -459,7 +519,7 @@ export function WeeklyReviewPDL() {
               </tr>
             </thead>
             <tbody>
-              {dataLoading ? (
+              {false ? (
                 <tr>
                   <td colSpan={5} style={{ textAlign: 'center', padding: '20px' }}>
                     Loading Reviewer B assignments...
@@ -475,7 +535,28 @@ export function WeeklyReviewPDL() {
                 reviewerBData.map((assignment, index) => (
                   <tr key={assignment.assignment_id || index}>
                     <td><code>{assignment.ndc}</code></td>
-                    <td><code>{assignment.keycode || '-'}</code></td>
+                    <td>
+                      <select 
+                        value={assignment.keycode || ''}
+                        onChange={(e) => {
+                          // Update keycode in reviewer data
+                          setReviewerBData(prev => prev.map(item => 
+                            item.ndc === assignment.ndc ? { ...item, keycode: e.target.value } : item
+                          ));
+                        }}
+                        style={{ minWidth: '120px' }}
+                      >
+                        <option value="">Select Keycode</option>
+                        <option value="PA">PA - Prior Auth Required</option>
+                        <option value="ST">ST - Step Therapy</option>
+                        <option value="QL">QL - Quantity Limit</option>
+                        <option value="DA">DA - Days Supply Limit</option>
+                        <option value="GE">GE - Generic Required</option>
+                        <option value="BR">BR - Brand Required</option>
+                        <option value="EX">EX - Excluded</option>
+                        <option value="IN">IN - Included</option>
+                      </select>
+                    </td>
                     <td><code>{assignment.template || '-'}</code></td>
                     <td><input type="date" defaultValue={assignment.eff_date || weekEnding} /></td>
                     <td><span className={`status ${assignment.status?.toLowerCase() || 'assigned'}`}>{assignment.status || 'ASSIGNED'}</span></td>
@@ -509,7 +590,7 @@ export function WeeklyReviewPDL() {
               </tr>
             </thead>
             <tbody>
-              {dataLoading ? (
+              {false ? (
                 <tr>
                   <td colSpan={9} style={{ textAlign: 'center', padding: '20px' }}>
                     Loading comparison data...
@@ -564,7 +645,7 @@ export function WeeklyReviewPDL() {
           <h2 className="panel-title">✅ Final Review & POS Export</h2>
           <span className="hint">Deduped by NDC</span>
           <button className="btn success" style={{ marginLeft: 'auto' }} onClick={handleApproveSync} disabled={finalApprovalData.length === 0}>
-            Approve & Generate POS Export
+            Approve & Sync
           </button>
         </div>
         
@@ -580,7 +661,7 @@ export function WeeklyReviewPDL() {
               </tr>
             </thead>
             <tbody>
-              {dataLoading ? (
+              {false ? (
                 <tr>
                   <td colSpan={5} style={{ textAlign: 'center', padding: '20px' }}>
                     Loading final approval data...
@@ -615,59 +696,7 @@ export function WeeklyReviewPDL() {
         </div>
       </div>
 
-      {/* Key Code Templates */}
-      <div className="panel">
-        <div className="panel-header">
-          <h2 className="panel-title">🔧 Active Key Code Template</h2>
-        </div>
-        
-        <div className="kv">
-          <div className="muted">Template Name</div>
-          <div><code>keycode.template.default</code></div>
-          
-          <div className="muted">Template Pattern</div>
-          <div><code>GSN|brand6|rx_otc|pkg6</code></div>
-          
-          <div className="muted">Description</div>
-          <div>Default PDL keycode template</div>
-          
-          <div className="muted">Example</div>
-          <div><code>40002|MOTRIN|RX|60</code> → GSN: 40002, Brand: MOTRIN (first 6), RX/OTC: RX, Package: 60</div>
-        </div>
-      </div>
 
-      {/* API Integration */}
-      <div className="panel">
-        <div className="panel-header">
-          <h2 className="panel-title">🔗 API Integration</h2>
-        </div>
-        
-        <div className="alert info">
-          <strong>Future API Wiring</strong>
-          <div className="muted mt-1">
-            PDL weekly review will connect to Lakebase OLTP for data management and automated POS export generation.
-          </div>
-        </div>
-        
-        <div className="kv">
-          <div className="muted">Review Endpoint</div>
-          <div><code>POST /api/review/pdl-submit</code></div>
-          
-          <div className="muted">Approval Endpoint</div>
-          <div><code>POST /api/approve/pdl</code></div>
-          
-          <div className="muted">Operations</div>
-          <div>
-            <ul>
-              <li>Automated PDL key code generation using configurable templates</li>
-              <li>Dual reviewer validation and conflict resolution</li>
-              <li>POS export file generation (CSV format)</li>
-              <li>Automatic sync to PDL Master upon approval</li>
-              <li>Weekly scheduling via Delta OLAP</li>
-            </ul>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }

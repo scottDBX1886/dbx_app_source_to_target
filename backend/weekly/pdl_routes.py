@@ -33,7 +33,7 @@ def load_pdl_weekly_pool_data(tenant: str, week_ending: str, search: Optional[st
         
         # Get new PDL master data for this week that needs review
         new_ndcs_query = f"""
-        SELECT DISTINCT p.ndc, p.pdl_drug as brand, p.keycode,
+        SELECT DISTINCT p.ndc, p.pdl_drug as brand,
                p.load_date, 'NEW' as status,
                CASE 
                  WHEN EXISTS (SELECT 1 FROM demo.gainwell.pdl_keycodes k WHERE k.ndc = p.ndc AND k.tenant = '{tenant.lower()}') THEN '100% match'
@@ -74,13 +74,12 @@ def load_pdl_weekly_pool_data(tenant: str, week_ending: str, search: Optional[st
                 search_filter = f"""
                 AND (
                     LOWER(p.ndc) LIKE '%{search_lower}%' OR
-                    LOWER(p.pdl_drug) LIKE '%{search_lower}%' OR
-                    LOWER(p.keycode) LIKE '%{search_lower}%'
+                    LOWER(p.pdl_drug) LIKE '%{search_lower}%'
                 )
                 """
             
             new_ndcs_query = f"""
-            SELECT DISTINCT p.ndc, p.pdl_drug as brand, p.keycode,
+            SELECT DISTINCT p.ndc, p.pdl_drug as brand,
                    p.load_date, 'NEW' as status,
                    CASE 
                      WHEN EXISTS (SELECT 1 FROM demo.gainwell.pdl_keycodes k WHERE k.ndc = p.ndc AND k.tenant = '{tenant.lower()}') THEN '100% match'
@@ -180,8 +179,7 @@ async def get_pdl_weekly_pool(
             search_lower = search.lower()
             mask = (
                 df['ndc'].astype(str).str.contains(search_lower, case=False, na=False) |
-                df['brand'].astype(str).str.contains(search_lower, case=False, na=False) |
-                df['keycode'].astype(str).str.contains(search_lower, case=False, na=False)
+                df['brand'].astype(str).str.contains(search_lower, case=False, na=False)
             )
             df = df[mask]
         
@@ -191,7 +189,6 @@ async def get_pdl_weekly_pool(
             record = {
                 "ndc": str(row['ndc']),
                 "brand": str(row['brand']) if pd.notna(row['brand']) else "",
-                "keycode": str(row['keycode']) if pd.notna(row['keycode']) else "",
                 "load_date": str(row['load_date']) if pd.notna(row['load_date']) else "",
                 "status": str(row['status']) if pd.notna(row['status']) else "NEW",
                 "match_type": str(row['match_type']) if pd.notna(row['match_type']) else "no match"
@@ -283,7 +280,6 @@ async def get_pdl_review_groups(
                 group_records.append({
                     "ndc": ndc,
                     "brand": str(row['brand']) if pd.notna(row['brand']) else "",
-                    "keycode": str(row['keycode']) if pd.notna(row['keycode']) else "",
                     "load_date": str(row['load_date']) if pd.notna(row['load_date']) else "",
                     "status": status,
                     "suggested_keycode": ""  # TODO: Implement keycode suggestion logic
