@@ -642,7 +642,7 @@ export function WeeklyReviewPDL() {
       {/* Final Review */}
       <div className="panel">
         <div className="panel-header">
-          <h2 className="panel-title">✅ Final Review & POS Export</h2>
+          <h2 className="panel-title">✅ Final Review</h2>
           <span className="hint">Deduped by NDC</span>
           <button className="btn success" style={{ marginLeft: 'auto' }} onClick={handleApproveSync} disabled={finalApprovalData.length === 0}>
             Approve & Sync
@@ -688,12 +688,6 @@ export function WeeklyReviewPDL() {
           </table>
         </div>
         
-        <div className="alert success" style={{ marginTop: '12px' }}>
-          <strong>POS Export Preview</strong>
-          <div className="muted mt-1">
-            File: <code>pos_export_2024-12-15.csv</code> | Records: 2 | Actions: 2 ADD, 0 REMOVE
-          </div>
-        </div>
       </div>
 
 

@@ -1,0 +1,501 @@
+ndc,gsn,brand,generic,rx_otc,pkg_size,hic3,hicl,dcc,mfr,obsolete,rebate,load_date,pkg_origin,gsn_desc,pkg_form
+1105633480,10000,Lantus,insulin glargine,RX,5ml,080,Insulin,ENDO,Sanofi,True,False,2025-09-05,CA,Insulin,Injection
+3233659725,10001,Nexium,esomeprazole,OTC,5ml,030,Proton Pump Inhibitors,GI,AstraZeneca,False,True,2025-05-03,FR,Proton Pump Inhibitors,Capsule
+2779671126,10002,Trulicity,dulaglutide,RX,30,041,GLP-1 Agonists,ENDO,Eli Lilly,True,False,2025-05-10,UK,GLP-1 Agonists,Capsule
+5192805893,10003,Lipitor,atorvastatin,RX,90,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,True,False,2025-05-18,UK,HMG-CoA Reductase Inhibitors,Tablet
+7459700640,10004,Advair,fluticasone-salmeterol,OTC,90,080,Corticosteroids,RESPIR,GlaxoSmithKline,False,True,2025-08-20,CA,Corticosteroids,Solution
+3783584446,10005,Enbrel,etanercept,OTC,5ml,025,TNF Blockers,IMMUNO,Amgen,True,False,2025-07-19,DE,TNF Blockers,Capsule
+7227952008,10006,Keytruda,pembrolizumab,RX,1ml,090,Immunotherapy,ONCO,Merck,False,True,2025-07-27,DE,Immunotherapy,Injection
+4906836455,10007,Enbrel,etanercept,OTC,60,025,TNF Blockers,IMMUNO,Amgen,True,False,2025-06-10,DE,TNF Blockers,Injection
+6553223750,10008,Eliquis,apixaban,OTC,1ml,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,False,False,2025-05-18,US,Anticoagulants,Capsule
+5028771608,10009,Synthroid,levothyroxine,OTC,120,060,Thyroid Hormones,ENDO,AbbVie,True,True,2025-09-16,FR,Thyroid Hormones,Cream
+7614408980,10010,Trulicity,dulaglutide,OTC,60,041,GLP-1 Agonists,ENDO,Eli Lilly,False,True,2025-04-17,DE,GLP-1 Agonists,Capsule
+1348598727,10011,Synthroid,levothyroxine,OTC,5ml,060,Thyroid Hormones,ENDO,AbbVie,False,True,2025-07-27,FR,Thyroid Hormones,Cream
+4800278377,10012,Advair,fluticasone-salmeterol,RX,90,080,Corticosteroids,RESPIR,GlaxoSmithKline,True,False,2025-07-29,CA,Corticosteroids,Cream
+1612262970,10013,Synthroid,levothyroxine,RX,120,060,Thyroid Hormones,ENDO,AbbVie,True,False,2025-06-03,UK,Thyroid Hormones,Capsule
+8343947494,10014,Jardiance,empagliflozin,OTC,60,042,SGLT2 Inhibitors,ENDO,Boehringer Ingelheim,False,False,2025-08-07,UK,SGLT2 Inhibitors,Tablet
+6815517973,10015,Keytruda,pembrolizumab,OTC,1ml,090,Immunotherapy,ONCO,Merck,False,True,2025-07-31,DE,Immunotherapy,Injection
+9721780145,10016,Crestor,rosuvastatin,OTC,30,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,False,False,2025-03-26,CA,HMG-CoA Reductase Inhibitors,Tablet
+8511183502,10017,Ozempic,semaglutide,OTC,30,041,GLP-1 Agonists,ENDO,Novo Nordisk,False,True,2025-05-10,CA,GLP-1 Agonists,Cream
+4148757719,10018,Lipitor,atorvastatin,RX,1ml,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,True,True,2025-07-23,CA,HMG-CoA Reductase Inhibitors,Tablet
+1346604939,10019,Crestor,rosuvastatin,RX,90,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,True,True,2025-07-13,FR,HMG-CoA Reductase Inhibitors,Capsule
+4922206011,10020,Metformin,metformin,OTC,120,040,Biguanides,ENDO,Teva,False,True,2025-07-03,DE,Biguanides,Injection
+9432416335,10021,Lantus,insulin glargine,RX,90,080,Insulin,ENDO,Sanofi,True,True,2025-04-10,FR,Insulin,Tablet
+9810359791,10022,Xarelto,rivaroxaban,RX,60,015,Anticoagulants,CARDIO,Bayer,True,True,2025-07-10,CA,Anticoagulants,Cream
+3877163187,10023,Lantus,insulin glargine,OTC,120,080,Insulin,ENDO,Sanofi,False,True,2025-05-15,DE,Insulin,Capsule
+5708871550,10024,Keytruda,pembrolizumab,RX,90,090,Immunotherapy,ONCO,Merck,True,True,2025-09-13,UK,Immunotherapy,Capsule
+4951825175,10025,Eliquis,apixaban,RX,60,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,True,False,2025-08-04,FR,Anticoagulants,Cream
+1568338435,10026,Xarelto,rivaroxaban,RX,60,015,Anticoagulants,CARDIO,Bayer,True,False,2025-04-20,DE,Anticoagulants,Injection
+1254751600,10027,Ozempic,semaglutide,RX,5ml,041,GLP-1 Agonists,ENDO,Novo Nordisk,True,True,2025-08-17,UK,GLP-1 Agonists,Tablet
+5182150253,10028,Jardiance,empagliflozin,OTC,90,042,SGLT2 Inhibitors,ENDO,Boehringer Ingelheim,False,False,2025-08-07,CA,SGLT2 Inhibitors,Solution
+8947871252,10029,Ozempic,semaglutide,OTC,90,041,GLP-1 Agonists,ENDO,Novo Nordisk,False,False,2025-08-27,US,GLP-1 Agonists,Tablet
+4900626301,10030,Trulicity,dulaglutide,RX,30,041,GLP-1 Agonists,ENDO,Eli Lilly,True,False,2025-08-25,UK,GLP-1 Agonists,Tablet
+8760685580,10031,Trulicity,dulaglutide,RX,1ml,041,GLP-1 Agonists,ENDO,Eli Lilly,True,True,2025-07-07,US,GLP-1 Agonists,Injection
+4477721364,10032,Enbrel,etanercept,OTC,30,025,TNF Blockers,IMMUNO,Amgen,False,True,2025-08-20,US,TNF Blockers,Tablet
+1158919264,10033,Nexium,esomeprazole,RX,120,030,Proton Pump Inhibitors,GI,AstraZeneca,False,True,2025-07-17,US,Proton Pump Inhibitors,Tablet
+5747878523,10034,Metformin,metformin,OTC,1ml,040,Biguanides,ENDO,Teva,False,False,2025-06-28,US,Biguanides,Solution
+5960196797,10035,Xarelto,rivaroxaban,RX,120,015,Anticoagulants,CARDIO,Bayer,False,False,2025-04-30,US,Anticoagulants,Tablet
+8373779153,10036,Nexium,esomeprazole,OTC,30,030,Proton Pump Inhibitors,GI,AstraZeneca,True,True,2025-05-08,UK,Proton Pump Inhibitors,Capsule
+1053861788,10037,Synthroid,levothyroxine,OTC,60,060,Thyroid Hormones,ENDO,AbbVie,False,True,2025-04-06,US,Thyroid Hormones,Capsule
+7561683173,10038,Advair,fluticasone-salmeterol,RX,90,080,Corticosteroids,RESPIR,GlaxoSmithKline,False,True,2025-08-26,CA,Corticosteroids,Capsule
+1604629525,10039,Lantus,insulin glargine,RX,1ml,080,Insulin,ENDO,Sanofi,False,False,2025-07-01,FR,Insulin,Cream
+7804370836,10040,Nexium,esomeprazole,OTC,90,030,Proton Pump Inhibitors,GI,AstraZeneca,False,True,2025-05-10,CA,Proton Pump Inhibitors,Cream
+7280233624,10041,Jardiance,empagliflozin,RX,5ml,042,SGLT2 Inhibitors,ENDO,Boehringer Ingelheim,False,True,2025-07-14,DE,SGLT2 Inhibitors,Cream
+8040635284,10042,Xarelto,rivaroxaban,OTC,1ml,015,Anticoagulants,CARDIO,Bayer,True,True,2025-08-23,UK,Anticoagulants,Injection
+7758619211,10043,Advair,fluticasone-salmeterol,OTC,1ml,080,Corticosteroids,RESPIR,GlaxoSmithKline,False,False,2025-05-07,UK,Corticosteroids,Injection
+6297907171,10044,Eliquis,apixaban,RX,60,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,False,True,2025-05-05,US,Anticoagulants,Solution
+2438146799,10045,Trulicity,dulaglutide,RX,30,041,GLP-1 Agonists,ENDO,Eli Lilly,True,True,2025-07-18,DE,GLP-1 Agonists,Capsule
+5494434588,10046,Ozempic,semaglutide,OTC,60,041,GLP-1 Agonists,ENDO,Novo Nordisk,True,True,2025-05-04,DE,GLP-1 Agonists,Tablet
+4718124639,10047,Nexium,esomeprazole,OTC,90,030,Proton Pump Inhibitors,GI,AstraZeneca,True,False,2025-04-21,FR,Proton Pump Inhibitors,Solution
+1700529332,10048,Lipitor,atorvastatin,OTC,30,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,True,False,2025-08-16,DE,HMG-CoA Reductase Inhibitors,Capsule
+9154911738,10049,Nexium,esomeprazole,OTC,90,030,Proton Pump Inhibitors,GI,AstraZeneca,True,False,2025-05-15,DE,Proton Pump Inhibitors,Tablet
+6827617894,10050,Synthroid,levothyroxine,OTC,1ml,060,Thyroid Hormones,ENDO,AbbVie,True,False,2025-05-28,DE,Thyroid Hormones,Capsule
+3742146348,10051,Humira,adalimumab,RX,90,011,TNF Blockers,IMMUNO,AbbVie,True,True,2025-07-08,CA,TNF Blockers,Solution
+4347655264,10052,Nexium,esomeprazole,RX,5ml,030,Proton Pump Inhibitors,GI,AstraZeneca,True,True,2025-07-04,DE,Proton Pump Inhibitors,Solution
+4883662456,10053,Lipitor,atorvastatin,RX,30,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,False,True,2025-07-15,DE,HMG-CoA Reductase Inhibitors,Cream
+9243479420,10054,Trulicity,dulaglutide,OTC,1ml,041,GLP-1 Agonists,ENDO,Eli Lilly,False,True,2025-04-16,US,GLP-1 Agonists,Tablet
+7725511239,10055,Trulicity,dulaglutide,OTC,30,041,GLP-1 Agonists,ENDO,Eli Lilly,False,False,2025-05-26,CA,GLP-1 Agonists,Cream
+1412959328,10056,Keytruda,pembrolizumab,OTC,60,090,Immunotherapy,ONCO,Merck,True,True,2025-04-30,UK,Immunotherapy,Solution
+9577302812,10057,Lipitor,atorvastatin,RX,120,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,True,False,2025-04-09,US,HMG-CoA Reductase Inhibitors,Solution
+5083708161,10058,Eliquis,apixaban,RX,60,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,True,True,2025-09-14,DE,Anticoagulants,Cream
+6034750232,10059,Xarelto,rivaroxaban,RX,120,015,Anticoagulants,CARDIO,Bayer,False,False,2025-05-04,CA,Anticoagulants,Solution
+7080700142,10060,Xarelto,rivaroxaban,RX,120,015,Anticoagulants,CARDIO,Bayer,False,False,2025-06-20,US,Anticoagulants,Capsule
+6293839765,10061,Synthroid,levothyroxine,OTC,1ml,060,Thyroid Hormones,ENDO,AbbVie,True,True,2025-05-16,FR,Thyroid Hormones,Injection
+6455230342,10062,Synthroid,levothyroxine,OTC,90,060,Thyroid Hormones,ENDO,AbbVie,True,False,2025-09-11,CA,Thyroid Hormones,Cream
+4524245206,10063,Eliquis,apixaban,OTC,60,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,True,False,2025-05-13,UK,Anticoagulants,Cream
+1839956360,10064,Jardiance,empagliflozin,RX,1ml,042,SGLT2 Inhibitors,ENDO,Boehringer Ingelheim,True,False,2025-05-22,UK,SGLT2 Inhibitors,Tablet
+8694647469,10065,Enbrel,etanercept,RX,30,025,TNF Blockers,IMMUNO,Amgen,False,False,2025-08-19,CA,TNF Blockers,Solution
+7488784199,10066,Nexium,esomeprazole,RX,30,030,Proton Pump Inhibitors,GI,AstraZeneca,False,True,2025-09-14,US,Proton Pump Inhibitors,Injection
+1445828320,10067,Advair,fluticasone-salmeterol,RX,90,080,Corticosteroids,RESPIR,GlaxoSmithKline,False,False,2025-05-18,UK,Corticosteroids,Solution
+3112461962,10068,Xarelto,rivaroxaban,OTC,90,015,Anticoagulants,CARDIO,Bayer,False,False,2025-04-05,CA,Anticoagulants,Capsule
+9355354271,10069,Keytruda,pembrolizumab,OTC,90,090,Immunotherapy,ONCO,Merck,True,False,2025-06-19,DE,Immunotherapy,Capsule
+8298103936,10070,Eliquis,apixaban,OTC,120,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,True,False,2025-05-14,FR,Anticoagulants,Injection
+9109937051,10071,Xarelto,rivaroxaban,RX,1ml,015,Anticoagulants,CARDIO,Bayer,False,False,2025-06-25,US,Anticoagulants,Capsule
+6576725730,10072,Lipitor,atorvastatin,OTC,5ml,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,False,False,2025-09-09,DE,HMG-CoA Reductase Inhibitors,Solution
+8128714944,10073,Nexium,esomeprazole,RX,60,030,Proton Pump Inhibitors,GI,AstraZeneca,True,False,2025-09-12,FR,Proton Pump Inhibitors,Solution
+9532612867,10074,Advair,fluticasone-salmeterol,OTC,60,080,Corticosteroids,RESPIR,GlaxoSmithKline,True,True,2025-04-18,CA,Corticosteroids,Cream
+9490878306,10075,Xarelto,rivaroxaban,OTC,1ml,015,Anticoagulants,CARDIO,Bayer,False,True,2025-06-26,US,Anticoagulants,Capsule
+6610523344,10076,Lantus,insulin glargine,OTC,90,080,Insulin,ENDO,Sanofi,True,True,2025-09-13,CA,Insulin,Solution
+5361141518,10077,Enbrel,etanercept,RX,120,025,TNF Blockers,IMMUNO,Amgen,False,True,2025-05-01,DE,TNF Blockers,Injection
+5070124937,10078,Eliquis,apixaban,RX,30,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,True,True,2025-04-29,UK,Anticoagulants,Injection
+7745554435,10079,Enbrel,etanercept,RX,60,025,TNF Blockers,IMMUNO,Amgen,True,True,2025-06-01,CA,TNF Blockers,Cream
+3011787498,10080,Crestor,rosuvastatin,OTC,1ml,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,True,False,2025-05-08,US,HMG-CoA Reductase Inhibitors,Capsule
+7717131487,10081,Xarelto,rivaroxaban,OTC,30,015,Anticoagulants,CARDIO,Bayer,False,False,2025-04-18,DE,Anticoagulants,Solution
+1519229767,10082,Humira,adalimumab,RX,120,011,TNF Blockers,IMMUNO,AbbVie,False,False,2025-05-21,CA,TNF Blockers,Cream
+9127906958,10083,Nexium,esomeprazole,OTC,120,030,Proton Pump Inhibitors,GI,AstraZeneca,True,False,2025-08-26,CA,Proton Pump Inhibitors,Capsule
+9171900890,10084,Synthroid,levothyroxine,OTC,120,060,Thyroid Hormones,ENDO,AbbVie,False,True,2025-07-28,UK,Thyroid Hormones,Solution
+8616599196,10085,Keytruda,pembrolizumab,RX,90,090,Immunotherapy,ONCO,Merck,True,False,2025-09-12,FR,Immunotherapy,Solution
+4720856717,10086,Eliquis,apixaban,OTC,90,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,False,True,2025-05-06,UK,Anticoagulants,Capsule
+9447970950,10087,Jardiance,empagliflozin,RX,30,042,SGLT2 Inhibitors,ENDO,Boehringer Ingelheim,True,True,2025-05-19,FR,SGLT2 Inhibitors,Capsule
+1009428392,10088,Jardiance,empagliflozin,RX,30,042,SGLT2 Inhibitors,ENDO,Boehringer Ingelheim,False,True,2025-06-12,US,SGLT2 Inhibitors,Cream
+4436472132,10089,Synthroid,levothyroxine,OTC,5ml,060,Thyroid Hormones,ENDO,AbbVie,False,False,2025-05-07,CA,Thyroid Hormones,Capsule
+3244493958,10090,Metformin,metformin,OTC,90,040,Biguanides,ENDO,Teva,True,True,2025-06-21,DE,Biguanides,Tablet
+6911343145,10091,Lantus,insulin glargine,OTC,60,080,Insulin,ENDO,Sanofi,True,True,2025-08-28,CA,Insulin,Capsule
+7067335765,10092,Advair,fluticasone-salmeterol,RX,60,080,Corticosteroids,RESPIR,GlaxoSmithKline,False,True,2025-08-14,UK,Corticosteroids,Solution
+9244213453,10093,Advair,fluticasone-salmeterol,RX,90,080,Corticosteroids,RESPIR,GlaxoSmithKline,False,True,2025-05-19,UK,Corticosteroids,Tablet
+6167753531,10094,Keytruda,pembrolizumab,RX,1ml,090,Immunotherapy,ONCO,Merck,True,False,2025-06-11,FR,Immunotherapy,Injection
+5434968158,10095,Enbrel,etanercept,OTC,120,025,TNF Blockers,IMMUNO,Amgen,False,False,2025-06-19,UK,TNF Blockers,Tablet
+2265350455,10096,Lipitor,atorvastatin,RX,90,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,False,True,2025-06-09,FR,HMG-CoA Reductase Inhibitors,Capsule
+1911350010,10097,Keytruda,pembrolizumab,RX,1ml,090,Immunotherapy,ONCO,Merck,True,False,2025-05-13,DE,Immunotherapy,Capsule
+7149784386,10098,Jardiance,empagliflozin,RX,1ml,042,SGLT2 Inhibitors,ENDO,Boehringer Ingelheim,True,False,2025-04-07,DE,SGLT2 Inhibitors,Injection
+8156402765,10099,Ozempic,semaglutide,OTC,5ml,041,GLP-1 Agonists,ENDO,Novo Nordisk,False,False,2025-05-26,CA,GLP-1 Agonists,Cream
+9647622058,10100,Metformin,metformin,OTC,60,040,Biguanides,ENDO,Teva,True,True,2025-08-07,US,Biguanides,Capsule
+7798427907,10101,Jardiance,empagliflozin,OTC,5ml,042,SGLT2 Inhibitors,ENDO,Boehringer Ingelheim,False,True,2025-09-05,FR,SGLT2 Inhibitors,Tablet
+6378276904,10102,Eliquis,apixaban,OTC,90,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,True,True,2025-03-24,DE,Anticoagulants,Solution
+4263426627,10103,Trulicity,dulaglutide,OTC,60,041,GLP-1 Agonists,ENDO,Eli Lilly,False,False,2025-04-11,CA,GLP-1 Agonists,Tablet
+8398766301,10104,Synthroid,levothyroxine,OTC,90,060,Thyroid Hormones,ENDO,AbbVie,False,False,2025-09-03,CA,Thyroid Hormones,Tablet
+1974441668,10105,Metformin,metformin,OTC,1ml,040,Biguanides,ENDO,Teva,True,True,2025-06-30,US,Biguanides,Tablet
+6172496669,10106,Trulicity,dulaglutide,OTC,120,041,GLP-1 Agonists,ENDO,Eli Lilly,False,False,2025-06-18,UK,GLP-1 Agonists,Solution
+5642110714,10107,Lipitor,atorvastatin,OTC,5ml,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,True,False,2025-04-05,DE,HMG-CoA Reductase Inhibitors,Injection
+8805972163,10108,Jardiance,empagliflozin,RX,30,042,SGLT2 Inhibitors,ENDO,Boehringer Ingelheim,True,False,2025-06-22,US,SGLT2 Inhibitors,Capsule
+1113230410,10109,Humira,adalimumab,RX,5ml,011,TNF Blockers,IMMUNO,AbbVie,True,False,2025-08-09,US,TNF Blockers,Capsule
+8225522363,10110,Synthroid,levothyroxine,RX,5ml,060,Thyroid Hormones,ENDO,AbbVie,False,False,2025-08-12,UK,Thyroid Hormones,Solution
+2605853200,10111,Humira,adalimumab,OTC,120,011,TNF Blockers,IMMUNO,AbbVie,False,True,2025-05-13,UK,TNF Blockers,Solution
+3304900558,10112,Synthroid,levothyroxine,RX,30,060,Thyroid Hormones,ENDO,AbbVie,True,True,2025-09-15,US,Thyroid Hormones,Tablet
+4998295437,10113,Jardiance,empagliflozin,RX,60,042,SGLT2 Inhibitors,ENDO,Boehringer Ingelheim,False,False,2025-04-20,US,SGLT2 Inhibitors,Tablet
+3247337331,10114,Synthroid,levothyroxine,OTC,1ml,060,Thyroid Hormones,ENDO,AbbVie,False,False,2025-05-16,US,Thyroid Hormones,Tablet
+3594524461,10115,Metformin,metformin,OTC,120,040,Biguanides,ENDO,Teva,False,False,2025-08-29,DE,Biguanides,Cream
+2308999470,10116,Keytruda,pembrolizumab,RX,1ml,090,Immunotherapy,ONCO,Merck,True,True,2025-04-17,CA,Immunotherapy,Cream
+2831986176,10117,Lipitor,atorvastatin,OTC,5ml,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,False,False,2025-08-14,UK,HMG-CoA Reductase Inhibitors,Tablet
+4926255051,10118,Nexium,esomeprazole,OTC,90,030,Proton Pump Inhibitors,GI,AstraZeneca,False,True,2025-07-06,CA,Proton Pump Inhibitors,Cream
+7340691240,10119,Humira,adalimumab,OTC,90,011,TNF Blockers,IMMUNO,AbbVie,True,True,2025-04-16,UK,TNF Blockers,Cream
+4913764917,10120,Eliquis,apixaban,OTC,60,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,True,False,2025-09-09,DE,Anticoagulants,Injection
+2025399484,10121,Trulicity,dulaglutide,RX,60,041,GLP-1 Agonists,ENDO,Eli Lilly,False,True,2025-08-18,CA,GLP-1 Agonists,Solution
+2566306779,10122,Crestor,rosuvastatin,RX,60,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,False,False,2025-03-30,CA,HMG-CoA Reductase Inhibitors,Capsule
+1921317338,10123,Lipitor,atorvastatin,OTC,5ml,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,True,False,2025-06-25,CA,HMG-CoA Reductase Inhibitors,Injection
+4107582499,10124,Synthroid,levothyroxine,RX,90,060,Thyroid Hormones,ENDO,AbbVie,False,True,2025-04-24,UK,Thyroid Hormones,Capsule
+8889516158,10125,Lantus,insulin glargine,OTC,1ml,080,Insulin,ENDO,Sanofi,True,True,2025-05-05,DE,Insulin,Tablet
+1357932008,10126,Ozempic,semaglutide,OTC,5ml,041,GLP-1 Agonists,ENDO,Novo Nordisk,True,False,2025-04-08,DE,GLP-1 Agonists,Cream
+7765283573,10127,Advair,fluticasone-salmeterol,OTC,30,080,Corticosteroids,RESPIR,GlaxoSmithKline,False,False,2025-05-01,DE,Corticosteroids,Cream
+4592872183,10128,Ozempic,semaglutide,OTC,60,041,GLP-1 Agonists,ENDO,Novo Nordisk,False,True,2025-07-09,US,GLP-1 Agonists,Tablet
+5297849867,10129,Ozempic,semaglutide,RX,90,041,GLP-1 Agonists,ENDO,Novo Nordisk,False,True,2025-04-04,DE,GLP-1 Agonists,Capsule
+8068590019,10130,Enbrel,etanercept,RX,5ml,025,TNF Blockers,IMMUNO,Amgen,True,False,2025-08-28,CA,TNF Blockers,Solution
+5243186654,10131,Lantus,insulin glargine,OTC,1ml,080,Insulin,ENDO,Sanofi,False,False,2025-06-06,FR,Insulin,Injection
+4985404509,10132,Metformin,metformin,RX,120,040,Biguanides,ENDO,Teva,False,True,2025-08-31,UK,Biguanides,Capsule
+5676575787,10133,Jardiance,empagliflozin,RX,90,042,SGLT2 Inhibitors,ENDO,Boehringer Ingelheim,True,True,2025-08-03,US,SGLT2 Inhibitors,Tablet
+9151310022,10134,Synthroid,levothyroxine,OTC,1ml,060,Thyroid Hormones,ENDO,AbbVie,False,True,2025-05-20,FR,Thyroid Hormones,Solution
+4654812668,10135,Jardiance,empagliflozin,RX,90,042,SGLT2 Inhibitors,ENDO,Boehringer Ingelheim,True,True,2025-05-31,DE,SGLT2 Inhibitors,Injection
+1331143740,10136,Metformin,metformin,OTC,30,040,Biguanides,ENDO,Teva,False,False,2025-08-04,FR,Biguanides,Injection
+2887559308,10137,Lipitor,atorvastatin,OTC,5ml,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,True,True,2025-04-10,DE,HMG-CoA Reductase Inhibitors,Solution
+5667570407,10138,Lipitor,atorvastatin,RX,1ml,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,False,False,2025-05-24,US,HMG-CoA Reductase Inhibitors,Tablet
+6024475102,10139,Crestor,rosuvastatin,OTC,90,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,False,True,2025-03-24,UK,HMG-CoA Reductase Inhibitors,Solution
+8414246160,10140,Trulicity,dulaglutide,RX,120,041,GLP-1 Agonists,ENDO,Eli Lilly,True,True,2025-03-26,DE,GLP-1 Agonists,Injection
+1511326375,10141,Crestor,rosuvastatin,RX,30,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,True,True,2025-09-03,US,HMG-CoA Reductase Inhibitors,Cream
+1571971889,10142,Advair,fluticasone-salmeterol,OTC,1ml,080,Corticosteroids,RESPIR,GlaxoSmithKline,False,True,2025-09-05,US,Corticosteroids,Solution
+7884428591,10143,Synthroid,levothyroxine,OTC,120,060,Thyroid Hormones,ENDO,AbbVie,False,False,2025-06-20,CA,Thyroid Hormones,Capsule
+4675317456,10144,Humira,adalimumab,OTC,5ml,011,TNF Blockers,IMMUNO,AbbVie,True,True,2025-08-19,UK,TNF Blockers,Cream
+2574758348,10145,Ozempic,semaglutide,OTC,5ml,041,GLP-1 Agonists,ENDO,Novo Nordisk,False,False,2025-07-14,CA,GLP-1 Agonists,Tablet
+9302724976,10146,Nexium,esomeprazole,OTC,5ml,030,Proton Pump Inhibitors,GI,AstraZeneca,False,False,2025-06-25,CA,Proton Pump Inhibitors,Tablet
+6001231818,10147,Enbrel,etanercept,RX,1ml,025,TNF Blockers,IMMUNO,Amgen,True,False,2025-07-11,FR,TNF Blockers,Solution
+3015762722,10148,Lipitor,atorvastatin,OTC,5ml,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,False,False,2025-06-12,FR,HMG-CoA Reductase Inhibitors,Cream
+5569742011,10149,Keytruda,pembrolizumab,OTC,120,090,Immunotherapy,ONCO,Merck,True,True,2025-04-26,UK,Immunotherapy,Cream
+2042541697,10150,Advair,fluticasone-salmeterol,OTC,120,080,Corticosteroids,RESPIR,GlaxoSmithKline,False,False,2025-09-13,DE,Corticosteroids,Tablet
+9563231564,10151,Jardiance,empagliflozin,OTC,90,042,SGLT2 Inhibitors,ENDO,Boehringer Ingelheim,False,False,2025-06-29,UK,SGLT2 Inhibitors,Solution
+7308877253,10152,Enbrel,etanercept,RX,30,025,TNF Blockers,IMMUNO,Amgen,True,True,2025-09-05,UK,TNF Blockers,Cream
+1498189017,10153,Lantus,insulin glargine,OTC,5ml,080,Insulin,ENDO,Sanofi,False,True,2025-05-15,FR,Insulin,Solution
+3286586173,10154,Trulicity,dulaglutide,OTC,120,041,GLP-1 Agonists,ENDO,Eli Lilly,True,False,2025-04-16,DE,GLP-1 Agonists,Injection
+1583120751,10155,Ozempic,semaglutide,OTC,120,041,GLP-1 Agonists,ENDO,Novo Nordisk,True,False,2025-07-17,US,GLP-1 Agonists,Cream
+5652441395,10156,Lipitor,atorvastatin,RX,90,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,False,False,2025-08-22,US,HMG-CoA Reductase Inhibitors,Tablet
+8572900652,10157,Humira,adalimumab,RX,60,011,TNF Blockers,IMMUNO,AbbVie,False,True,2025-09-09,US,TNF Blockers,Solution
+5223206678,10158,Lipitor,atorvastatin,OTC,120,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,True,True,2025-08-10,CA,HMG-CoA Reductase Inhibitors,Solution
+9435524835,10159,Ozempic,semaglutide,OTC,90,041,GLP-1 Agonists,ENDO,Novo Nordisk,True,True,2025-03-31,CA,GLP-1 Agonists,Injection
+8904413378,10160,Humira,adalimumab,RX,5ml,011,TNF Blockers,IMMUNO,AbbVie,False,True,2025-05-09,US,TNF Blockers,Cream
+5890751133,10161,Jardiance,empagliflozin,OTC,120,042,SGLT2 Inhibitors,ENDO,Boehringer Ingelheim,True,True,2025-06-26,FR,SGLT2 Inhibitors,Cream
+8061939755,10162,Advair,fluticasone-salmeterol,OTC,30,080,Corticosteroids,RESPIR,GlaxoSmithKline,False,True,2025-08-30,FR,Corticosteroids,Injection
+6702263004,10163,Xarelto,rivaroxaban,RX,30,015,Anticoagulants,CARDIO,Bayer,True,True,2025-04-28,CA,Anticoagulants,Injection
+9690235451,10164,Lantus,insulin glargine,OTC,5ml,080,Insulin,ENDO,Sanofi,True,False,2025-08-18,CA,Insulin,Injection
+6901317675,10165,Eliquis,apixaban,OTC,60,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,False,True,2025-06-29,CA,Anticoagulants,Capsule
+2313855871,10166,Eliquis,apixaban,RX,1ml,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,False,True,2025-05-12,UK,Anticoagulants,Solution
+6241629054,10167,Lipitor,atorvastatin,OTC,30,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,True,False,2025-05-08,FR,HMG-CoA Reductase Inhibitors,Capsule
+7042622182,10168,Metformin,metformin,RX,30,040,Biguanides,ENDO,Teva,True,False,2025-06-04,DE,Biguanides,Tablet
+8615301781,10169,Eliquis,apixaban,OTC,90,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,True,False,2025-07-17,CA,Anticoagulants,Tablet
+9307653327,10170,Trulicity,dulaglutide,OTC,1ml,041,GLP-1 Agonists,ENDO,Eli Lilly,False,False,2025-05-27,DE,GLP-1 Agonists,Capsule
+4157208448,10171,Humira,adalimumab,RX,30,011,TNF Blockers,IMMUNO,AbbVie,False,False,2025-06-17,US,TNF Blockers,Tablet
+8041561622,10172,Enbrel,etanercept,OTC,90,025,TNF Blockers,IMMUNO,Amgen,True,False,2025-09-05,CA,TNF Blockers,Solution
+2312602678,10173,Synthroid,levothyroxine,RX,30,060,Thyroid Hormones,ENDO,AbbVie,True,True,2025-09-02,UK,Thyroid Hormones,Capsule
+8689966026,10174,Nexium,esomeprazole,RX,60,030,Proton Pump Inhibitors,GI,AstraZeneca,False,True,2025-08-29,US,Proton Pump Inhibitors,Cream
+7068893998,10175,Metformin,metformin,RX,90,040,Biguanides,ENDO,Teva,True,False,2025-09-01,US,Biguanides,Capsule
+6425236717,10176,Metformin,metformin,OTC,120,040,Biguanides,ENDO,Teva,False,True,2025-04-04,US,Biguanides,Injection
+4475167976,10177,Xarelto,rivaroxaban,RX,30,015,Anticoagulants,CARDIO,Bayer,True,False,2025-04-06,DE,Anticoagulants,Cream
+1902456498,10178,Nexium,esomeprazole,RX,60,030,Proton Pump Inhibitors,GI,AstraZeneca,False,False,2025-08-22,US,Proton Pump Inhibitors,Cream
+1691540938,10179,Lipitor,atorvastatin,RX,1ml,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,False,False,2025-08-08,US,HMG-CoA Reductase Inhibitors,Cream
+7502562337,10180,Trulicity,dulaglutide,RX,60,041,GLP-1 Agonists,ENDO,Eli Lilly,False,False,2025-04-01,DE,GLP-1 Agonists,Capsule
+8186700260,10181,Crestor,rosuvastatin,RX,30,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,False,True,2025-06-22,UK,HMG-CoA Reductase Inhibitors,Injection
+1216609549,10182,Xarelto,rivaroxaban,RX,90,015,Anticoagulants,CARDIO,Bayer,True,True,2025-09-06,UK,Anticoagulants,Injection
+6705810526,10183,Trulicity,dulaglutide,RX,120,041,GLP-1 Agonists,ENDO,Eli Lilly,True,False,2025-06-05,DE,GLP-1 Agonists,Solution
+2774653255,10184,Nexium,esomeprazole,OTC,60,030,Proton Pump Inhibitors,GI,AstraZeneca,True,True,2025-06-20,DE,Proton Pump Inhibitors,Capsule
+1002213896,10185,Nexium,esomeprazole,OTC,120,030,Proton Pump Inhibitors,GI,AstraZeneca,True,True,2025-04-01,DE,Proton Pump Inhibitors,Injection
+2777899166,10186,Ozempic,semaglutide,OTC,120,041,GLP-1 Agonists,ENDO,Novo Nordisk,False,True,2025-08-30,CA,GLP-1 Agonists,Injection
+8932843683,10187,Keytruda,pembrolizumab,OTC,60,090,Immunotherapy,ONCO,Merck,True,True,2025-05-19,FR,Immunotherapy,Tablet
+1185142368,10188,Lipitor,atorvastatin,RX,5ml,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,False,True,2025-06-02,DE,HMG-CoA Reductase Inhibitors,Tablet
+7246526346,10189,Keytruda,pembrolizumab,OTC,60,090,Immunotherapy,ONCO,Merck,True,True,2025-03-24,CA,Immunotherapy,Solution
+7579305851,10190,Jardiance,empagliflozin,OTC,120,042,SGLT2 Inhibitors,ENDO,Boehringer Ingelheim,True,False,2025-04-24,DE,SGLT2 Inhibitors,Solution
+9020967910,10191,Metformin,metformin,RX,30,040,Biguanides,ENDO,Teva,False,False,2025-05-28,DE,Biguanides,Tablet
+6719494304,10192,Ozempic,semaglutide,OTC,120,041,GLP-1 Agonists,ENDO,Novo Nordisk,False,False,2025-09-04,US,GLP-1 Agonists,Tablet
+4603262287,10193,Xarelto,rivaroxaban,RX,30,015,Anticoagulants,CARDIO,Bayer,True,True,2025-05-17,FR,Anticoagulants,Injection
+5110788469,10194,Trulicity,dulaglutide,RX,120,041,GLP-1 Agonists,ENDO,Eli Lilly,True,False,2025-05-10,CA,GLP-1 Agonists,Cream
+7736786747,10195,Eliquis,apixaban,RX,120,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,False,True,2025-05-01,CA,Anticoagulants,Injection
+5228803725,10196,Synthroid,levothyroxine,OTC,30,060,Thyroid Hormones,ENDO,AbbVie,False,True,2025-06-06,DE,Thyroid Hormones,Cream
+4160480297,10197,Humira,adalimumab,OTC,30,011,TNF Blockers,IMMUNO,AbbVie,True,True,2025-09-08,UK,TNF Blockers,Tablet
+4424235982,10198,Lipitor,atorvastatin,RX,60,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,True,False,2025-04-21,DE,HMG-CoA Reductase Inhibitors,Cream
+7763567608,10199,Trulicity,dulaglutide,RX,5ml,041,GLP-1 Agonists,ENDO,Eli Lilly,True,True,2025-05-20,DE,GLP-1 Agonists,Injection
+3478112622,10200,Synthroid,levothyroxine,OTC,120,060,Thyroid Hormones,ENDO,AbbVie,True,True,2025-04-23,US,Thyroid Hormones,Capsule
+7437168343,10201,Lipitor,atorvastatin,OTC,30,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,False,False,2025-08-01,CA,HMG-CoA Reductase Inhibitors,Tablet
+7029943247,10202,Advair,fluticasone-salmeterol,OTC,60,080,Corticosteroids,RESPIR,GlaxoSmithKline,True,True,2025-05-27,US,Corticosteroids,Solution
+3435761533,10203,Trulicity,dulaglutide,RX,5ml,041,GLP-1 Agonists,ENDO,Eli Lilly,False,True,2025-09-09,CA,GLP-1 Agonists,Injection
+4916261265,10204,Advair,fluticasone-salmeterol,OTC,5ml,080,Corticosteroids,RESPIR,GlaxoSmithKline,True,False,2025-05-09,US,Corticosteroids,Tablet
+6691316698,10205,Humira,adalimumab,OTC,30,011,TNF Blockers,IMMUNO,AbbVie,False,True,2025-03-27,CA,TNF Blockers,Cream
+4665346617,10206,Metformin,metformin,RX,5ml,040,Biguanides,ENDO,Teva,False,True,2025-08-26,DE,Biguanides,Capsule
+5666116892,10207,Keytruda,pembrolizumab,RX,30,090,Immunotherapy,ONCO,Merck,True,True,2025-08-17,FR,Immunotherapy,Cream
+7729398263,10208,Synthroid,levothyroxine,OTC,60,060,Thyroid Hormones,ENDO,AbbVie,True,True,2025-07-02,UK,Thyroid Hormones,Solution
+3689312210,10209,Xarelto,rivaroxaban,RX,5ml,015,Anticoagulants,CARDIO,Bayer,False,False,2025-03-24,US,Anticoagulants,Solution
+3796292770,10210,Crestor,rosuvastatin,OTC,60,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,True,False,2025-05-08,UK,HMG-CoA Reductase Inhibitors,Cream
+1250277360,10211,Jardiance,empagliflozin,RX,90,042,SGLT2 Inhibitors,ENDO,Boehringer Ingelheim,True,False,2025-09-17,UK,SGLT2 Inhibitors,Tablet
+9853740488,10212,Crestor,rosuvastatin,OTC,5ml,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,True,False,2025-04-04,CA,HMG-CoA Reductase Inhibitors,Tablet
+3667634502,10213,Nexium,esomeprazole,RX,30,030,Proton Pump Inhibitors,GI,AstraZeneca,False,False,2025-06-04,FR,Proton Pump Inhibitors,Tablet
+7762330563,10214,Humira,adalimumab,RX,5ml,011,TNF Blockers,IMMUNO,AbbVie,True,False,2025-05-29,FR,TNF Blockers,Injection
+3183234608,10215,Metformin,metformin,RX,1ml,040,Biguanides,ENDO,Teva,False,True,2025-06-10,FR,Biguanides,Cream
+5285850028,10216,Keytruda,pembrolizumab,RX,5ml,090,Immunotherapy,ONCO,Merck,False,False,2025-05-02,US,Immunotherapy,Capsule
+3705303491,10217,Eliquis,apixaban,OTC,30,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,False,False,2025-09-01,FR,Anticoagulants,Injection
+5919285406,10218,Trulicity,dulaglutide,OTC,30,041,GLP-1 Agonists,ENDO,Eli Lilly,False,False,2025-05-19,UK,GLP-1 Agonists,Solution
+5513671390,10219,Keytruda,pembrolizumab,RX,60,090,Immunotherapy,ONCO,Merck,False,False,2025-05-23,CA,Immunotherapy,Tablet
+1838410579,10220,Eliquis,apixaban,RX,5ml,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,False,True,2025-08-03,CA,Anticoagulants,Cream
+9964356659,10221,Trulicity,dulaglutide,RX,120,041,GLP-1 Agonists,ENDO,Eli Lilly,True,False,2025-04-19,FR,GLP-1 Agonists,Tablet
+8025249652,10222,Metformin,metformin,RX,120,040,Biguanides,ENDO,Teva,False,False,2025-06-29,US,Biguanides,Solution
+7765224309,10223,Advair,fluticasone-salmeterol,OTC,90,080,Corticosteroids,RESPIR,GlaxoSmithKline,False,False,2025-05-15,DE,Corticosteroids,Tablet
+1101131385,10224,Enbrel,etanercept,OTC,30,025,TNF Blockers,IMMUNO,Amgen,True,False,2025-04-06,US,TNF Blockers,Injection
+7675753664,10225,Synthroid,levothyroxine,OTC,60,060,Thyroid Hormones,ENDO,AbbVie,True,True,2025-06-14,UK,Thyroid Hormones,Cream
+9308678525,10226,Xarelto,rivaroxaban,OTC,90,015,Anticoagulants,CARDIO,Bayer,True,True,2025-08-24,FR,Anticoagulants,Tablet
+8470443577,10227,Eliquis,apixaban,OTC,1ml,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,False,False,2025-06-10,CA,Anticoagulants,Solution
+8129463130,10228,Humira,adalimumab,RX,1ml,011,TNF Blockers,IMMUNO,AbbVie,False,True,2025-09-04,DE,TNF Blockers,Injection
+6471571892,10229,Humira,adalimumab,OTC,90,011,TNF Blockers,IMMUNO,AbbVie,False,True,2025-07-20,FR,TNF Blockers,Capsule
+9906682642,10230,Lantus,insulin glargine,OTC,120,080,Insulin,ENDO,Sanofi,False,True,2025-07-16,CA,Insulin,Solution
+7857477825,10231,Metformin,metformin,RX,120,040,Biguanides,ENDO,Teva,False,False,2025-09-18,US,Biguanides,Tablet
+3099383762,10232,Nexium,esomeprazole,RX,120,030,Proton Pump Inhibitors,GI,AstraZeneca,False,True,2025-06-05,FR,Proton Pump Inhibitors,Capsule
+8450668232,10233,Lantus,insulin glargine,RX,90,080,Insulin,ENDO,Sanofi,False,False,2025-08-31,CA,Insulin,Capsule
+7009932186,10234,Lipitor,atorvastatin,RX,5ml,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,False,False,2025-08-08,CA,HMG-CoA Reductase Inhibitors,Capsule
+2277271844,10235,Eliquis,apixaban,RX,30,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,True,False,2025-06-23,FR,Anticoagulants,Solution
+6658173935,10236,Jardiance,empagliflozin,RX,90,042,SGLT2 Inhibitors,ENDO,Boehringer Ingelheim,False,False,2025-07-13,DE,SGLT2 Inhibitors,Capsule
+3202544133,10237,Humira,adalimumab,RX,60,011,TNF Blockers,IMMUNO,AbbVie,True,False,2025-05-06,DE,TNF Blockers,Solution
+9738314434,10238,Trulicity,dulaglutide,RX,5ml,041,GLP-1 Agonists,ENDO,Eli Lilly,True,True,2025-03-23,FR,GLP-1 Agonists,Capsule
+9426758083,10239,Synthroid,levothyroxine,RX,90,060,Thyroid Hormones,ENDO,AbbVie,True,False,2025-07-14,UK,Thyroid Hormones,Solution
+6786104712,10240,Advair,fluticasone-salmeterol,OTC,5ml,080,Corticosteroids,RESPIR,GlaxoSmithKline,True,True,2025-08-21,FR,Corticosteroids,Solution
+2812267158,10241,Crestor,rosuvastatin,OTC,120,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,True,True,2025-04-05,UK,HMG-CoA Reductase Inhibitors,Cream
+1510198953,10242,Eliquis,apixaban,OTC,60,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,True,False,2025-06-20,US,Anticoagulants,Tablet
+8251110183,10243,Jardiance,empagliflozin,OTC,120,042,SGLT2 Inhibitors,ENDO,Boehringer Ingelheim,True,False,2025-08-16,FR,SGLT2 Inhibitors,Solution
+3720332955,10244,Enbrel,etanercept,RX,120,025,TNF Blockers,IMMUNO,Amgen,True,True,2025-08-19,FR,TNF Blockers,Solution
+5898551545,10245,Lipitor,atorvastatin,RX,1ml,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,False,True,2025-03-30,UK,HMG-CoA Reductase Inhibitors,Injection
+4878830965,10246,Eliquis,apixaban,RX,120,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,False,True,2025-04-20,FR,Anticoagulants,Capsule
+7924123885,10247,Advair,fluticasone-salmeterol,OTC,30,080,Corticosteroids,RESPIR,GlaxoSmithKline,True,True,2025-05-06,DE,Corticosteroids,Cream
+2866703460,10248,Lipitor,atorvastatin,RX,60,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,True,False,2025-08-04,CA,HMG-CoA Reductase Inhibitors,Injection
+1035614932,10249,Eliquis,apixaban,RX,5ml,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,False,True,2025-04-23,DE,Anticoagulants,Solution
+7950805510,10250,Advair,fluticasone-salmeterol,OTC,1ml,080,Corticosteroids,RESPIR,GlaxoSmithKline,True,False,2025-05-21,CA,Corticosteroids,Tablet
+1699169388,10251,Advair,fluticasone-salmeterol,RX,1ml,080,Corticosteroids,RESPIR,GlaxoSmithKline,False,True,2025-06-06,FR,Corticosteroids,Injection
+6113123341,10252,Nexium,esomeprazole,RX,120,030,Proton Pump Inhibitors,GI,AstraZeneca,True,True,2025-05-04,US,Proton Pump Inhibitors,Capsule
+8615725850,10253,Metformin,metformin,RX,120,040,Biguanides,ENDO,Teva,True,True,2025-08-11,DE,Biguanides,Tablet
+9646926463,10254,Keytruda,pembrolizumab,OTC,1ml,090,Immunotherapy,ONCO,Merck,False,True,2025-05-03,CA,Immunotherapy,Capsule
+4952379323,10255,Metformin,metformin,RX,60,040,Biguanides,ENDO,Teva,False,False,2025-08-27,DE,Biguanides,Tablet
+1606847229,10256,Metformin,metformin,OTC,1ml,040,Biguanides,ENDO,Teva,True,False,2025-05-16,UK,Biguanides,Injection
+1924508136,10257,Trulicity,dulaglutide,OTC,60,041,GLP-1 Agonists,ENDO,Eli Lilly,True,True,2025-07-23,US,GLP-1 Agonists,Tablet
+2756505153,10258,Humira,adalimumab,RX,5ml,011,TNF Blockers,IMMUNO,AbbVie,True,False,2025-06-10,FR,TNF Blockers,Cream
+6987544085,10259,Keytruda,pembrolizumab,RX,30,090,Immunotherapy,ONCO,Merck,True,False,2025-04-22,UK,Immunotherapy,Injection
+8642804529,10260,Eliquis,apixaban,OTC,1ml,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,False,True,2025-05-07,US,Anticoagulants,Solution
+9711905827,10261,Ozempic,semaglutide,RX,1ml,041,GLP-1 Agonists,ENDO,Novo Nordisk,True,True,2025-03-28,UK,GLP-1 Agonists,Injection
+4156635055,10262,Jardiance,empagliflozin,OTC,5ml,042,SGLT2 Inhibitors,ENDO,Boehringer Ingelheim,True,False,2025-07-24,DE,SGLT2 Inhibitors,Solution
+9866568718,10263,Advair,fluticasone-salmeterol,RX,30,080,Corticosteroids,RESPIR,GlaxoSmithKline,True,False,2025-05-01,CA,Corticosteroids,Solution
+8380967066,10264,Lantus,insulin glargine,RX,60,080,Insulin,ENDO,Sanofi,True,False,2025-04-25,CA,Insulin,Solution
+7793836773,10265,Trulicity,dulaglutide,OTC,30,041,GLP-1 Agonists,ENDO,Eli Lilly,False,True,2025-08-03,DE,GLP-1 Agonists,Solution
+4162379327,10266,Synthroid,levothyroxine,OTC,5ml,060,Thyroid Hormones,ENDO,AbbVie,False,True,2025-04-27,CA,Thyroid Hormones,Injection
+3249560378,10267,Advair,fluticasone-salmeterol,RX,1ml,080,Corticosteroids,RESPIR,GlaxoSmithKline,False,False,2025-04-09,UK,Corticosteroids,Tablet
+9812529406,10268,Xarelto,rivaroxaban,RX,1ml,015,Anticoagulants,CARDIO,Bayer,True,True,2025-08-23,DE,Anticoagulants,Cream
+9494231050,10269,Xarelto,rivaroxaban,OTC,30,015,Anticoagulants,CARDIO,Bayer,False,False,2025-08-23,FR,Anticoagulants,Injection
+3193369160,10270,Enbrel,etanercept,RX,30,025,TNF Blockers,IMMUNO,Amgen,False,True,2025-07-06,UK,TNF Blockers,Tablet
+5079439670,10271,Nexium,esomeprazole,RX,1ml,030,Proton Pump Inhibitors,GI,AstraZeneca,False,False,2025-04-05,US,Proton Pump Inhibitors,Injection
+2754826781,10272,Lantus,insulin glargine,RX,120,080,Insulin,ENDO,Sanofi,False,False,2025-05-15,DE,Insulin,Cream
+3495233425,10273,Eliquis,apixaban,OTC,120,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,True,False,2025-08-13,UK,Anticoagulants,Solution
+2360658867,10274,Jardiance,empagliflozin,RX,5ml,042,SGLT2 Inhibitors,ENDO,Boehringer Ingelheim,False,True,2025-04-11,DE,SGLT2 Inhibitors,Solution
+3515356030,10275,Synthroid,levothyroxine,RX,90,060,Thyroid Hormones,ENDO,AbbVie,False,True,2025-05-06,CA,Thyroid Hormones,Injection
+7993541274,10276,Eliquis,apixaban,OTC,60,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,True,False,2025-05-01,CA,Anticoagulants,Cream
+7203228933,10277,Lantus,insulin glargine,OTC,60,080,Insulin,ENDO,Sanofi,False,True,2025-05-09,DE,Insulin,Solution
+8857585658,10278,Enbrel,etanercept,OTC,60,025,TNF Blockers,IMMUNO,Amgen,False,False,2025-08-26,UK,TNF Blockers,Tablet
+4695833631,10279,Lipitor,atorvastatin,OTC,5ml,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,True,False,2025-09-06,FR,HMG-CoA Reductase Inhibitors,Cream
+2235223532,10280,Synthroid,levothyroxine,RX,30,060,Thyroid Hormones,ENDO,AbbVie,False,False,2025-05-22,FR,Thyroid Hormones,Solution
+5120229589,10281,Nexium,esomeprazole,RX,120,030,Proton Pump Inhibitors,GI,AstraZeneca,True,False,2025-08-13,DE,Proton Pump Inhibitors,Tablet
+4682866547,10282,Nexium,esomeprazole,RX,120,030,Proton Pump Inhibitors,GI,AstraZeneca,False,True,2025-08-23,UK,Proton Pump Inhibitors,Capsule
+7552587340,10283,Lipitor,atorvastatin,OTC,30,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,True,False,2025-05-25,CA,HMG-CoA Reductase Inhibitors,Cream
+5392376819,10284,Trulicity,dulaglutide,OTC,120,041,GLP-1 Agonists,ENDO,Eli Lilly,False,True,2025-04-28,UK,GLP-1 Agonists,Solution
+1757544871,10285,Crestor,rosuvastatin,RX,5ml,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,True,False,2025-07-08,US,HMG-CoA Reductase Inhibitors,Capsule
+8331326310,10286,Humira,adalimumab,RX,1ml,011,TNF Blockers,IMMUNO,AbbVie,False,False,2025-09-12,US,TNF Blockers,Cream
+2515899609,10287,Enbrel,etanercept,OTC,90,025,TNF Blockers,IMMUNO,Amgen,False,False,2025-05-09,UK,TNF Blockers,Solution
+4023765305,10288,Nexium,esomeprazole,RX,30,030,Proton Pump Inhibitors,GI,AstraZeneca,False,False,2025-05-17,FR,Proton Pump Inhibitors,Cream
+7947926708,10289,Crestor,rosuvastatin,OTC,60,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,False,False,2025-06-14,US,HMG-CoA Reductase Inhibitors,Injection
+1048953219,10290,Advair,fluticasone-salmeterol,OTC,120,080,Corticosteroids,RESPIR,GlaxoSmithKline,True,False,2025-07-21,UK,Corticosteroids,Cream
+9496684205,10291,Ozempic,semaglutide,OTC,60,041,GLP-1 Agonists,ENDO,Novo Nordisk,False,False,2025-05-22,CA,GLP-1 Agonists,Injection
+6132393937,10292,Nexium,esomeprazole,RX,5ml,030,Proton Pump Inhibitors,GI,AstraZeneca,False,True,2025-04-18,CA,Proton Pump Inhibitors,Tablet
+5676409646,10293,Synthroid,levothyroxine,RX,30,060,Thyroid Hormones,ENDO,AbbVie,True,True,2025-07-22,UK,Thyroid Hormones,Injection
+2384726249,10294,Lantus,insulin glargine,RX,5ml,080,Insulin,ENDO,Sanofi,True,False,2025-07-29,DE,Insulin,Capsule
+3156170663,10295,Advair,fluticasone-salmeterol,RX,90,080,Corticosteroids,RESPIR,GlaxoSmithKline,False,True,2025-09-09,UK,Corticosteroids,Capsule
+3039678075,10296,Enbrel,etanercept,OTC,90,025,TNF Blockers,IMMUNO,Amgen,False,True,2025-07-16,FR,TNF Blockers,Injection
+6891916541,10297,Trulicity,dulaglutide,RX,60,041,GLP-1 Agonists,ENDO,Eli Lilly,True,False,2025-05-25,UK,GLP-1 Agonists,Injection
+5139620261,10298,Crestor,rosuvastatin,OTC,1ml,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,False,False,2025-03-28,CA,HMG-CoA Reductase Inhibitors,Tablet
+5556492856,10299,Humira,adalimumab,RX,60,011,TNF Blockers,IMMUNO,AbbVie,False,True,2025-03-26,UK,TNF Blockers,Injection
+9132527704,10300,Trulicity,dulaglutide,OTC,120,041,GLP-1 Agonists,ENDO,Eli Lilly,False,False,2025-04-08,UK,GLP-1 Agonists,Capsule
+8743697098,10301,Trulicity,dulaglutide,RX,30,041,GLP-1 Agonists,ENDO,Eli Lilly,True,True,2025-08-01,DE,GLP-1 Agonists,Tablet
+5524824739,10302,Humira,adalimumab,OTC,5ml,011,TNF Blockers,IMMUNO,AbbVie,True,True,2025-08-08,DE,TNF Blockers,Tablet
+2910352038,10303,Crestor,rosuvastatin,OTC,5ml,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,False,True,2025-04-12,FR,HMG-CoA Reductase Inhibitors,Tablet
+9901947332,10304,Lipitor,atorvastatin,RX,120,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,False,True,2025-07-01,US,HMG-CoA Reductase Inhibitors,Solution
+8119917624,10305,Lipitor,atorvastatin,OTC,1ml,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,False,True,2025-08-13,FR,HMG-CoA Reductase Inhibitors,Tablet
+8887890804,10306,Crestor,rosuvastatin,OTC,1ml,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,True,True,2025-08-12,DE,HMG-CoA Reductase Inhibitors,Capsule
+3804156081,10307,Nexium,esomeprazole,RX,120,030,Proton Pump Inhibitors,GI,AstraZeneca,True,True,2025-07-20,CA,Proton Pump Inhibitors,Tablet
+7097160169,10308,Keytruda,pembrolizumab,OTC,120,090,Immunotherapy,ONCO,Merck,True,True,2025-03-23,DE,Immunotherapy,Solution
+7199691766,10309,Synthroid,levothyroxine,RX,120,060,Thyroid Hormones,ENDO,AbbVie,True,True,2025-07-19,DE,Thyroid Hormones,Cream
+2810942167,10310,Humira,adalimumab,RX,90,011,TNF Blockers,IMMUNO,AbbVie,True,False,2025-03-24,CA,TNF Blockers,Tablet
+5971764818,10311,Humira,adalimumab,RX,1ml,011,TNF Blockers,IMMUNO,AbbVie,False,True,2025-03-28,FR,TNF Blockers,Cream
+1734871024,10312,Crestor,rosuvastatin,OTC,1ml,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,True,True,2025-07-10,FR,HMG-CoA Reductase Inhibitors,Cream
+6904452356,10313,Lipitor,atorvastatin,OTC,60,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,False,False,2025-09-02,DE,HMG-CoA Reductase Inhibitors,Capsule
+4835658849,10314,Crestor,rosuvastatin,OTC,90,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,False,True,2025-05-30,FR,HMG-CoA Reductase Inhibitors,Injection
+2538502916,10315,Crestor,rosuvastatin,RX,90,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,True,False,2025-06-11,US,HMG-CoA Reductase Inhibitors,Capsule
+3671667795,10316,Advair,fluticasone-salmeterol,OTC,120,080,Corticosteroids,RESPIR,GlaxoSmithKline,False,False,2025-04-27,DE,Corticosteroids,Capsule
+8294806525,10317,Lipitor,atorvastatin,OTC,90,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,True,False,2025-07-04,UK,HMG-CoA Reductase Inhibitors,Cream
+7202350685,10318,Xarelto,rivaroxaban,RX,60,015,Anticoagulants,CARDIO,Bayer,True,True,2025-08-17,CA,Anticoagulants,Injection
+6286310785,10319,Synthroid,levothyroxine,OTC,30,060,Thyroid Hormones,ENDO,AbbVie,True,False,2025-05-03,CA,Thyroid Hormones,Solution
+2362849751,10320,Lantus,insulin glargine,OTC,60,080,Insulin,ENDO,Sanofi,False,False,2025-07-26,FR,Insulin,Cream
+9463225258,10321,Advair,fluticasone-salmeterol,OTC,30,080,Corticosteroids,RESPIR,GlaxoSmithKline,True,True,2025-03-27,US,Corticosteroids,Solution
+6946528366,10322,Synthroid,levothyroxine,OTC,90,060,Thyroid Hormones,ENDO,AbbVie,False,True,2025-07-09,UK,Thyroid Hormones,Tablet
+3690279021,10323,Lantus,insulin glargine,OTC,60,080,Insulin,ENDO,Sanofi,False,True,2025-07-25,UK,Insulin,Tablet
+4360826110,10324,Jardiance,empagliflozin,OTC,120,042,SGLT2 Inhibitors,ENDO,Boehringer Ingelheim,True,True,2025-06-07,CA,SGLT2 Inhibitors,Cream
+7772462958,10325,Advair,fluticasone-salmeterol,RX,30,080,Corticosteroids,RESPIR,GlaxoSmithKline,True,False,2025-05-01,US,Corticosteroids,Tablet
+5648890405,10326,Xarelto,rivaroxaban,OTC,1ml,015,Anticoagulants,CARDIO,Bayer,True,False,2025-03-31,US,Anticoagulants,Injection
+4010494099,10327,Enbrel,etanercept,RX,90,025,TNF Blockers,IMMUNO,Amgen,True,False,2025-04-01,CA,TNF Blockers,Injection
+6360319029,10328,Enbrel,etanercept,RX,120,025,TNF Blockers,IMMUNO,Amgen,True,False,2025-05-15,US,TNF Blockers,Capsule
+9862150983,10329,Nexium,esomeprazole,OTC,60,030,Proton Pump Inhibitors,GI,AstraZeneca,True,False,2025-04-16,FR,Proton Pump Inhibitors,Cream
+7022656673,10330,Crestor,rosuvastatin,RX,1ml,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,False,True,2025-04-27,FR,HMG-CoA Reductase Inhibitors,Tablet
+8517210722,10331,Xarelto,rivaroxaban,RX,5ml,015,Anticoagulants,CARDIO,Bayer,True,True,2025-05-31,FR,Anticoagulants,Injection
+1460512159,10332,Trulicity,dulaglutide,RX,30,041,GLP-1 Agonists,ENDO,Eli Lilly,False,True,2025-09-12,FR,GLP-1 Agonists,Cream
+4869972690,10333,Jardiance,empagliflozin,RX,1ml,042,SGLT2 Inhibitors,ENDO,Boehringer Ingelheim,True,True,2025-08-07,FR,SGLT2 Inhibitors,Capsule
+5190778397,10334,Ozempic,semaglutide,OTC,90,041,GLP-1 Agonists,ENDO,Novo Nordisk,True,False,2025-05-13,UK,GLP-1 Agonists,Injection
+4926982435,10335,Jardiance,empagliflozin,OTC,60,042,SGLT2 Inhibitors,ENDO,Boehringer Ingelheim,False,True,2025-03-27,UK,SGLT2 Inhibitors,Injection
+3783511081,10336,Lipitor,atorvastatin,RX,30,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,False,False,2025-05-29,FR,HMG-CoA Reductase Inhibitors,Injection
+8997999533,10337,Synthroid,levothyroxine,OTC,90,060,Thyroid Hormones,ENDO,AbbVie,True,False,2025-08-11,UK,Thyroid Hormones,Injection
+8127868456,10338,Jardiance,empagliflozin,RX,60,042,SGLT2 Inhibitors,ENDO,Boehringer Ingelheim,True,False,2025-09-09,CA,SGLT2 Inhibitors,Capsule
+7212916332,10339,Metformin,metformin,OTC,5ml,040,Biguanides,ENDO,Teva,False,True,2025-05-05,UK,Biguanides,Solution
+8684395227,10340,Advair,fluticasone-salmeterol,RX,60,080,Corticosteroids,RESPIR,GlaxoSmithKline,False,False,2025-04-14,FR,Corticosteroids,Injection
+7563245808,10341,Enbrel,etanercept,RX,90,025,TNF Blockers,IMMUNO,Amgen,False,False,2025-08-05,FR,TNF Blockers,Solution
+5136828758,10342,Advair,fluticasone-salmeterol,OTC,90,080,Corticosteroids,RESPIR,GlaxoSmithKline,True,False,2025-08-25,DE,Corticosteroids,Tablet
+7992268550,10343,Crestor,rosuvastatin,RX,1ml,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,True,True,2025-07-10,US,HMG-CoA Reductase Inhibitors,Cream
+1320794066,10344,Lipitor,atorvastatin,OTC,30,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,True,True,2025-06-28,US,HMG-CoA Reductase Inhibitors,Capsule
+7880709711,10345,Metformin,metformin,RX,90,040,Biguanides,ENDO,Teva,False,False,2025-05-23,US,Biguanides,Solution
+4400366371,10346,Enbrel,etanercept,RX,90,025,TNF Blockers,IMMUNO,Amgen,False,True,2025-04-24,CA,TNF Blockers,Cream
+7495724863,10347,Humira,adalimumab,OTC,120,011,TNF Blockers,IMMUNO,AbbVie,False,True,2025-09-14,US,TNF Blockers,Injection
+3169261527,10348,Eliquis,apixaban,OTC,90,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,False,True,2025-08-10,FR,Anticoagulants,Injection
+9484377097,10349,Xarelto,rivaroxaban,RX,30,015,Anticoagulants,CARDIO,Bayer,True,True,2025-07-17,CA,Anticoagulants,Capsule
+1153324588,10350,Trulicity,dulaglutide,OTC,5ml,041,GLP-1 Agonists,ENDO,Eli Lilly,True,True,2025-07-12,DE,GLP-1 Agonists,Solution
+3110172904,10351,Synthroid,levothyroxine,OTC,1ml,060,Thyroid Hormones,ENDO,AbbVie,False,False,2025-05-27,CA,Thyroid Hormones,Injection
+8763774895,10352,Keytruda,pembrolizumab,OTC,1ml,090,Immunotherapy,ONCO,Merck,False,False,2025-08-21,CA,Immunotherapy,Tablet
+7608297034,10353,Metformin,metformin,OTC,60,040,Biguanides,ENDO,Teva,False,False,2025-07-30,DE,Biguanides,Injection
+5220242022,10354,Crestor,rosuvastatin,RX,120,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,True,False,2025-05-30,CA,HMG-CoA Reductase Inhibitors,Capsule
+9318786650,10355,Synthroid,levothyroxine,RX,5ml,060,Thyroid Hormones,ENDO,AbbVie,False,False,2025-09-15,UK,Thyroid Hormones,Solution
+2292971586,10356,Keytruda,pembrolizumab,RX,5ml,090,Immunotherapy,ONCO,Merck,True,False,2025-04-17,US,Immunotherapy,Capsule
+8954541741,10357,Metformin,metformin,RX,1ml,040,Biguanides,ENDO,Teva,False,True,2025-06-29,US,Biguanides,Cream
+8689604499,10358,Synthroid,levothyroxine,OTC,120,060,Thyroid Hormones,ENDO,AbbVie,False,True,2025-04-29,CA,Thyroid Hormones,Capsule
+2223673707,10359,Advair,fluticasone-salmeterol,RX,90,080,Corticosteroids,RESPIR,GlaxoSmithKline,False,False,2025-08-24,US,Corticosteroids,Tablet
+9503133925,10360,Humira,adalimumab,RX,1ml,011,TNF Blockers,IMMUNO,AbbVie,False,False,2025-08-07,CA,TNF Blockers,Capsule
+1224811583,10361,Humira,adalimumab,OTC,90,011,TNF Blockers,IMMUNO,AbbVie,True,False,2025-07-02,FR,TNF Blockers,Injection
+5740328559,10362,Crestor,rosuvastatin,RX,1ml,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,True,False,2025-08-23,UK,HMG-CoA Reductase Inhibitors,Tablet
+8169116841,10363,Eliquis,apixaban,RX,1ml,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,True,False,2025-08-29,US,Anticoagulants,Injection
+3262717209,10364,Trulicity,dulaglutide,OTC,60,041,GLP-1 Agonists,ENDO,Eli Lilly,True,False,2025-08-30,FR,GLP-1 Agonists,Solution
+4832759161,10365,Crestor,rosuvastatin,RX,1ml,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,False,False,2025-09-13,CA,HMG-CoA Reductase Inhibitors,Injection
+1074182147,10366,Advair,fluticasone-salmeterol,RX,5ml,080,Corticosteroids,RESPIR,GlaxoSmithKline,False,False,2025-04-01,US,Corticosteroids,Solution
+6932477738,10367,Eliquis,apixaban,OTC,5ml,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,True,True,2025-09-03,FR,Anticoagulants,Cream
+8770666263,10368,Synthroid,levothyroxine,OTC,1ml,060,Thyroid Hormones,ENDO,AbbVie,False,True,2025-05-04,US,Thyroid Hormones,Injection
+2455137904,10369,Advair,fluticasone-salmeterol,RX,90,080,Corticosteroids,RESPIR,GlaxoSmithKline,False,False,2025-08-18,CA,Corticosteroids,Solution
+2786414337,10370,Trulicity,dulaglutide,OTC,120,041,GLP-1 Agonists,ENDO,Eli Lilly,False,True,2025-04-17,US,GLP-1 Agonists,Capsule
+5255397911,10371,Lantus,insulin glargine,OTC,120,080,Insulin,ENDO,Sanofi,False,True,2025-08-12,CA,Insulin,Capsule
+7005680047,10372,Lantus,insulin glargine,OTC,5ml,080,Insulin,ENDO,Sanofi,True,True,2025-05-10,FR,Insulin,Solution
+5912155877,10373,Nexium,esomeprazole,OTC,60,030,Proton Pump Inhibitors,GI,AstraZeneca,False,False,2025-06-16,CA,Proton Pump Inhibitors,Solution
+6059586613,10374,Metformin,metformin,OTC,90,040,Biguanides,ENDO,Teva,True,False,2025-07-13,US,Biguanides,Capsule
+7007934187,10375,Nexium,esomeprazole,OTC,120,030,Proton Pump Inhibitors,GI,AstraZeneca,True,True,2025-04-09,UK,Proton Pump Inhibitors,Cream
+7341809153,10376,Jardiance,empagliflozin,OTC,1ml,042,SGLT2 Inhibitors,ENDO,Boehringer Ingelheim,False,False,2025-04-16,CA,SGLT2 Inhibitors,Cream
+2808900837,10377,Advair,fluticasone-salmeterol,OTC,5ml,080,Corticosteroids,RESPIR,GlaxoSmithKline,True,True,2025-05-24,US,Corticosteroids,Solution
+1911150159,10378,Crestor,rosuvastatin,OTC,90,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,False,True,2025-08-11,FR,HMG-CoA Reductase Inhibitors,Injection
+4164880711,10379,Advair,fluticasone-salmeterol,RX,90,080,Corticosteroids,RESPIR,GlaxoSmithKline,True,True,2025-08-05,FR,Corticosteroids,Cream
+2478771260,10380,Humira,adalimumab,OTC,30,011,TNF Blockers,IMMUNO,AbbVie,False,True,2025-05-11,FR,TNF Blockers,Tablet
+1403409684,10381,Keytruda,pembrolizumab,RX,5ml,090,Immunotherapy,ONCO,Merck,True,False,2025-09-16,UK,Immunotherapy,Cream
+9500753609,10382,Humira,adalimumab,RX,30,011,TNF Blockers,IMMUNO,AbbVie,True,False,2025-08-02,US,TNF Blockers,Injection
+7606979090,10383,Synthroid,levothyroxine,OTC,1ml,060,Thyroid Hormones,ENDO,AbbVie,False,True,2025-04-26,FR,Thyroid Hormones,Solution
+3705784427,10384,Nexium,esomeprazole,RX,5ml,030,Proton Pump Inhibitors,GI,AstraZeneca,True,False,2025-07-08,UK,Proton Pump Inhibitors,Solution
+7168319021,10385,Humira,adalimumab,OTC,120,011,TNF Blockers,IMMUNO,AbbVie,True,False,2025-05-20,FR,TNF Blockers,Solution
+7486749130,10386,Eliquis,apixaban,OTC,90,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,True,False,2025-06-25,US,Anticoagulants,Injection
+8225447860,10387,Enbrel,etanercept,RX,30,025,TNF Blockers,IMMUNO,Amgen,True,False,2025-06-26,DE,TNF Blockers,Injection
+4272764301,10388,Crestor,rosuvastatin,OTC,60,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,False,False,2025-04-18,US,HMG-CoA Reductase Inhibitors,Cream
+7679211703,10389,Metformin,metformin,OTC,90,040,Biguanides,ENDO,Teva,True,True,2025-04-07,FR,Biguanides,Tablet
+8849441730,10390,Trulicity,dulaglutide,RX,90,041,GLP-1 Agonists,ENDO,Eli Lilly,False,False,2025-04-09,DE,GLP-1 Agonists,Tablet
+7553581765,10391,Crestor,rosuvastatin,OTC,90,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,False,False,2025-09-14,FR,HMG-CoA Reductase Inhibitors,Cream
+1076247469,10392,Ozempic,semaglutide,RX,120,041,GLP-1 Agonists,ENDO,Novo Nordisk,False,False,2025-08-29,CA,GLP-1 Agonists,Capsule
+7629200020,10393,Keytruda,pembrolizumab,RX,30,090,Immunotherapy,ONCO,Merck,False,False,2025-06-12,FR,Immunotherapy,Cream
+1559925758,10394,Lantus,insulin glargine,OTC,5ml,080,Insulin,ENDO,Sanofi,False,False,2025-04-04,FR,Insulin,Tablet
+1976943497,10395,Nexium,esomeprazole,RX,1ml,030,Proton Pump Inhibitors,GI,AstraZeneca,True,True,2025-08-17,US,Proton Pump Inhibitors,Tablet
+3775600972,10396,Trulicity,dulaglutide,OTC,60,041,GLP-1 Agonists,ENDO,Eli Lilly,False,True,2025-08-06,CA,GLP-1 Agonists,Solution
+4848550290,10397,Keytruda,pembrolizumab,OTC,60,090,Immunotherapy,ONCO,Merck,False,True,2025-06-23,FR,Immunotherapy,Injection
+8520543646,10398,Advair,fluticasone-salmeterol,OTC,60,080,Corticosteroids,RESPIR,GlaxoSmithKline,False,True,2025-05-27,CA,Corticosteroids,Cream
+5946358456,10399,Trulicity,dulaglutide,OTC,1ml,041,GLP-1 Agonists,ENDO,Eli Lilly,True,False,2025-09-03,CA,GLP-1 Agonists,Cream
+2320611961,10400,Advair,fluticasone-salmeterol,OTC,60,080,Corticosteroids,RESPIR,GlaxoSmithKline,True,False,2025-07-11,FR,Corticosteroids,Solution
+2901410339,10401,Enbrel,etanercept,OTC,1ml,025,TNF Blockers,IMMUNO,Amgen,True,True,2025-09-18,US,TNF Blockers,Solution
+1507584015,10402,Trulicity,dulaglutide,RX,5ml,041,GLP-1 Agonists,ENDO,Eli Lilly,False,False,2025-05-24,DE,GLP-1 Agonists,Injection
+9563422231,10403,Humira,adalimumab,RX,1ml,011,TNF Blockers,IMMUNO,AbbVie,False,True,2025-04-10,DE,TNF Blockers,Cream
+9623515257,10404,Keytruda,pembrolizumab,OTC,90,090,Immunotherapy,ONCO,Merck,False,False,2025-06-19,FR,Immunotherapy,Solution
+1751171313,10405,Trulicity,dulaglutide,RX,5ml,041,GLP-1 Agonists,ENDO,Eli Lilly,False,False,2025-06-03,UK,GLP-1 Agonists,Tablet
+3959812092,10406,Eliquis,apixaban,RX,30,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,True,False,2025-07-23,US,Anticoagulants,Tablet
+9100124845,10407,Crestor,rosuvastatin,RX,120,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,True,True,2025-09-07,FR,HMG-CoA Reductase Inhibitors,Cream
+2056168526,10408,Humira,adalimumab,RX,60,011,TNF Blockers,IMMUNO,AbbVie,False,True,2025-08-01,US,TNF Blockers,Cream
+7781722721,10409,Trulicity,dulaglutide,OTC,90,041,GLP-1 Agonists,ENDO,Eli Lilly,False,True,2025-04-05,CA,GLP-1 Agonists,Cream
+9283629843,10410,Metformin,metformin,RX,60,040,Biguanides,ENDO,Teva,True,False,2025-04-11,DE,Biguanides,Tablet
+3471480200,10411,Metformin,metformin,OTC,5ml,040,Biguanides,ENDO,Teva,False,True,2025-07-10,CA,Biguanides,Tablet
+1166663125,10412,Xarelto,rivaroxaban,RX,90,015,Anticoagulants,CARDIO,Bayer,True,False,2025-07-31,US,Anticoagulants,Capsule
+9869859516,10413,Lipitor,atorvastatin,RX,30,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,True,False,2025-08-15,FR,HMG-CoA Reductase Inhibitors,Cream
+2919345816,10414,Keytruda,pembrolizumab,OTC,60,090,Immunotherapy,ONCO,Merck,True,True,2025-07-18,DE,Immunotherapy,Capsule
+2584366503,10415,Crestor,rosuvastatin,RX,1ml,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,False,False,2025-04-22,UK,HMG-CoA Reductase Inhibitors,Solution
+7653481000,10416,Keytruda,pembrolizumab,RX,90,090,Immunotherapy,ONCO,Merck,True,False,2025-06-17,DE,Immunotherapy,Solution
+8483937948,10417,Lantus,insulin glargine,OTC,5ml,080,Insulin,ENDO,Sanofi,True,True,2025-06-15,CA,Insulin,Solution
+8661997481,10418,Xarelto,rivaroxaban,RX,120,015,Anticoagulants,CARDIO,Bayer,True,False,2025-04-01,UK,Anticoagulants,Capsule
+6479439827,10419,Humira,adalimumab,RX,90,011,TNF Blockers,IMMUNO,AbbVie,True,False,2025-03-31,UK,TNF Blockers,Capsule
+8723190426,10420,Crestor,rosuvastatin,OTC,30,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,False,False,2025-04-07,DE,HMG-CoA Reductase Inhibitors,Capsule
+2215706759,10421,Keytruda,pembrolizumab,RX,1ml,090,Immunotherapy,ONCO,Merck,True,False,2025-04-12,UK,Immunotherapy,Cream
+2266442791,10422,Advair,fluticasone-salmeterol,RX,120,080,Corticosteroids,RESPIR,GlaxoSmithKline,True,False,2025-06-27,UK,Corticosteroids,Cream
+7721794949,10423,Enbrel,etanercept,RX,5ml,025,TNF Blockers,IMMUNO,Amgen,False,True,2025-09-04,US,TNF Blockers,Solution
+8107389623,10424,Jardiance,empagliflozin,RX,30,042,SGLT2 Inhibitors,ENDO,Boehringer Ingelheim,True,True,2025-05-13,DE,SGLT2 Inhibitors,Tablet
+1612709487,10425,Trulicity,dulaglutide,RX,120,041,GLP-1 Agonists,ENDO,Eli Lilly,True,False,2025-04-18,UK,GLP-1 Agonists,Injection
+6498746277,10426,Metformin,metformin,OTC,90,040,Biguanides,ENDO,Teva,True,True,2025-04-28,UK,Biguanides,Injection
+4215794577,10427,Synthroid,levothyroxine,OTC,1ml,060,Thyroid Hormones,ENDO,AbbVie,False,False,2025-06-19,DE,Thyroid Hormones,Tablet
+5299692241,10428,Metformin,metformin,RX,30,040,Biguanides,ENDO,Teva,False,False,2025-06-28,US,Biguanides,Capsule
+7712492999,10429,Humira,adalimumab,OTC,90,011,TNF Blockers,IMMUNO,AbbVie,True,False,2025-07-23,CA,TNF Blockers,Injection
+9167157231,10430,Jardiance,empagliflozin,RX,5ml,042,SGLT2 Inhibitors,ENDO,Boehringer Ingelheim,True,False,2025-03-27,US,SGLT2 Inhibitors,Injection
+5041104051,10431,Ozempic,semaglutide,OTC,90,041,GLP-1 Agonists,ENDO,Novo Nordisk,True,False,2025-08-01,CA,GLP-1 Agonists,Tablet
+7641264752,10432,Eliquis,apixaban,OTC,5ml,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,False,True,2025-04-10,UK,Anticoagulants,Cream
+7334884594,10433,Lipitor,atorvastatin,OTC,5ml,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,True,True,2025-06-25,CA,HMG-CoA Reductase Inhibitors,Cream
+3505416273,10434,Eliquis,apixaban,RX,1ml,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,False,True,2025-07-21,CA,Anticoagulants,Capsule
+5389984538,10435,Synthroid,levothyroxine,RX,1ml,060,Thyroid Hormones,ENDO,AbbVie,False,False,2025-08-01,UK,Thyroid Hormones,Capsule
+9031660797,10436,Eliquis,apixaban,RX,120,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,True,True,2025-05-14,DE,Anticoagulants,Capsule
+1839946326,10437,Advair,fluticasone-salmeterol,RX,30,080,Corticosteroids,RESPIR,GlaxoSmithKline,False,False,2025-07-19,FR,Corticosteroids,Capsule
+1117539623,10438,Synthroid,levothyroxine,OTC,120,060,Thyroid Hormones,ENDO,AbbVie,True,False,2025-04-28,FR,Thyroid Hormones,Tablet
+3194125395,10439,Ozempic,semaglutide,OTC,60,041,GLP-1 Agonists,ENDO,Novo Nordisk,True,True,2025-04-29,DE,GLP-1 Agonists,Solution
+7993170504,10440,Ozempic,semaglutide,RX,60,041,GLP-1 Agonists,ENDO,Novo Nordisk,True,False,2025-09-16,US,GLP-1 Agonists,Solution
+4840788712,10441,Lantus,insulin glargine,RX,60,080,Insulin,ENDO,Sanofi,False,True,2025-08-16,US,Insulin,Solution
+5544731222,10442,Nexium,esomeprazole,OTC,60,030,Proton Pump Inhibitors,GI,AstraZeneca,False,True,2025-04-29,CA,Proton Pump Inhibitors,Tablet
+1621461765,10443,Metformin,metformin,RX,30,040,Biguanides,ENDO,Teva,False,True,2025-07-17,US,Biguanides,Capsule
+3635252300,10444,Humira,adalimumab,OTC,30,011,TNF Blockers,IMMUNO,AbbVie,True,False,2025-07-05,US,TNF Blockers,Cream
+9795700513,10445,Xarelto,rivaroxaban,RX,120,015,Anticoagulants,CARDIO,Bayer,False,False,2025-05-30,FR,Anticoagulants,Cream
+5607862915,10446,Keytruda,pembrolizumab,RX,120,090,Immunotherapy,ONCO,Merck,True,True,2025-08-08,FR,Immunotherapy,Injection
+7360733059,10447,Enbrel,etanercept,OTC,60,025,TNF Blockers,IMMUNO,Amgen,True,True,2025-06-12,US,TNF Blockers,Capsule
+3279528820,10448,Xarelto,rivaroxaban,OTC,60,015,Anticoagulants,CARDIO,Bayer,False,True,2025-05-02,US,Anticoagulants,Cream
+3875661353,10449,Enbrel,etanercept,OTC,60,025,TNF Blockers,IMMUNO,Amgen,True,False,2025-06-24,US,TNF Blockers,Capsule
+8258424449,10450,Metformin,metformin,RX,1ml,040,Biguanides,ENDO,Teva,False,True,2025-08-10,FR,Biguanides,Solution
+8671802097,10451,Lantus,insulin glargine,RX,120,080,Insulin,ENDO,Sanofi,True,True,2025-05-17,CA,Insulin,Capsule
+3190245007,10452,Advair,fluticasone-salmeterol,RX,5ml,080,Corticosteroids,RESPIR,GlaxoSmithKline,False,False,2025-04-02,UK,Corticosteroids,Cream
+9662482528,10453,Jardiance,empagliflozin,OTC,60,042,SGLT2 Inhibitors,ENDO,Boehringer Ingelheim,False,True,2025-07-10,CA,SGLT2 Inhibitors,Injection
+9409191501,10454,Keytruda,pembrolizumab,OTC,120,090,Immunotherapy,ONCO,Merck,False,False,2025-04-13,DE,Immunotherapy,Solution
+9975104530,10455,Synthroid,levothyroxine,OTC,5ml,060,Thyroid Hormones,ENDO,AbbVie,False,True,2025-08-29,FR,Thyroid Hormones,Solution
+7667179079,10456,Nexium,esomeprazole,RX,90,030,Proton Pump Inhibitors,GI,AstraZeneca,False,True,2025-06-19,UK,Proton Pump Inhibitors,Tablet
+6539577736,10457,Keytruda,pembrolizumab,RX,30,090,Immunotherapy,ONCO,Merck,False,True,2025-09-01,US,Immunotherapy,Injection
+4615361026,10458,Nexium,esomeprazole,OTC,30,030,Proton Pump Inhibitors,GI,AstraZeneca,True,True,2025-08-23,UK,Proton Pump Inhibitors,Injection
+6310226266,10459,Keytruda,pembrolizumab,RX,5ml,090,Immunotherapy,ONCO,Merck,False,False,2025-05-25,CA,Immunotherapy,Solution
+4860575310,10460,Humira,adalimumab,OTC,60,011,TNF Blockers,IMMUNO,AbbVie,False,True,2025-09-10,CA,TNF Blockers,Tablet
+8214827901,10461,Metformin,metformin,OTC,5ml,040,Biguanides,ENDO,Teva,True,False,2025-04-30,DE,Biguanides,Solution
+5039221414,10462,Nexium,esomeprazole,OTC,120,030,Proton Pump Inhibitors,GI,AstraZeneca,False,False,2025-06-15,CA,Proton Pump Inhibitors,Tablet
+9270760492,10463,Keytruda,pembrolizumab,OTC,90,090,Immunotherapy,ONCO,Merck,True,False,2025-05-04,FR,Immunotherapy,Solution
+5119192821,10464,Advair,fluticasone-salmeterol,OTC,30,080,Corticosteroids,RESPIR,GlaxoSmithKline,True,True,2025-05-09,FR,Corticosteroids,Injection
+9404184090,10465,Trulicity,dulaglutide,OTC,60,041,GLP-1 Agonists,ENDO,Eli Lilly,True,True,2025-09-09,UK,GLP-1 Agonists,Cream
+5867639038,10466,Synthroid,levothyroxine,OTC,90,060,Thyroid Hormones,ENDO,AbbVie,False,False,2025-07-30,CA,Thyroid Hormones,Capsule
+6473879250,10467,Keytruda,pembrolizumab,RX,30,090,Immunotherapy,ONCO,Merck,True,True,2025-06-02,UK,Immunotherapy,Tablet
+9692137196,10468,Enbrel,etanercept,RX,60,025,TNF Blockers,IMMUNO,Amgen,False,True,2025-07-08,FR,TNF Blockers,Capsule
+3693871386,10469,Eliquis,apixaban,OTC,5ml,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,False,False,2025-08-02,DE,Anticoagulants,Injection
+1225378822,10470,Enbrel,etanercept,RX,5ml,025,TNF Blockers,IMMUNO,Amgen,True,True,2025-08-13,CA,TNF Blockers,Cream
+3994344489,10471,Keytruda,pembrolizumab,OTC,90,090,Immunotherapy,ONCO,Merck,True,True,2025-06-12,CA,Immunotherapy,Injection
+1262481838,10472,Humira,adalimumab,OTC,5ml,011,TNF Blockers,IMMUNO,AbbVie,True,False,2025-05-16,CA,TNF Blockers,Capsule
+8408829738,10473,Metformin,metformin,OTC,5ml,040,Biguanides,ENDO,Teva,True,False,2025-08-08,CA,Biguanides,Cream
+7103348799,10474,Lantus,insulin glargine,RX,90,080,Insulin,ENDO,Sanofi,True,False,2025-03-29,UK,Insulin,Tablet
+3859551369,10475,Keytruda,pembrolizumab,OTC,1ml,090,Immunotherapy,ONCO,Merck,False,True,2025-05-14,DE,Immunotherapy,Tablet
+4037124251,10476,Lantus,insulin glargine,OTC,60,080,Insulin,ENDO,Sanofi,True,False,2025-04-14,UK,Insulin,Tablet
+6645961231,10477,Nexium,esomeprazole,RX,60,030,Proton Pump Inhibitors,GI,AstraZeneca,False,True,2025-05-04,CA,Proton Pump Inhibitors,Tablet
+2009630575,10478,Metformin,metformin,RX,5ml,040,Biguanides,ENDO,Teva,False,True,2025-06-25,CA,Biguanides,Tablet
+2016757307,10479,Lipitor,atorvastatin,OTC,1ml,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,True,True,2025-08-27,DE,HMG-CoA Reductase Inhibitors,Injection
+6685506297,10480,Eliquis,apixaban,RX,120,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,True,False,2025-05-03,UK,Anticoagulants,Tablet
+1378697397,10481,Trulicity,dulaglutide,OTC,1ml,041,GLP-1 Agonists,ENDO,Eli Lilly,False,True,2025-07-24,DE,GLP-1 Agonists,Capsule
+9662355122,10482,Ozempic,semaglutide,RX,90,041,GLP-1 Agonists,ENDO,Novo Nordisk,False,False,2025-08-01,FR,GLP-1 Agonists,Solution
+2851131694,10483,Crestor,rosuvastatin,OTC,60,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,True,True,2025-07-02,CA,HMG-CoA Reductase Inhibitors,Tablet
+7234811870,10484,Humira,adalimumab,RX,120,011,TNF Blockers,IMMUNO,AbbVie,True,False,2025-07-12,CA,TNF Blockers,Injection
+4812892284,10485,Advair,fluticasone-salmeterol,RX,60,080,Corticosteroids,RESPIR,GlaxoSmithKline,True,False,2025-08-06,UK,Corticosteroids,Tablet
+2679808832,10486,Ozempic,semaglutide,RX,30,041,GLP-1 Agonists,ENDO,Novo Nordisk,True,False,2025-05-25,US,GLP-1 Agonists,Tablet
+7494883898,10487,Crestor,rosuvastatin,OTC,120,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,False,False,2025-04-28,UK,HMG-CoA Reductase Inhibitors,Injection
+6260724222,10488,Nexium,esomeprazole,OTC,60,030,Proton Pump Inhibitors,GI,AstraZeneca,True,True,2025-05-06,UK,Proton Pump Inhibitors,Injection
+1751325355,10489,Keytruda,pembrolizumab,RX,1ml,090,Immunotherapy,ONCO,Merck,True,True,2025-05-28,DE,Immunotherapy,Capsule
+4212961677,10490,Xarelto,rivaroxaban,RX,120,015,Anticoagulants,CARDIO,Bayer,True,True,2025-04-04,CA,Anticoagulants,Tablet
+5178797828,10491,Enbrel,etanercept,RX,5ml,025,TNF Blockers,IMMUNO,Amgen,False,False,2025-03-28,FR,TNF Blockers,Capsule
+6010664427,10492,Trulicity,dulaglutide,RX,60,041,GLP-1 Agonists,ENDO,Eli Lilly,False,False,2025-07-22,CA,GLP-1 Agonists,Cream
+3653298842,10493,Nexium,esomeprazole,OTC,1ml,030,Proton Pump Inhibitors,GI,AstraZeneca,True,True,2025-04-06,FR,Proton Pump Inhibitors,Solution
+3594138885,10494,Eliquis,apixaban,OTC,5ml,015,Anticoagulants,CARDIO,Bristol-Myers Squibb,True,False,2025-04-09,UK,Anticoagulants,Cream
+9753492873,10495,Humira,adalimumab,RX,5ml,011,TNF Blockers,IMMUNO,AbbVie,False,True,2025-07-11,CA,TNF Blockers,Capsule
+3165118481,10496,Crestor,rosuvastatin,RX,1ml,002,HMG-CoA Reductase Inhibitors,CARDIO,AstraZeneca,True,False,2025-04-04,FR,HMG-CoA Reductase Inhibitors,Tablet
+2099767005,10497,Humira,adalimumab,OTC,60,011,TNF Blockers,IMMUNO,AbbVie,True,True,2025-07-24,DE,TNF Blockers,Injection
+3399798355,10498,Lipitor,atorvastatin,RX,60,002,HMG-CoA Reductase Inhibitors,CARDIO,Pfizer,True,True,2025-07-01,FR,HMG-CoA Reductase Inhibitors,Capsule
+7533824680,10499,Keytruda,pembrolizumab,RX,90,090,Immunotherapy,ONCO,Merck,True,True,2025-05-24,US,Immunotherapy,Solution
