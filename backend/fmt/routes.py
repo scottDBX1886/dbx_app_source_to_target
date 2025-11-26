@@ -8,6 +8,7 @@ import json
 import io
 from backend.services.connector import query, insert_data
 from backend.config.settings import Settings, get_settings
+from backend.auth.service_principal_utils import log_api_request
 
 logger = logging.getLogger(__name__)
 
@@ -118,9 +119,8 @@ async def search_fmt_records(
     Example: GET /api/fmt/search?tenant=AK&query=amoxicillin&limit=50
     """
     try:
-        # Get user info from headers
-        user_email = request.headers.get("X-Forwarded-Email", "unknown")
-        logger.info(f"FMT search: tenant={tenant}, query={query}, status={status}, limit={limit}, user={user_email}")
+        # Log request using service principal context
+        log_api_request("FMT search", tenant=tenant, query=query, status=status, limit=limit)
         
         # Load data for the specified tenant
         df = load_fmt_data(tenant)
@@ -200,8 +200,7 @@ async def get_fmt_details(
     Example: GET /api/fmt/details/00011122233?tenant=AK
     """
     try:
-        user_email = request.headers.get("X-Forwarded-Email", "unknown")
-        logger.info(f"FMT details: ndc={ndc}, tenant={tenant}, user={user_email}")
+        log_api_request("FMT details", ndc=ndc, tenant=tenant)
         
         # Load data for the specified tenant
         df = load_fmt_data(tenant)
@@ -297,8 +296,7 @@ async def export_fmt_data(
     Example: GET /api/fmt/export?tenant=MO&format=csv&query=insulin&limit=1000
     """
     try:
-        user_email = request.headers.get("X-Forwarded-Email", "unknown")
-        logger.info(f"FMT export: tenant={tenant}, format={format}, query={query}, status={status}, user={user_email}")
+        log_api_request("FMT export", tenant=tenant, format=format, query=query, status=status)
         
         # Load data
         df = load_fmt_data(tenant)

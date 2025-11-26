@@ -6,6 +6,7 @@ import logging
 import pandas as pd
 import json
 import io
+from backend.auth.service_principal_utils import log_api_request
 
 logger = logging.getLogger(__name__)
 
@@ -83,8 +84,7 @@ async def search_pdl_records(
     Search PDL coding records for tenant
     """
     try:
-        user_email = request.headers.get("X-Forwarded-Email", "unknown")
-        logger.info(f"PDL search: tenant={tenant}, query={query}, status={status}, limit={limit}, user={user_email}")
+        log_api_request("PDL search", tenant=tenant, query=query, status=status, limit=limit)
         
         df = load_pdl_data(tenant)
         
@@ -155,8 +155,7 @@ async def get_pdl_details(
     Get detailed PDL information for an NDC (for drawer popup)
     """
     try:
-        user_email = request.headers.get("X-Forwarded-Email", "unknown")
-        logger.info(f"PDL details: ndc={ndc}, tenant={tenant}, user={user_email}")
+        log_api_request("PDL details", ndc=ndc, tenant=tenant)
         
         df = load_pdl_data(tenant)
         
@@ -234,8 +233,7 @@ async def export_pdl_data(
     Export PDL data in CSV or JSON format
     """
     try:
-        user_email = request.headers.get("X-Forwarded-Email", "unknown")
-        logger.info(f"PDL export: tenant={tenant}, format={format}, query={query}, status={status}, user={user_email}")
+        log_api_request("PDL export", tenant=tenant, format=format, query=query, status=status)
         
         df = load_pdl_data(tenant)
         

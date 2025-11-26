@@ -9,14 +9,39 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 import logging
 
-# Import modular routers
-from backend.auth.routes import router as auth_router
-from backend.fdb.routes import router as fdb_router
-from backend.fmt.routes import router as fmt_router
-from backend.pdl.routes import router as pdl_router
-from backend.config.routes import router as config_router
-from backend.weekly.fmt_routes import router as weekly_fmt_router
-from backend.weekly.pdl_routes import router as weekly_pdl_router
+# Import modular routers with error handling
+try:
+    from backend.auth.routes import router as auth_router
+    logger.info("✅ Auth routes imported successfully")
+except ImportError as e:
+    logger.error(f"❌ Failed to import auth routes: {e}")
+    # Create a dummy router to prevent startup failure
+    from fastapi import APIRouter
+    auth_router = APIRouter()
+
+try:
+    from backend.fdb.routes import router as fdb_router
+    logger.info("✅ FDB routes imported successfully")
+except ImportError as e:
+    logger.error(f"❌ Failed to import FDB routes: {e}")
+    from fastapi import APIRouter
+    fdb_router = APIRouter()
+
+try:
+    from backend.fmt.routes import router as fmt_router
+    from backend.pdl.routes import router as pdl_router
+    from backend.config.routes import router as config_router
+    from backend.weekly.fmt_routes import router as weekly_fmt_router
+    from backend.weekly.pdl_routes import router as weekly_pdl_router
+    logger.info("✅ All other routes imported successfully")
+except ImportError as e:
+    logger.error(f"❌ Failed to import some routes: {e}")
+    from fastapi import APIRouter
+    fmt_router = APIRouter()
+    pdl_router = APIRouter()
+    config_router = APIRouter()
+    weekly_fmt_router = APIRouter()
+    weekly_pdl_router = APIRouter()
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)

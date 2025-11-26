@@ -1,5 +1,5 @@
 import os
-from fastapi import APIRouter, Request, Query, HTTPException
+from fastapi import APIRouter, Request, Query, HTTPException, Depends
 from fastapi.responses import StreamingResponse
 from typing import Optional
 import logging
@@ -8,8 +8,15 @@ import json
 import io
 from backend.services.connector import query, insert_data
 from backend.config.settings import Settings, get_settings
+from backend.auth.service_principal_utils import log_api_request, get_service_principal_context
 
 logger = logging.getLogger(__name__)
+
+# Local authentication dependency to avoid circular imports
+async def get_authenticated_token() -> str:
+    """Local wrapper for authentication to avoid circular imports"""
+    from backend.auth.routes import get_authenticated_token as auth_token
+    return await auth_token()
 
 router = APIRouter(prefix="/api/fdb", tags=["fdb-search"])
 
@@ -29,13 +36,13 @@ def load_fdb_data(tenant: str = "MASTER") -> pd.DataFrame:
     try:
         warehouse_id = get_settings().databricks_warehouse_id
         
-        df_core = query(f"SELECT * FROM demo.gainwell.fdb_core_drugs", warehouse_id=warehouse_id,as_dict=False)
+        df_core = query(f"SELECT ndc,gsn,brand_name as brand,pkg_size,hic3 FROM pdl_de_dev.pdl_data_temp.fdb_new_drugs_to_hist_vw;", warehouse_id=warehouse_id,as_dict=False)
         
-        df_formulary = query(f"SELECT * FROM demo.gainwell.fdb_formulary_{tenant.lower()}", warehouse_id=warehouse_id,as_dict=False)
-        logger.info(f"df_core preview:\n{df_core.head().to_string()} for tenant {tenant}")
-        logger.info(f"df_formulary preview:\n{df_formulary.head().to_string()} for tenant {tenant}")
+        #df_formulary = query(f"SELECT ndc FROM pdl_dev.pdl_ref_brnz.fdb_new_drugs_to_hist_vw", warehouse_id=warehouse_id,as_dict=False)
+        #logger.info(f"df_core preview:\n{df_core.head().to_string()} for tenant {tenant}")
+        #logger.info(f"df_formulary preview:\n{df_formulary.head().to_string()} for tenant {tenant}")
 
-        df = df_core.merge(df_formulary, on='ndc', how='inner')
+        df = df_core
         
         logger.info(f"Loaded {len(df)} FDB records for tenant {tenant}")
         return df
@@ -44,9 +51,7 @@ def load_fdb_data(tenant: str = "MASTER") -> pd.DataFrame:
         logger.error(f"Error loading FDB data for tenant {tenant}: {e}")
         # Return empty DataFrame with expected columns to prevent crashes
         return pd.DataFrame(columns=[
-            "ndc", "gsn", "brand", "generic", "rx_otc", "pkg_size", "hic3", "hicl", "dcc", "mfr", "load_date",
-            "obsolete", "rebate", "pkg_origin", "gsn_desc", "pkg_form",
-            "formulary_status", "tier", "pa_required", "ql_limits"
+            "ndc", "gsn", "brand", "pkg_size", "hic3"
         ])
 
 def search_dataframe(df: pd.DataFrame, query: str) -> pd.DataFrame:
@@ -62,10 +67,7 @@ def search_dataframe(df: pd.DataFrame, query: str) -> pd.DataFrame:
     mask = (
         df['ndc'].astype(str).str.contains(query_lower, case=False, na=False) |
         df['brand'].str.contains(query_lower, case=False, na=False) |
-        df['generic'].str.contains(query_lower, case=False, na=False) |
-        df['mfr'].str.contains(query_lower, case=False, na=False) |
-        df['hic3'].astype(str).str.contains(query_lower, case=False, na=False) |
-        df['dcc'].str.contains(query_lower, case=False, na=False)
+        df['hic3'].astype(str).str.contains(query_lower, case=False, na=False)
     )
     
     return df[mask]
@@ -75,17 +77,18 @@ async def search_fdb_records(
     request: Request,
     tenant: str = Query(..., description="Tenant (MASTER/AK/MO)"),
     query: Optional[str] = Query(None, description="Search query"),
-    limit: Optional[int] = Query(100, description="Result limit")
+    limit: Optional[int] = Query(100, description="Result limit"),
+    token: str = Depends(get_authenticated_token)
 ):
     """
     Search FDB records for a specific tenant
     
     Example: GET /api/fdb/search?tenant=AK&query=amoxicillin&limit=50
+    Requires service principal authentication.
     """
     try:
-        # Get user info from headers
-        user_email = request.headers.get("X-Forwarded-Email", "unknown")
-        logger.info(f"FDB search: tenant={tenant}, query={query}, limit={limit}, user={user_email}")
+        # Log request using standardized service principal utilities
+        log_api_request("FDB search", tenant=tenant, query=query, limit=limit)
         
         # Load data for the specified tenant
         df = load_fdb_data(tenant)
@@ -118,14 +121,8 @@ async def search_fdb_records(
                     "ndc": str(row['ndc']),
                     "gsn": int(row['gsn']) if pd.notna(row['gsn']) else None,
                     "brand": str(row['brand']) if pd.notna(row['brand']) else "",
-                    "generic": str(row['generic']) if pd.notna(row['generic']) else "",
-                    "rx_otc": str(row['rx_otc']) if pd.notna(row['rx_otc']) else "",
                     "pkg_size": str(row['pkg_size']) if pd.notna(row['pkg_size']) else "",
-                    "hic3": str(row['hic3']) if pd.notna(row['hic3']) else "",
-                    "hicl": str(row['hicl']) if pd.notna(row['hicl']) else "",
-                    "dcc": str(row['dcc']) if pd.notna(row['dcc']) else "",
-                    "mfr": str(row['mfr']) if pd.notna(row['mfr']) else "",
-                    "load_date": str(row['load_date']) if pd.notna(row['load_date']) else ""
+                    "hic3": str(row['hic3']) if pd.notna(row['hic3']) else ""
                 }
                 records.append(record)
                 
@@ -139,7 +136,7 @@ async def search_fdb_records(
             "limit": limit,
             "total_found": len(records),
             "data_source": "Live Data",  # TODO: Update with actual source name
-            "user_email": user_email,
+            "service_principal": get_service_principal_context()["client_id"],
             "records": records
         }
         
@@ -158,17 +155,18 @@ async def search_fdb_records(
 async def get_fdb_details(
     request: Request,
     ndc: str,
-    tenant: str = Query(..., description="Tenant (MASTER/AK/MO)")
+    tenant: str = Query(..., description="Tenant (MASTER/AK/MO)"),
+    token: str = Depends(get_authenticated_token)
 ):
     """
     Get detailed FDB record for specific NDC
     
     Example: GET /api/fdb/details/00003012345?tenant=AK
+    Requires service principal authentication.
     """
     try:
-        # Get user info from headers
-        user_email = request.headers.get("X-Forwarded-Email", "unknown")
-        logger.info(f"FDB details: NDC={ndc}, tenant={tenant}, user={user_email}")
+        # Log request using standardized service principal utilities
+        log_api_request("FDB details", ndc=ndc, tenant=tenant)
         
         # Load data
         df = load_fdb_data(tenant)
@@ -188,7 +186,7 @@ async def get_fdb_details(
             "ndc": ndc,
             "tenant": tenant,
             "data_source": "Live Data",  # TODO: Update with actual source name
-            "user_email": user_email,
+            "service_principal": get_service_principal_context()["client_id"],
             "Core": {
                 "NDC": str(record['ndc']),
                 "GSN": int(record['gsn']) if pd.notna(record['gsn']) else None,
@@ -238,17 +236,18 @@ async def export_fdb_data(
     tenant: str = Query(..., description="Tenant (MASTER/AK/MO)"),
     format: str = Query("csv", description="Export format (csv/json)"),
     query: Optional[str] = Query(None, description="Optional search filter"),
-    limit: Optional[int] = Query(None, description="Optional record limit")
+    limit: Optional[int] = Query(None, description="Optional record limit"),
+    token: str = Depends(get_authenticated_token)
 ):
     """
     Export FDB data for tenant
     
     Example: GET /api/fdb/export?tenant=MO&format=csv&query=insulin&limit=1000
+    Requires service principal authentication.
     """
     try:
-        # Get user info from headers
-        user_email = request.headers.get("X-Forwarded-Email", "unknown")
-        logger.info(f"FDB export: tenant={tenant}, format={format}, user={user_email}")
+        # Log request using standardized service principal utilities
+        log_api_request("FDB export", tenant=tenant, format=format, query=query, limit=limit)
         
         # Load data for the specified tenant
         df = load_fdb_data(tenant)
@@ -298,7 +297,7 @@ async def export_fdb_data(
                     "total_records": len(records),
                     "export_timestamp": timestamp,
                     "data_source": "Live Data",  # TODO: Update with actual source name
-                    "exported_by": user_email
+                    "exported_by": get_service_principal_context()["client_id"]
                 },
                 "records": records
             }
