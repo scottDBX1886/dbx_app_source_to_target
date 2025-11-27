@@ -9,6 +9,10 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 import logging
 
+# Configure logging first before any imports
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 # Import modular routers with error handling
 try:
     from backend.auth.routes import router as auth_router
@@ -42,10 +46,6 @@ except ImportError as e:
     config_router = APIRouter()
     weekly_fmt_router = APIRouter()
     weekly_pdl_router = APIRouter()
-
-# Configure logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
 
 # Create FastAPI app
 app = FastAPI(
