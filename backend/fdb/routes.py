@@ -62,7 +62,7 @@ async def load_fdb_data(tenant: str = "MASTER", access_token: str = None) -> pd.
         
         # Try the primary table first
         try:
-            df_core = query(f"SELECT '123' as ndc,'0856789' as gsn,'DR REDDYS' as brand_name,10 as pkg_size,'BCA' as hic3 FROM {table_name};", warehouse_id=warehouse_id, as_dict=False, access_token=access_token)
+            df_core = query(f"SELECT '123' as ndc,'0856789' as gsn,'DR REDDYS' as brand,10 as pkg_size,'BCA' as hic3 FROM {table_name};", warehouse_id=warehouse_id, as_dict=False, access_token=access_token)
         except Exception as primary_error:
             logger.error(f"Primary table failed: {primary_error}")
             
