@@ -27,7 +27,7 @@ async def get_authenticated_token() -> str:
 
 router = APIRouter(prefix="/api/fdb", tags=["fdb-search"])
 
-def load_fdb_data(tenant: str = "MASTER") -> pd.DataFrame:
+async def load_fdb_data(tenant: str = "MASTER", access_token: str = None) -> pd.DataFrame:
     """
     Load FDB data from your data source
     """
@@ -43,7 +43,7 @@ def load_fdb_data(tenant: str = "MASTER") -> pd.DataFrame:
     try:
         warehouse_id = get_settings().databricks_warehouse_id
         
-        df_core = query(f"SELECT ndc,gsn,brand_name as brand,pkg_size,hic3 FROM pdl_de_dev.pdl_de_brnz.fdb_new_drugs_to_hist_vw;", warehouse_id=warehouse_id,as_dict=False)
+        df_core = query(f"SELECT ndc,gsn,brand_name as brand,pkg_size,hic3 FROM pdl_de_dev.pdl_de_brnz.fdb_new_drugs_to_hist_vw;", warehouse_id=warehouse_id, as_dict=False, access_token=access_token)
         
         #df_formulary = query(f"SELECT ndc FROM pdl_dev.pdl_ref_brnz.fdb_new_drugs_to_hist_vw", warehouse_id=warehouse_id,as_dict=False)
         #logger.info(f"df_core preview:\n{df_core.head().to_string()} for tenant {tenant}")
@@ -98,7 +98,7 @@ async def search_fdb_records(
         log_api_request("FDB search", tenant=tenant, query=query, limit=limit)
         
         # Load data for the specified tenant
-        df = load_fdb_data(tenant)
+        df = await load_fdb_data(tenant, token)
         
         if df.empty:
             return {
@@ -176,7 +176,7 @@ async def get_fdb_details(
         log_api_request("FDB details", ndc=ndc, tenant=tenant)
         
         # Load data
-        df = load_fdb_data(tenant)
+        df = await load_fdb_data(tenant, token)
         
         if df.empty:
             raise HTTPException(status_code=404, detail="Data loading not implemented")
@@ -257,7 +257,7 @@ async def export_fdb_data(
         log_api_request("FDB export", tenant=tenant, format=format, query=query, limit=limit)
         
         # Load data for the specified tenant
-        df = load_fdb_data(tenant)
+        df = await load_fdb_data(tenant, token)
         
         if df.empty:
             raise HTTPException(status_code=404, detail="No data available - data loading not implemented")

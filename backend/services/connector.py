@@ -17,24 +17,33 @@ from databricks.sdk.core import Config
 cfg = Config()
 
 
-@lru_cache(maxsize=1)
-def get_connection(warehouse_id: str):
+def get_connection(warehouse_id: str, access_token: Optional[str] = None):
     """
     Get or create a connection to the Databricks SQL warehouse.
-    Connection is cached using lru_cache to avoid creating multiple connections.
 
     Args:
         warehouse_id: The ID of the SQL warehouse to connect to
+        access_token: Optional access token for service principal authentication
 
     Returns:
         A connection to the SQL warehouse
     """
     http_path = f"/sql/1.0/warehouses/{warehouse_id}"
-    return sql.connect(
-        server_hostname=cfg.host,
-        http_path=http_path,
-        credentials_provider=lambda: cfg.authenticate,
-    )
+    
+    if access_token:
+        # Use service principal token
+        return sql.connect(
+            server_hostname=cfg.host,
+            http_path=http_path,
+            access_token=access_token,
+        )
+    else:
+        # Fallback to default SDK authentication
+        return sql.connect(
+            server_hostname=cfg.host,
+            http_path=http_path,
+            credentials_provider=lambda: cfg.authenticate,
+        )
 
 
 def close_connections():
@@ -47,7 +56,7 @@ def close_connections():
 
 
 def query(
-    sql_query: str, warehouse_id: str, as_dict: bool = True
+    sql_query: str, warehouse_id: str, as_dict: bool = True, access_token: Optional[str] = None
 ) -> Union[List[Dict], pd.DataFrame]:
     """
     Execute a query against a Databricks SQL Warehouse.
@@ -56,6 +65,7 @@ def query(
         sql_query: SQL query to execute
         warehouse_id: The ID of the SQL warehouse to connect to
         as_dict: Whether to return results as dictionaries (True) or pandas DataFrame (False)
+        access_token: Optional access token for service principal authentication
 
     Returns:
         Query results as a list of dictionaries or pandas DataFrame
@@ -63,7 +73,7 @@ def query(
     Raises:
         Exception: If the query fails
     """
-    conn = get_connection(warehouse_id)
+    conn = get_connection(warehouse_id, access_token)
 
     try:
         with conn.cursor() as cursor:
