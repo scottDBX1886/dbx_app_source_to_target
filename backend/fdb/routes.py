@@ -10,7 +10,14 @@ from backend.services.connector import query, insert_data
 from backend.config.settings import Settings, get_settings
 from backend.auth.service_principal_utils import log_api_request, get_service_principal_context
 
+# Configure logger for this module
 logger = logging.getLogger(__name__)
+if not logger.handlers:
+    handler = logging.StreamHandler()
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
+    logger.setLevel(logging.INFO)
 
 # Local authentication dependency to avoid circular imports
 async def get_authenticated_token() -> str:
