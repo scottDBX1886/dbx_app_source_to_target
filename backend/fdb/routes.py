@@ -43,7 +43,16 @@ async def load_fdb_data(tenant: str = "MASTER", access_token: str = None) -> pd.
     try:
         warehouse_id = get_settings().databricks_warehouse_id
         
-        df_core = query(f"SELECT ndc,gsn,brand_name as brand,pkg_size,hic3 FROM pdl_dev.pdl_de_brnz.fdb_new_drugs_to_hist_vw;", warehouse_id=warehouse_id, as_dict=False, access_token=access_token)
+        # Debug logging
+        logger.info(f"Using warehouse_id: {warehouse_id}")
+        logger.info(f"Access token provided: {'Yes' if access_token else 'No'}")
+        if access_token:
+            logger.info(f"Access token length: {len(access_token)}")
+        
+        table_name = "pdl_dev.pdl_de_brnz.fdb_new_drugs_to_hist_vw"
+        logger.info(f"Querying table: {table_name}")
+        
+        df_core = query(f"SELECT ndc,gsn,brand_name as brand,pkg_size,hic3 FROM {table_name};", warehouse_id=warehouse_id, as_dict=False, access_token=access_token)
         
         #df_formulary = query(f"SELECT ndc FROM pdl_dev.pdl_ref_brnz.fdb_new_drugs_to_hist_vw", warehouse_id=warehouse_id,as_dict=False)
         #logger.info(f"df_core preview:\n{df_core.head().to_string()} for tenant {tenant}")

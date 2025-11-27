@@ -32,6 +32,9 @@ def get_connection(warehouse_id: str, access_token: Optional[str] = None):
     
     if access_token:
         # Use service principal token
+        import logging
+        logger = logging.getLogger(__name__)
+        logger.info(f"Connecting to {cfg.host} with service principal token (length: {len(access_token)})")
         return sql.connect(
             server_hostname=cfg.host,
             http_path=http_path,
@@ -74,6 +77,11 @@ def query(
         Exception: If the query fails
     """
     conn = get_connection(warehouse_id, access_token)
+    
+    import logging
+    logger = logging.getLogger(__name__)
+    logger.info(f"Executing query: {sql_query[:100]}...")  # Log first 100 chars
+    logger.info(f"Using access token: {'Yes' if access_token else 'No'}")
 
     try:
         with conn.cursor() as cursor:
