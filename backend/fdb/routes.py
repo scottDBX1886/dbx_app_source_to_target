@@ -49,10 +49,43 @@ async def load_fdb_data(tenant: str = "MASTER", access_token: str = None) -> pd.
         if access_token:
             logger.info(f"Access token length: {len(access_token)}")
         
+        # First, let's test what catalogs are accessible
+        try:
+            logger.info("Testing accessible catalogs...")
+            catalogs_result = query("SHOW CATALOGS", warehouse_id=warehouse_id, as_dict=True, access_token=access_token)
+            logger.info(f"Available catalogs: {[cat.get('catalog', cat) for cat in catalogs_result]}")
+        except Exception as catalog_error:
+            logger.warning(f"Could not list catalogs: {catalog_error}")
+        
         table_name = "pdl_dev.pdl_de_brnz.fdb_new_drugs_to_hist_vw"
         logger.info(f"Querying table: {table_name}")
         
-        df_core = query(f"SELECT ndc,gsn,brand_name as brand,pkg_size,hic3 FROM {table_name};", warehouse_id=warehouse_id, as_dict=False, access_token=access_token)
+        # Try the primary table first
+        try:
+            df_core = query(f"SELECT ndc,gsn,brand_name as brand,pkg_size,hic3 FROM {table_name};", warehouse_id=warehouse_id, as_dict=False, access_token=access_token)
+        except Exception as primary_error:
+            logger.error(f"Primary table failed: {primary_error}")
+            
+            # Try alternative catalog names if the service principal has access
+            alternative_tables = [
+                "pdl_de_dev.pdl_de_brnz.fdb_new_drugs_to_hist_vw",
+                "pdl_de_dev.pdl_data_temp.fdb_new_drugs_to_hist_vw",
+                "pdl_dev.pdl_data_temp.fdb_new_drugs_to_hist_vw"
+            ]
+            
+            df_core = None
+            for alt_table in alternative_tables:
+                try:
+                    logger.info(f"Trying alternative table: {alt_table}")
+                    df_core = query(f"SELECT ndc,gsn,brand_name as brand,pkg_size,hic3 FROM {alt_table};", warehouse_id=warehouse_id, as_dict=False, access_token=access_token)
+                    logger.info(f"Success with table: {alt_table}")
+                    break
+                except Exception as alt_error:
+                    logger.warning(f"Alternative table {alt_table} failed: {alt_error}")
+                    continue
+            
+            if df_core is None:
+                raise Exception("No accessible FDB tables found with current service principal permissions")
         
         #df_formulary = query(f"SELECT ndc FROM pdl_dev.pdl_ref_brnz.fdb_new_drugs_to_hist_vw", warehouse_id=warehouse_id,as_dict=False)
         #logger.info(f"df_core preview:\n{df_core.head().to_string()} for tenant {tenant}")
