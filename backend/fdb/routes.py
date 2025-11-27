@@ -43,7 +43,7 @@ def load_fdb_data(tenant: str = "MASTER") -> pd.DataFrame:
     try:
         warehouse_id = get_settings().databricks_warehouse_id
         
-        df_core = query(f"SELECT ndc,gsn,brand_name as brand,pkg_size,hic3 FROM pdl_de_dev.pdl_data_temp.fdb_new_drugs_to_hist_vw;", warehouse_id=warehouse_id,as_dict=False)
+        df_core = query(f"SELECT ndc,gsn,brand_name as brand,pkg_size,hic3 FROM pdl_de_dev.pdl_de_brnz.fdb_new_drugs_to_hist_vw;", warehouse_id=warehouse_id,as_dict=False)
         
         #df_formulary = query(f"SELECT ndc FROM pdl_dev.pdl_ref_brnz.fdb_new_drugs_to_hist_vw", warehouse_id=warehouse_id,as_dict=False)
         #logger.info(f"df_core preview:\n{df_core.head().to_string()} for tenant {tenant}")
