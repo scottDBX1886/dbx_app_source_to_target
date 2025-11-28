@@ -57,12 +57,12 @@ async def load_fdb_data(tenant: str = "MASTER", access_token: str = None) -> pd.
         except Exception as catalog_error:
             logger.warning(f"Could not list catalogs: {catalog_error}")
         
-        table_name = "samples.accuweather.forecast_daily_calendar_imperial"
+        table_name = "pdl_dev.pdl_ref_brnz.ndc"
         logger.info(f"Querying table: {table_name}")
         
         # Try the primary table first
         try:
-            df_core = query(f"SELECT '123' as ndc,'0856789' as gsn,'DR REDDYS' as brand,10 as pkg_size,'BCA' as hic3 FROM {table_name};", warehouse_id=warehouse_id, as_dict=False, access_token=access_token)
+            df_core = query(f"SELECT ndc,GSI as gsn,brand_nm as brand,PKG_SIZE_NUM as pkg_size,"" as hic3 FROM {table_name};", warehouse_id=warehouse_id, as_dict=False, access_token=access_token)
         except Exception as primary_error:
             logger.error(f"Primary table failed: {primary_error}")
             
